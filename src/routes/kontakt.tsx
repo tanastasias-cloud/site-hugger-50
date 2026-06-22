@@ -24,12 +24,41 @@ export const Route = createFileRoute("/kontakt")({
 });
 
 function ContactPage() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState<string>("");
 
-  function onSubmit(e: FormEvent) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    if (status === "sending") return;
+    setStatus("sending");
+    setErrorMsg("");
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      first_name: String(fd.get("first_name") || ""),
+      last_name: String(fd.get("last_name") || ""),
+      email: String(fd.get("email") || ""),
+      phone: String(fd.get("phone") || ""),
+      interest: String(fd.get("interest") || ""),
+      avgs_status: String(fd.get("avgs_status") || ""),
+      message: String(fd.get("message") || ""),
+      format: String(fd.get("format") || ""),
+      source: "kontakt-form",
+    };
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("send_failed");
+      setStatus("sent");
+      (e.target as HTMLFormElement).reset();
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg("Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie an info@getgrow.academy.");
+    }
   }
+
 
   return (
     <SiteShell active="contact">
@@ -98,27 +127,27 @@ function ContactPage() {
             <div className="form-row">
               <div className="form-group">
                 <label className="form-label">Vorname</label>
-                <input type="text" className="form-input" placeholder="Anna" required />
+                <input name="first_name" type="text" className="form-input" placeholder="Anna" required />
               </div>
               <div className="form-group">
                 <label className="form-label">Nachname</label>
-                <input type="text" className="form-input" placeholder="Schmidt" required />
+                <input name="last_name" type="text" className="form-input" placeholder="Schmidt" required />
               </div>
             </div>
 
             <div className="form-group">
               <label className="form-label">E-Mail</label>
-              <input type="email" className="form-input" placeholder="anna@example.com" required />
+              <input name="email" type="email" className="form-input" placeholder="anna@example.com" required />
             </div>
 
             <div className="form-group">
               <label className="form-label">Telefon (optional)</label>
-              <input type="tel" className="form-input" placeholder="+49" />
+              <input name="phone" type="tel" className="form-input" placeholder="+49" />
             </div>
 
             <div className="form-group">
               <label className="form-label">Ich interessiere mich für</label>
-              <select className="form-select" defaultValue="">
+              <select name="interest" className="form-select" defaultValue="">
                 <option value="" disabled>
                   Bitte wählen...
                 </option>
@@ -132,7 +161,7 @@ function ContactPage() {
 
             <div className="form-group">
               <label className="form-label">AVGS / Jobcenter-Gutschein</label>
-              <select className="form-select" defaultValue="Nein — aber ich möchte einen beantragen">
+              <select name="avgs_status" className="form-select" defaultValue="Nein — aber ich möchte einen beantragen">
                 <option>Nein — aber ich möchte einen beantragen</option>
                 <option>Ja — ich habe bereits einen AVGS-Gutschein</option>
                 <option>Ich habe einen §16k SGB II Gutschein</option>
@@ -145,6 +174,7 @@ function ContactPage() {
             <div className="form-group">
               <label className="form-label">Wo stehen Sie gerade?</label>
               <textarea
+                name="message"
                 className="form-textarea"
                 placeholder="Erzählen Sie uns kurz: Wie lange sind Sie in Deutschland, was ist Ihr beruflicher Hintergrund und was möchten Sie verändern..."
               />
@@ -152,7 +182,7 @@ function ContactPage() {
 
             <div className="form-group">
               <label className="form-label">Bevorzugtes Format</label>
-              <select className="form-select" defaultValue="Online">
+              <select name="format" className="form-select" defaultValue="Online">
                 <option>Online</option>
                 <option>Vor Ort (Berlin)</option>
                 <option>Beides passt für mich</option>
@@ -167,9 +197,18 @@ function ContactPage() {
               </label>
             </div>
 
-            <button type="submit" className="btn-submit">
-              {sent ? "Vielen Dank — wir melden uns ✓" : "Anfrage senden →"}
+            {status === "error" && (
+              <div style={{ color: "#b91c1c", fontSize: 14, marginBottom: 12 }}>{errorMsg}</div>
+            )}
+
+            <button type="submit" className="btn-submit" disabled={status === "sending" || status === "sent"}>
+              {status === "sent"
+                ? "Vielen Dank — wir melden uns ✓"
+                : status === "sending"
+                  ? "Wird gesendet..."
+                  : "Anfrage senden →"}
             </button>
+
           </form>
         </div>
       </div>
