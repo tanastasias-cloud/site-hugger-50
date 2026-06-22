@@ -2,6 +2,20 @@
 @source "../src";
 @import "tw-animate-css";
 
+/* Self-hosted fonts (DSGVO-compliant — no Google Fonts CDN) */
+@import "@fontsource/allura/400.css";
+@import "@fontsource/tenor-sans/400.css";
+@import "@fontsource/dm-sans/300.css";
+@import "@fontsource/dm-sans/400.css";
+@import "@fontsource/dm-sans/500.css";
+@import "@fontsource/dm-sans/600.css";
+@import "@fontsource/dm-sans/300-italic.css";
+@import "@fontsource/cormorant-garamond/300.css";
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/300-italic.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+
 @custom-variant dark (&:is(.dark *));
 
 /*
