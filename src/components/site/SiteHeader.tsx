@@ -13,6 +13,7 @@ type ActiveKey =
   | "16k"
   | "coaches"
   | "referenzen"
+  | "impressum"
   | "contact";
 
 

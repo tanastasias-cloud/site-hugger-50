@@ -1,4 +1,4 @@
-export function SiteFooter() {
+import { Link } from "@tanstack/react-router";
   return (
     <footer className="gg-footer">
       <div className="footer-logo" aria-label="GetGrow Academy Berlin">
