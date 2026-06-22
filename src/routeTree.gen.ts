@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UnternehmenRouteImport } from './routes/unternehmen'
+import { Route as ReferenzenRouteImport } from './routes/referenzen'
 import { Route as PrivatpersonenRouteImport } from './routes/privatpersonen'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as CoachesRouteImport } from './routes/coaches'
@@ -21,6 +22,11 @@ import { Route as ApiPublicContactRouteImport } from './routes/api/public/contac
 const UnternehmenRoute = UnternehmenRouteImport.update({
   id: '/unternehmen',
   path: '/unternehmen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferenzenRoute = ReferenzenRouteImport.update({
+  id: '/referenzen',
+  path: '/referenzen',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivatpersonenRoute = PrivatpersonenRouteImport.update({
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/coaches': typeof CoachesRoute
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
+  '/referenzen': typeof ReferenzenRoute
   '/unternehmen': typeof UnternehmenRoute
   '/api/public/contact': typeof ApiPublicContactRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/coaches': typeof CoachesRoute
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
+  '/referenzen': typeof ReferenzenRoute
   '/unternehmen': typeof UnternehmenRoute
   '/api/public/contact': typeof ApiPublicContactRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/coaches': typeof CoachesRoute
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
+  '/referenzen': typeof ReferenzenRoute
   '/unternehmen': typeof UnternehmenRoute
   '/api/public/contact': typeof ApiPublicContactRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/coaches'
     | '/kontakt'
     | '/privatpersonen'
+    | '/referenzen'
     | '/unternehmen'
     | '/api/public/contact'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/coaches'
     | '/kontakt'
     | '/privatpersonen'
+    | '/referenzen'
     | '/unternehmen'
     | '/api/public/contact'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/coaches'
     | '/kontakt'
     | '/privatpersonen'
+    | '/referenzen'
     | '/unternehmen'
     | '/api/public/contact'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   CoachesRoute: typeof CoachesRoute
   KontaktRoute: typeof KontaktRoute
   PrivatpersonenRoute: typeof PrivatpersonenRoute
+  ReferenzenRoute: typeof ReferenzenRoute
   UnternehmenRoute: typeof UnternehmenRoute
   ApiPublicContactRoute: typeof ApiPublicContactRoute
 }
@@ -141,6 +154,13 @@ declare module '@tanstack/react-router' {
       path: '/unternehmen'
       fullPath: '/unternehmen'
       preLoaderRoute: typeof UnternehmenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/referenzen': {
+      id: '/referenzen'
+      path: '/referenzen'
+      fullPath: '/referenzen'
+      preLoaderRoute: typeof ReferenzenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privatpersonen': {
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   CoachesRoute: CoachesRoute,
   KontaktRoute: KontaktRoute,
   PrivatpersonenRoute: PrivatpersonenRoute,
+  ReferenzenRoute: ReferenzenRoute,
   UnternehmenRoute: UnternehmenRoute,
   ApiPublicContactRoute: ApiPublicContactRoute,
 }

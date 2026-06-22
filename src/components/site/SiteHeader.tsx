@@ -12,7 +12,9 @@ type ActiveKey =
   | "avgs"
   | "16k"
   | "coaches"
+  | "referenzen"
   | "contact";
+
 
 export function SiteHeader({ active }: { active?: ActiveKey }) {
   const [open, setOpen] = useState(false);
