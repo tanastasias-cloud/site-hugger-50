@@ -1,11 +1,11 @@
 export function SiteFooter() {
   return (
     <footer className="gg-footer">
-      <div className="footer-logo">
+      <div className="footer-logo" aria-label="GetGrow Academy Berlin">
         <div className="get">Get</div>
         <div className="div" />
         <div>
-          <div className="grow">Grow</div>
+          <div className="grow">GROW</div>
           <div className="acad">Academy · Berlin</div>
         </div>
       </div>
@@ -17,8 +17,10 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="footer-c">
-          <div className="label">Phone</div>
-          <div className="value">+49 157 3665 1515</div>
+          <div className="label">Telefon</div>
+          <div className="value">
+            <a href="tel:+4915736651515">+49 157 3665 1515</a>
+          </div>
         </div>
         <div className="footer-c">
           <div className="label">Website</div>
