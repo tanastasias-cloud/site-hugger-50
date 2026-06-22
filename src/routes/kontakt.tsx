@@ -5,12 +5,19 @@ import { SiteShell } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: [
-      { title: "Contact — GetGrow Academy Berlin" },
+      { title: "Kontakt — GetGrow Academy Berlin" },
       {
         name: "description",
         content:
-          "Book a free consultation. AVGS & §16k SGB II accepted. We respond within 24 hours.",
+          "Buchen Sie ein kostenloses Erstgespräch. AVGS & §16k SGB II werden akzeptiert. Antwort innerhalb von 24 Stunden.",
       },
+      { property: "og:title", content: "Kontakt — GetGrow Academy Berlin" },
+      {
+        property: "og:description",
+        content:
+          "Kostenloses Erstgespräch buchen — für Jobcenter-Klient:innen, Privatpersonen und Unternehmen. Berlin & online.",
+      },
+      { property: "og:type", content: "website" },
     ],
   }),
   component: ContactPage,
@@ -28,27 +35,27 @@ function ContactPage() {
     <SiteShell active="contact">
       <section className="page-hero simple">
         <div className="breadcrumb">
-          <Link to="/">Home</Link> · Contact
+          <Link to="/">Startseite</Link> · Kontakt
         </div>
         <h1>
-          Get in <em>touch</em>
+          Nehmen Sie <em>Kontakt</em> auf
         </h1>
         <p className="page-hero-sub">
-          Book a free consultation, ask about AVGS, or simply tell us where you are — we'll get
-          back to you within 24 hours.
+          Buchen Sie ein kostenloses Erstgespräch, fragen Sie zu AVGS — oder schreiben Sie uns
+          einfach, wo Sie gerade stehen. Wir melden uns innerhalb von 24 Stunden.
         </p>
       </section>
 
       <div className="contact-main">
         <div className="contact-info">
           <div>
-            <div className="info-tag">Contact details</div>
+            <div className="info-tag">Kontaktdaten</div>
             {[
-              ["Email", <a href="mailto:info@getgrow.academy">info@getgrow.academy</a>],
-              ["Phone", <a href="tel:+4915736651515">+49 157 3665 1515</a>],
+              ["E-Mail", <a href="mailto:info@getgrow.academy">info@getgrow.academy</a>],
+              ["Telefon", <a href="tel:+4915736651515">+49 157 3665 1515</a>],
               ["Website", "getgrow.academy"],
-              ["Location", "Berlin & Online"],
-              ["Languages", "DE · EN · UA · RU"],
+              ["Standort", "Berlin & Online"],
+              ["Sprachen", "DE · EN · UA · RU"],
             ].map(([label, value], i) => (
               <div className="info-item" key={i}>
                 <span className="info-label">{label}</span>
@@ -58,108 +65,110 @@ function ContactPage() {
           </div>
 
           <div className="avgs-box">
-            <div className="avgs-box-tag">Jobcenter clients</div>
-            <h3>Have an AVGS voucher?</h3>
+            <div className="avgs-box-tag">Klient:innen mit Jobcenter-Bezug</div>
+            <h3>Haben Sie einen AVGS-Gutschein?</h3>
             <p>
-              Our coaching is fully funded through AVGS and §16k SGB II. If you already have a
-              voucher — or need help getting one — just mention it in the form and we'll take
-              care of the rest.
+              Unser Coaching ist vollständig über AVGS und §16k SGB II finanzierbar. Wenn Sie
+              bereits einen Gutschein haben — oder Unterstützung bei der Beantragung brauchen —
+              vermerken Sie es einfach im Formular, wir kümmern uns um den Rest.
             </p>
           </div>
 
           <div>
-            <div className="info-tag">Response time</div>
+            <div className="info-tag">Antwortzeiten</div>
             <div className="info-item">
-              <span className="info-label">Mon–Fri</span>
-              <span className="info-value">Within 24 hours</span>
+              <span className="info-label">Mo–Fr</span>
+              <span className="info-value">Innerhalb von 24 Stunden</span>
             </div>
             <div className="info-item">
-              <span className="info-label">Weekend</span>
-              <span className="info-value">Reply on Monday</span>
+              <span className="info-label">Wochenende</span>
+              <span className="info-value">Antwort am Montag</span>
             </div>
           </div>
         </div>
 
         <div>
           <form className="form-card" onSubmit={onSubmit}>
-            <div className="form-title">Free consultation</div>
+            <div className="form-title">Kostenloses Erstgespräch</div>
             <div className="form-sub">
-              Fill in the form and we'll be in touch within 24 hours to arrange a free intro
-              call.
+              Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden, um einen
+              Termin für Ihr kostenloses Kennenlerngespräch zu vereinbaren.
             </div>
 
             <div className="form-row">
               <div className="form-group">
-                <label className="form-label">First name</label>
-                <input type="text" className="form-input" placeholder="Jane" required />
+                <label className="form-label">Vorname</label>
+                <input type="text" className="form-input" placeholder="Anna" required />
               </div>
               <div className="form-group">
-                <label className="form-label">Last name</label>
-                <input type="text" className="form-input" placeholder="Smith" required />
+                <label className="form-label">Nachname</label>
+                <input type="text" className="form-input" placeholder="Schmidt" required />
               </div>
             </div>
 
             <div className="form-group">
-              <label className="form-label">Email</label>
-              <input type="email" className="form-input" placeholder="jane@example.com" required />
+              <label className="form-label">E-Mail</label>
+              <input type="email" className="form-input" placeholder="anna@example.com" required />
             </div>
 
             <div className="form-group">
-              <label className="form-label">Phone (optional)</label>
+              <label className="form-label">Telefon (optional)</label>
               <input type="tel" className="form-input" placeholder="+49" />
             </div>
 
             <div className="form-group">
-              <label className="form-label">I'm interested in</label>
+              <label className="form-label">Ich interessiere mich für</label>
               <select className="form-select" defaultValue="">
                 <option value="" disabled>
-                  Please select...
+                  Bitte wählen...
                 </option>
                 <option>Job Coaching · AVGS</option>
-                <option>Holistic Coaching · §16k SGB II</option>
-                <option>Life & Business Coaching · Private</option>
-                <option>Not sure — please advise me</option>
+                <option>Ganzheitliches Coaching · §16k SGB II</option>
+                <option>Life & Business Coaching · Privat</option>
+                <option>Coaching für Unternehmen</option>
+                <option>Ich bin mir noch nicht sicher — bitte beraten Sie mich</option>
               </select>
             </div>
 
             <div className="form-group">
-              <label className="form-label">AVGS / Jobcenter voucher</label>
-              <select className="form-select" defaultValue="No — but I'd like to apply for one">
-                <option>No — but I'd like to apply for one</option>
-                <option>Yes — I already have an AVGS voucher</option>
-                <option>I have a §16k SGB II voucher</option>
-                <option>I'm a private client</option>
-                <option>Not sure — please explain</option>
+              <label className="form-label">AVGS / Jobcenter-Gutschein</label>
+              <select className="form-select" defaultValue="Nein — aber ich möchte einen beantragen">
+                <option>Nein — aber ich möchte einen beantragen</option>
+                <option>Ja — ich habe bereits einen AVGS-Gutschein</option>
+                <option>Ich habe einen §16k SGB II Gutschein</option>
+                <option>Ich bin Privatkund:in</option>
+                <option>Ich vertrete ein Unternehmen</option>
+                <option>Unklar — bitte erklären Sie es mir</option>
               </select>
             </div>
 
             <div className="form-group">
-              <label className="form-label">Where are you now?</label>
+              <label className="form-label">Wo stehen Sie gerade?</label>
               <textarea
                 className="form-textarea"
-                placeholder="Tell us briefly: how long have you been in Germany, what's your professional background, and what you'd like to change..."
+                placeholder="Erzählen Sie uns kurz: Wie lange sind Sie in Deutschland, was ist Ihr beruflicher Hintergrund und was möchten Sie verändern..."
               />
             </div>
 
             <div className="form-group">
-              <label className="form-label">Preferred format</label>
+              <label className="form-label">Bevorzugtes Format</label>
               <select className="form-select" defaultValue="Online">
                 <option>Online</option>
-                <option>In person (Berlin)</option>
-                <option>Either works for me</option>
+                <option>Vor Ort (Berlin)</option>
+                <option>Beides passt für mich</option>
               </select>
             </div>
 
             <div className="form-check">
               <input type="checkbox" id="privacy" required />
               <label htmlFor="privacy">
-                I have read the <a href="#">Privacy Policy</a> and consent to the processing of
-                my personal data in accordance with GDPR.
+                Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der
+                Verarbeitung meiner personenbezogenen Daten gemäß DSGVO zu.
               </label>
             </div>
 
             <button type="submit" className="btn-submit">
-              {sent ? "Thank you — we'll be in touch ✓" : "Send enquiry →"}
+              {sent ? "Vielen Dank — wir melden uns ✓" : "Anfrage senden →"}
             </button>
           </form>
         </div>
