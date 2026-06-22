@@ -205,7 +205,7 @@
 .gg-manifesto { padding: 140px 64px 120px; background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
 .gg-manifesto-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: end; }
 .gg-manifesto .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 32px; }
-.gg-manifesto h1 { font-family: 'Tenor Sans', sans-serif; font-size: clamp(44px, 6vw, 80px); line-height: 1.0; letter-spacing: -1px; color: var(--forest); font-weight: 400; }
+.gg-manifesto h1 { font-family: 'Tenor Sans', sans-serif; font-size: clamp(40px, 5.5vw, 72px); line-height: 1.0; letter-spacing: -1px; color: var(--forest); font-weight: 400; }
 .gg-manifesto h1 em { font-family: 'Allura', cursive; color: var(--green); font-style: normal; font-size: 1.1em; letter-spacing: 0; display: inline-block; padding: 0 8px; }
 .gg-manifesto .rule { width: 64px; height: 1px; background: var(--sand); margin: 40px 0 28px; }
 .gg-manifesto p { font-size: 17px; line-height: 1.7; color: #3a3a3a; max-width: 520px; }
@@ -249,7 +249,7 @@
   padding: 0 64px;
 }
 .gg-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-.gg-logo-img { height: 44px; width: auto; display: block; }
+.gg-logo-img { height: 56px; width: auto; display: block; }
 
 .gg-nav { display: flex; align-items: center; gap: 36px; }
 .gg-nav-link { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--forest); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; letter-spacing: 0.3px; background: none; border: none; cursor: pointer; }
@@ -452,7 +452,7 @@
 .page-hero-right { display: flex; flex-direction: column; justify-content: center; padding: 96px 64px; gap: 22px; border-left: 1px solid rgba(26,46,38,0.06); }
 .breadcrumb { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 28px; opacity: 0.75; }
 .breadcrumb a { color: var(--green); text-decoration: none; opacity: 1; }
-.page-hero h1 { font-family: 'Tenor Sans', sans-serif; font-size: clamp(44px, 6vw, 80px); color: var(--forest); letter-spacing: -0.3px; line-height: 1.05; margin-bottom: 24px; font-weight: 400; }
+.page-hero h1 { font-family: 'Tenor Sans', sans-serif; font-size: clamp(40px, 5.5vw, 72px); color: var(--forest); letter-spacing: -0.3px; line-height: 1.05; margin-bottom: 24px; font-weight: 400; }
 .page-hero h1 em { font-family: 'Allura', cursive; font-size: 1.25em; color: var(--green); font-style: normal; display: block; line-height: 1; letter-spacing: 0; margin-top: 4px; }
 .page-hero-text, .page-hero-sub { font-size: 16px; line-height: 1.8; color: #3a3a3a; max-width: 520px; }
 .hero-badge-item { display: flex; align-items: center; gap: 18px; }
