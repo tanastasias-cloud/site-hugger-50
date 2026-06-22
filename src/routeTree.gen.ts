@@ -16,6 +16,7 @@ import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as AvgsCoachingRouteImport } from './routes/avgs-coaching'
 import { Route as R16kCoachingRouteImport } from './routes/16k-coaching'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiPublicContactRouteImport } from './routes/api/public/contact'
 
 const UnternehmenRoute = UnternehmenRouteImport.update({
   id: '/unternehmen',
@@ -52,6 +53,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicContactRoute = ApiPublicContactRouteImport.update({
+  id: '/api/public/contact',
+  path: '/api/public/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/privatpersonen'
     | '/unternehmen'
+    | '/api/public/contact'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/privatpersonen'
     | '/unternehmen'
+    | '/api/public/contact'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/privatpersonen'
     | '/unternehmen'
+    | '/api/public/contact'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   KontaktRoute: typeof KontaktRoute
   PrivatpersonenRoute: typeof PrivatpersonenRoute
   UnternehmenRoute: typeof UnternehmenRoute
+  ApiPublicContactRoute: typeof ApiPublicContactRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/contact': {
+      id: '/api/public/contact'
+      path: '/api/public/contact'
+      fullPath: '/api/public/contact'
+      preLoaderRoute: typeof ApiPublicContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   KontaktRoute: KontaktRoute,
   PrivatpersonenRoute: PrivatpersonenRoute,
   UnternehmenRoute: UnternehmenRoute,
+  ApiPublicContactRoute: ApiPublicContactRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
