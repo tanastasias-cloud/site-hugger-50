@@ -18,9 +18,22 @@ type ActiveKey =
 
 export function SiteHeader({ active }: { active?: ActiveKey }) {
   const [open, setOpen] = useState(false);
+  const [jcOpen, setJcOpen] = useState(false);
+  const [mobileJcOpen, setMobileJcOpen] = useState(false);
   const [lang, setLang] = useState<"DE" | "EN">("DE");
+  const jcRef = useRef<HTMLDivElement>(null);
 
   const jcActive = active === "jobcenter" || active === "avgs" || active === "16k";
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (jcRef.current && !jcRef.current.contains(e.target as Node)) {
+        setJcOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
 
   return (
     <>
