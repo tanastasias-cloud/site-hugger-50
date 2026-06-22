@@ -249,7 +249,37 @@
   padding: 0 64px;
 }
 .gg-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-.gg-logo-img { height: 68px; width: auto; display: block; }
+.gg-logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+.gg-logo-get {
+  font-family: 'Allura', cursive;
+  font-size: 42px;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: -2px;
+}
+.gg-logo-grow {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 15px;
+  letter-spacing: 5.5px;
+  text-transform: uppercase;
+  color: var(--forest);
+  line-height: 1;
+}
+.gg-logo-acad {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--green);
+  line-height: 1;
+  margin-top: 6px;
+  opacity: 0.85;
+}
 
 .gg-nav { display: flex; align-items: center; gap: 36px; }
 .gg-nav-link { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--forest); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; letter-spacing: 0.3px; background: none; border: none; cursor: pointer; }
