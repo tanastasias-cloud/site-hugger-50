@@ -241,7 +241,7 @@
 /* ── HEADER ── */
 .gg-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  height: 72px;
+  height: 84px;
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid #f0f0f0;
@@ -249,7 +249,7 @@
   padding: 0 64px;
 }
 .gg-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-.gg-logo-img { height: 56px; width: auto; display: block; }
+.gg-logo-img { height: 68px; width: auto; display: block; }
 
 .gg-nav { display: flex; align-items: center; gap: 36px; }
 .gg-nav-link { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--forest); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; letter-spacing: 0.3px; background: none; border: none; cursor: pointer; }
@@ -283,7 +283,7 @@
 
 .gg-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
 .gg-burger span { display: block; width: 24px; height: 2px; background: var(--forest); transition: all 0.2s; }
-.gg-mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: white; z-index: 199; padding: 32px 24px; flex-direction: column; gap: 0; overflow-y: auto; }
+.gg-mobile-menu { display: none; position: fixed; top: 84px; left: 0; right: 0; bottom: 0; background: white; z-index: 199; padding: 32px 24px; flex-direction: column; gap: 0; overflow-y: auto; }
 .gg-mobile-menu.open { display: flex; }
 .gg-mobile-link { display: block; padding: 16px 0; font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--forest); text-decoration: none; border-bottom: 1px solid #f0f0f0; }
 .gg-mobile-parent { width: 100%; text-align: left; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; }
@@ -293,7 +293,7 @@
 .gg-mobile-cta { margin-top: 24px; background: var(--forest); color: white; padding: 16px 32px; text-align: center; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
 
 /* ── HERO (home) ── */
-.gg-hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 72px; }
+.gg-hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 84px; }
 .gg-hero-left { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; background: white; }
 .gg-hero-tag { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--green); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
 .gg-hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--green); }
@@ -444,7 +444,7 @@
 .footer-legal a:hover { color: rgba(255,255,255,0.6); }
 
 /* ── Page hero (inner pages) — light, matches home manifesto ── */
-.page-hero { padding-top: 72px; background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
+.page-hero { padding-top: 84px; background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
 .page-hero.split { display: grid; grid-template-columns: 1fr 1fr; min-height: 360px; gap: 0; }
 .page-hero.simple { padding: 120px 64px 80px; min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end; }
 .page-hero.simple > * { max-width: 1320px; width: 100%; margin-left: auto; margin-right: auto; }
