@@ -55,11 +55,5 @@ export const coaches: Coach[] = [
 ];
 
 // Team / Backoffice — keine Coaching-Sessions, aber Teil von GetGrow.
-export const team: TeamMember[] = [
-  {
-    slug: "anastasia-lunina",
-    name: "Anastasia Lunina",
-    role: "Mitgründerin · Operations & Backoffice",
-    bio: "Verantwortlich für Strategie, Operations und alles, was hinter den Kulissen läuft — von Partnerschaften mit Jobcentern und Unternehmen bis hin zu Programmentwicklung und Qualitätssicherung. Hintergrund in Sales-Leadership, Teamaufbau und Management.",
-  },
-];
+export const team: TeamMember[] = [];
+
