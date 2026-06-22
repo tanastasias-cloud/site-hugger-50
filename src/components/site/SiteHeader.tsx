@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/logo.png.asset.json";
-
 
 
 type ActiveKey =
@@ -19,9 +18,22 @@ type ActiveKey =
 
 export function SiteHeader({ active }: { active?: ActiveKey }) {
   const [open, setOpen] = useState(false);
+  const [jcOpen, setJcOpen] = useState(false);
+  const [mobileJcOpen, setMobileJcOpen] = useState(false);
   const [lang, setLang] = useState<"DE" | "EN">("DE");
+  const jcRef = useRef<HTMLDivElement>(null);
 
   const jcActive = active === "jobcenter" || active === "avgs" || active === "16k";
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (jcRef.current && !jcRef.current.contains(e.target as Node)) {
+        setJcOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
 
   return (
     <>
@@ -54,14 +66,25 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
             Unternehmen
           </Link>
 
-          <div className="gg-dropdown">
-            <div className={`gg-dropdown-trigger${jcActive ? " active" : ""}`}>
+          <div
+            ref={jcRef}
+            className={`gg-dropdown${jcOpen ? " open" : ""}`}
+          >
+            <button
+              type="button"
+              className={`gg-dropdown-trigger${jcActive ? " active" : ""}`}
+              aria-expanded={jcOpen}
+              aria-haspopup="true"
+              onClick={() => setJcOpen((v) => !v)}
+            >
               Mit Jobcenter <span className="arrow">▾</span>
-            </div>
-            <div className="gg-dropdown-menu">
+            </button>
+            <div className="gg-dropdown-menu" role="menu">
               <Link
                 to="/avgs-coaching"
                 className={`gg-dropdown-item${active === "avgs" ? " active" : ""}`}
+                role="menuitem"
+                onClick={() => setJcOpen(false)}
               >
                 <span className="gg-di-label">Programm 01 · AVGS</span>
                 <span className="gg-di-title">Job Coaching</span>
@@ -69,6 +92,8 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
               <Link
                 to="/16k-coaching"
                 className={`gg-dropdown-item${active === "16k" ? " active" : ""}`}
+                role="menuitem"
+                onClick={() => setJcOpen(false)}
               >
                 <span className="gg-di-label">Programm 02 · §16k SGB II</span>
                 <span className="gg-di-title">Ganzheitliches Coaching</span>
@@ -114,15 +139,27 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
         <Link to="/" className="gg-mobile-link" onClick={() => setOpen(false)}>Start</Link>
         <Link to="/privatpersonen" className="gg-mobile-link" onClick={() => setOpen(false)}>Privatpersonen</Link>
         <Link to="/unternehmen" className="gg-mobile-link" onClick={() => setOpen(false)}>Unternehmen</Link>
-        <div className="gg-mobile-link" style={{ color: "#3d6b55", fontWeight: 500 }}>Mit Jobcenter</div>
-        <Link to="/avgs-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
-          <span className="sub-label">Programm 01 · AVGS</span>
-          Job Coaching
-        </Link>
-        <Link to="/16k-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
-          <span className="sub-label">Programm 02 · §16k SGB II</span>
-          Ganzheitliches Coaching
-        </Link>
+        <button
+          type="button"
+          className="gg-mobile-link gg-mobile-parent"
+          style={{ color: "#3d6b55", fontWeight: 500 }}
+          onClick={() => setMobileJcOpen((v) => !v)}
+          aria-expanded={mobileJcOpen}
+        >
+          Mit Jobcenter <span className="arrow" style={{ transform: mobileJcOpen ? "rotate(180deg)" : undefined }}>▾</span>
+        </button>
+        {mobileJcOpen && (
+          <>
+            <Link to="/avgs-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
+              <span className="sub-label">Programm 01 · AVGS</span>
+              Job Coaching
+            </Link>
+            <Link to="/16k-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
+              <span className="sub-label">Programm 02 · §16k SGB II</span>
+              Ganzheitliches Coaching
+            </Link>
+          </>
+        )}
         <Link to="/coaches" className="gg-mobile-link" onClick={() => setOpen(false)}>Coaches</Link>
         <Link to="/referenzen" className="gg-mobile-link" onClick={() => setOpen(false)}>Referenzen</Link>
         <Link to="/kontakt" className="gg-mobile-link" onClick={() => setOpen(false)}>Kontakt</Link>
