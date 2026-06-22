@@ -78,9 +78,13 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
           <Link to="/coaches" className={`gg-nav-link${active === "coaches" ? " active" : ""}`}>
             Coaches
           </Link>
+          <Link to="/referenzen" className={`gg-nav-link${active === "referenzen" ? " active" : ""}`}>
+            Referenzen
+          </Link>
           <Link to="/kontakt" className={`gg-nav-link${active === "contact" ? " active" : ""}`}>
             Kontakt
           </Link>
+
         </nav>
 
         <div className="gg-right">
