@@ -427,7 +427,8 @@
 /* ── Page hero (inner pages) — light, matches home manifesto ── */
 .page-hero { padding-top: 72px; background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
 .page-hero.split { display: grid; grid-template-columns: 1fr 1fr; min-height: 360px; gap: 0; }
-.page-hero.simple { padding: 100px 64px 72px; min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end; max-width: 1320px; margin: 0 auto; }
+.page-hero.simple { padding: 120px 64px 80px; min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end; }
+.page-hero.simple > * { max-width: 1320px; width: 100%; margin-left: auto; margin-right: auto; }
 .page-hero-left { padding: 96px 64px; display: flex; flex-direction: column; justify-content: center; }
 .page-hero-right { display: flex; flex-direction: column; justify-content: center; padding: 96px 64px; gap: 22px; border-left: 1px solid rgba(26,46,38,0.06); }
 .breadcrumb { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 28px; opacity: 0.75; }
