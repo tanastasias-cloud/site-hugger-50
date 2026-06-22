@@ -139,15 +139,27 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
         <Link to="/" className="gg-mobile-link" onClick={() => setOpen(false)}>Start</Link>
         <Link to="/privatpersonen" className="gg-mobile-link" onClick={() => setOpen(false)}>Privatpersonen</Link>
         <Link to="/unternehmen" className="gg-mobile-link" onClick={() => setOpen(false)}>Unternehmen</Link>
-        <div className="gg-mobile-link" style={{ color: "#3d6b55", fontWeight: 500 }}>Mit Jobcenter</div>
-        <Link to="/avgs-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
-          <span className="sub-label">Programm 01 · AVGS</span>
-          Job Coaching
-        </Link>
-        <Link to="/16k-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
-          <span className="sub-label">Programm 02 · §16k SGB II</span>
-          Ganzheitliches Coaching
-        </Link>
+        <button
+          type="button"
+          className="gg-mobile-link gg-mobile-parent"
+          style={{ color: "#3d6b55", fontWeight: 500 }}
+          onClick={() => setMobileJcOpen((v) => !v)}
+          aria-expanded={mobileJcOpen}
+        >
+          Mit Jobcenter <span className="arrow" style={{ transform: mobileJcOpen ? "rotate(180deg)" : undefined }}>▾</span>
+        </button>
+        {mobileJcOpen && (
+          <>
+            <Link to="/avgs-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
+              <span className="sub-label">Programm 01 · AVGS</span>
+              Job Coaching
+            </Link>
+            <Link to="/16k-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
+              <span className="sub-label">Programm 02 · §16k SGB II</span>
+              Ganzheitliches Coaching
+            </Link>
+          </>
+        )}
         <Link to="/coaches" className="gg-mobile-link" onClick={() => setOpen(false)}>Coaches</Link>
         <Link to="/referenzen" className="gg-mobile-link" onClick={() => setOpen(false)}>Referenzen</Link>
         <Link to="/kontakt" className="gg-mobile-link" onClick={() => setOpen(false)}>Kontakt</Link>
