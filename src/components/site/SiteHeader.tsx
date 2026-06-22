@@ -23,13 +23,15 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
   return (
     <>
       <header className="gg-header">
-        <Link to="/" className="gg-logo">
-          <div className="gg-logo-get">Get</div>
-          <div className="gg-logo-div" />
-          <div className="gg-logo-text">
-            <span className="gg-logo-grow">Grow</span>
-            <span className="gg-logo-acad">Academy · Berlin</span>
-          </div>
+        <Link to="/" className="gg-logo" aria-label="GetGrow Academy Berlin">
+          <img
+            src={logoAsset.url}
+            alt="GetGrow Academy Berlin"
+            className="gg-logo-img"
+            width="180"
+            height="60"
+            loading="eager"
+          />
         </Link>
 
         <nav className="gg-nav">
