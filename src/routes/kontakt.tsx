@@ -24,41 +24,13 @@ export const Route = createFileRoute("/kontakt")({
 });
 
 function ContactPage() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const [errorMsg, setErrorMsg] = useState<string>("");
+  const [sent, setSent] = useState(false);
 
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (status === "sending") return;
-    setStatus("sending");
-    setErrorMsg("");
-    const fd = new FormData(e.currentTarget);
-    const payload = {
-      first_name: String(fd.get("first_name") || ""),
-      last_name: String(fd.get("last_name") || ""),
-      email: String(fd.get("email") || ""),
-      phone: String(fd.get("phone") || ""),
-      interest: String(fd.get("interest") || ""),
-      avgs_status: String(fd.get("avgs_status") || ""),
-      message: String(fd.get("message") || ""),
-      format: String(fd.get("format") || ""),
-      source: "kontakt-form",
-    };
-    try {
-      const res = await fetch("/api/public/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error("send_failed");
-      setStatus("sent");
-      (e.target as HTMLFormElement).reset();
-    } catch (err) {
-      setStatus("error");
-      setErrorMsg("Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie an info@getgrow.academy.");
-    }
+    setSent(true);
+    (e.target as HTMLFormElement).reset();
   }
-
 
   return (
     <SiteShell active="contact">
@@ -197,16 +169,8 @@ function ContactPage() {
               </label>
             </div>
 
-            {status === "error" && (
-              <div style={{ color: "#b91c1c", fontSize: 14, marginBottom: 12 }}>{errorMsg}</div>
-            )}
-
-            <button type="submit" className="btn-submit" disabled={status === "sending" || status === "sent"}>
-              {status === "sent"
-                ? "Vielen Dank — wir melden uns ✓"
-                : status === "sending"
-                  ? "Wird gesendet..."
-                  : "Anfrage senden →"}
+            <button type="submit" className="btn-submit" disabled={sent}>
+              {sent ? "Vielen Dank — wir melden uns ✓" : "Anfrage senden →"}
             </button>
 
           </form>
