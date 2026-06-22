@@ -336,6 +336,33 @@ function DatenschutzPage() {
 
           <div className="impressum-block">
             <div className="info-tag">5. Externe Dienste und Inhalte</div>
+            <h3 className="impressum-h3">Google Fonts</h3>
+            <p className="impressum-text">
+              Unsere Website nutzt Google Fonts, um Schriftarten einheitlich darzustellen. Beim Aufruf
+              unserer Seite lädt Ihr Browser die benötigten Schriftarten von Servern der Google Ireland
+              Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei kann es sein, dass Google
+              Ihre IP-Adresse und weitere technische Informationen erfasst.
+            </p>
+            <p className="impressum-text">
+              Die genutzten Schriftarten sind: Allura, Tenor Sans, DM Sans und Cormorant Garamond. Die
+              Einbindung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+              einer einheitlichen und ansprechenden Darstellung der Website). Sofern für den Zugriff auf
+              Informationen im Endgerät eine Einwilligung erforderlich ist, erfolgt die Verarbeitung
+              auf Grundlage von § 25 Abs. 1 TTDSG und Art. 6 Abs. 1 lit. a DSGVO.
+            </p>
+            <p className="impressum-text">
+              Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der
+              Datenschutzerklärung von Google:{' '}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                policies.google.com/privacy
+              </a>
+              .
+            </p>
+
             <h3 className="impressum-h3">Google Maps</h3>
             <p className="impressum-text">
               Auf unserer Website verlinken wir zu Google Maps-Bewertungen. Beim Anklicken dieses
