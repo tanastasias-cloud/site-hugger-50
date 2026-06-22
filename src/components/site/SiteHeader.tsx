@@ -12,7 +12,9 @@ type ActiveKey =
   | "avgs"
   | "16k"
   | "coaches"
+  | "referenzen"
   | "contact";
+
 
 export function SiteHeader({ active }: { active?: ActiveKey }) {
   const [open, setOpen] = useState(false);
@@ -76,9 +78,13 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
           <Link to="/coaches" className={`gg-nav-link${active === "coaches" ? " active" : ""}`}>
             Coaches
           </Link>
+          <Link to="/referenzen" className={`gg-nav-link${active === "referenzen" ? " active" : ""}`}>
+            Referenzen
+          </Link>
           <Link to="/kontakt" className={`gg-nav-link${active === "contact" ? " active" : ""}`}>
             Kontakt
           </Link>
+
         </nav>
 
         <div className="gg-right">
@@ -114,7 +120,9 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
           Ganzheitliches Coaching
         </Link>
         <Link to="/coaches" className="gg-mobile-link" onClick={() => setOpen(false)}>Coaches</Link>
+        <Link to="/referenzen" className="gg-mobile-link" onClick={() => setOpen(false)}>Referenzen</Link>
         <Link to="/kontakt" className="gg-mobile-link" onClick={() => setOpen(false)}>Kontakt</Link>
+
         <Link to="/kontakt" className="gg-mobile-cta" onClick={() => setOpen(false)}>
           Erstgespräch buchen →
         </Link>

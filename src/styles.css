@@ -588,3 +588,33 @@
   .team-card { flex-direction: column; padding: 24px; }
   .coach-join { padding: 40px 24px; }
 }
+
+/* ── Referenzen page ── */
+.ref-summary { padding: 56px 64px; background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
+.ref-summary-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: center; }
+.ref-rating { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.ref-rating-score { font-family: 'Tenor Sans', sans-serif; font-size: 64px; color: var(--forest); line-height: 1; letter-spacing: -1px; }
+.ref-stars { display: inline-flex; gap: 2px; color: #e4a82c; font-size: 16px; letter-spacing: 1px; }
+.ref-rating-source { font-size: 12px; color: var(--gg-muted); letter-spacing: 0.5px; margin-top: 4px; }
+.ref-rating-source a { color: var(--green); text-decoration: none; border-bottom: 1px solid currentColor; }
+.ref-tag { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+.ref-summary-text p { font-size: 15px; line-height: 1.8; color: #555; max-width: 560px; }
+
+.ref-list { padding: 80px 64px; background: white; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
+.ref-card { background: var(--paper); padding: 36px 40px; border-left: 2px solid var(--mint); display: flex; flex-direction: column; gap: 18px; }
+.ref-card-head { display: flex; gap: 16px; align-items: center; }
+.ref-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--forest); color: var(--mint); display: flex; align-items: center; justify-content: center; font-family: 'Tenor Sans', sans-serif; font-size: 16px; letter-spacing: 1px; flex-shrink: 0; }
+.ref-name { font-family: 'Tenor Sans', sans-serif; font-size: 18px; color: var(--forest); letter-spacing: 0.5px; margin-bottom: 4px; }
+.ref-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--gg-muted); }
+.ref-date, .ref-lang { font-size: 12px; }
+.ref-lang { letter-spacing: 1.5px; }
+.ref-text { font-size: 15px; line-height: 1.85; color: #444; font-style: italic; }
+.ref-more { text-align: center; padding-top: 16px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.ref-more p { font-size: 13px; color: var(--gg-muted); }
+
+@media (max-width: 960px) {
+  .ref-summary { padding: 48px 24px; }
+  .ref-summary-inner { grid-template-columns: 1fr; gap: 32px; }
+  .ref-list { padding: 48px 20px; gap: 28px; }
+  .ref-card { padding: 28px 24px; }
+}
