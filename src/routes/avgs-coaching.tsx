@@ -8,27 +8,64 @@ export const Route = createFileRoute("/avgs-coaching")({
       {
         name: "description",
         content:
-          "Certified Job Coaching funded by AVGS / Jobcenter. From situation analysis to signing your contract — step by step.",
+          "Zertifiziertes Job Coaching, vollständig gefördert durch AVGS / Jobcenter. Von der Standortanalyse bis zur Vertragsunterschrift — Schritt für Schritt.",
       },
+      { property: "og:title", content: "Job Coaching · AVGS — GetGrow Academy Berlin" },
+      {
+        property: "og:description",
+        content:
+          "Zertifiziertes Job Coaching, vollständig gefördert durch AVGS / Jobcenter. Mehrsprachig in Berlin und online.",
+      },
+      { property: "og:type", content: "website" },
     ],
   }),
   component: AvgsPage,
 });
 
 const STEPS: Array<[string, string]> = [
-  ["Professional analysis & strategy", "We identify your competencies, goals, and develop a clear action plan for the German labour market. Where you are, where you can go, and how to get there."],
-  ["Application documents", "CV and cover letter tailored for German employers. LinkedIn and XING profiles that get noticed. We know what works here — and what doesn't."],
-  ["Targeted job search", "We analyse the current market, identify suitable positions for your profile, and build a practical, effective search strategy together."],
-  ["Interview preparation", "Mock interviews, typical employer questions, confident self-presentation — practised until it feels natural. In your language."],
-  ["Ongoing coach support", "Regular individual sessions, honest feedback, and full support throughout the entire process — until you sign the contract."],
+  [
+    "Standortanalyse & Strategie",
+    "Wir erfassen Ihre Kompetenzen und Ziele und entwickeln einen klaren Aktionsplan für den deutschen Arbeitsmarkt. Wo Sie stehen, wohin Sie gehen können und wie Sie dorthin kommen.",
+  ],
+  [
+    "Bewerbungsunterlagen",
+    "Lebenslauf und Anschreiben, zugeschnitten auf deutsche Arbeitgeber. LinkedIn- und XING-Profile, die wahrgenommen werden. Wir wissen, was hier funktioniert — und was nicht.",
+  ],
+  [
+    "Gezielte Jobsuche",
+    "Wir analysieren den aktuellen Markt, identifizieren passende Stellen für Ihr Profil und entwickeln gemeinsam eine praktische, wirksame Suchstrategie.",
+  ],
+  [
+    "Vorbereitung auf Vorstellungsgespräche",
+    "Probegespräche, typische Arbeitgeberfragen, souveräne Selbstpräsentation — so lange geübt, bis es sich natürlich anfühlt. In Ihrer Sprache.",
+  ],
+  [
+    "Laufende Coach-Begleitung",
+    "Regelmäßige Einzelgespräche, ehrliches Feedback und volle Unterstützung über den gesamten Prozess hinweg — bis zur Vertragsunterschrift.",
+  ],
 ];
 
 const FAQS: Array<[string, string]> = [
-  ["What is an AVGS voucher?", "An AVGS (Aktivierungs- und Vermittlungsgutschein) is a funding voucher issued by the Jobcenter or Agentur für Arbeit. It covers the full cost of individual coaching — you pay nothing."],
-  ["How long does the coaching last?", "The duration depends on your goals and what's stated on the AVGS voucher. Sessions must take place at least twice per week."],
-  ["Can I choose my coach?", "Yes. You're entitled to a free 30-minute intro session before committing. If the fit isn't right, we'll find a better match."],
-  ["In which languages do you coach?", "German is the primary language. Ukrainian, Russian, and English are available as additional options — for both sessions and communication with the Jobcenter."],
-  ["Can you help me get the AVGS voucher?", "Yes — we help with correspondence and if needed, can join a consultation call with your Jobcenter advisor. Get in touch and we'll guide you through the process."],
+  [
+    "Was ist ein AVGS-Gutschein?",
+    "Der AVGS (Aktivierungs- und Vermittlungsgutschein) ist ein Förderinstrument des Jobcenters oder der Agentur für Arbeit. Er übernimmt die gesamten Kosten für ein individuelles Coaching — für Sie ist es kostenfrei.",
+  ],
+  [
+    "Wie lange dauert das Coaching?",
+    "Die Dauer richtet sich nach Ihren Zielen und den Angaben auf Ihrem AVGS-Gutschein. Die Termine finden mindestens zweimal pro Woche statt.",
+  ],
+  [
+    "Kann ich meinen Coach selbst wählen?",
+    "Ja. Sie haben Anspruch auf ein kostenloses 30-minütiges Kennenlerngespräch, bevor Sie sich entscheiden. Wenn die Chemie nicht stimmt, finden wir eine bessere Begleitung für Sie.",
+  ],
+  [
+    "In welchen Sprachen wird gecoacht?",
+    "Deutsch ist die Hauptsprache. Ukrainisch, Russisch und Englisch sind als zusätzliche Optionen verfügbar — für die Coaching-Termine und für die Kommunikation mit dem Jobcenter.",
+  ],
+  [
+    "Helfen Sie mir, einen AVGS-Gutschein zu erhalten?",
+    "Ja — wir unterstützen Sie bei der Korrespondenz und können bei Bedarf an einem Beratungsgespräch mit Ihrer Jobcenter-Ansprechperson teilnehmen. Melden Sie sich, wir begleiten Sie durch den Prozess.",
+  ],
 ];
 
 function AvgsPage() {
@@ -37,22 +74,22 @@ function AvgsPage() {
       <section className="page-hero split">
         <div className="page-hero-left">
           <div className="breadcrumb">
-            <Link to="/">Home</Link> · Job Coaching · AVGS
+            <Link to="/">Startseite</Link> · Job Coaching · AVGS
           </div>
           <h1>
             Job Coaching <em>· AVGS</em>
           </h1>
           <p className="page-hero-text">
-            From your first session to signing your employment contract — certified coaching,
-            fully funded by the Jobcenter.
+            Vom ersten Gespräch bis zur Unterschrift des Arbeitsvertrags — zertifiziertes
+            Coaching, vollständig durch das Jobcenter finanziert.
           </p>
         </div>
         <div className="page-hero-right">
           {[
-            ["✓", "Cost", "100% free · funded by Jobcenter"],
-            ["📋", "Certification", "AZAV certified · AVGS accepted"],
-            ["🌍", "Languages", "DE · EN · UA · RU"],
-            ["📍", "Format", "Online & in person · Berlin"],
+            ["✓", "Kosten", "100 % kostenfrei · gefördert vom Jobcenter"],
+            ["📋", "Zertifizierung", "AZAV-zertifiziert · AVGS akzeptiert"],
+            ["🌍", "Sprachen", "DE · EN · UA · RU"],
+            ["📍", "Format", "Online & vor Ort · Berlin"],
           ].map(([icon, label, value]) => (
             <div className="hero-badge-item" key={label}>
               <div className="badge-icon">{icon}</div>
@@ -67,17 +104,17 @@ function AvgsPage() {
 
       <section className="section white">
         <div className="sh">
-          <div className="sh-tag">Program 01 · AVGS</div>
+          <div className="sh-tag">Programm 01 · AVGS</div>
           <h2 className="sh-h2">
-            Job Coaching — <em>step by step</em>
+            Job Coaching — <em>Schritt für Schritt</em>
           </h2>
         </div>
         <div className="two-col">
           <div>
             <p style={{ fontSize: 15, lineHeight: 1.9, color: "#666", marginBottom: 36 }}>
-              Our certified coaches accompany you at every step — from situation analysis to
-              signing your employment contract. We know how the German system works, and we show
-              you exactly how to navigate it.
+              Unsere zertifizierten Coaches begleiten Sie auf jedem Schritt — von der
+              Standortanalyse bis zur Unterschrift Ihres Arbeitsvertrags. Wir kennen das deutsche
+              System und zeigen Ihnen genau, wie Sie sich darin bewegen.
             </p>
             <div className="steps">
               {STEPS.map(([title, text], i) => (
@@ -94,28 +131,28 @@ function AvgsPage() {
 
           <div className="avgs-right">
             <div className="avgs-info-box">
-              <div className="box-tag">How to get your AVGS voucher</div>
+              <div className="box-tag">So erhalten Sie Ihren AVGS-Gutschein</div>
               <p>
-                Contact your advisor at the Jobcenter or Agentur für Arbeit and request an AVGS
-                voucher for Job Coaching. Once you have it, get in touch — we'll organise a free
-                intro session and handle all the paperwork. We can also help you with the
-                voucher application itself.
+                Wenden Sie sich an Ihre Ansprechperson im Jobcenter oder bei der Agentur für
+                Arbeit und beantragen Sie einen AVGS-Gutschein für Job Coaching. Sobald Sie ihn
+                haben, melden Sie sich bei uns — wir organisieren das kostenlose Erstgespräch und
+                kümmern uns um die Formalitäten. Auch bei der Antragstellung unterstützen wir Sie.
               </p>
               <div className="avgs-free-badge">
-                <div className="free-title">Participation is completely free.</div>
-                <div className="free-sub">All costs are covered by the state.</div>
+                <div className="free-title">Die Teilnahme ist vollständig kostenfrei.</div>
+                <div className="free-sub">Alle Kosten werden vom Staat übernommen.</div>
               </div>
             </div>
             <div className="eligibility-box">
-              <div className="elig-tag">Who can apply</div>
-              <div className="elig-item">Registered as unemployed, receiving Bürgergeld or Arbeitslosengeld</div>
-              <div className="elig-item">Eingliederungsvereinbarung signed with your Jobcenter</div>
-              <div className="elig-item">Had a consultation with your Jobcenter advisor</div>
-              <div className="elig-item">Employment at risk (Kündigung received or expected)</div>
+              <div className="elig-tag">Wer teilnehmen kann</div>
+              <div className="elig-item">Arbeitslos gemeldet, Bezug von Bürgergeld oder Arbeitslosengeld</div>
+              <div className="elig-item">Eingliederungsvereinbarung mit dem Jobcenter unterschrieben</div>
+              <div className="elig-item">Beratungsgespräch mit der Jobcenter-Ansprechperson stattgefunden</div>
+              <div className="elig-item">Beschäftigung gefährdet (Kündigung erhalten oder absehbar)</div>
             </div>
             <div className="cta-box">
-              <div className="cta-box-text">We also help with the voucher application.</div>
-              <Link to="/kontakt">Get in touch →</Link>
+              <div className="cta-box-text">Wir helfen auch bei der Beantragung des Gutscheins.</div>
+              <Link to="/kontakt">Kontakt aufnehmen →</Link>
             </div>
           </div>
         </div>
@@ -123,9 +160,9 @@ function AvgsPage() {
 
       <section className="section off">
         <div className="sh">
-          <div className="sh-tag">Questions</div>
+          <div className="sh-tag">Fragen</div>
           <h2 className="sh-h2">
-            Frequently <em>asked</em>
+            Häufig <em>gestellt</em>
           </h2>
         </div>
         <div className="faq-list">
@@ -140,15 +177,15 @@ function AvgsPage() {
 
       <section className="cta-strip">
         <div>
-          <div className="cta-strip-tag">Ready to start?</div>
-          <h2>Book your free consultation today.</h2>
+          <div className="cta-strip-tag">Bereit anzufangen?</div>
+          <h2>Buchen Sie heute Ihr kostenloses Erstgespräch.</h2>
         </div>
         <div className="cta-btns">
           <Link to="/kontakt" className="btn-mint">
-            Book free call
+            Kostenloses Gespräch buchen
           </Link>
           <Link to="/16k-coaching" className="btn-outline-w">
-            Also looking at §16k? →
+            Auch §16k im Blick? →
           </Link>
         </div>
       </section>
