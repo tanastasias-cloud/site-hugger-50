@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as CoachesRouteImport } from './routes/coaches'
+import { Route as AvgsCoachingRouteImport } from './routes/avgs-coaching'
+import { Route as R16kCoachingRouteImport } from './routes/16k-coaching'
 import { Route as IndexRouteImport } from './routes/index'
 
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoachesRoute = CoachesRouteImport.update({
+  id: '/coaches',
+  path: '/coaches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvgsCoachingRoute = AvgsCoachingRouteImport.update({
+  id: '/avgs-coaching',
+  path: '/avgs-coaching',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R16kCoachingRoute = R16kCoachingRouteImport.update({
+  id: '/16k-coaching',
+  path: '/16k-coaching',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,78 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/16k-coaching': typeof R16kCoachingRoute
+  '/avgs-coaching': typeof AvgsCoachingRoute
+  '/coaches': typeof CoachesRoute
+  '/kontakt': typeof KontaktRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/16k-coaching': typeof R16kCoachingRoute
+  '/avgs-coaching': typeof AvgsCoachingRoute
+  '/coaches': typeof CoachesRoute
+  '/kontakt': typeof KontaktRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/16k-coaching': typeof R16kCoachingRoute
+  '/avgs-coaching': typeof AvgsCoachingRoute
+  '/coaches': typeof CoachesRoute
+  '/kontakt': typeof KontaktRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/16k-coaching' | '/avgs-coaching' | '/coaches' | '/kontakt'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/16k-coaching' | '/avgs-coaching' | '/coaches' | '/kontakt'
+  id:
+    | '__root__'
+    | '/'
+    | '/16k-coaching'
+    | '/avgs-coaching'
+    | '/coaches'
+    | '/kontakt'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R16kCoachingRoute: typeof R16kCoachingRoute
+  AvgsCoachingRoute: typeof AvgsCoachingRoute
+  CoachesRoute: typeof CoachesRoute
+  KontaktRoute: typeof KontaktRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coaches': {
+      id: '/coaches'
+      path: '/coaches'
+      fullPath: '/coaches'
+      preLoaderRoute: typeof CoachesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/avgs-coaching': {
+      id: '/avgs-coaching'
+      path: '/avgs-coaching'
+      fullPath: '/avgs-coaching'
+      preLoaderRoute: typeof AvgsCoachingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/16k-coaching': {
+      id: '/16k-coaching'
+      path: '/16k-coaching'
+      fullPath: '/16k-coaching'
+      preLoaderRoute: typeof R16kCoachingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +127,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R16kCoachingRoute: R16kCoachingRoute,
+  AvgsCoachingRoute: AvgsCoachingRoute,
+  CoachesRoute: CoachesRoute,
+  KontaktRoute: KontaktRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
