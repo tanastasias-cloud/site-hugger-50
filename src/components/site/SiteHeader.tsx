@@ -126,6 +126,7 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
         <Link to="/coaches" className="gg-mobile-link" onClick={() => setOpen(false)}>Coaches</Link>
         <Link to="/referenzen" className="gg-mobile-link" onClick={() => setOpen(false)}>Referenzen</Link>
         <Link to="/kontakt" className="gg-mobile-link" onClick={() => setOpen(false)}>Kontakt</Link>
+        <Link to="/impressum" className="gg-mobile-link" onClick={() => setOpen(false)}>Impressum</Link>
 
         <Link to="/kontakt" className="gg-mobile-cta" onClick={() => setOpen(false)}>
           Erstgespräch buchen →
