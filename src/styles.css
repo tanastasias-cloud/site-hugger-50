@@ -234,12 +234,8 @@
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 64px;
 }
-.gg-logo { display: flex; align-items: center; gap: 13px; text-decoration: none; flex-shrink: 0; }
-.gg-logo-get { font-family: 'Allura', cursive; font-size: 44px; color: #3d6b55; line-height: 1; }
-.gg-logo-div { width: 1px; height: 30px; background: linear-gradient(to bottom, transparent, rgba(61,107,85,0.3), transparent); }
-.gg-logo-text { display: flex; flex-direction: column; gap: 2px; }
-.gg-logo-grow { font-family: 'Tenor Sans', sans-serif; font-size: 13px; letter-spacing: 6px; text-transform: uppercase; color: var(--forest); line-height: 1; }
-.gg-logo-acad { font-family: 'DM Sans', sans-serif; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); }
+.gg-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.gg-logo-img { height: 44px; width: auto; display: block; }
 
 .gg-nav { display: flex; align-items: center; gap: 36px; }
 .gg-nav-link { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--forest); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; letter-spacing: 0.3px; background: none; border: none; cursor: pointer; }
@@ -415,10 +411,10 @@
 /* ── Footer ── */
 .gg-footer { background: var(--forest); padding: 48px 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
 .footer-logo { display: flex; align-items: center; gap: 13px; }
-.footer-logo .get { font-family: 'Allura', cursive; font-size: 44px; color: #3d6b55; line-height: 1; }
-.footer-logo .div { width: 1px; height: 30px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.25), transparent); }
-.footer-logo .grow { font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: #e8f0ec; }
-.footer-logo .acad { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--mint); }
+.footer-logo .get { font-family: 'Allura', cursive; font-size: 44px; color: var(--mint); line-height: 1; }
+.footer-logo .div { width: 1px; height: 30px; background: linear-gradient(to bottom, transparent, rgba(127,196,160,0.35), transparent); }
+.footer-logo .grow { font-family: 'Tenor Sans', sans-serif; font-size: 13px; letter-spacing: 6px; text-transform: uppercase; color: #f5f0e8; line-height: 1; }
+.footer-logo .acad { font-family: 'DM Sans', sans-serif; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--mint); }
 .footer-contacts { display: flex; gap: 40px; flex-wrap: wrap; }
 .footer-c { display: flex; flex-direction: column; gap: 3px; }
 .footer-c .label { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
