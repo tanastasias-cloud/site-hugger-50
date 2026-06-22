@@ -202,7 +202,7 @@
 .door:hover .door-cta::after { transform: translateX(4px); }
 
 /* ── Manifesto strip (DE hero) ── */
-.gg-manifesto { padding: 140px 64px 120px; background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
+.gg-manifesto { padding: 152px 64px 120px; background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
 .gg-manifesto-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: end; }
 .gg-manifesto .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 32px; }
 .gg-manifesto h1 { font-family: 'Tenor Sans', sans-serif; font-size: clamp(40px, 5.5vw, 72px); line-height: 1.0; letter-spacing: -1px; color: var(--forest); font-weight: 400; }
