@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/logo.png.asset.json";
 
-
+import type { JSX } from "react";
 
 type ActiveKey =
   | "home"
