@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 export function SiteFooter() {
   return (
     <footer className="gg-footer">
@@ -28,8 +30,8 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="footer-legal">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
+        <Link to="/impressum">Impressum</Link>
+        <Link to="/datenschutz">Datenschutz</Link>
       </div>
     </footer>
   );

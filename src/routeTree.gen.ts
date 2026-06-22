@@ -13,6 +13,8 @@ import { Route as UnternehmenRouteImport } from './routes/unternehmen'
 import { Route as ReferenzenRouteImport } from './routes/referenzen'
 import { Route as PrivatpersonenRouteImport } from './routes/privatpersonen'
 import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as ImpressumRouteImport } from './routes/impressum'
+import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as AvgsCoachingRouteImport } from './routes/avgs-coaching'
 import { Route as R16kCoachingRouteImport } from './routes/16k-coaching'
@@ -37,6 +39,16 @@ const PrivatpersonenRoute = PrivatpersonenRouteImport.update({
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpressumRoute = ImpressumRouteImport.update({
+  id: '/impressum',
+  path: '/impressum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DatenschutzRoute = DatenschutzRouteImport.update({
+  id: '/datenschutz',
+  path: '/datenschutz',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoachesRoute = CoachesRouteImport.update({
@@ -70,6 +82,8 @@ export interface FileRoutesByFullPath {
   '/16k-coaching': typeof R16kCoachingRoute
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/coaches': typeof CoachesRoute
+  '/datenschutz': typeof DatenschutzRoute
+  '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
   '/referenzen': typeof ReferenzenRoute
@@ -81,6 +95,8 @@ export interface FileRoutesByTo {
   '/16k-coaching': typeof R16kCoachingRoute
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/coaches': typeof CoachesRoute
+  '/datenschutz': typeof DatenschutzRoute
+  '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
   '/referenzen': typeof ReferenzenRoute
@@ -93,6 +109,8 @@ export interface FileRoutesById {
   '/16k-coaching': typeof R16kCoachingRoute
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/coaches': typeof CoachesRoute
+  '/datenschutz': typeof DatenschutzRoute
+  '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
   '/referenzen': typeof ReferenzenRoute
@@ -106,6 +124,8 @@ export interface FileRouteTypes {
     | '/16k-coaching'
     | '/avgs-coaching'
     | '/coaches'
+    | '/datenschutz'
+    | '/impressum'
     | '/kontakt'
     | '/privatpersonen'
     | '/referenzen'
@@ -117,6 +137,8 @@ export interface FileRouteTypes {
     | '/16k-coaching'
     | '/avgs-coaching'
     | '/coaches'
+    | '/datenschutz'
+    | '/impressum'
     | '/kontakt'
     | '/privatpersonen'
     | '/referenzen'
@@ -128,6 +150,8 @@ export interface FileRouteTypes {
     | '/16k-coaching'
     | '/avgs-coaching'
     | '/coaches'
+    | '/datenschutz'
+    | '/impressum'
     | '/kontakt'
     | '/privatpersonen'
     | '/referenzen'
@@ -140,6 +164,8 @@ export interface RootRouteChildren {
   R16kCoachingRoute: typeof R16kCoachingRoute
   AvgsCoachingRoute: typeof AvgsCoachingRoute
   CoachesRoute: typeof CoachesRoute
+  DatenschutzRoute: typeof DatenschutzRoute
+  ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
   PrivatpersonenRoute: typeof PrivatpersonenRoute
   ReferenzenRoute: typeof ReferenzenRoute
@@ -175,6 +201,20 @@ declare module '@tanstack/react-router' {
       path: '/kontakt'
       fullPath: '/kontakt'
       preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impressum': {
+      id: '/impressum'
+      path: '/impressum'
+      fullPath: '/impressum'
+      preLoaderRoute: typeof ImpressumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/datenschutz': {
+      id: '/datenschutz'
+      path: '/datenschutz'
+      fullPath: '/datenschutz'
+      preLoaderRoute: typeof DatenschutzRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/coaches': {
@@ -220,6 +260,8 @@ const rootRouteChildren: RootRouteChildren = {
   R16kCoachingRoute: R16kCoachingRoute,
   AvgsCoachingRoute: AvgsCoachingRoute,
   CoachesRoute: CoachesRoute,
+  DatenschutzRoute: DatenschutzRoute,
+  ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
   PrivatpersonenRoute: PrivatpersonenRoute,
   ReferenzenRoute: ReferenzenRoute,

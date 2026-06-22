@@ -10,6 +10,8 @@ type ActiveKey =
   | "avgs"
   | "16k"
   | "coaches"
+  | "referenzen"
+  | "impressum"
   | "contact";
 
 export function SiteShell({

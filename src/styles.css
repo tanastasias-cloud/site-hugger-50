@@ -605,6 +605,25 @@
 .ref-card-head { display: flex; gap: 16px; align-items: center; }
 .ref-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--forest); color: var(--mint); display: flex; align-items: center; justify-content: center; font-family: 'Tenor Sans', sans-serif; font-size: 16px; letter-spacing: 1px; flex-shrink: 0; }
 .ref-name { font-family: 'Tenor Sans', sans-serif; font-size: 18px; color: var(--forest); letter-spacing: 0.5px; margin-bottom: 4px; }
+
+/* ── Impressum page ── */
+.impressum-content { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
+.impressum-block { padding-bottom: 48px; border-bottom: 1px solid #f0f0f0; }
+.impressum-block:last-child { border-bottom: none; padding-bottom: 0; }
+.impressum-item { display: flex; align-items: baseline; gap: 20px; padding: 12px 0; border-bottom: 1px solid #f8f8f8; }
+.impressum-item:last-child { border-bottom: none; }
+.impressum-text { font-size: 15px; line-height: 1.85; color: #555; }
+.impressum-text a { color: var(--green); text-decoration: none; border-bottom: 1px solid currentColor; }
+.impressum-text a:hover { color: var(--forest); }
+.impressum-text + .impressum-text { margin-top: 16px; }
+
+@media (max-width: 960px) {
+  .impressum-content { gap: 36px; }
+  .impressum-block { padding-bottom: 36px; }
+  .impressum-item { flex-direction: column; gap: 4px; }
+  .impressum-text { font-size: 14px; }
+}
+
 .ref-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--gg-muted); }
 .ref-date, .ref-lang { font-size: 12px; }
 .ref-lang { letter-spacing: 1.5px; }
