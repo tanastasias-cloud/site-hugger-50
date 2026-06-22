@@ -569,3 +569,25 @@
   .page-hero h1 { font-size: 38px; }
   .coach-coming { flex-direction: column; padding: 32px; }
 }
+
+/* ── Team / Backoffice & Coach-Recruiting ── */
+.coach-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+.team-section { margin-top: 64px; }
+.team-heading { font-family: 'Tenor Sans', sans-serif; font-size: 22px; color: var(--forest); letter-spacing: 1.5px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #eee; }
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.team-card { background: var(--paper, #f5f3ee); padding: 32px; display: flex; gap: 24px; align-items: flex-start; border-left: 2px solid var(--mint); }
+.team-avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--forest); color: var(--mint); display: flex; align-items: center; justify-content: center; font-family: 'Tenor Sans', sans-serif; font-size: 22px; letter-spacing: 2px; flex-shrink: 0; }
+.team-name { font-family: 'Tenor Sans', sans-serif; font-size: 22px; color: var(--forest); letter-spacing: 1px; margin-bottom: 4px; }
+.team-role { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gg-muted); margin-bottom: 12px; }
+.team-bio { font-size: 14px; line-height: 1.7; color: #555; }
+
+.coach-join { margin-top: 64px; background: var(--forest); color: var(--cream); padding: 56px 48px; border-left: 3px solid var(--mint); }
+.join-tag { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--mint); margin-bottom: 16px; }
+.coach-join h3 { font-family: 'Tenor Sans', sans-serif; font-size: 28px; letter-spacing: 1px; margin-bottom: 16px; color: var(--cream); }
+.coach-join p { font-size: 15px; line-height: 1.7; color: rgba(245,240,232,0.8); margin-bottom: 24px; max-width: 640px; }
+
+@media (max-width: 960px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .team-card { flex-direction: column; padding: 24px; }
+  .coach-join { padding: 40px 24px; }
+}
