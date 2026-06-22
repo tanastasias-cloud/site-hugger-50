@@ -169,16 +169,8 @@ function ContactPage() {
               </label>
             </div>
 
-            {status === "error" && (
-              <div style={{ color: "#b91c1c", fontSize: 14, marginBottom: 12 }}>{errorMsg}</div>
-            )}
-
-            <button type="submit" className="btn-submit" disabled={status === "sending" || status === "sent"}>
-              {status === "sent"
-                ? "Vielen Dank — wir melden uns ✓"
-                : status === "sending"
-                  ? "Wird gesendet..."
-                  : "Anfrage senden →"}
+            <button type="submit" className="btn-submit" disabled={sent}>
+              {sent ? "Vielen Dank — wir melden uns ✓" : "Anfrage senden →"}
             </button>
 
           </form>
