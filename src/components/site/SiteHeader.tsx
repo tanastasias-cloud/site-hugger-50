@@ -66,14 +66,25 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
             Unternehmen
           </Link>
 
-          <div className="gg-dropdown">
-            <div className={`gg-dropdown-trigger${jcActive ? " active" : ""}`}>
+          <div
+            ref={jcRef}
+            className={`gg-dropdown${jcOpen ? " open" : ""}`}
+          >
+            <button
+              type="button"
+              className={`gg-dropdown-trigger${jcActive ? " active" : ""}`}
+              aria-expanded={jcOpen}
+              aria-haspopup="true"
+              onClick={() => setJcOpen((v) => !v)}
+            >
               Mit Jobcenter <span className="arrow">▾</span>
-            </div>
-            <div className="gg-dropdown-menu">
+            </button>
+            <div className="gg-dropdown-menu" role="menu">
               <Link
                 to="/avgs-coaching"
                 className={`gg-dropdown-item${active === "avgs" ? " active" : ""}`}
+                role="menuitem"
+                onClick={() => setJcOpen(false)}
               >
                 <span className="gg-di-label">Programm 01 · AVGS</span>
                 <span className="gg-di-title">Job Coaching</span>
@@ -81,6 +92,8 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
               <Link
                 to="/16k-coaching"
                 className={`gg-dropdown-item${active === "16k" ? " active" : ""}`}
+                role="menuitem"
+                onClick={() => setJcOpen(false)}
               >
                 <span className="gg-di-label">Programm 02 · §16k SGB II</span>
                 <span className="gg-di-title">Ganzheitliches Coaching</span>
