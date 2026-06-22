@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-
+import logoAsset from "@/assets/logo.png.asset.json";
 
 
 type ActiveKey =
@@ -39,11 +39,14 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
     <>
       <header className="gg-header">
         <Link to="/" className="gg-logo" aria-label="GetGrow Academy Berlin">
-          <div className="gg-logo-text">
-            <span className="gg-logo-get">Get</span>
-            <span className="gg-logo-grow">GROW</span>
-            <span className="gg-logo-acad">Academy · Berlin</span>
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="GetGrow Academy Berlin"
+            className="gg-logo-img"
+            width="180"
+            height="60"
+            loading="eager"
+          />
         </Link>
 
         <nav className="gg-nav">
