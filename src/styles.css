@@ -294,7 +294,7 @@
 
 /* ── HERO (home) ── */
 .gg-hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 100px; }
-.gg-hero-left { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; background: white; }
+.gg-hero-left { padding: 40px 64px 80px; display: flex; flex-direction: column; justify-content: center; background: white; }
 .gg-hero-tag { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--green); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
 .gg-hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--green); }
 .gg-hero-h1 { font-family: 'Tenor Sans', sans-serif; font-size: 54px; line-height: 1.1; color: var(--forest); font-weight: 400; margin-bottom: 8px; letter-spacing: 0.5px; }
@@ -311,7 +311,7 @@
 .proof-num { font-family: 'Tenor Sans', sans-serif; font-size: 28px; color: var(--forest); letter-spacing: 1px; }
 .proof-text { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #bbb; }
 
-.gg-hero-right { background: var(--sage); display: flex; align-items: center; justify-content: center; position: relative; padding: 60px 48px; }
+.gg-hero-right { background: var(--sage); display: flex; align-items: center; justify-content: center; position: relative; padding: 40px 48px 60px; }
 .gg-hero-photo { width: 100%; max-width: 400px; aspect-ratio: 3/4; background: linear-gradient(160deg, #dde8e4 0%, #c4d8d0 100%); display: flex; align-items: center; justify-content: center; color: #a0b8b0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; flex-direction: column; gap: 10px; }
 .gg-hero-badge { position: absolute; bottom: 48px; left: 24px; right: 48px; background: white; padding: 22px 26px; border-left: 3px solid var(--mint); box-shadow: 0 8px 40px rgba(0,0,0,0.07); }
 .badge-text { font-family: 'Cormorant Garamond', serif; font-size: 17px; line-height: 1.6; color: var(--forest); font-style: italic; margin-bottom: 8px; }
