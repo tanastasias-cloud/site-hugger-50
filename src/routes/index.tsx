@@ -28,7 +28,7 @@ function HomePage() {
       <section className="gg-manifesto">
         <div className="gg-manifesto-inner">
           <div>
-            <div className="eyebrow">Coaching Academy · Berlin · seit 2018</div>
+            <div className="eyebrow">Coaching Academy · Berlin</div>
             <h1>
               Wachsen,<br />
               <em>wo</em> Sie<br />
