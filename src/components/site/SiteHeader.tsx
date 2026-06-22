@@ -107,12 +107,6 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
           <Link to="/referenzen" className={`gg-nav-link${active === "referenzen" ? " active" : ""}`}>
             Referenzen
           </Link>
-          <Link to="/kontakt" className={`gg-nav-link${active === "contact" ? " active" : ""}`}>
-            Kontakt
-          </Link>
-          <Link to="/impressum" className={`gg-nav-link${active === "impressum" ? " active" : ""}`}>
-            Impressum
-          </Link>
 
         </nav>
 
@@ -162,8 +156,6 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
         )}
         <Link to="/coaches" className="gg-mobile-link" onClick={() => setOpen(false)}>Coaches</Link>
         <Link to="/referenzen" className="gg-mobile-link" onClick={() => setOpen(false)}>Referenzen</Link>
-        <Link to="/kontakt" className="gg-mobile-link" onClick={() => setOpen(false)}>Kontakt</Link>
-        <Link to="/impressum" className="gg-mobile-link" onClick={() => setOpen(false)}>Impressum</Link>
 
         <Link to="/kontakt" className="gg-mobile-cta" onClick={() => setOpen(false)}>
           Erstgespräch buchen →
