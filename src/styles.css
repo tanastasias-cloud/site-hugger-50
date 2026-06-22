@@ -581,7 +581,7 @@
   .cta-strip { flex-direction: column; padding: 48px 24px; align-items: flex-start; }
   .gg-footer { flex-direction: column; gap: 32px; padding: 40px 24px; align-items: flex-start; }
   .avgs-banner { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
-  .page-hero.simple { padding: 100px 24px 60px; }
+  .page-hero.simple { padding: 112px 24px 60px; }
   .page-hero h1 { font-size: 38px; }
   .coach-coming { flex-direction: column; padding: 32px; }
 }
