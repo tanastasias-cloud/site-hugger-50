@@ -9,12 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UnternehmenRouteImport } from './routes/unternehmen'
+import { Route as PrivatpersonenRouteImport } from './routes/privatpersonen'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as AvgsCoachingRouteImport } from './routes/avgs-coaching'
 import { Route as R16kCoachingRouteImport } from './routes/16k-coaching'
 import { Route as IndexRouteImport } from './routes/index'
 
+const UnternehmenRoute = UnternehmenRouteImport.update({
+  id: '/unternehmen',
+  path: '/unternehmen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivatpersonenRoute = PrivatpersonenRouteImport.update({
+  id: '/privatpersonen',
+  path: '/privatpersonen',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
@@ -47,6 +59,8 @@ export interface FileRoutesByFullPath {
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/coaches': typeof CoachesRoute
   '/kontakt': typeof KontaktRoute
+  '/privatpersonen': typeof PrivatpersonenRoute
+  '/unternehmen': typeof UnternehmenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +68,8 @@ export interface FileRoutesByTo {
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/coaches': typeof CoachesRoute
   '/kontakt': typeof KontaktRoute
+  '/privatpersonen': typeof PrivatpersonenRoute
+  '/unternehmen': typeof UnternehmenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,12 +78,28 @@ export interface FileRoutesById {
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/coaches': typeof CoachesRoute
   '/kontakt': typeof KontaktRoute
+  '/privatpersonen': typeof PrivatpersonenRoute
+  '/unternehmen': typeof UnternehmenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/16k-coaching' | '/avgs-coaching' | '/coaches' | '/kontakt'
+  fullPaths:
+    | '/'
+    | '/16k-coaching'
+    | '/avgs-coaching'
+    | '/coaches'
+    | '/kontakt'
+    | '/privatpersonen'
+    | '/unternehmen'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/16k-coaching' | '/avgs-coaching' | '/coaches' | '/kontakt'
+  to:
+    | '/'
+    | '/16k-coaching'
+    | '/avgs-coaching'
+    | '/coaches'
+    | '/kontakt'
+    | '/privatpersonen'
+    | '/unternehmen'
   id:
     | '__root__'
     | '/'
@@ -75,6 +107,8 @@ export interface FileRouteTypes {
     | '/avgs-coaching'
     | '/coaches'
     | '/kontakt'
+    | '/privatpersonen'
+    | '/unternehmen'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -83,10 +117,26 @@ export interface RootRouteChildren {
   AvgsCoachingRoute: typeof AvgsCoachingRoute
   CoachesRoute: typeof CoachesRoute
   KontaktRoute: typeof KontaktRoute
+  PrivatpersonenRoute: typeof PrivatpersonenRoute
+  UnternehmenRoute: typeof UnternehmenRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/unternehmen': {
+      id: '/unternehmen'
+      path: '/unternehmen'
+      fullPath: '/unternehmen'
+      preLoaderRoute: typeof UnternehmenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privatpersonen': {
+      id: '/privatpersonen'
+      path: '/privatpersonen'
+      fullPath: '/privatpersonen'
+      preLoaderRoute: typeof PrivatpersonenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kontakt': {
       id: '/kontakt'
       path: '/kontakt'
@@ -131,6 +181,8 @@ const rootRouteChildren: RootRouteChildren = {
   AvgsCoachingRoute: AvgsCoachingRoute,
   CoachesRoute: CoachesRoute,
   KontaktRoute: KontaktRoute,
+  PrivatpersonenRoute: PrivatpersonenRoute,
+  UnternehmenRoute: UnternehmenRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

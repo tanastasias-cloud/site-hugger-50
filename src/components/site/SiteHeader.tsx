@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 
-type ActiveKey = "home" | "avgs" | "16k" | "life" | "coaches" | "contact";
+type ActiveKey =
+  | "home"
+  | "privat"
+  | "unternehmen"
+  | "jobcenter"
+  | "avgs"
+  | "16k"
+  | "coaches"
+  | "contact";
 
 export function SiteHeader({ active }: { active?: ActiveKey }) {
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState<"DE" | "EN">("EN");
+  const [lang, setLang] = useState<"DE" | "EN">("DE");
 
-  const jobActive = active === "avgs" || active === "16k" || active === "life";
+  const jcActive = active === "jobcenter" || active === "avgs" || active === "16k";
 
   return (
     <>
@@ -23,27 +31,39 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
 
         <nav className="gg-nav">
           <Link to="/" className={`gg-nav-link${active === "home" ? " active" : ""}`}>
-            Home
+            Start
+          </Link>
+          <Link
+            to="/privatpersonen"
+            className={`gg-nav-link${active === "privat" ? " active" : ""}`}
+          >
+            Privatpersonen
+          </Link>
+          <Link
+            to="/unternehmen"
+            className={`gg-nav-link${active === "unternehmen" ? " active" : ""}`}
+          >
+            Unternehmen
           </Link>
 
           <div className="gg-dropdown">
-            <div className={`gg-dropdown-trigger${jobActive ? " active" : ""}`}>
-              Job Coaching <span className="arrow">▾</span>
+            <div className={`gg-dropdown-trigger${jcActive ? " active" : ""}`}>
+              Mit Jobcenter <span className="arrow">▾</span>
             </div>
             <div className="gg-dropdown-menu">
               <Link
                 to="/avgs-coaching"
                 className={`gg-dropdown-item${active === "avgs" ? " active" : ""}`}
               >
-                <span className="gg-di-label">Program 01 · AVGS</span>
+                <span className="gg-di-label">Programm 01 · AVGS</span>
                 <span className="gg-di-title">Job Coaching</span>
               </Link>
               <Link
                 to="/16k-coaching"
                 className={`gg-dropdown-item${active === "16k" ? " active" : ""}`}
               >
-                <span className="gg-di-label">Program 02 · §16k SGB II</span>
-                <span className="gg-di-title">Holistic Coaching</span>
+                <span className="gg-di-label">Programm 02 · §16k SGB II</span>
+                <span className="gg-di-title">Ganzheitliches Coaching</span>
               </Link>
             </div>
           </div>
@@ -52,7 +72,7 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
             Coaches
           </Link>
           <Link to="/kontakt" className={`gg-nav-link${active === "contact" ? " active" : ""}`}>
-            Contact
+            Kontakt
           </Link>
         </nav>
 
@@ -66,42 +86,32 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
             </button>
           </div>
           <Link to="/kontakt" className="gg-cta">
-            Book free call
+            Erstgespräch
           </Link>
         </div>
 
-        <button
-          className="gg-burger"
-          aria-label="Menu"
-          onClick={() => setOpen((v) => !v)}
-        >
+        <button className="gg-burger" aria-label="Menu" onClick={() => setOpen((v) => !v)}>
           <span /><span /><span />
         </button>
       </header>
 
       <div className={`gg-mobile-menu${open ? " open" : ""}`}>
-        <Link to="/" className="gg-mobile-link" onClick={() => setOpen(false)}>
-          Home
-        </Link>
-        <div className="gg-mobile-link" style={{ color: "#3d6b55", fontWeight: 500 }}>
-          Job Coaching
-        </div>
+        <Link to="/" className="gg-mobile-link" onClick={() => setOpen(false)}>Start</Link>
+        <Link to="/privatpersonen" className="gg-mobile-link" onClick={() => setOpen(false)}>Privatpersonen</Link>
+        <Link to="/unternehmen" className="gg-mobile-link" onClick={() => setOpen(false)}>Unternehmen</Link>
+        <div className="gg-mobile-link" style={{ color: "#3d6b55", fontWeight: 500 }}>Mit Jobcenter</div>
         <Link to="/avgs-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
-          <span className="sub-label">Program 01 · AVGS</span>
+          <span className="sub-label">Programm 01 · AVGS</span>
           Job Coaching
         </Link>
         <Link to="/16k-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
-          <span className="sub-label">Program 02 · §16k SGB II</span>
-          Holistic Coaching
+          <span className="sub-label">Programm 02 · §16k SGB II</span>
+          Ganzheitliches Coaching
         </Link>
-        <Link to="/coaches" className="gg-mobile-link" onClick={() => setOpen(false)}>
-          Coaches
-        </Link>
-        <Link to="/kontakt" className="gg-mobile-link" onClick={() => setOpen(false)}>
-          Contact
-        </Link>
+        <Link to="/coaches" className="gg-mobile-link" onClick={() => setOpen(false)}>Coaches</Link>
+        <Link to="/kontakt" className="gg-mobile-link" onClick={() => setOpen(false)}>Kontakt</Link>
         <Link to="/kontakt" className="gg-mobile-cta" onClick={() => setOpen(false)}>
-          Book free call →
+          Erstgespräch buchen →
         </Link>
       </div>
     </>

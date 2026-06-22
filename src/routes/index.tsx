@@ -4,11 +4,17 @@ import { SiteShell } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "GetGrow Academy Berlin · Career · Life · Business Coaching" },
+      { title: "GetGrow Academy Berlin · Coaching für Karriere, Leben und Unternehmen" },
       {
         name: "description",
         content:
-          "Certified career, life and business coaching for international professionals in Berlin. AVGS & §16k SGB II accepted.",
+          "Zertifiziertes Coaching in Berlin — für Privatpersonen, Unternehmen und Jobcenter-Kund:innen. AVGS & §16k SGB II anerkannt. DE · EN · UA · RU.",
+      },
+      { property: "og:title", content: "GetGrow Academy Berlin" },
+      {
+        property: "og:description",
+        content:
+          "Coaching für Privatpersonen, Unternehmen und Jobcenter-Kund:innen. AZAV-zertifiziert.",
       },
     ],
   }),
@@ -18,141 +24,133 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <SiteShell active="home">
-      {/* HERO */}
-      <section className="gg-hero">
-        <div className="gg-hero-left">
-          <div className="gg-hero-tag">Career · Life · Business Coaching · Berlin & Online</div>
-          <h1 className="gg-hero-h1">
-            Your experience matters.
-            <br />
-            Let's make it work <em>here.</em>
-          </h1>
-          <span className="gg-hero-script">Grow.</span>
-          <p className="gg-hero-text">
-            You moved to a new country with skills, experience, and ambition. But the system is
-            different, the language is hard, and no one seems to see what you bring. We do — and
-            we help you build a career that reflects who you really are.
-          </p>
-          <div className="gg-hero-btns">
-            <Link to="/kontakt" className="btn-p">
-              Book free consultation
-            </Link>
-            <a href="#services" className="btn-s">
-              See our programs
-            </a>
+      {/* MANIFEST HERO */}
+      <section className="gg-manifesto">
+        <div className="gg-manifesto-inner">
+          <div>
+            <div className="eyebrow">Coaching Academy · Berlin · seit 2018</div>
+            <h1>
+              Wachsen,<br />
+              <em>wo</em> Sie<br />
+              stehen.
+            </h1>
           </div>
-          <div className="gg-hero-proof">
-            <div className="proof-item">
-              <div className="proof-num">200+</div>
-              <div className="proof-text">Clients coached</div>
+          <div>
+            <div className="rule" />
+            <p>
+              GetGrow Academy begleitet Menschen, Teams und Organisationen in
+              entscheidenden beruflichen Übergängen — mit Psychologie, Klarheit
+              und einem konkreten Plan.
+            </p>
+            <p>
+              Wir arbeiten mit Privatpersonen, mit Unternehmen und gemeinsam
+              mit dem Jobcenter. In Berlin und online, auf Deutsch, Englisch,
+              Ukrainisch und Russisch.
+            </p>
+            <div className="cta-row">
+              <Link to="/kontakt" className="primary">
+                Kostenloses Erstgespräch
+              </Link>
+              <a href="#angebot" className="ghost">
+                Unser Angebot ansehen
+              </a>
             </div>
-            <div className="proof-item">
-              <div className="proof-num">AZAV</div>
-              <div className="proof-text">Certified · AVGS</div>
-            </div>
-            <div className="proof-item">
-              <div className="proof-num">4+</div>
-              <div className="proof-text">Languages</div>
-            </div>
-          </div>
-        </div>
-        <div className="gg-hero-right">
-          <div className="gg-hero-photo">
-            <span>🖼</span>
-            <span>Photo: Yuliia & Anastasia</span>
-          </div>
-          <div className="gg-hero-badge">
-            <div className="badge-text">
-              "I came to Germany with 15 years of experience. After coaching I finally knew how to
-              make it count here."
-            </div>
-            <div className="badge-author">Maria S. · Career Coaching · Berlin</div>
           </div>
         </div>
       </section>
 
-      {/* MISSION */}
-      <section className="gg-mission">
-        <div className="mission-inner">
-          <div className="mission-tag">Our mission</div>
-          <h2 className="mission-h2">
-            Moving to a new country shouldn't mean
-            <br />
-            starting your career <em>from zero.</em>
-          </h2>
-          <p className="mission-text">
-            Too many skilled professionals arrive in Germany and spend years feeling invisible —
-            overqualified for some roles, underqualified on paper for others, lost in a system no
-            one explained. GetGrow Academy exists to change that. We help migrants turn their
-            international experience into a real career path in Germany — with clarity,
-            confidence, and a concrete plan.
+      {/* TRUST STRIP */}
+      <div className="gg-trust">
+        <span>AZAV-zertifizierter Träger</span>
+        <span>AVGS · §16k SGB II anerkannt</span>
+        <span><strong>200+</strong> begleitete Klient:innen</span>
+        <span>DE · EN · UA · RU</span>
+      </div>
+
+      {/* THREE DOORS */}
+      <section className="gg-doors" id="angebot">
+        <div className="gg-doors-head">
+          <div>
+            <div className="eyebrow">Drei Wege zu uns</div>
+            <h2>
+              Wofür sind Sie <em>hier?</em>
+            </h2>
+          </div>
+          <p className="lede">
+            Unsere Arbeit folgt einem Prinzip: Coaching, das den Menschen
+            ernst nimmt. Die Form passen wir an — privat, im Unternehmen
+            oder im Rahmen einer geförderten Maßnahme.
           </p>
         </div>
-      </section>
 
-      {/* SERVICES */}
-      <section className="gg-services" id="services">
-        <div className="sh">
-          <div className="sh-tag">What we offer</div>
-          <h2 className="sh-h2">
-            Our programs. <em>Your path.</em>
-          </h2>
-        </div>
-        <div className="services-grid">
-          <div className="service-card">
-            <div className="service-num">01</div>
-            <div className="service-tag">Yuliia Zaienchyk · AVGS accepted</div>
-            <div className="service-title">Job Coaching</div>
-            <p className="service-text">
-              From situation analysis to signing your contract. CV, cover letter, LinkedIn, job
-              search strategy, interview preparation — step by step, with a certified coach.
+        <div className="gg-doors-grid">
+          <Link to="/privatpersonen" className="door">
+            <div className="door-num">01</div>
+            <div className="door-tag">Für Privatpersonen</div>
+            <div className="door-title">Karriere · Leben · Neuorientierung</div>
+            <p className="door-text">
+              Wenn Sie an einem Wendepunkt stehen — beruflich, persönlich
+              oder beim Neuanfang in Deutschland. Wir arbeiten mit Ihrer
+              ganzen Situation, nicht nur mit dem Lebenslauf.
             </p>
-            <Link to="/avgs-coaching" className="service-link">
-              Learn more
-            </Link>
-          </div>
-          <div className="service-card">
-            <div className="service-num">02</div>
-            <div className="service-tag">Yuliia Zaienchyk · §16k SGB II</div>
-            <div className="service-title">Holistic Coaching</div>
-            <p className="service-text">
-              When it's not just about the CV. Stress, housing, language barriers, debt,
-              uncertainty — the §16k programme covers your whole situation. Fully funded by
-              Jobcenter.
+            <ul className="door-list">
+              <li>Career & Life Coaching</li>
+              <li>Selbstführung und Klarheit</li>
+              <li>Neuorientierung & Reintegration</li>
+            </ul>
+            <span className="door-cta">Mehr erfahren</span>
+          </Link>
+
+          <Link to="/unternehmen" className="door">
+            <div className="door-num">02</div>
+            <div className="door-tag">Für Unternehmen</div>
+            <div className="door-title">Teams · Führung · Integration</div>
+            <p className="door-text">
+              Coaching und Workshops für Organisationen, die mit
+              internationalen Mitarbeitenden, Veränderungen und
+              Führungsfragen arbeiten. Maßgeschneidert für Ihr Team.
             </p>
-            <Link to="/16k-coaching" className="service-link">
-              Learn more
-            </Link>
-          </div>
-          <div className="service-card">
-            <div className="service-num">03</div>
-            <div className="service-tag">Anastasia Lunina · Private clients</div>
-            <div className="service-title">Life & Business Coaching</div>
-            <p className="service-text">
-              Building something new in Germany — a career, a business, or a life that finally
-              feels like yours. Coaching focused on clarity, confidence, and real results.
+            <ul className="door-list">
+              <li>Führungskräfte-Coaching</li>
+              <li>Onboarding internationaler Talente</li>
+              <li>Team-Workshops & Change-Begleitung</li>
+            </ul>
+            <span className="door-cta">Angebot anfragen</span>
+          </Link>
+
+          <Link to="/avgs-coaching" className="door">
+            <div className="door-num">03</div>
+            <div className="door-tag">Mit Jobcenter</div>
+            <div className="door-title">AVGS · §16k SGB II</div>
+            <p className="door-text">
+              Vollständig vom Jobcenter finanziertes Coaching für
+              Bürgergeld-Empfänger:innen. Vom Bewerbungstraining bis zur
+              ganzheitlichen Stabilisierung Ihrer Lebenssituation.
             </p>
-            <Link to="/kontakt" className="service-link">
-              Book a call
-            </Link>
-          </div>
+            <ul className="door-list">
+              <li>AVGS-Job-Coaching</li>
+              <li>§16k SGB II Ganzheitliches Coaching</li>
+              <li>100 % gefördert · für Sie kostenfrei</li>
+            </ul>
+            <span className="door-cta">Programm ansehen</span>
+          </Link>
         </div>
       </section>
 
       {/* OUTCOMES */}
       <section className="gg-outcomes">
         <div className="sh">
-          <div className="sh-tag">What changes</div>
+          <div className="sh-tag">Was sich verändert</div>
           <h2 className="sh-h2">
-            What our clients <em>experience</em>
+            Vier Worte, die unsere Klient:innen <em>nennen</em>
           </h2>
         </div>
         <div className="outcomes-grid">
           {[
-            ["Clarity", "You understand exactly where you stand in the German job market — and where you can go. No more guessing."],
-            ["Direction", "A concrete action plan: which roles to target, how to apply, how to present your international background as a strength."],
-            ["Confidence", "You walk into interviews, meetings, and new situations knowing your value — regardless of your accent or passport."],
-            ["Results", "A new job, a business launched, a life that feels stable and meaningful again. Outcomes you can measure."],
+            ["Klarheit", "Sie wissen, wo Sie stehen — und wohin Sie wollen. Kein Rätselraten mehr."],
+            ["Richtung", "Ein konkreter Plan: welche Rollen, welcher Markt, welcher nächste Schritt."],
+            ["Selbstvertrauen", "Sie kennen Ihren Wert — unabhängig von Sprache, Pass oder Vorgeschichte."],
+            ["Ergebnisse", "Ein neuer Job, ein gegründetes Unternehmen, ein Leben, das wieder trägt."],
           ].map(([word, text]) => (
             <div className="outcome-item" key={word}>
               <div className="outcome-word">{word}</div>
@@ -166,95 +164,33 @@ function HomePage() {
       <section className="gg-coach-intro">
         <div className="coach-intro-grid">
           <div className="coach-intro-photo">
-            <span>Photo · Yuliia</span>
+            <span>Foto · Yuliia</span>
           </div>
           <div>
-            <div className="coach-intro-tag">Your coach</div>
+            <div className="coach-intro-tag">Ihre Coach</div>
             <div className="coach-intro-name">Yuliia Zaienchyk</div>
             <div className="coach-intro-role">
-              Career Coach · Applied Psychologist · Berlin since 2015
+              Career Coach · M.Sc. Angewandte Psychologie · Berlin seit 2015
             </div>
             <p className="coach-intro-bio">
-              I'm a certified career coach with a Master's degree in Applied Psychology and 6
-              years of practice. I work at the intersection of psychology and coaching — because
-              most career challenges aren't really about the CV.
+              Ich bin zertifizierte Karriere-Coach mit Master in Angewandter
+              Psychologie und sechs Jahren Praxis. Ich arbeite an der
+              Schnittstelle von Psychologie und Coaching — weil die meisten
+              beruflichen Themen nicht beim Lebenslauf beginnen.
             </p>
             <p className="coach-intro-bio">
-              I've been in Berlin since 2015. I know this system — and I know how to help you
-              navigate it.
+              Ich lebe seit 2015 in Berlin und kenne dieses System aus eigener
+              Erfahrung. Ich weiß, wie man hier ankommt — und wie man bleibt.
             </p>
             <div className="coach-intro-tags">
-              <span>🇺🇦 Ukrainian</span>
-              <span>🇷🇺 Russian</span>
-              <span>🇩🇪 German B2</span>
-              <span>🇬🇧 English C1</span>
+              <span>🇩🇪 Deutsch B2</span>
+              <span>🇬🇧 Englisch C1</span>
+              <span>🇺🇦 Ukrainisch</span>
+              <span>🇷🇺 Russisch</span>
             </div>
             <Link to="/coaches" className="coach-intro-link">
-              Full profile & qualifications →
+              Vollständiges Profil →
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="gg-testimonials">
-        <div className="sh">
-          <div className="sh-tag">Client stories</div>
-          <h2 className="sh-h2">
-            People who built a new <em>beginning</em>
-          </h2>
-        </div>
-        <div className="testi-grid">
-          <div className="tcard tcard-featured">
-            <div className="tcard-stars">★★★★★</div>
-            <div className="tcard-quote">"</div>
-            <p className="tcard-text">
-              Yuliia showed an incredible attention and genuine love for her work from the very
-              first session. She created a safe and supportive atmosphere where I felt
-              comfortable expressing my thoughts. She has the ability to bring a person back to
-              themselves and start fresh when something isn't working.
-            </p>
-            <div className="tcard-author">
-              <div className="tcard-av">👤</div>
-              <div>
-                <div className="tcard-name">Anastasia</div>
-                <div className="tcard-role">Career Coaching · Berlin</div>
-              </div>
-            </div>
-          </div>
-          <div className="tcard tcard-regular">
-            <div className="tcard-stars">★★★★★</div>
-            <div className="tcard-quote">"</div>
-            <p className="tcard-text">
-              The terrible war drove me from my home into the unknown. But it was the coaching
-              sessions with Yuliia that helped me find myself again — set new goals and actually
-              pursue them. It's not easy to build a new life at my age, but the foundation has
-              been laid.
-            </p>
-            <div className="tcard-author">
-              <div className="tcard-av">👤</div>
-              <div>
-                <div className="tcard-name">Liudmyla</div>
-                <div className="tcard-role">Career Coaching · Berlin</div>
-              </div>
-            </div>
-          </div>
-          <div className="tcard tcard-regular">
-            <div className="tcard-stars">★★★★★</div>
-            <div className="tcard-quote">"</div>
-            <p className="tcard-text">
-              Yuliia was always by my side — she helped me write letters to the employment
-              office, called on my behalf when I couldn't yet speak the language. Thanks to her
-              I found an apartment, helped my daughter through a difficult time, and finally
-              felt supported in this country.
-            </p>
-            <div className="tcard-author">
-              <div className="tcard-av">👤</div>
-              <div>
-                <div className="tcard-name">Olena</div>
-                <div className="tcard-role">Career & Life Coaching · Berlin</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -262,13 +198,14 @@ function HomePage() {
       {/* AVGS BANNER */}
       <section className="avgs-banner">
         <div>
-          <div className="tag">For Jobcenter clients</div>
+          <div className="tag">Für Jobcenter-Kund:innen</div>
           <h3>
-            Our coaching is available through AVGS — <em>100% funded</em> by the Jobcenter.
+            Unser Coaching ist über AVGS — <em>zu 100 % gefördert</em> durch
+            das Jobcenter.
           </h3>
         </div>
         <Link to="/avgs-coaching" className="btn-p" style={{ whiteSpace: "nowrap" }}>
-          Apply for AVGS →
+          AVGS anfragen →
         </Link>
       </section>
     </SiteShell>

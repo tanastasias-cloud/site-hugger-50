@@ -2,7 +2,15 @@ import type { ReactNode } from "react";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 
-type ActiveKey = "home" | "avgs" | "16k" | "life" | "coaches" | "contact";
+type ActiveKey =
+  | "home"
+  | "privat"
+  | "unternehmen"
+  | "jobcenter"
+  | "avgs"
+  | "16k"
+  | "coaches"
+  | "contact";
 
 export function SiteShell({
   active,
