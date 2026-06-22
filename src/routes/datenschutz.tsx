@@ -336,31 +336,18 @@ function DatenschutzPage() {
 
           <div className="impressum-block">
             <div className="info-tag">5. Externe Dienste und Inhalte</div>
-            <h3 className="impressum-h3">Google Fonts</h3>
+            <h3 className="impressum-h3">Schriftarten (lokal gehostet)</h3>
             <p className="impressum-text">
-              Unsere Website nutzt Google Fonts, um Schriftarten einheitlich darzustellen. Beim Aufruf
-              unserer Seite lädt Ihr Browser die benötigten Schriftarten von Servern der Google Ireland
-              Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei kann es sein, dass Google
-              Ihre IP-Adresse und weitere technische Informationen erfasst.
+              Zur einheitlichen Darstellung von Schriftarten verwenden wir die Schriftarten Allura,
+              Tenor Sans, DM Sans und Cormorant Garamond. Diese Schriftarten werden ausschließlich
+              lokal von unserem eigenen Server bzw. dem Server unseres Hosters geladen. Es findet
+              <strong> keine Verbindung zu Servern Dritter (z. B. Google Fonts)</strong> statt, und es
+              werden in diesem Zusammenhang <strong>keine personenbezogenen Daten</strong> an Dritte
+              übertragen.
             </p>
             <p className="impressum-text">
-              Die genutzten Schriftarten sind: Allura, Tenor Sans, DM Sans und Cormorant Garamond. Die
-              Einbindung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
-              einer einheitlichen und ansprechenden Darstellung der Website). Sofern für den Zugriff auf
-              Informationen im Endgerät eine Einwilligung erforderlich ist, erfolgt die Verarbeitung
-              auf Grundlage von § 25 Abs. 1 TTDSG und Art. 6 Abs. 1 lit. a DSGVO.
-            </p>
-            <p className="impressum-text">
-              Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der
-              Datenschutzerklärung von Google:{' '}
-              <a
-                href="https://policies.google.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                policies.google.com/privacy
-              </a>
-              .
+              Rechtsgrundlage für die Nutzung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse
+              an einer einheitlichen und ansprechenden Darstellung unseres Onlineangebots).
             </p>
 
             <h3 className="impressum-h3">Google Maps</h3>
