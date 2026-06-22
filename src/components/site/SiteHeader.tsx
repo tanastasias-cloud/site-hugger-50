@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import logoAsset from "@/assets/logo.png.asset.json";
+
+
 
 type ActiveKey =
   | "home"
