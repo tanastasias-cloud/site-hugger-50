@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
+import { coaches, team, type Coach } from "@/data/coaches";
 
 export const Route = createFileRoute("/coaches")({
   head: () => ({
@@ -8,138 +9,145 @@ export const Route = createFileRoute("/coaches")({
       {
         name: "description",
         content:
-          "Meet our certified coaches — career coaching, applied psychology, and life & business coaching for international professionals in Berlin.",
+          "Lerne unser Team kennen — zertifizierte Coaches mit eigener Migrationserfahrung, die den deutschen Arbeitsmarkt und den Weg zurück ins Berufsleben verstehen.",
       },
     ],
   }),
   component: CoachesPage,
 });
 
+function initials(name: string) {
+  return name
+    .split(" ")
+    .map((p) => p[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
+
+function CoachCard({ coach }: { coach: Coach }) {
+  return (
+    <article className="coach-card">
+      <div className="coach-photo-col">
+        {coach.photo ? (
+          <img src={coach.photo} alt={coach.name} className="coach-photo" />
+        ) : (
+          <div className="coach-photo-placeholder">{initials(coach.name)}</div>
+        )}
+        <div className="coach-langs">
+          {coach.languages.map((l) => (
+            <span className="lang-tag" key={l.label}>
+              {l.flag} {l.label}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="coach-content">
+        <div>
+          <div className="coach-name">{coach.name}</div>
+          <div className="coach-role">{coach.role}</div>
+        </div>
+
+        <div className="coach-bio">
+          {coach.bio.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+
+        <div className="coach-creds">
+          <div className="creds-title">Ausbildung & Qualifikationen</div>
+          {coach.credentials.map((c) => (
+            <div className="cred-item" key={c.text}>
+              <div className="cred-type">{c.type}</div>
+              <div>
+                <div className="cred-text">{c.text}</div>
+                <div className="cred-sub">{c.sub}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <div className="exp-title">Schwerpunkte</div>
+          <div className="exp-grid">
+            {coach.expertise.map((e) => (
+              <div className="exp-item" key={e}>
+                {e}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function CoachesPage() {
   return (
     <SiteShell active="coaches">
       <section className="page-hero simple">
         <div className="breadcrumb">
-          <Link to="/">Home</Link> · Coaches
+          <Link to="/">Start</Link> · Coaches
         </div>
         <h1>
-          Meet our <em>coaches</em>
+          Unser <em>Team</em>
         </h1>
         <p className="page-hero-sub">
-          Certified professionals with first-hand migration experience — who understand not just
-          the German job market, but what it truly takes to rebuild a professional life in a new
-          country.
+          Zertifizierte Coaches mit eigener Migrationserfahrung — die nicht nur den deutschen
+          Arbeitsmarkt verstehen, sondern auch, was es wirklich braucht, sich beruflich in einem
+          neuen Land neu aufzustellen.
         </p>
       </section>
 
       <section className="coaches-section">
-        <article className="coach-card">
-          <div className="coach-photo-col">
-            <div className="coach-photo-placeholder">Photo · Yuliia</div>
-            <div className="coach-langs">
-              <span className="lang-tag">🇺🇦 Ukrainian</span>
-              <span className="lang-tag">🇷🇺 Russian</span>
-              <span className="lang-tag">🇩🇪 German B2</span>
-              <span className="lang-tag">🇬🇧 English C1</span>
-            </div>
-          </div>
+        {coaches.map((c) => (
+          <CoachCard key={c.slug} coach={c} />
+        ))}
 
-          <div className="coach-content">
-            <div>
-              <div className="coach-name">Yuliia Zaienchyk</div>
-              <div className="coach-role">
-                Co-Founder · Career Coach · Applied Psychologist · Berlin since 2015
-              </div>
-            </div>
-
-            <div className="coach-bio">
-              <p>
-                I've lived in Berlin since 2015 — which means I know exactly what it feels like
-                to arrive in a new country with a full professional life behind you and have to
-                start again. That personal experience is at the core of how I work with every
-                client.
-              </p>
-              <p>
-                I'm a certified career coach with a Master's degree in Applied Psychology and
-                6 years of practice. I work at the intersection of psychology and coaching —
-                because most career challenges aren't really about the CV. They're about fear,
-                identity, and the beliefs people carry with them from a different life. I help
-                people see that clearly — and move past it.
-              </p>
-              <p>
-                Over the years I've built a wide professional network in Germany — companies, HR
-                managers, educational institutions, and social organisations. That means I don't
-                just give advice — I open real doors.
-              </p>
-            </div>
-
-            <div className="coach-creds">
-              <div className="creds-title">Education & Qualifications</div>
-              {[
-                ["Master's", "Applied Psychology", "Pedagogical University, Kyiv"],
-                ["Bachelor's", "International Management", "International University of Finance, Kyiv"],
-                ["Certificate", "Career Coaching — certified course", "Berlin"],
-                [
-                  "Experience",
-                  "6 years coaching practice",
-                  "incl. 2+ years at MigraVision — AVGS coaching, group programmes, team coordination",
-                ],
-              ].map(([type, text, sub]) => (
-                <div className="cred-item" key={text}>
-                  <div className="cred-type">{type}</div>
+        {team.length > 0 && (
+          <div className="team-section">
+            <div className="team-heading">Hinter den Kulissen</div>
+            <div className="team-grid">
+              {team.map((m) => (
+                <div className="team-card" key={m.slug}>
+                  <div className="team-avatar">{initials(m.name)}</div>
                   <div>
-                    <div className="cred-text">{text}</div>
-                    <div className="cred-sub">{sub}</div>
+                    <div className="team-name">{m.name}</div>
+                    <div className="team-role">{m.role}</div>
+                    <p className="team-bio">{m.bio}</p>
                   </div>
                 </div>
               ))}
             </div>
-
-            <div>
-              <div className="exp-title">Areas of expertise</div>
-              <div className="exp-grid">
-                {[
-                  "Job search on the German market",
-                  "CV & Bewerbung that open doors",
-                  "Ausbildung & diploma recognition",
-                  "Interview preparation & confidence",
-                  "Crisis support & migration trauma",
-                  "Identity, motivation & inner clarity",
-                ].map((e) => (
-                  <div className="exp-item" key={e}>
-                    {e}
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
-        </article>
+        )}
 
-        <div className="coach-coming">
-          <div className="coming-icon">👤</div>
-          <div>
-            <div className="coming-tag">Coming soon</div>
-            <div className="coming-name">Anastasia Lunina</div>
-            <p className="coming-text">
-              Founder · Life & Business Coach · Berlin. Background in sales leadership, team
-              building, and management. Specialises in private clients navigating career
-              transitions, leadership growth, and business development in Germany.
-            </p>
-          </div>
+        <div className="coach-join">
+          <div className="join-tag">Coach werden</div>
+          <h3>Du bist Coach und möchtest mit uns arbeiten?</h3>
+          <p>
+            Wir bauen ein Netzwerk aus zertifizierten Coaches auf, die Privatpersonen, Unternehmen
+            und Jobcenter-Klient:innen in Deutschland begleiten. Wenn du Erfahrung im Karriere-,
+            Life- oder Business-Coaching hast, freuen wir uns über deine Nachricht.
+          </p>
+          <Link to="/kontakt" className="btn-mint">
+            Bewirb dich als Coach →
+          </Link>
         </div>
       </section>
 
       <section className="cta-strip">
         <div>
-          <div className="cta-strip-tag">Ready to start?</div>
-          <h2>Book a free intro call today.</h2>
+          <div className="cta-strip-tag">Bereit anzufangen?</div>
+          <h2>Buche heute dein kostenloses Erstgespräch.</h2>
         </div>
         <div className="cta-btns">
           <Link to="/kontakt" className="btn-mint">
-            Book free call
+            Erstgespräch buchen
           </Link>
           <Link to="/avgs-coaching" className="btn-outline-w">
-            See our programs →
+            Programme ansehen →
           </Link>
         </div>
       </section>
