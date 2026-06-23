@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
+import yuliiaAsset from "@/assets/yuliia-zaienchyk.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -163,9 +164,14 @@ function HomePage() {
       {/* COACH INTRO */}
       <section className="gg-coach-intro">
         <div className="coach-intro-grid">
-          <div className="coach-intro-photo">
+          <object
+            data={yuliiaAsset.url}
+            type="image/jpeg"
+            aria-label="Yuliia Zaienchyk"
+            className="coach-intro-photo"
+          >
             <span>Foto · Yuliia</span>
-          </div>
+          </object>
           <div>
             <div className="coach-intro-tag">Ihre Coach</div>
             <div className="coach-intro-name">Yuliia Zaienchyk</div>
