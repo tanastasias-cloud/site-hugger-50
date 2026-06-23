@@ -528,6 +528,7 @@
 .coach-card:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 .coach-photo-col { display: flex; flex-direction: column; gap: 20px; }
 .coach-photo-placeholder { width: 100%; aspect-ratio: 3/4; background: linear-gradient(160deg, #dde8e4, #c4d8d0); display: flex; align-items: center; justify-content: center; color: #a0b8b0; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+.coach-photo-fallback { width: 100%; aspect-ratio: 3/4; background: linear-gradient(160deg, #dde8e4, #c4d8d0); display: flex; align-items: center; justify-content: center; color: #a0b8b0; font-family: 'Tenor Sans', sans-serif; font-size: 40px; letter-spacing: 2px; }
 .coach-langs { display: flex; flex-wrap: wrap; gap: 8px; }
 .lang-tag { border: 1px solid var(--gg-border); padding: 6px 14px; font-size: 11px; letter-spacing: 1px; color: var(--green); }
 .coach-content { display: flex; flex-direction: column; gap: 32px; padding-top: 8px; }
@@ -549,6 +550,56 @@
 .coming-tag { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--mint); margin-bottom: 10px; }
 .coming-name { font-family: 'Tenor Sans', sans-serif; font-size: 28px; color: var(--forest); margin-bottom: 8px; letter-spacing: 1px; }
 .coming-text { font-size: 14px; line-height: 1.7; color: #666; }
+
+.coaches-placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 80px;
+}
+.placeholder-coach-card {
+  background: var(--sage);
+  border-left: 3px solid var(--mint);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.placeholder-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(160deg, #dde8e4, #c4d8d0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0b8b0;
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+.placeholder-tag {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 8px;
+}
+.placeholder-name {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 20px;
+  color: var(--forest);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.placeholder-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 1100px) {
+  .coaches-placeholder-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* ── Kontakt info ── */
 .contact-main { padding: 80px 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -606,6 +657,7 @@
   .team-grid { grid-template-columns: 1fr; }
   .team-card { flex-direction: column; padding: 24px; }
   .coach-join { padding: 40px 24px; }
+  .coaches-placeholder-grid { grid-template-columns: 1fr; }
 }
 
 /* ── Referenzen page ── */

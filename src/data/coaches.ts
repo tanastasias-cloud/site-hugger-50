@@ -1,3 +1,5 @@
+import yuliiaAsset from "@/assets/yuliia-zaienchyk.jpg.asset.json";
+
 // Coach-Profile — neue Coaches einfach hier hinzufügen.
 // Jeder Eintrag erscheint automatisch auf /coaches.
 
@@ -10,6 +12,7 @@ export type Coach = {
   bio: string[];
   credentials: { type: string; text: string; sub: string }[];
   expertise: string[];
+  isPlaceholder?: boolean;
 };
 
 export type TeamMember = {
@@ -26,6 +29,7 @@ export const coaches: Coach[] = [
     slug: "yuliia-zaienchyk",
     name: "Yuliia Zaienchyk",
     role: "Mitgründerin · Karriere-Coach · Angewandte Psychologin · Berlin seit 2015",
+    photo: yuliiaAsset.url,
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇷🇺", label: "Russisch" },
@@ -52,6 +56,15 @@ export const coaches: Coach[] = [
       "Identität, Motivation & innere Klarheit",
     ],
   },
+];
+
+// Platzhalter für Coaches, deren Profil noch ergänzt wird.
+// Sobald Foto & Beschreibung vorliegen, Eintrag nach `coaches` verschieben.
+export const coachPlaceholders: Coach[] = [
+  { slug: "coach-2", name: "Coach 2", role: "Bald verfügbar", languages: [], bio: [], credentials: [], expertise: [], isPlaceholder: true },
+  { slug: "coach-3", name: "Coach 3", role: "Bald verfügbar", languages: [], bio: [], credentials: [], expertise: [], isPlaceholder: true },
+  { slug: "coach-4", name: "Coach 4", role: "Bald verfügbar", languages: [], bio: [], credentials: [], expertise: [], isPlaceholder: true },
+  { slug: "coach-5", name: "Coach 5", role: "Bald verfügbar", languages: [], bio: [], credentials: [], expertise: [], isPlaceholder: true },
 ];
 
 // Team / Backoffice — keine Coaching-Sessions, aber Teil von GetGrow.
