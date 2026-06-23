@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
+import yuliiaAsset from "@/assets/yuliia-zaienchyk.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
