@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
-import { coaches, team, type Coach } from "@/data/coaches";
+import { coaches, coachPlaceholders, team, type Coach } from "@/data/coaches";
 
 export const Route = createFileRoute("/coaches")({
   head: () => ({
@@ -30,7 +30,14 @@ function CoachCard({ coach }: { coach: Coach }) {
     <article className="coach-card">
       <div className="coach-photo-col">
         {coach.photo ? (
-          <img src={coach.photo} alt={coach.name} className="coach-photo" />
+          <object
+            data={coach.photo}
+            type="image/jpeg"
+            aria-label={coach.name}
+            className="coach-photo"
+          >
+            <div className="coach-photo-fallback">{initials(coach.name)}</div>
+          </object>
         ) : (
           <div className="coach-photo-placeholder">{initials(coach.name)}</div>
         )}
@@ -83,6 +90,19 @@ function CoachCard({ coach }: { coach: Coach }) {
   );
 }
 
+function PlaceholderCoachCard({ coach }: { coach: Coach }) {
+  return (
+    <article className="placeholder-coach-card">
+      <div className="placeholder-photo">{initials(coach.name)}</div>
+      <div className="placeholder-content">
+        <div className="placeholder-tag">Bald verfügbar</div>
+        <div className="placeholder-name">{coach.name}</div>
+        <p className="placeholder-text">Details zu diesem Coach folgen in Kürze.</p>
+      </div>
+    </article>
+  );
+}
+
 function CoachesPage() {
   return (
     <SiteShell active="coaches">
@@ -104,6 +124,12 @@ function CoachesPage() {
         {coaches.map((c) => (
           <CoachCard key={c.slug} coach={c} />
         ))}
+
+        <div className="coaches-placeholder-grid" aria-label="Weitere Coaches folgen">
+          {coachPlaceholders.map((c) => (
+            <PlaceholderCoachCard key={c.slug} coach={c} />
+          ))}
+        </div>
 
         {team.length > 0 && (
           <div className="team-section">
