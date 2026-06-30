@@ -8,13 +8,13 @@ export const Route = createFileRoute("/avgs-coaching")({
       {
         name: "description",
         content:
-          "Zertifiziertes Job Coaching, vollständig gefördert durch AVGS / Jobcenter. Von der Standortanalyse bis zur Vertragsunterschrift — Schritt für Schritt.",
+          "Zertifiziertes Job Coaching, 100 % kostenlos mit AVGS · 56 Unterrichtseinheiten · hybrid, online oder in Präsenz in Berlin.",
       },
       { property: "og:title", content: "Job Coaching · AVGS — GetGrow Academy Berlin" },
       {
         property: "og:description",
         content:
-          "Zertifiziertes Job Coaching, vollständig gefördert durch AVGS / Jobcenter. Mehrsprachig in Berlin und online.",
+          "Zertifiziertes Job Coaching, 100 % kostenlos mit AVGS · 56 Unterrichtseinheiten · hybrid, online oder in Präsenz.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -45,26 +45,51 @@ const STEPS: Array<[string, string]> = [
   ],
 ];
 
-const FAQS: Array<[string, string]> = [
+const INHALTE = [
+  "Stärken-Schwächen-Analyse (SWOT)",
+  "Ziele definieren, Arbeitsschritte und Zeitmanagement festlegen",
+  "Arbeitsmarktrelevante berufliche und persönliche Erfahrungen evaluieren",
+  "Lebenslauf (CV) und Anschreiben formulieren und optimieren",
+  "Methoden der Selbstvermarktung und Selbstpräsentation",
+  "Vorbereitung auf Vorstellungsgespräche (Mock-Interviews)",
+  "Stilberatung, Körpersprache und Umgangsformen",
+  "Stellensuche, Nutzung von LinkedIn, XING und weiteren Plattformen",
+  "Aufbau eines beruflichen Netzwerks",
+];
+
+const FAQS: Array<[string, React.ReactNode]> = [
   [
     "Was ist ein AVGS-Gutschein?",
-    "Der AVGS (Aktivierungs- und Vermittlungsgutschein) ist ein Förderinstrument des Jobcenters oder der Agentur für Arbeit. Er übernimmt die gesamten Kosten für ein individuelles Coaching — für Sie ist es kostenfrei.",
+    "Der AVGS (Aktivierungs- und Vermittlungsgutschein) ist ein Berechtigungsschein, den Sie von Ihrer Agentur für Arbeit oder Ihrem Jobcenter erhalten. Mit diesem Gutschein können Sie sich kostenlos einen zugelassenen Bildungsträger — wie uns — für Ihr Coaching aussuchen. Die Kosten übernimmt vollständig der Staat.",
   ],
   [
     "Wie lange dauert das Coaching?",
-    "Die Dauer richtet sich nach Ihren Zielen und den Angaben auf Ihrem AVGS-Gutschein. Die Termine finden mindestens zweimal pro Woche statt.",
+    "In der Regel rund 2 Monate, mit mindestens zwei Terminen pro Woche. Insgesamt umfasst das Programm 56 Unterrichtseinheiten. Die genaue Verteilung passen wir gemeinsam an Ihre Situation an.",
   ],
   [
     "Kann ich meinen Coach selbst wählen?",
-    "Ja. Sie haben Anspruch auf ein kostenloses 30-minütiges Kennenlerngespräch, bevor Sie sich entscheiden. Wenn die Chemie nicht stimmt, finden wir eine bessere Begleitung für Sie.",
+    "Ja. Sie lernen Ihren Coach im kostenlosen Erstgespräch kennen. Passt es menschlich nicht, sprechen Sie uns an — wir finden gemeinsam eine passende Lösung.",
   ],
   [
     "In welchen Sprachen wird gecoacht?",
-    "Deutsch ist die Hauptsprache. Ukrainisch, Russisch und Englisch sind als zusätzliche Optionen verfügbar — für die Coaching-Termine und für die Kommunikation mit dem Jobcenter.",
+    "Deutsch ist die Hauptsprache. Zusätzlich coachen wir aktuell auf Ukrainisch, Russisch und Englisch — auch in der Kommunikation mit dem Jobcenter.",
   ],
   [
     "Helfen Sie mir, einen AVGS-Gutschein zu erhalten?",
-    "Ja — wir unterstützen Sie bei der Korrespondenz und können bei Bedarf an einem Beratungsgespräch mit Ihrer Jobcenter-Ansprechperson teilnehmen. Melden Sie sich, wir begleiten Sie durch den Prozess.",
+    "Ja. Sprechen Sie zunächst mit Ihrer Ansprechperson im Jobcenter oder der Agentur für Arbeit und beantragen Sie einen AVGS für Job Coaching. Sobald Sie ihn haben, melden Sie sich bei uns — wir übernehmen den Rest und kümmern uns auch um die Formalitäten.",
+  ],
+  [
+    "Was passiert, wenn ich abbreche oder die Maßnahme nicht zu mir passt?",
+    "Sie können die Teilnahme jederzeit kostenfrei beenden. Innerhalb der ersten 14 Tage nach Vertragsabschluss haben Sie zudem ein generelles Rücktrittsrecht. Ihnen entstehen dadurch keine Nachteile.",
+  ],
+  [
+    "Was, wenn ich keinen AVGS-Gutschein bekomme oder mein Fall nicht passt?",
+    (
+      <>
+        Auch ohne Gutschein können wir Sie unterstützen — im privaten Rahmen.{" "}
+        <Link to="/privatpersonen">Mehr für Privatpersonen →</Link>
+      </>
+    ),
   ],
 ];
 
@@ -102,6 +127,21 @@ function AvgsPage() {
         </div>
       </section>
 
+      <section className="params-strip">
+        <div className="params-strip-item">
+          <div className="params-num">100 %</div>
+          <div className="params-label">kostenlos mit AVGS</div>
+        </div>
+        <div className="params-strip-item">
+          <div className="params-num">56</div>
+          <div className="params-label">Unterrichtseinheiten</div>
+        </div>
+        <div className="params-strip-item">
+          <div className="params-num">3</div>
+          <div className="params-label">Formate · hybrid, online oder Präsenz</div>
+        </div>
+      </section>
+
       <section className="section white">
         <div className="sh">
           <div className="sh-tag">Programm 01 · AVGS</div>
@@ -113,8 +153,9 @@ function AvgsPage() {
           <div>
             <p style={{ fontSize: 15, lineHeight: 1.9, color: "#666", marginBottom: 36 }}>
               Unsere zertifizierten Coaches begleiten Sie auf jedem Schritt — von der
-              Standortanalyse bis zur Unterschrift Ihres Arbeitsvertrags. Wir kennen das deutsche
-              System und zeigen Ihnen genau, wie Sie sich darin bewegen.
+              Standortanalyse bis zur Unterschrift Ihres Arbeitsvertrags. Das Programm dauert
+              in der Regel rund 2 Monate, mit mindestens zwei Terminen pro Woche — individuell
+              auf Ihre Bedürfnisse abgestimmt.
             </p>
             <div className="steps">
               {STEPS.map(([title, text], i) => (
@@ -126,6 +167,14 @@ function AvgsPage() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="highlight-box" style={{ marginTop: 32 }}>
+              <div className="hl-tag">Was Sie am Ende erhalten</div>
+              <p>
+                Am Ende des Programms erhalten Sie ein Teilnahmezertifikat mit Angaben zu
+                Inhalt, Dauer und Ziel des Coachings — auch bei vorzeitigem Abschluss.
+              </p>
             </div>
           </div>
 
@@ -148,13 +197,28 @@ function AvgsPage() {
               <div className="elig-item">Arbeitslos gemeldet, Bezug von Bürgergeld oder Arbeitslosengeld</div>
               <div className="elig-item">Eingliederungsvereinbarung mit dem Jobcenter unterschrieben</div>
               <div className="elig-item">Beratungsgespräch mit der Jobcenter-Ansprechperson stattgefunden</div>
-              <div className="elig-item">Beschäftigung gefährdet (Kündigung erhalten oder absehbar)</div>
             </div>
             <div className="cta-box">
               <div className="cta-box-text">Wir helfen auch bei der Beantragung des Gutscheins.</div>
               <Link to="/kontakt">Kontakt aufnehmen →</Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section sage">
+        <div className="sh">
+          <div className="sh-tag">Was wir behandeln</div>
+          <h2 className="sh-h2">
+            Inhalte <em>im Detail</em>
+          </h2>
+        </div>
+        <div className="topics-grid" style={{ maxWidth: 1100 }}>
+          {INHALTE.map((t) => (
+            <div className="topic-item" key={t}>
+              {t}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -167,7 +231,7 @@ function AvgsPage() {
         </div>
         <div className="faq-list">
           {FAQS.map(([q, a]) => (
-            <details className="faq-item" key={q}>
+            <details className="faq-item" key={q as string}>
               <summary className="faq-q">{q}</summary>
               <div className="faq-a">{a}</div>
             </details>
