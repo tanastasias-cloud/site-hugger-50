@@ -109,6 +109,29 @@ function PrivatPage() {
         </div>
       </section>
 
+      <section className="section white">
+        <div className="sh">
+          <div className="sh-tag">Ohne Jobcenter</div>
+          <h2 className="sh-h2">
+            Auch ohne Jobcenter-Gutschein — <em>wir sind für Sie da</em>
+          </h2>
+        </div>
+        <div className="intro-text" style={{ maxWidth: 780 }}>
+          <p>
+            Droht Ihnen eine Kündigung, möchten Sie sich beruflich neu orientieren oder haben
+            (noch) keinen AVGS-Gutschein? Auch dann unterstützen wir Sie — im privaten Rahmen,
+            unabhängig vom Jobcenter.
+          </p>
+          <p style={{ fontSize: 13, color: "#888" }}>
+            Diese Begleitung ist nicht über die AZAV-Zertifizierung gefördert. Format, Dauer und
+            Honorar besprechen wir individuell im kostenlosen Erstgespräch.
+          </p>
+          <Link to="/kontakt" className="btn-dark">
+            Kontakt aufnehmen →
+          </Link>
+        </div>
+      </section>
+
       <section className="cta-strip">
         <div>
           <div className="cta-strip-tag">Bereit anzufangen?</div>

@@ -27,14 +27,32 @@ const TOPICS = [
   "Umgang mit Unsicherheit & fehlenden Zielen",
   "Stabilisierung der Lebenssituation",
   "Unterstützung bei der Wohnungssuche",
-  "Schuldenberatung & Finanzkompetenz",
+  "Begleitung bei Schulden- und Finanzfragen — Vermittlung an Fachstellen",
   "Zeitmanagement & Selbstorganisation",
   "Stressresilienz & Selbstreflexion",
   "Überwindung psychischer Hürden",
   "Körperliche & mentale Stabilisierung",
   "Umgang mit Frustration & Aggression",
-  "Business-Etikette & professionelles Auftreten",
-  "Berufliche Ziele & berufliche Orientierung",
+  "Aufsuchende Betreuung — Begleitung im gewohnten Umfeld",
+];
+
+const FAQS: Array<[string, string]> = [
+  [
+    "Was unterscheidet dieses Programm vom klassischen Bewerbungscoaching?",
+    "Beim Bewerbungscoaching geht es um konkrete Bewerbungsunterlagen und Vorstellungsgespräche. Das ganzheitliche Coaching setzt einen Schritt davor an: Wir arbeiten gemeinsam an dem, was Ihnen aktuell im Weg steht — sei es Stress, gesundheitliche Themen, Schulden oder fehlende Tagesstruktur —, damit Sie überhaupt wieder Kraft und Klarheit für den nächsten Schritt finden.",
+  ],
+  [
+    "Muss ich über alles sprechen, was mich belastet?",
+    "Nein. Sie entscheiden, worüber Sie sprechen möchten und in welchem Tempo. Vertrauen entsteht mit der Zeit — es gibt keinen Druck.",
+  ],
+  [
+    "Was passiert, wenn ich nicht teilnehmen möchte oder abbreche?",
+    "Die Teilnahme ist komplett freiwillig. Eine Ablehnung oder ein Abbruch hat keinerlei negative Auswirkungen auf Ihre Leistungen.",
+  ],
+  [
+    "Bleibt mein Coach während des gesamten Programms gleich?",
+    "Ja. Sie arbeiten durchgehend mit derselben Begleitperson zusammen, damit eine vertrauensvolle Zusammenarbeit entstehen kann.",
+  ],
 ];
 
 function SixteenKPage() {
@@ -71,6 +89,21 @@ function SixteenKPage() {
         </div>
       </section>
 
+      <section className="params-strip">
+        <div className="params-strip-item">
+          <div className="params-num">100 %</div>
+          <div className="params-label">kostenfrei · gefördert vom Jobcenter</div>
+        </div>
+        <div className="params-strip-item">
+          <div className="params-num">1:1</div>
+          <div className="params-label">Persönliche Begleitung in Präsenz</div>
+        </div>
+        <div className="params-strip-item">
+          <div className="params-num">↻</div>
+          <div className="params-label">Dieselbe Begleitperson während des gesamten Programms</div>
+        </div>
+      </section>
+
       <section className="section sage">
         <div className="sh">
           <div className="sh-tag">Programm 02 · §16k SGB II</div>
@@ -103,8 +136,43 @@ function SixteenKPage() {
             <div className="highlight-box">
               <div className="hl-tag">Für wen es ist</div>
               <p>
-                Beziehende von Bürgergeld, denen das Jobcenter einen §16k SGB II Gutschein
-                ausgestellt hat.
+                Wenn Stress, Schulden, gesundheitliche Themen, eine Sprachbarriere oder einfach
+                das Gefühl, nicht zu wissen, wo man anfangen soll, Ihnen gerade im Weg stehen —
+                dann ist dieses Programm für Sie gedacht. Voraussetzung: Bezug von Bürgergeld
+                und ein §16k SGB II Gutschein vom Jobcenter.
+              </p>
+            </div>
+
+            <div className="highlight-box">
+              <div className="hl-tag">Format · persönlich vor Ort</div>
+              <p>
+                Die Begleitung findet grundsätzlich persönlich vor Ort statt — denn Vertrauen
+                entsteht im direkten Gespräch. Nur in kurzfristigen, dringenden Ausnahmefällen
+                ist auch ein digitaler Kontakt möglich.
+              </p>
+            </div>
+
+            <div className="highlight-box">
+              <div className="hl-tag">Eine Begleitperson — durchgehend</div>
+              <p>
+                Sie arbeiten während des gesamten Programms mit derselben Begleitperson zusammen
+                — Sie müssen Ihre Geschichte nicht immer wieder neu erzählen.
+              </p>
+            </div>
+
+            <div className="highlight-box">
+              <div className="hl-tag">Freiwillig</div>
+              <p>
+                Die Teilnahme ist freiwillig. Wenn Sie das Programm ablehnen oder vorzeitig
+                beenden möchten, entstehen Ihnen dadurch keine Nachteile.
+              </p>
+            </div>
+
+            <div className="highlight-box">
+              <div className="hl-tag">Aufsuchende Betreuung</div>
+              <p>
+                Auf Wunsch: Begleitung auch in Ihrem gewohnten Umfeld — zu Hause oder dort, wo
+                Sie sich sicher fühlen, mit Ihrem Einverständnis.
               </p>
             </div>
 
@@ -112,7 +180,9 @@ function SixteenKPage() {
             <p className="how-start-text">
               Wenden Sie sich an Ihre Jobcenter-Ansprechperson und beantragen Sie einen §16k SGB
               II Gutschein. Melden Sie sich anschließend bei uns — wir vereinbaren Ihr
-              kostenloses Erstgespräch und kümmern uns um alles Weitere.
+              kostenloses Erstgespräch und kümmern uns um alles Weitere. Die Dauer wird
+              individuell mit Ihnen und dem Jobcenter festgelegt — je nach Bedarf für mehrere
+              Monate.
             </p>
             <Link to="/kontakt" className="btn-dark">
               Kostenloses Gespräch anfragen →
@@ -135,6 +205,23 @@ function SixteenKPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section off">
+        <div className="sh">
+          <div className="sh-tag">Fragen</div>
+          <h2 className="sh-h2">
+            Häufig <em>gestellt</em>
+          </h2>
+        </div>
+        <div className="faq-list">
+          {FAQS.map(([q, a]) => (
+            <details className="faq-item" key={q}>
+              <summary className="faq-q">{q}</summary>
+              <div className="faq-a">{a}</div>
+            </details>
+          ))}
         </div>
       </section>
 

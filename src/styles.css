@@ -460,6 +460,15 @@
 .badge-label { font-family: 'DM Sans', sans-serif; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); opacity: 0.75; }
 .badge-value { font-family: 'Tenor Sans', sans-serif; font-size: 15px; color: var(--forest); margin-top: 4px; letter-spacing: 0.3px; }
 
+/* ── Params strip ── */
+.params-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: var(--cream); border-top: 1px solid rgba(26,46,38,0.08); border-bottom: 1px solid rgba(26,46,38,0.08); }
+.params-strip-item { padding: 32px 40px; display: flex; flex-direction: column; gap: 8px; border-left: 1px solid rgba(26,46,38,0.06); }
+.params-strip-item:first-child { border-left: none; }
+.params-num { font-family: 'Tenor Sans', sans-serif; font-size: 32px; color: var(--green); letter-spacing: 0.5px; }
+.params-label { font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 1px; color: var(--forest); opacity: 0.75; line-height: 1.5; }
+@media (max-width: 768px) { .params-strip { grid-template-columns: 1fr; } .params-strip-item { border-left: none; border-top: 1px solid rgba(26,46,38,0.06); } .params-strip-item:first-child { border-top: none; } }
+
+
 /* ── Inner page sections ── */
 .section { padding: 80px 64px; }
 .section.off { background: var(--off); }
