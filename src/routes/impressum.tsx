@@ -33,7 +33,7 @@ function ImpressumPage() {
           <em>Impressum</em>
         </h1>
         <p className="page-hero-sub">
-          Angaben gemäß § 5 TMG und § 55 Abs. 2 RStV.
+          Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz) und § 18 Abs. 2 MStV.
         </p>
       </section>
 
