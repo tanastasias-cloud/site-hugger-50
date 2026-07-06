@@ -8,13 +8,13 @@ export const Route = createFileRoute("/impressum")({
       {
         name: "description",
         content:
-          "Impressum der GetGrow Academy GmbH, Berlin. Angaben nach § 5 TMG und § 55 RStV.",
+          "Impressum der GetGrow Academy GmbH, Berlin. Angaben nach § 5 DDG und § 18 Abs. 2 MStV.",
       },
       { property: "og:title", content: "Impressum — GetGrow Academy Berlin" },
       {
         property: "og:description",
         content:
-          "Impressum der GetGrow Academy GmbH, Berlin. Angaben nach § 5 TMG und § 55 RStV.",
+          "Impressum der GetGrow Academy GmbH, Berlin. Angaben nach § 5 DDG und § 18 Abs. 2 MStV.",
       },
       { property: "og:type", content: "website" },
     ],
