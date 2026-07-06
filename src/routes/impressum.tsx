@@ -8,13 +8,13 @@ export const Route = createFileRoute("/impressum")({
       {
         name: "description",
         content:
-          "Impressum der GetGrow Academy GmbH, Berlin. Angaben nach § 5 TMG und § 55 RStV.",
+          "Impressum der GetGrow Academy GmbH, Berlin. Angaben nach § 5 DDG und § 18 Abs. 2 MStV.",
       },
       { property: "og:title", content: "Impressum — GetGrow Academy Berlin" },
       {
         property: "og:description",
         content:
-          "Impressum der GetGrow Academy GmbH, Berlin. Angaben nach § 5 TMG und § 55 RStV.",
+          "Impressum der GetGrow Academy GmbH, Berlin. Angaben nach § 5 DDG und § 18 Abs. 2 MStV.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -33,7 +33,7 @@ function ImpressumPage() {
           <em>Impressum</em>
         </h1>
         <p className="page-hero-sub">
-          Angaben gemäß § 5 TMG und § 55 Abs. 2 RStV.
+          Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz) und § 18 Abs. 2 MStV.
         </p>
       </section>
 
@@ -48,6 +48,8 @@ function ImpressumPage() {
             <div className="impressum-item">
               <span className="info-label">Adresse</span>
               <span className="info-value">
+                c/o Mindspace
+                <br />
                 Krausenstraße 9/10
                 <br />
                 10117 Berlin
@@ -72,31 +74,29 @@ function ImpressumPage() {
           <div className="impressum-block">
             <div className="info-tag">Vertretung</div>
             <div className="impressum-item">
-              <span className="info-label">Geschäftsführer</span>
-              <span className="info-value">ZAIENCHYK YULIIA</span>
+              <span className="info-label">Geschäftsführerin</span>
+              <span className="info-value">Zaienchyk, Yuliia</span>
             </div>
             <div className="impressum-item">
-              <span className="info-label">Handelsregister</span>
-              <span className="info-value">
-                In Registrierung — Angaben werden nach Eintragung ergänzt.
-              </span>
+              <span className="info-label">Registergericht</span>
+              <span className="info-value">Amtsgericht Charlottenburg</span>
             </div>
             <div className="impressum-item">
-              <span className="info-label">USt-IdNr.</span>
-              <span className="info-value">
-                Wird nach Erteilung durch das Finanzamt ergänzt.
-              </span>
+              <span className="info-label">Registernummer</span>
+              <span className="info-value">HRB 288987 B</span>
             </div>
           </div>
 
           <div className="impressum-block">
             <div className="info-tag">Inhaltlich verantwortlich</div>
             <p className="impressum-text">
-              ZAIENCHYK YULIIA
+              Verantwortlich gemäß § 18 Abs. 2 MStV:
+              <br />
+              Yuliia Zaienchyk
               <br />
               GetGrow Academy GmbH
               <br />
-              Krausenstraße 9/10, 10117 Berlin
+              c/o Mindspace, Krausenstraße 9/10, 10117 Berlin
             </p>
           </div>
 
@@ -105,8 +105,8 @@ function ImpressumPage() {
             <p className="impressum-text">
               Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
               Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
-              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
-              nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten
+              nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als
               Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
               Informationen zu überwachen oder nach Umständen zu forschen, die auf eine
               rechtswidrige Tätigkeit hinweisen.
