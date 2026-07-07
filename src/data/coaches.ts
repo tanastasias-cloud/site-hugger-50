@@ -2,6 +2,8 @@ import yuliiaAsset from "@/assets/yuliia-zaienchyk.jpg.asset.json";
 import alenaAsset from "@/assets/alena-yurpalova.jpg.asset.json";
 import zoyaAsset from "@/assets/zoya-skobeltsyna.jpg.asset.json";
 import alinaAsset from "@/assets/alina-orlanski.jpg.asset.json";
+import olhaAsset from "@/assets/olha-shanta-hladun.jpg.asset.json";
+import eugenieAsset from "@/assets/eugenie-kralyuk.jpg.asset.json";
 
 // Coach-Profile — neue Coaches einfach hier hinzufügen.
 // Jeder Eintrag erscheint automatisch auf /coaches.
@@ -10,7 +12,7 @@ export type Coach = {
   slug: string;
   name: string;
   role: string;
-  photo?: string; // URL oder Pfad. Wenn leer → Platzhalter mit Initialen.
+  photo?: string;
   languages: { flag: string; label: string }[];
   bio: string[];
   credentials: { type: string; text: string; sub: string }[];
@@ -26,7 +28,6 @@ export type TeamMember = {
   bio: string;
 };
 
-// Aktive Coaches — Profile mit voller Bio, Qualifikationen, Expertise.
 export const coaches: Coach[] = [
   {
     slug: "yuliia-zaienchyk",
@@ -64,6 +65,7 @@ export const coaches: Coach[] = [
     slug: "olha-shanta-hladun",
     name: "Olha Shanta-Hladun",
     role: "Job- & Business-Coach · Leadership · Persönlichkeitsentwicklung",
+    photo: olhaAsset.url,
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇷🇺", label: "Russisch" },
@@ -157,23 +159,70 @@ export const coaches: Coach[] = [
   {
     slug: "alina-orlanski",
     name: "Alina Orlanski",
-    role: "Coach · Profil folgt in Kürze",
+    role: "Job-Coach · Karriereberaterin · Expertin für Existenzgründung",
     photo: alinaAsset.url,
-    languages: [],
-    bio: [
-      "Vollständiges Profil mit Qualifikationen und Schwerpunkten folgt in Kürze.",
+    languages: [
+      { flag: "🇷🇺", label: "Russisch" },
+      { flag: "🇺🇦", label: "Ukrainisch" },
+      { flag: "🇩🇪", label: "Deutsch" },
     ],
-    credentials: [],
-    expertise: [],
+    bio: [
+      "Ich habe einen Bachelor of Science in BWL und Recht der Wirtschaft und bilde mich regelmäßig weiter — zu Themen wie Integration von Migrant:innen, Sozialrecht (SGB), Besonderheiten des deutschen Arbeitsmarkts und Zusammenarbeit mit Behörden. Mein Wissen basiert nicht nur auf Ausbildung, sondern auf langjähriger Praxis mit Menschen und eigener unternehmerischer Erfahrung.",
+      "Seit mehreren Jahren begleite ich Menschen mit Migrationshintergrund auf ihrem Weg in den deutschen Arbeitsmarkt. Im AVGS-Coaching helfe ich, die berufliche Richtung zu klären, eine wirksame Bewerbungsstrategie zu entwickeln, moderne Bewerbungsunterlagen zu erstellen und Vorstellungsgespräche souverän zu meistern. Ich führe auch Trainingsinterviews durch und bereite Klient:innen anderer Coaches auf entscheidende Schritte im Bewerbungsprozess vor.",
+      "Neben dem Coaching bin ich Mitgründerin und Geschäftsführerin der yaLASHes GmbH. Über die Jahre habe ich rund 100 Menschen bei der Gründung ihres eigenen Unternehmens in Deutschland begleitet — von der Idee bis zur Anmeldung, Rechtsform, Steuern und den ersten Schritten in der Selbstständigkeit. Dadurch begleite ich meine Klient:innen sowohl in Anstellung als auch in die Selbstständigkeit — praktisch, nicht theoretisch.",
+    ],
+    credentials: [
+      { type: "Bachelor", text: "BWL und Recht der Wirtschaft (B.Sc.)", sub: "" },
+      { type: "Weiterbildung", text: "Integration, Sozialrecht (SGB), deutscher Arbeitsmarkt", sub: "laufende Fortbildung" },
+      { type: "Erfahrung", text: "AVGS-Coaching & Bewerbungstraining", sub: "mehrjährige Praxis mit Migrant:innen" },
+      { type: "Praxis", text: "Mitgründerin & Geschäftsführerin yaLASHes GmbH", sub: "~100 begleitete Existenzgründungen in Deutschland" },
+    ],
+    expertise: [
+      "Berufliche Orientierung & Wechsel der Branche",
+      "Bewerbungsstrategie & moderne Unterlagen",
+      "Vorstellungsgespräche & Trainingsinterviews",
+      "Selbstpräsentation & Selbstvertrauen",
+      "Existenzgründung in Deutschland: Rechtsform, Steuern, erste Schritte",
+      "Ziele setzen & konkrete Handlungspläne",
+    ],
+  },
+  {
+    slug: "eugenie-kralyuk",
+    name: "Eugenie Kralyuk",
+    role: "Systemischer Coach · HR-Expertin · Job-Coach",
+    photo: eugenieAsset.url,
+    languages: [
+      { flag: "🇺🇦", label: "Ukrainisch" },
+      { flag: "🇩🇪", label: "Deutsch" },
+      { flag: "🇷🇺", label: "Russisch" },
+      { flag: "🇵🇱", label: "Polnisch" },
+      { flag: "🇬🇧", label: "Englisch" },
+    ],
+    bio: [
+      "Ich bin systemische Coach, HR-Expertin und Job-Coach. Master in Kulturwissenschaften an der Universität Leipzig, Bachelor in Politikwissenschaft / Internationale Beziehungen (Leipzig und Warschau). Zusätzlich Ausbildungen in systemischem Coaching, Corporate Social Responsibility, strategischem Umweltmanagement sowie im Umgang mit Stress und psychischem Trauma.",
+      "Nach dem Studium habe ich über zehn Jahre internationale Projekte in deutschen Forschungsinstituten und der Deutsch-Ukrainischen Industrie- und Handelskammer geleitet — Kooperationen zwischen deutschen und ukrainischen Unternehmen in Energie, Automobil, Recruiting und Bildung.",
+      "Seit über fünf Jahren arbeite ich in HR, Recruiting und Job-Coaching. Mein Schwerpunkt ist die Begleitung von Menschen mit Migrationserfahrung, ukrainischen Geflüchteten und internationalen Fachkräften, die sich in Deutschland beruflich neu aufstellen — sowie deutschen Fachkräften in beruflicher Umorientierung. Ich begleite meine Klient:innen von den ersten Zweifeln bis zur erfolgreichen beruflichen Realisierung.",
+    ],
+    credentials: [
+      { type: "Master", text: "Kulturwissenschaften", sub: "Universität Leipzig" },
+      { type: "Bachelor", text: "Politikwissenschaft / Internationale Beziehungen", sub: "Leipzig & Warschau" },
+      { type: "Zertifikat", text: "Systemisches Coaching", sub: "" },
+      { type: "Weiterbildung", text: "CSR, strategisches Umweltmanagement, Stress & Trauma", sub: "" },
+      { type: "Erfahrung", text: "10+ Jahre internationales Projektmanagement", sub: "Deutsche Forschungsinstitute · Deutsch-Ukrainische IHK" },
+      { type: "Erfahrung", text: "5+ Jahre HR, Recruiting & Job-Coaching", sub: "Schwerpunkt Migrant:innen & internationale Fachkräfte" },
+    ],
+    expertise: [
+      "Berufliche Orientierung & Karrierestrategie",
+      "Jobsuche & Bewerbungsprozess in Deutschland",
+      "Stärken erkennen & individuelle Positionierung",
+      "Begleitung bei Migration & beruflichem Neustart",
+      "HR- & Recruiting-Perspektive im Coaching",
+      "Umgang mit Stress und Belastung",
+    ],
   },
 ];
 
 // Platzhalter für Coaches, deren Profil noch ergänzt wird.
-// Sobald Foto & Beschreibung vorliegen, Eintrag nach `coaches` verschieben.
-export const coachPlaceholders: Coach[] = [
-  { slug: "coach-6", name: "Coach 6", role: "Bald verfügbar", languages: [], bio: [], credentials: [], expertise: [], isPlaceholder: true },
-  { slug: "coach-7", name: "Coach 7", role: "Bald verfügbar", languages: [], bio: [], credentials: [], expertise: [], isPlaceholder: true },
-];
+export const coachPlaceholders: Coach[] = [];
 
-// Team / Backoffice — keine Coaching-Sessions, aber Teil von GetGrow.
 export const team: TeamMember[] = [];
