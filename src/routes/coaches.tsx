@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
-import { coaches, coachPlaceholders, team, type Coach } from "@/data/coaches";
+import { coaches, coachPlaceholders, type Coach } from "@/data/coaches";
 
 export const Route = createFileRoute("/coaches")({
   head: () => ({
@@ -17,89 +17,56 @@ export const Route = createFileRoute("/coaches")({
 });
 
 function initials(name: string) {
-  return name
-    .split(" ")
-    .map((p) => p[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
+  return name.split(" ").map((p) => p[0]).slice(0, 2).join("").toUpperCase();
 }
 
-function CoachCard({ coach }: { coach: Coach }) {
+function CoachMiniCard({ coach }: { coach: Coach }) {
   return (
-    <article className="coach-card">
-      <div className="coach-photo-col">
+    <Link
+      to="/coaches/$slug"
+      params={{ slug: coach.slug }}
+      className="coach-mini"
+    >
+      <div className="coach-mini-photo-wrap">
         {coach.photo ? (
           <object
             data={coach.photo}
             type="image/jpeg"
             aria-label={coach.name}
-            className="coach-photo"
+            className="coach-mini-photo"
           >
-            <div className="coach-photo-fallback">{initials(coach.name)}</div>
+            <div className="coach-mini-fallback">{initials(coach.name)}</div>
           </object>
         ) : (
-          <div className="coach-photo-placeholder">{initials(coach.name)}</div>
+          <div className="coach-mini-fallback">{initials(coach.name)}</div>
         )}
-        <div className="coach-langs">
+      </div>
+      <div className="coach-mini-body">
+        <div className="coach-mini-name">{coach.name}</div>
+        <div className="coach-mini-role">{coach.role}</div>
+        <div className="coach-mini-langs">
           {coach.languages.map((l) => (
-            <span className="lang-tag" key={l.label}>
-              {l.flag} {l.label}
-            </span>
+            <span key={l.label} title={l.label}>{l.flag}</span>
           ))}
         </div>
+        <span className="coach-mini-cta">Profil ansehen →</span>
       </div>
-
-      <div className="coach-content">
-        <div>
-          <div className="coach-name">{coach.name}</div>
-          <div className="coach-role">{coach.role}</div>
-        </div>
-
-        <div className="coach-bio">
-          {coach.bio.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </div>
-
-        <div className="coach-creds">
-          <div className="creds-title">Ausbildung & Qualifikationen</div>
-          {coach.credentials.map((c) => (
-            <div className="cred-item" key={c.text}>
-              <div className="cred-type">{c.type}</div>
-              <div>
-                <div className="cred-text">{c.text}</div>
-                <div className="cred-sub">{c.sub}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div>
-          <div className="exp-title">Schwerpunkte</div>
-          <div className="exp-grid">
-            {coach.expertise.map((e) => (
-              <div className="exp-item" key={e}>
-                {e}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </article>
+    </Link>
   );
 }
 
-function PlaceholderCoachCard({ coach }: { coach: Coach }) {
+function PlaceholderMiniCard({ coach }: { coach: Coach }) {
   return (
-    <article className="placeholder-coach-card">
-      <div className="placeholder-photo">{initials(coach.name)}</div>
-      <div className="placeholder-content">
-        <div className="placeholder-tag">Bald verfügbar</div>
-        <div className="placeholder-name">{coach.name}</div>
-        <p className="placeholder-text">Details zu diesem Coach folgen in Kürze.</p>
+    <div className="coach-mini coach-mini-placeholder">
+      <div className="coach-mini-photo-wrap">
+        <div className="coach-mini-fallback">{initials(coach.name)}</div>
       </div>
-    </article>
+      <div className="coach-mini-body">
+        <div className="placeholder-tag">Bald verfügbar</div>
+        <div className="coach-mini-name">{coach.name}</div>
+        <p className="placeholder-text">Details folgen in Kürze.</p>
+      </div>
+    </div>
   );
 }
 
@@ -121,35 +88,16 @@ function CoachesPage() {
       </section>
 
       <section className="coaches-section">
-        {coaches.map((c) => (
-          <CoachCard key={c.slug} coach={c} />
-        ))}
-
-        <div className="coaches-placeholder-grid" aria-label="Weitere Coaches folgen">
+        <div className="coach-grid">
+          {coaches.map((c) => (
+            <CoachMiniCard key={c.slug} coach={c} />
+          ))}
           {coachPlaceholders.map((c) => (
-            <PlaceholderCoachCard key={c.slug} coach={c} />
+            <PlaceholderMiniCard key={c.slug} coach={c} />
           ))}
         </div>
 
-        {team.length > 0 && (
-          <div className="team-section">
-            <div className="team-heading">Hinter den Kulissen</div>
-            <div className="team-grid">
-              {team.map((m) => (
-                <div className="team-card" key={m.slug}>
-                  <div className="team-avatar">{initials(m.name)}</div>
-                  <div>
-                    <div className="team-name">{m.name}</div>
-                    <div className="team-role">{m.role}</div>
-                    <p className="team-bio">{m.bio}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div className="coach-join">
+        <div className="coach-join" style={{ marginTop: 80 }}>
           <div className="join-tag">Coach werden</div>
           <h3>Du bist Coach und möchtest mit uns arbeiten?</h3>
           <p>

@@ -161,7 +161,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* COACH INTRO */}
+      {/* FOUNDER MESSAGE */}
       <section className="gg-coach-intro">
         <div className="coach-intro-grid">
           <object
@@ -173,29 +173,34 @@ function HomePage() {
             <span>Foto · Yuliia</span>
           </object>
           <div>
-            <div className="coach-intro-tag">Ihre Coach</div>
+            <div className="coach-intro-tag">Gründerin · GetGrow Academy</div>
             <div className="coach-intro-name">Yuliia Zaienchyk</div>
             <div className="coach-intro-role">
-              Career Coach · M.Sc. Angewandte Psychologie · Berlin seit 2015
+              Mitgründerin · Psychologin · Job-Coach · Berlin seit 2015
             </div>
             <p className="coach-intro-bio">
-              Ich bin zertifizierte Karriere-Coach mit Master in Angewandter
-              Psychologie und sechs Jahren Praxis. Ich arbeite an der
-              Schnittstelle von Psychologie und Coaching — weil die meisten
-              beruflichen Themen nicht beim Lebenslauf beginnen.
+              „Ich habe GetGrow Academy gegründet, weil ich selbst weiß, wie es
+              ist, in Deutschland neu anzufangen. Ich weiß, wie viel Kraft es
+              kostet — und wie viel möglich wird, wenn man den richtigen
+              Menschen an seiner Seite hat.
             </p>
             <p className="coach-intro-bio">
-              Ich lebe seit 2015 in Berlin und kenne dieses System aus eigener
-              Erfahrung. Ich weiß, wie man hier ankommt — und wie man bleibt.
+              Bei uns bekommen Sie kein Standard-Coaching und keine leeren
+              Versprechen. Sie bekommen ein Team aus Coaches, die den deutschen
+              Arbeitsmarkt kennen, Ihre Sprache sprechen und Ihre Situation
+              verstehen — weil viele von uns diesen Weg selbst gegangen sind.
             </p>
-            <div className="coach-intro-tags">
-              <span>🇩🇪 Deutsch B2</span>
-              <span>🇬🇧 Englisch C1</span>
-              <span>🇺🇦 Ukrainisch</span>
-              <span>🇷🇺 Russisch</span>
-            </div>
-            <Link to="/coaches" className="coach-intro-link">
-              Vollständiges Profil →
+            <p className="coach-intro-bio">
+              Egal ob Sie beruflich neu ansetzen, sich selbstständig machen
+              oder als Unternehmen mit uns arbeiten möchten: Wir hören zu, wir
+              denken mit, und wir bringen Sie einen echten Schritt weiter."
+            </p>
+            <Link
+              to="/coaches/$slug"
+              params={{ slug: "yuliia-zaienchyk" }}
+              className="coach-intro-link"
+            >
+              Mehr über Yuliia →
             </Link>
           </div>
         </div>
