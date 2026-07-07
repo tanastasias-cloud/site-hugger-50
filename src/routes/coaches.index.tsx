@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { coaches, coachPlaceholders, type Coach } from "@/data/coaches";
 
-export const Route = createFileRoute("/coaches")({
+export const Route = createFileRoute("/coaches/")({
   head: () => ({
     meta: [
       { title: "Coaches — GetGrow Academy Berlin" },
