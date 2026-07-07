@@ -19,6 +19,7 @@ import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as AvgsCoachingRouteImport } from './routes/avgs-coaching'
 import { Route as R16kCoachingRouteImport } from './routes/16k-coaching'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CoachesIndexRouteImport } from './routes/coaches.index'
 import { Route as CoachesSlugRouteImport } from './routes/coaches.$slug'
 import { Route as ApiPublicContactRouteImport } from './routes/api/public/contact'
 
@@ -72,6 +73,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CoachesIndexRoute = CoachesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CoachesRoute,
+} as any)
 const CoachesSlugRoute = CoachesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -95,13 +101,13 @@ export interface FileRoutesByFullPath {
   '/referenzen': typeof ReferenzenRoute
   '/unternehmen': typeof UnternehmenRoute
   '/coaches/$slug': typeof CoachesSlugRoute
+  '/coaches/': typeof CoachesIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/16k-coaching': typeof R16kCoachingRoute
   '/avgs-coaching': typeof AvgsCoachingRoute
-  '/coaches': typeof CoachesRouteWithChildren
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
@@ -109,6 +115,7 @@ export interface FileRoutesByTo {
   '/referenzen': typeof ReferenzenRoute
   '/unternehmen': typeof UnternehmenRoute
   '/coaches/$slug': typeof CoachesSlugRoute
+  '/coaches': typeof CoachesIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
 }
 export interface FileRoutesById {
@@ -124,6 +131,7 @@ export interface FileRoutesById {
   '/referenzen': typeof ReferenzenRoute
   '/unternehmen': typeof UnternehmenRoute
   '/coaches/$slug': typeof CoachesSlugRoute
+  '/coaches/': typeof CoachesIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
 }
 export interface FileRouteTypes {
@@ -140,13 +148,13 @@ export interface FileRouteTypes {
     | '/referenzen'
     | '/unternehmen'
     | '/coaches/$slug'
+    | '/coaches/'
     | '/api/public/contact'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/16k-coaching'
     | '/avgs-coaching'
-    | '/coaches'
     | '/datenschutz'
     | '/impressum'
     | '/kontakt'
@@ -154,6 +162,7 @@ export interface FileRouteTypes {
     | '/referenzen'
     | '/unternehmen'
     | '/coaches/$slug'
+    | '/coaches'
     | '/api/public/contact'
   id:
     | '__root__'
@@ -168,6 +177,7 @@ export interface FileRouteTypes {
     | '/referenzen'
     | '/unternehmen'
     | '/coaches/$slug'
+    | '/coaches/'
     | '/api/public/contact'
   fileRoutesById: FileRoutesById
 }
@@ -257,6 +267,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/coaches/': {
+      id: '/coaches/'
+      path: '/'
+      fullPath: '/coaches/'
+      preLoaderRoute: typeof CoachesIndexRouteImport
+      parentRoute: typeof CoachesRoute
+    }
     '/coaches/$slug': {
       id: '/coaches/$slug'
       path: '/$slug'
@@ -276,10 +293,12 @@ declare module '@tanstack/react-router' {
 
 interface CoachesRouteChildren {
   CoachesSlugRoute: typeof CoachesSlugRoute
+  CoachesIndexRoute: typeof CoachesIndexRoute
 }
 
 const CoachesRouteChildren: CoachesRouteChildren = {
   CoachesSlugRoute: CoachesSlugRoute,
+  CoachesIndexRoute: CoachesIndexRoute,
 }
 
 const CoachesRouteWithChildren =
