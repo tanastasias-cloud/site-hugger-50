@@ -358,7 +358,7 @@
 /* ── Coach intro on home ── */
 .gg-coach-intro { background: #fafafa; padding: 80px 64px; }
 .coach-intro-grid { display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: center; max-width: 980px; margin: 0 auto; }
-.coach-intro-photo { width: 100%; aspect-ratio: 3/4; background: linear-gradient(160deg, #dde8e4, #c4d8d0); display: flex; align-items: center; justify-content: center; color: #a0b8b0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+.coach-intro-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; background: linear-gradient(160deg, #dde8e4, #c4d8d0); }
 .coach-intro-tag { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
 .coach-intro-tag::before { content: ''; width: 20px; height: 1px; background: var(--green); }
 .coach-intro-name { font-family: 'Tenor Sans', sans-serif; font-size: 32px; color: var(--forest); letter-spacing: 1px; margin-bottom: 6px; }

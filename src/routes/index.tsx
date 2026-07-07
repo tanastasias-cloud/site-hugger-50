@@ -164,14 +164,11 @@ function HomePage() {
       {/* FOUNDER MESSAGE */}
       <section className="gg-coach-intro">
         <div className="coach-intro-grid">
-          <object
-            data={yuliiaAsset.url}
-            type="image/jpeg"
-            aria-label="Yuliia Zaienchyk"
+          <img
+            src={yuliiaAsset.url}
+            alt="Yuliia Zaienchyk"
             className="coach-intro-photo"
-          >
-            <span>Foto · Yuliia</span>
-          </object>
+          />
           <div>
             <div className="coach-intro-tag">Gründerin · GetGrow Academy</div>
             <div className="coach-intro-name">Yuliia Zaienchyk</div>
