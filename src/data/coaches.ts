@@ -259,6 +259,39 @@ export const coaches: Coach[] = [
       "Umgang mit Stress und Belastung",
     ],
   },
+  {
+    slug: "nataliia-skliar",
+    name: "Nataliia Skliar",
+    role: "Diplom-Psychologin · Job-Coach · Eco-Facilitator",
+    photo: nataliiaAsset.url,
+    languages: [
+      { flag: "🇺🇦", label: "Ukrainisch" },
+      { flag: "🇷🇺", label: "Russisch" },
+      { flag: "🇩🇪", label: "Deutsch" },
+    ],
+    bio: [
+      "Ich bin Diplom-Psychologin (Nationale Universität Odesa I. I. Metschnikow) mit kontinuierlicher Fort- und Weiterbildung im Bereich Coaching, u. a. als Eco-Facilitator. Seit 2022 als Coachin tätig für über 50 Klientinnen mit mehr als 400 Coaching-Stunden — überwiegend im Rahmen von AVGS-finanzierten Maßnahmen, in Zusammenarbeit mit fünf Bildungsträgern.",
+      "Parallel arbeite ich als Psychologin in einem Jugendprojekt (§ 16h SGB II, Förderung schwer erreichbarer junger Menschen, 16–25 Jahre) sowie in Workshops und Netzwerktreffen für Migrantinnen. Diese Kombination aus psychologischer, gruppenbezogener und individueller Praxis prägt meinen Coaching-Ansatz.",
+      "Mein Fokus im Coaching: Frauen mit Migrationshintergrund auf ihrem Weg in den deutschen Arbeitsmarkt — von der Anerkennung des Diploms über professionelle Bewerbungsunterlagen bis zum ersten Arbeitstag. Beratung auf Ukrainisch, Russisch und Deutsch, im Hybrid-Format (online und vor Ort).",
+    ],
+    credentials: [
+      { type: "Diplom", text: "Psychologie", sub: "Nationale Universität Odesa I. I. Metschnikow" },
+      { type: "Weiterbildung", text: "Eco-Facilitator & Coaching", sub: "kontinuierliche Fort- und Weiterbildung" },
+      { type: "Erfahrung", text: "400+ Coaching-Stunden · 50+ Klientinnen", sub: "seit 2022, AVGS mit 5 Bildungsträgern" },
+      { type: "Praxis", text: "Psychologin im Jugendprojekt (§ 16h SGB II)", sub: "Förderung schwer erreichbarer junger Menschen, 16–25 Jahre" },
+      { type: "Praxis", text: "Workshops & Netzwerktreffen für Migrantinnen", sub: "" },
+    ],
+    expertise: [
+      "Bewerbungsstrategie & Unterlagen nach deutschem Standard",
+      "Diplomanerkennung & Vorbereitung auf Vorstellungsgespräche",
+      "Arbeitsmarktanalyse & Auswahl passender Weiterbildungen",
+      "Standortbestimmung bei nicht-linearen Lebensläufen",
+      "Resilienz & Selbstvertrauen in Übergangsphasen",
+      "Netzwerkstrategie & Sichtbarkeit auf LinkedIn",
+      "Digitale Kompetenz: Canva, LinkedIn, KI-Tools",
+      "Interkulturelle Kompetenz & Gewaltfreie Kommunikation",
+    ],
+  },
 ];
 
 // Platzhalter für Coaches, deren Profil noch ergänzt wird.
