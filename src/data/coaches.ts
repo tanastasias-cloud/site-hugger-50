@@ -35,6 +35,7 @@ export const coaches: Coach[] = [
     slug: "yuliia-zaienchyk",
     name: "Yuliia Zaienchyk",
     role: "Mitgründerin · Psychologin · Job-Coach · Berlin seit 2015",
+    isFounder: true,
     photo: yuliiaAsset.url,
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
