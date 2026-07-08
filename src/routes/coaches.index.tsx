@@ -87,10 +87,16 @@ function CoachesPage() {
           Unser <em>Team</em>
         </h1>
         <p className="page-hero-sub">
-          Zertifizierte Coaches mit eigener Migrationserfahrung — die nicht nur den deutschen
-          Arbeitsmarkt verstehen, sondern auch, was es wirklich braucht, sich beruflich in einem
-          neuen Land neu aufzustellen.
+          Zertifizierte Coaches mit eigener Migrationserfahrung — die den deutschen Arbeitsmarkt
+          verstehen und wissen, was es wirklich braucht, sich beruflich in einem neuen Land neu
+          aufzustellen.
         </p>
+        <div className="coaches-stats">
+          <div className="coaches-stat"><strong>{coaches.length}</strong><span>Zertifizierte Coaches</span></div>
+          <div className="coaches-stat"><strong>3 000+</strong><span>Coaching-Stunden</span></div>
+          <div className="coaches-stat"><strong>5</strong><span>Arbeitssprachen</span></div>
+          <div className="coaches-stat"><strong>AVGS</strong><span>anerkannter Träger</span></div>
+        </div>
       </section>
 
       <section className="coaches-section">
