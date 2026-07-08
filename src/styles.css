@@ -533,6 +533,11 @@
 
 /* ── Coaches page ── */
 .coaches-section { padding: 48px 64px 80px; background: white; }
+.coaches-stats { display: flex; flex-wrap: wrap; gap: 48px; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(26,46,38,0.1); }
+.coaches-stat { display: flex; flex-direction: column; gap: 4px; }
+.coaches-stat strong { font-family: 'Tenor Sans', sans-serif; font-size: 28px; color: var(--forest); font-weight: 400; letter-spacing: 0.5px; }
+.coaches-stat span { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); }
+@media (max-width: 640px) { .coaches-stats { gap: 24px; } .coaches-stat strong { font-size: 22px; } }
 .coach-card { display: grid; grid-template-columns: 340px 1fr; gap: 72px; align-items: start; padding-bottom: 80px; border-bottom: 1px solid #f0f0f0; margin-bottom: 80px; }
 .coach-card:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 .coach-photo-col { display: flex; flex-direction: column; gap: 20px; }
