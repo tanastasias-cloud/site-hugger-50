@@ -25,7 +25,7 @@ function CoachMiniCard({ coach }: { coach: Coach }) {
     <Link
       to="/coaches/$slug"
       params={{ slug: coach.slug }}
-      className="coach-mini"
+      className={`coach-mini ${coach.isFounder ? "coach-mini-founder" : ""}`}
     >
       <div className="coach-mini-photo-wrap">
         {coach.photo ? (
@@ -42,6 +42,9 @@ function CoachMiniCard({ coach }: { coach: Coach }) {
         )}
       </div>
       <div className="coach-mini-body">
+        {coach.isFounder && (
+          <div className="coach-mini-founder-badge">Mitgründerin</div>
+        )}
         <div className="coach-mini-name">{coach.name}</div>
         <div className="coach-mini-role">{coach.role}</div>
         <div className="coach-mini-langs">
