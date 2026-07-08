@@ -68,6 +68,7 @@ export const coaches: Coach[] = [
     slug: "anastasia-lunina",
     name: "Anastasia Lunina",
     role: "Mitgründerin · Business & Leadership · Organisationsentwicklung",
+    isFounder: true,
     photo: anastasiaAsset.url,
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
