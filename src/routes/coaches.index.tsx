@@ -25,7 +25,7 @@ function CoachMiniCard({ coach }: { coach: Coach }) {
     <Link
       to="/coaches/$slug"
       params={{ slug: coach.slug }}
-      className="coach-mini"
+      className={`coach-mini ${coach.isFounder ? "coach-mini-founder" : ""}`}
     >
       <div className="coach-mini-photo-wrap">
         {coach.photo ? (
@@ -42,6 +42,9 @@ function CoachMiniCard({ coach }: { coach: Coach }) {
         )}
       </div>
       <div className="coach-mini-body">
+        {coach.isFounder && (
+          <div className="coach-mini-founder-badge">Mitgründerin</div>
+        )}
         <div className="coach-mini-name">{coach.name}</div>
         <div className="coach-mini-role">{coach.role}</div>
         <div className="coach-mini-langs">
@@ -71,6 +74,9 @@ function PlaceholderMiniCard({ coach }: { coach: Coach }) {
 }
 
 function CoachesPage() {
+  const founders = coaches.filter((c) => c.isFounder);
+  const team = coaches.filter((c) => !c.isFounder);
+
   return (
     <SiteShell active="coaches">
       <section className="page-hero simple">
@@ -88,13 +94,31 @@ function CoachesPage() {
       </section>
 
       <section className="coaches-section">
-        <div className="coach-grid">
-          {coaches.map((c) => (
-            <CoachMiniCard key={c.slug} coach={c} />
-          ))}
-          {coachPlaceholders.map((c) => (
-            <PlaceholderMiniCard key={c.slug} coach={c} />
-          ))}
+        <div className="coach-group">
+          <div className="coach-group-head">
+            <div className="coach-group-tag">Gründerinnen</div>
+            <h2>Die Gründerinnen der Academy</h2>
+          </div>
+          <div className="coach-grid founder-grid">
+            {founders.map((c) => (
+              <CoachMiniCard key={c.slug} coach={c} />
+            ))}
+          </div>
+        </div>
+
+        <div className="coach-group">
+          <div className="coach-group-head">
+            <div className="coach-group-tag">Coaching-Team</div>
+            <h2>Unser erfahrenes Coaching-Team</h2>
+          </div>
+          <div className="coach-grid">
+            {team.map((c) => (
+              <CoachMiniCard key={c.slug} coach={c} />
+            ))}
+            {coachPlaceholders.map((c) => (
+              <PlaceholderMiniCard key={c.slug} coach={c} />
+            ))}
+          </div>
         </div>
 
         <div className="coach-join" style={{ marginTop: 80 }}>

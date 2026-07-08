@@ -18,6 +18,7 @@ export type Coach = {
   bio: string[];
   credentials: { type: string; text: string; sub: string }[];
   expertise: string[];
+  isFounder?: boolean;
   isPlaceholder?: boolean;
 };
 
@@ -34,6 +35,7 @@ export const coaches: Coach[] = [
     slug: "yuliia-zaienchyk",
     name: "Yuliia Zaienchyk",
     role: "Mitgründerin · Psychologin · Job-Coach · Berlin seit 2015",
+    isFounder: true,
     photo: yuliiaAsset.url,
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
@@ -66,6 +68,7 @@ export const coaches: Coach[] = [
     slug: "anastasia-lunina",
     name: "Anastasia Lunina",
     role: "Mitgründerin · Business & Leadership · Organisationsentwicklung",
+    isFounder: true,
     photo: anastasiaAsset.url,
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
