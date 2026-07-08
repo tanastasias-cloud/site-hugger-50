@@ -18,6 +18,7 @@ export type Coach = {
   bio: string[];
   credentials: { type: string; text: string; sub: string }[];
   expertise: string[];
+  isFounder?: boolean;
   isPlaceholder?: boolean;
 };
 
