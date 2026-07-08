@@ -1,4 +1,5 @@
 import yuliiaAsset from "@/assets/yuliia-zaienchyk.jpg.asset.json";
+import anastasiaAsset from "@/assets/anastasia-lunina.jpg.asset.json";
 import alenaAsset from "@/assets/alena-yurpalova.jpg.asset.json";
 import zoyaAsset from "@/assets/zoya-skobeltsyna.jpg.asset.json";
 import alinaAsset from "@/assets/alina-orlanski.jpg.asset.json";
