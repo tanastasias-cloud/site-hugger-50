@@ -5,6 +5,7 @@ import zoyaAsset from "@/assets/zoya-skobeltsyna.jpg.asset.json";
 import alinaAsset from "@/assets/alina-orlanski.jpg.asset.json";
 import olhaAsset from "@/assets/olha-shanta-hladun.jpg.asset.json";
 import eugenieAsset from "@/assets/eugenie-kralyuk.jpg.asset.json";
+import nataliiaAsset from "@/assets/nataliia-skliar.jpg.asset.json";
 
 // Coach-Profile — neue Coaches einfach hier hinzufügen.
 // Jeder Eintrag erscheint automatisch auf /coaches.
