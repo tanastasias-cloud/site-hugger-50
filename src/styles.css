@@ -661,7 +661,18 @@
 .coach-group-tag { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
 .coach-group-head h2 { font-family: 'Tenor Sans', sans-serif; font-size: clamp(26px, 3vw, 38px); color: var(--forest); letter-spacing: 0.5px; font-weight: 400; }
 
-.founder-grid { grid-template-columns: repeat(2, 1fr); }
+.founder-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 1100px; margin: 0 auto; }
+.founder-grid .coach-mini { flex-direction: row; }
+.founder-grid .coach-mini-photo-wrap { width: 200px; flex-shrink: 0; aspect-ratio: 4/5; }
+.founder-grid .coach-mini-body { padding: 24px 24px 24px 22px; }
+
+@media (max-width: 900px) {
+  .founder-grid { grid-template-columns: 1fr; max-width: 560px; }
+}
+@media (max-width: 520px) {
+  .founder-grid .coach-mini { flex-direction: column; }
+  .founder-grid .coach-mini-photo-wrap { width: 100%; }
+}
 
 .coach-contact-box {
   background: var(--sage, #f5f0e8);
