@@ -135,8 +135,6 @@ export const coaches: Coach[] = [
     photo: zoyaAsset.url,
     languages: [
       { flag: "🇷🇺", label: "Russisch" },
-      { flag: "🇺🇦", label: "Ukrainisch" },
-      { flag: "🇩🇪", label: "Deutsch" },
       { flag: "🇬🇧", label: "Englisch" },
     ],
     bio: [
