@@ -797,6 +797,21 @@
   .impressum-h3 { font-size: 17px; }
 }
 
+.legal-content { max-width: 780px; margin: 0 auto; padding: 0 24px 96px; color: #444; font-size: 15px; line-height: 1.85; }
+.legal-content h2 { font-family: "Tenor Sans", serif; font-size: 24px; color: var(--forest); margin: 56px 0 20px; letter-spacing: 0.5px; }
+.legal-content h3 { font-family: "Tenor Sans", serif; font-size: 17px; color: var(--forest); margin: 32px 0 12px; }
+.legal-content p { margin: 0 0 16px; }
+.legal-content a { color: var(--green); border-bottom: 1px solid currentColor; text-decoration: none; word-break: break-word; }
+.legal-content a:hover { color: var(--forest); }
+.legal-content strong { color: var(--forest); font-weight: 600; }
+.legal-updated { margin-top: 56px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gg-muted); }
+@media (max-width: 720px) {
+  .legal-content { font-size: 14px; padding-bottom: 64px; }
+  .legal-content h2 { font-size: 20px; margin-top: 40px; }
+  .legal-content h3 { font-size: 16px; }
+}
+
+
 
 .ref-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--gg-muted); }
 .ref-date, .ref-lang { font-size: 12px; }
