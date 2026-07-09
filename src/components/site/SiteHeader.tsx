@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import logoAsset from "@/assets/logo.png.asset.json";
-import { SUPPORTED_LANGS, type Lang } from "@/i18n";
+import { SUPPORTED_LANGS, LANG_STORAGE_KEY, type Lang } from "@/i18n";
 
 
 type ActiveKey =
