@@ -166,7 +166,6 @@ export const coaches: Coach[] = [
     photo: alenaAsset.url,
     languages: [
       { flag: "🇷🇺", label: "Russisch" },
-      { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇩🇪", label: "Deutsch" },
     ],
     bio: [
