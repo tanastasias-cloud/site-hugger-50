@@ -490,6 +490,12 @@
 .section.off { background: var(--off); }
 .section.white { background: white; }
 .section.sage { background: var(--sage); }
+.section.forest { background: var(--forest); }
+.section.forest .sh-tag { color: var(--mint); }
+.section.forest .sh-h2 { color: white; }
+.section.forest .sh-h2 em { color: var(--mint); }
+.sh.light .sh-h2 { color: white; }
+.sh.light .sh-tag { color: var(--mint); }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 
 /* ── Steps (AVGS) ── */
