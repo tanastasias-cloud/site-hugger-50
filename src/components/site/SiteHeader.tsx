@@ -44,6 +44,11 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
   }, []);
 
   const changeLang = (lng: Lang) => {
+    try {
+      window.localStorage.setItem(LANG_STORAGE_KEY, lng);
+    } catch {
+      /* ignore */
+    }
     void i18n.changeLanguage(lng);
     setLangOpen(false);
   };
