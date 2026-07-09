@@ -72,9 +72,7 @@ export const coaches: Coach[] = [
     isFounder: true,
     photo: anastasiaAsset.url,
     languages: [
-      { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇷🇺", label: "Russisch" },
-      { flag: "🇩🇪", label: "Deutsch" },
       { flag: "🇬🇧", label: "Englisch" },
     ],
     bio: [
