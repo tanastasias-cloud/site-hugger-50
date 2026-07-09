@@ -164,7 +164,7 @@ function ContactPage() {
             <div className="form-check">
               <input type="checkbox" id="privacy" required />
               <label htmlFor="privacy">
-                Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der
+                Ich habe die <Link to="/datenschutz">Datenschutzerklärung</Link> gelesen und stimme der
                 Verarbeitung meiner personenbezogenen Daten gemäß DSGVO zu.
               </label>
             </div>

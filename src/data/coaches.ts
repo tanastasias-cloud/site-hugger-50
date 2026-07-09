@@ -72,9 +72,7 @@ export const coaches: Coach[] = [
     isFounder: true,
     photo: anastasiaAsset.url,
     languages: [
-      { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇷🇺", label: "Russisch" },
-      { flag: "🇩🇪", label: "Deutsch" },
       { flag: "🇬🇧", label: "Englisch" },
     ],
     bio: [
@@ -137,8 +135,6 @@ export const coaches: Coach[] = [
     photo: zoyaAsset.url,
     languages: [
       { flag: "🇷🇺", label: "Russisch" },
-      { flag: "🇺🇦", label: "Ukrainisch" },
-      { flag: "🇩🇪", label: "Deutsch" },
       { flag: "🇬🇧", label: "Englisch" },
     ],
     bio: [
@@ -170,7 +166,6 @@ export const coaches: Coach[] = [
     photo: alenaAsset.url,
     languages: [
       { flag: "🇷🇺", label: "Russisch" },
-      { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇩🇪", label: "Deutsch" },
     ],
     bio: [
@@ -204,6 +199,7 @@ export const coaches: Coach[] = [
       { flag: "🇷🇺", label: "Russisch" },
       { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇩🇪", label: "Deutsch" },
+      { flag: "🇬🇧", label: "Englisch" },
     ],
     bio: [
       "Ich habe einen Bachelor of Science in BWL und Recht der Wirtschaft und bilde mich regelmäßig weiter — zu Themen wie Integration von Migrant:innen, Sozialrecht (SGB), Besonderheiten des deutschen Arbeitsmarkts und Zusammenarbeit mit Behörden. Mein Wissen basiert nicht nur auf Ausbildung, sondern auf langjähriger Praxis mit Menschen und eigener unternehmerischer Erfahrung.",
