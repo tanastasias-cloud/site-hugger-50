@@ -278,6 +278,22 @@
 .gg-lang { display: flex; gap: 2px; background: #f4f4f4; border-radius: 20px; padding: 3px; }
 .gg-lang button { background: none; border: none; padding: 4px 10px; border-radius: 16px; font-size: 11px; letter-spacing: 1px; cursor: pointer; font-family: 'DM Sans', sans-serif; color: #888; transition: all 0.2s; }
 .gg-lang button.active { background: var(--forest); color: white; }
+
+/* Language dropdown (DE/EN/RU) */
+.gg-lang-dd { position: relative; padding: 0; background: transparent; border-radius: 0; }
+.gg-lang-trigger { display: inline-flex; align-items: center; gap: 4px; background: #f4f4f4; border: none; border-radius: 20px; padding: 6px 12px; font-size: 11px; letter-spacing: 1px; cursor: pointer; font-family: 'DM Sans', sans-serif; color: var(--forest); font-weight: 600; transition: background 0.2s; }
+.gg-lang-trigger:hover { background: #ebe6dc; }
+.gg-lang-trigger .arrow { font-size: 9px; opacity: 0.7; }
+.gg-lang-menu { position: absolute; top: calc(100% + 6px); right: 0; min-width: 96px; background: white; border: 1px solid #eee; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); padding: 4px; display: none; z-index: 100; }
+.gg-lang-dd.open .gg-lang-menu { display: block; }
+.gg-lang-item { display: block; width: 100%; text-align: left; background: none; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; letter-spacing: 1px; cursor: pointer; font-family: 'DM Sans', sans-serif; color: #666; transition: all 0.15s; }
+.gg-lang-item:hover { background: #f5f0e8; color: var(--forest); }
+.gg-lang-item.active { background: var(--forest); color: white; }
+
+/* Mobile language switch */
+.gg-mobile-lang { display: flex; gap: 8px; padding: 16px 24px; border-top: 1px solid #eee; margin-top: 8px; }
+.gg-mobile-lang-item { flex: 1; background: #f4f4f4; border: none; padding: 10px; border-radius: 8px; font-size: 12px; font-weight: 600; letter-spacing: 1px; color: #666; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+.gg-mobile-lang-item.active { background: var(--forest); color: white; }
 .gg-cta { background: var(--forest); color: white; padding: 10px 26px; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
 .gg-cta:hover { background: var(--green); }
 
