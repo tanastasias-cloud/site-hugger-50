@@ -142,6 +142,46 @@ function AvgsPage() {
         </div>
       </section>
 
+      <section className="section forest">
+        <div className="sh light">
+          <div className="sh-tag">Unser Vorteil</div>
+          <h2 className="sh-h2">
+            Direkte Kontakte zu <em>Unternehmen & HR</em>
+          </h2>
+        </div>
+        <p className="direct-lead">
+          Anders als reine Bewerbungsberatungen arbeiten wir eng mit Arbeitgebern und
+          Personalverantwortlichen zusammen. Das bedeutet für Sie: echte Stellen, direkte
+          Vermittlungswege und oft eine Verbindung, die Sie allein über Jobbörsen nicht
+          finden.
+        </p>
+        <div className="direct-grid">
+          {[
+            [
+              "hidden",
+              "Stellen, die noch nicht öffentlich sind",
+              "Wir bekommen Vakanzen direkt von Unternehmen und HR-Partnern — mitunter bevor sie überhaupt online ausgeschrieben werden.",
+            ],
+            [
+              "direct",
+              "Direkte Empfehlung statt anonyme Bewerbung",
+              "Wenn Ihr Profil passt, vermitteln wir Sie persönlich weiter. Ihre Bewerbung landet nicht im digitalen Nirwana, sondern bei der richtigen Person.",
+            ],
+            [
+              "match",
+              "Passgenauer, schneller Match",
+              "Weil wir die Unternehmen kennen, wissen wir, wen sie wirklich suchen — und was Sie konkret mitbringen müssen, um dort erfolgreich zu sein.",
+            ],
+          ].map(([icon, title, text]) => (
+            <div className="direct-card" key={title}>
+              <div className="direct-icon">{icon}</div>
+              <div className="direct-title">{title}</div>
+              <div className="direct-text">{text}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="section white">
         <div className="sh">
           <div className="sh-tag">Programm 01 · AVGS</div>
