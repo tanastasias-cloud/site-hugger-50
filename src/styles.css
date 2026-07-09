@@ -553,7 +553,7 @@
 .creds-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gg-muted); margin-bottom: 16px; }
 .cred-item { display: flex; align-items: baseline; gap: 20px; padding: 12px 0; border-bottom: 1px solid #f8f8f8; }
 .cred-item:last-child { border-bottom: none; }
-.cred-type { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #ccc; width: 90px; flex-shrink: 0; }
+.cred-type { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gg-muted); width: 90px; flex-shrink: 0; }
 .cred-text { font-size: 14px; color: var(--forest); font-weight: 500; }
 .cred-sub { font-size: 12px; color: var(--gg-muted); margin-top: 2px; }
 .exp-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gg-muted); margin-bottom: 14px; }
@@ -699,7 +699,7 @@
 .info-tag { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gg-muted); margin-bottom: 16px; }
 .info-item { display: flex; align-items: baseline; gap: 20px; padding: 12px 0; border-bottom: 1px solid #f5f5f5; }
 .info-item:last-child { border-bottom: none; }
-.info-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #ccc; width: 72px; flex-shrink: 0; }
+.info-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); width: 72px; flex-shrink: 0; }
 .info-value { font-size: 15px; color: var(--forest); }
 .info-value a { color: var(--green); text-decoration: none; }
 .info-value a:hover { text-decoration: underline; }
