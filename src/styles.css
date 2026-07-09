@@ -528,7 +528,7 @@
 .direct-lead { max-width: 820px; font-size: 17px; line-height: 1.8; color: rgba(232,240,236,0.75); margin: 0 0 48px; }
 .direct-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .direct-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(127,196,160,0.2); padding: 36px 32px; }
-.direct-icon { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--mint); margin-bottom: 18px; }
+.direct-icon { font-size: 24px; line-height: 1; margin-bottom: 18px; }
 .direct-title { font-family: 'Tenor Sans', sans-serif; font-size: 20px; color: white; letter-spacing: 0.5px; line-height: 1.25; margin-bottom: 12px; }
 .direct-text { font-size: 14px; line-height: 1.7; color: rgba(232,240,236,0.6); }
 @media (max-width: 900px) { .direct-grid { grid-template-columns: 1fr; } .direct-lead { font-size: 15px; } }
