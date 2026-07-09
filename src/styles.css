@@ -490,6 +490,12 @@
 .section.off { background: var(--off); }
 .section.white { background: white; }
 .section.sage { background: var(--sage); }
+.section.forest { background: var(--forest); }
+.section.forest .sh-tag { color: var(--mint); }
+.section.forest .sh-h2 { color: white; }
+.section.forest .sh-h2 em { color: var(--mint); }
+.sh.light .sh-h2 { color: white; }
+.sh.light .sh-tag { color: var(--mint); }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 
 /* ── Steps (AVGS) ── */
@@ -518,7 +524,14 @@
 .cta-box-text { font-size: 14px; color: var(--forest); font-weight: 500; }
 .cta-box a { background: var(--forest); color: white; padding: 12px 24px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
 
-/* ── FAQ ── */
+/* ── Direct HR contacts advantage (AVGS) ── */
+.direct-lead { max-width: 820px; font-size: 17px; line-height: 1.8; color: rgba(232,240,236,0.75); margin: 0 0 48px; }
+.direct-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.direct-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(127,196,160,0.2); padding: 36px 32px; }
+.direct-icon { font-size: 24px; line-height: 1; margin-bottom: 18px; }
+.direct-title { font-family: 'Tenor Sans', sans-serif; font-size: 20px; color: white; letter-spacing: 0.5px; line-height: 1.25; margin-bottom: 12px; }
+.direct-text { font-size: 14px; line-height: 1.7; color: rgba(232,240,236,0.6); }
+@media (max-width: 900px) { .direct-grid { grid-template-columns: 1fr; } .direct-lead { font-size: 15px; } }
 .faq-list { display: flex; flex-direction: column; max-width: 780px; }
 .faq-item { border-bottom: 1px solid #f0f0f0; }
 .faq-q { padding: 20px 0; font-family: 'Tenor Sans', sans-serif; font-size: 16px; color: var(--forest); cursor: pointer; display: flex; justify-content: space-between; align-items: center; letter-spacing: 0.5px; }

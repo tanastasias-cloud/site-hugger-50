@@ -32,8 +32,8 @@ const STEPS: Array<[string, string]> = [
     "Lebenslauf und Anschreiben, zugeschnitten auf deutsche Arbeitgeber. LinkedIn- und XING-Profile, die wahrgenommen werden. Wir wissen, was hier funktioniert — und was nicht.",
   ],
   [
-    "Gezielte Jobsuche",
-    "Wir analysieren den aktuellen Markt, identifizieren passende Stellen für Ihr Profil und entwickeln gemeinsam eine praktische, wirksame Suchstrategie.",
+    "Gezielte Jobsuche & direkte HR-Kontakte",
+    "Wir analysieren den aktuellen Markt, identifizieren passende Stellen für Ihr Profil und greifen dabei auf unser eigenes Netzwerk aus direkten Unternehmenskontakten und HR-Partnern zurück. Viele Stellen erreichen uns, bevor sie überhaupt öffentlich ausgeschrieben werden.",
   ],
   [
     "Vorbereitung auf Vorstellungsgespräche",
@@ -58,6 +58,10 @@ const INHALTE = [
 ];
 
 const FAQS: Array<[string, React.ReactNode]> = [
+  [
+    "Wie finden Sie passende Stellen für mich?",
+    "Wir kombinieren klassische Jobsuche mit unserem eigenen Netzwerk aus direkten Unternehmens- und HR-Kontakten. Das bedeutet: neben öffentlichen Stellenanzeigen greifen wir auch auf Vakanzen zurück, die uns direkt zugespielt werden — und vermitteln Sie persönlich weiter, wenn Ihr Profil passt.",
+  ],
   [
     "Was ist ein AVGS-Gutschein?",
     "Der AVGS (Aktivierungs- und Vermittlungsgutschein) ist ein Berechtigungsschein, den Sie von Ihrer Agentur für Arbeit oder Ihrem Jobcenter erhalten. Mit diesem Gutschein können Sie sich kostenlos einen zugelassenen Bildungsträger — wie uns — für Ihr Coaching aussuchen. Die Kosten übernimmt vollständig der Staat.",
@@ -139,6 +143,46 @@ function AvgsPage() {
         <div className="params-strip-item">
           <div className="params-num">3</div>
           <div className="params-label">Formate · hybrid, online oder Präsenz</div>
+        </div>
+      </section>
+
+      <section className="section forest">
+        <div className="sh light">
+          <div className="sh-tag">Unser Vorteil</div>
+          <h2 className="sh-h2">
+            Direkte Kontakte zu <em>Unternehmen & HR</em>
+          </h2>
+        </div>
+        <p className="direct-lead">
+          Anders als reine Bewerbungsberatungen arbeiten wir eng mit Arbeitgebern und
+          Personalverantwortlichen zusammen. Das bedeutet für Sie: echte Stellen, direkte
+          Vermittlungswege und oft eine Verbindung, die Sie allein über Jobbörsen nicht
+          finden.
+        </p>
+        <div className="direct-grid">
+          {[
+            [
+              "🔍",
+              "Stellen, die noch nicht öffentlich sind",
+              "Wir bekommen Vakanzen direkt von Unternehmen und HR-Partnern — mitunter bevor sie überhaupt online ausgeschrieben werden.",
+            ],
+            [
+              "🤝",
+              "Direkte Empfehlung statt anonyme Bewerbung",
+              "Wenn Ihr Profil passt, vermitteln wir Sie persönlich weiter. Ihre Bewerbung landet nicht im digitalen Nirwana, sondern bei der richtigen Person.",
+            ],
+            [
+              "⚡",
+              "Passgenauer, schneller Match",
+              "Weil wir die Unternehmen kennen, wissen wir, wen sie wirklich suchen — und was Sie konkret mitbringen müssen, um dort erfolgreich zu sein.",
+            ],
+          ].map(([icon, title, text]) => (
+            <div className="direct-card" key={title}>
+              <div className="direct-icon">{icon}</div>
+              <div className="direct-title">{title}</div>
+              <div className="direct-text">{text}</div>
+            </div>
+          ))}
         </div>
       </section>
 
