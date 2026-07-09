@@ -32,8 +32,8 @@ const STEPS: Array<[string, string]> = [
     "Lebenslauf und Anschreiben, zugeschnitten auf deutsche Arbeitgeber. LinkedIn- und XING-Profile, die wahrgenommen werden. Wir wissen, was hier funktioniert — und was nicht.",
   ],
   [
-    "Gezielte Jobsuche",
-    "Wir analysieren den aktuellen Markt, identifizieren passende Stellen für Ihr Profil und entwickeln gemeinsam eine praktische, wirksame Suchstrategie.",
+    "Gezielte Jobsuche & direkte HR-Kontakte",
+    "Wir analysieren den aktuellen Markt, identifizieren passende Stellen für Ihr Profil und greifen dabei auf unser eigenes Netzwerk aus direkten Unternehmenskontakten und HR-Partnern zurück. Viele Stellen erreichen uns, bevor sie überhaupt öffentlich ausgeschrieben werden.",
   ],
   [
     "Vorbereitung auf Vorstellungsgespräche",
