@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "start": "Home",
+    "privat": "Individuals",
+    "unternehmen": "Companies",
+    "jobcenter": "With Jobcenter",
+    "avgs_label": "Program 01 · AVGS",
+    "avgs_title": "Job Coaching",
+    "k16_label": "Program 02 · §16k SGB II",
+    "k16_title": "Holistic Coaching",
+    "coaches": "Coaches",
+    "referenzen": "References",
+    "contact_cta": "Free consultation",
+    "menu": "Menu",
+    "book_cta": "Book a consultation →"
+  },
+  "footer": {
+    "email": "Email",
+    "phone": "Phone",
+    "website": "Website",
+    "impressum": "Imprint",
+    "datenschutz": "Privacy"
+  },
+  "lang": {
+    "de": "DE",
+    "en": "EN",
+    "ru": "RU",
+    "switch_aria": "Select language"
+  }
+}

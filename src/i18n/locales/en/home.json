@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "eyebrow": "Coaching Academy · Berlin",
+    "title_1": "Grow,",
+    "title_2_pre": "",
+    "title_2_em": "where",
+    "title_2_post": " you",
+    "title_3": "stand.",
+    "lede_1": "GetGrow Academy supports people, teams and organisations through key career transitions — with psychology, clarity and a concrete plan.",
+    "lede_2": "We work with private clients, with companies and together with the Jobcenter. In Berlin and online, in German, English, Ukrainian and Russian.",
+    "cta_primary": "Free first consultation",
+    "cta_ghost": "See what we offer"
+  },
+  "trust": {
+    "azav": "AZAV-certified provider",
+    "programs": "AVGS · §16k SGB II recognised",
+    "clients_prefix": "",
+    "clients_num": "200+",
+    "clients_suffix": " clients supported",
+    "langs": "DE · EN · UA · RU"
+  }
+}
