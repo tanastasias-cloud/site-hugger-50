@@ -59,6 +59,10 @@ const INHALTE = [
 
 const FAQS: Array<[string, React.ReactNode]> = [
   [
+    "Wie finden Sie passende Stellen für mich?",
+    "Wir kombinieren klassische Jobsuche mit unserem eigenen Netzwerk aus direkten Unternehmens- und HR-Kontakten. Das bedeutet: neben öffentlichen Stellenanzeigen greifen wir auch auf Vakanzen zurück, die uns direkt zugespielt werden — und vermitteln Sie persönlich weiter, wenn Ihr Profil passt.",
+  ],
+  [
     "Was ist ein AVGS-Gutschein?",
     "Der AVGS (Aktivierungs- und Vermittlungsgutschein) ist ein Berechtigungsschein, den Sie von Ihrer Agentur für Arbeit oder Ihrem Jobcenter erhalten. Mit diesem Gutschein können Sie sich kostenlos einen zugelassenen Bildungsträger — wie uns — für Ihr Coaching aussuchen. Die Kosten übernimmt vollständig der Staat.",
   ],
