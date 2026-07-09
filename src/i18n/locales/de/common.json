@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "start": "Start",
+    "privat": "Privatpersonen",
+    "unternehmen": "Unternehmen",
+    "jobcenter": "Mit Jobcenter",
+    "avgs_label": "Programm 01 · AVGS",
+    "avgs_title": "Job Coaching",
+    "k16_label": "Programm 02 · §16k SGB II",
+    "k16_title": "Ganzheitliches Coaching",
+    "coaches": "Coaches",
+    "referenzen": "Referenzen",
+    "contact_cta": "Erstgespräch",
+    "menu": "Menü",
+    "book_cta": "Erstgespräch buchen →"
+  },
+  "footer": {
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "website": "Website",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz"
+  },
+  "lang": {
+    "de": "DE",
+    "en": "EN",
+    "ru": "RU",
+    "switch_aria": "Sprache wählen"
+  }
+}
