@@ -162,17 +162,17 @@ function AvgsPage() {
         <div className="direct-grid">
           {[
             [
-              "hidden",
+              "🔍",
               "Stellen, die noch nicht öffentlich sind",
               "Wir bekommen Vakanzen direkt von Unternehmen und HR-Partnern — mitunter bevor sie überhaupt online ausgeschrieben werden.",
             ],
             [
-              "direct",
+              "🤝",
               "Direkte Empfehlung statt anonyme Bewerbung",
               "Wenn Ihr Profil passt, vermitteln wir Sie persönlich weiter. Ihre Bewerbung landet nicht im digitalen Nirwana, sondern bei der richtigen Person.",
             ],
             [
-              "match",
+              "⚡",
               "Passgenauer, schneller Match",
               "Weil wir die Unternehmen kennen, wissen wir, wen sie wirklich suchen — und was Sie konkret mitbringen müssen, um dort erfolgreich zu sein.",
             ],
