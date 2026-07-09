@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { SiteShell } from "@/components/site/SiteShell";
 import yuliiaAsset from "@/assets/yuliia-zaienchyk.jpg.asset.json";
 
@@ -23,37 +24,30 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
+  const { t } = useTranslation("home");
   return (
     <SiteShell active="home">
       {/* MANIFEST HERO */}
       <section className="gg-manifesto">
         <div className="gg-manifesto-inner">
           <div>
-            <div className="eyebrow">Coaching Academy · Berlin</div>
+            <div className="eyebrow">{t("hero.eyebrow")}</div>
             <h1>
-              Wachsen,<br />
-              <em>wo</em> Sie<br />
-              stehen.
+              {t("hero.title_1")}<br />
+              {t("hero.title_2_pre")}<em>{t("hero.title_2_em")}</em>{t("hero.title_2_post")}<br />
+              {t("hero.title_3")}
             </h1>
           </div>
           <div>
             <div className="rule" />
-            <p>
-              GetGrow Academy begleitet Menschen, Teams und Organisationen in
-              entscheidenden beruflichen Übergängen — mit Psychologie, Klarheit
-              und einem konkreten Plan.
-            </p>
-            <p>
-              Wir arbeiten mit Privatpersonen, mit Unternehmen und gemeinsam
-              mit dem Jobcenter. In Berlin und online, auf Deutsch, Englisch,
-              Ukrainisch und Russisch.
-            </p>
+            <p>{t("hero.lede_1")}</p>
+            <p>{t("hero.lede_2")}</p>
             <div className="cta-row">
               <Link to="/kontakt" className="primary">
-                Kostenloses Erstgespräch
+                {t("hero.cta_primary")}
               </Link>
               <a href="#angebot" className="ghost">
-                Unser Angebot ansehen
+                {t("hero.cta_ghost")}
               </a>
             </div>
           </div>
@@ -62,11 +56,12 @@ function HomePage() {
 
       {/* TRUST STRIP */}
       <div className="gg-trust">
-        <span>AZAV-zertifizierter Träger</span>
-        <span>AVGS · §16k SGB II anerkannt</span>
-        <span><strong>200+</strong> begleitete Klient:innen</span>
-        <span>DE · EN · UA · RU</span>
+        <span>{t("trust.azav")}</span>
+        <span>{t("trust.programs")}</span>
+        <span>{t("trust.clients_prefix")}<strong>{t("trust.clients_num")}</strong>{t("trust.clients_suffix")}</span>
+        <span>{t("trust.langs")}</span>
       </div>
+
 
       {/* THREE DOORS */}
       <section className="gg-doors" id="angebot">
