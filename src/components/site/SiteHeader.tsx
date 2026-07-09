@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import logoAsset from "@/assets/logo.png.asset.json";
-import { SUPPORTED_LANGS, type Lang } from "@/i18n";
+import { SUPPORTED_LANGS, LANG_STORAGE_KEY, type Lang } from "@/i18n";
 
 
 type ActiveKey =
@@ -44,6 +44,11 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
   }, []);
 
   const changeLang = (lng: Lang) => {
+    try {
+      window.localStorage.setItem(LANG_STORAGE_KEY, lng);
+    } catch {
+      /* ignore */
+    }
     void i18n.changeLanguage(lng);
     setLangOpen(false);
   };
