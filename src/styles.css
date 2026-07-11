@@ -510,6 +510,11 @@
 .section.white { background: white; }
 .section.sage { background: var(--sage); }
 .section.forest { background: var(--forest); }
+.section.forest.spread { display: flex; flex-direction: column; justify-content: space-between; min-height: 92vh; padding: 96px 64px; }
+.section.forest.spread .spread-top { display: flex; flex-direction: column; gap: 0; }
+.section.forest.spread .direct-lead { margin: 0; }
+.section.forest.spread .direct-footnote { margin: 0; }
+.section.forest.spread .direct-grid { margin: 48px 0; }
 .section.forest .sh-tag { color: var(--mint); }
 .section.forest .sh-h2 { color: white; }
 .section.forest .sh-h2 em { color: var(--mint); }
