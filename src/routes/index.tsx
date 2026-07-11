@@ -201,42 +201,6 @@ function HomePage() {
           </div>
         </section>
 
-        {/* FOUNDER — sage */}
-        <section className="section sage">
-          <div className="sh">
-            <div className="sh-tag">Gründerin</div>
-            <h2 className="sh-h2">
-              Yuliia <em>Zaienchyk</em>
-            </h2>
-          </div>
-          <div className="coach-intro-grid" style={{ marginTop: 12 }}>
-            <img
-              src={yuliiaAsset.url}
-              alt="Yuliia Zaienchyk"
-              className="coach-intro-photo"
-            />
-            <div>
-              <div className="coach-intro-tag">Gründerin · GetGrow Academy</div>
-              <div className="coach-intro-role">
-                Psychologin · Job-Coach · Berlin seit 2015
-              </div>
-              <p className="coach-intro-bio">
-                „Ich habe GetGrow Academy gegründet, weil ich selbst weiß, wie es ist, in
-                Deutschland neu anzufangen. Bei uns bekommen Sie kein Standard-Coaching und
-                keine leeren Versprechen — sondern ein Team, das den deutschen Arbeitsmarkt
-                kennt, Ihre Sprache spricht und Ihre Situation versteht."
-              </p>
-              <Link
-                to="/coaches/$slug"
-                params={{ slug: "yuliia-zaienchyk" }}
-                className="coach-intro-link"
-              >
-                Mehr über Yuliia →
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* OUTCOMES — off */}
         <section className="section off">
           <div className="sh">
