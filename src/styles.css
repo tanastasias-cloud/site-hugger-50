@@ -603,7 +603,7 @@
 .creds-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gg-muted); margin-bottom: 16px; }
 .cred-item { display: flex; align-items: baseline; gap: 20px; padding: 12px 0; border-bottom: 1px solid #f8f8f8; }
 .cred-item:last-child { border-bottom: none; }
-.cred-type { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gg-muted); width: 90px; flex-shrink: 0; }
+.cred-type { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gg-muted); width: 170px; flex-shrink: 0; word-break: break-word; }
 .cred-text { font-size: 14px; color: var(--forest); font-weight: 500; }
 .cred-sub { font-size: 12px; color: var(--gg-muted); margin-top: 2px; }
 .exp-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gg-muted); margin-bottom: 14px; }
