@@ -111,7 +111,8 @@ const FAQS: Array<[string, React.ReactNode]> = [
 function AvgsPage() {
   return (
     <SiteShell active="avgs">
-      <section className="page-hero split">
+      <div className="avgs-page">
+        <section className="page-hero split">
         <div className="page-hero-left">
           <div className="breadcrumb">
             <Link to="/">Startseite</Link> · Job Coaching · AVGS
@@ -206,7 +207,7 @@ function AvgsPage() {
         </div>
         <div className="two-col">
           <div>
-            <p style={{ fontSize: 15, lineHeight: 1.9, color: "#666", marginBottom: 36 }}>
+            <p className="step-intro">
               Unsere zertifizierten Coaches begleiten Sie auf jedem Schritt — von der
               Standortanalyse bis zur Unterschrift Ihres Arbeitsvertrags. Das Programm dauert
               in der Regel rund 2 Monate, mit mindestens zwei Terminen pro Woche — individuell
@@ -226,7 +227,7 @@ function AvgsPage() {
 
             <div className="highlight-box" style={{ marginTop: 32 }}>
               <div className="hl-tag">Was Sie am Ende erhalten</div>
-              <p>
+              <p className="hl-text">
                 Am Ende des Programms erhalten Sie ein Teilnahmezertifikat mit Angaben zu
                 Inhalt, Dauer und Ziel des Coachings — auch bei vorzeitigem Abschluss.
               </p>
@@ -333,6 +334,7 @@ function AvgsPage() {
           </Link>
         </div>
       </section>
+      </div>
     </SiteShell>
   );
 }

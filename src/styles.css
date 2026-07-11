@@ -1019,3 +1019,44 @@
 @media (max-width: 960px) {
   .legal-disclaimer { padding: 56px 24px; }
 }
+
+/* ── AVGS page readability & redesign ── */
+.avgs-page .page-hero-text { font-size: 17px; line-height: 1.75; }
+.avgs-page .badge-value { font-size: 17px; }
+.avgs-page .step-intro { font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 36px; max-width: 640px; }
+.avgs-page .step-title { font-size: 20px; margin-bottom: 8px; }
+.avgs-page .step-text { font-size: 15px; line-height: 1.8; color: #555; }
+.avgs-page .step-num-circle { width: 44px; height: 44px; font-size: 17px; }
+.avgs-page .step-item { padding: 26px 0; }
+.avgs-page .highlight-box p { font-size: 15px; line-height: 1.8; }
+.avgs-page .avgs-info-box { padding: 44px; border-left: 4px solid var(--mint); }
+.avgs-page .box-tag { font-size: 10px; letter-spacing: 3.5px; }
+.avgs-page .avgs-info-box p { font-size: 16px; line-height: 1.85; color: rgba(245, 240, 232, 0.88); }
+.avgs-page .free-title { font-size: 15px; }
+.avgs-page .free-sub { font-size: 14px; color: rgba(245, 240, 232, 0.6); }
+.avgs-page .eligibility-box { padding: 32px; border-top: 4px solid var(--mint); }
+.avgs-page .elig-tag { font-size: 10px; letter-spacing: 3px; }
+.avgs-page .elig-item { font-size: 15px; line-height: 1.75; padding: 11px 0; }
+.avgs-page .cta-box { padding: 28px 36px; }
+.avgs-page .cta-box-text { font-size: 16px; }
+.avgs-page .cta-box a { font-size: 12px; letter-spacing: 2px; }
+.avgs-page .direct-lead { font-size: 18px; line-height: 1.85; }
+.avgs-page .direct-text { font-size: 15px; line-height: 1.8; }
+.avgs-page .module-title { font-size: 19px; }
+.avgs-page .module-text { font-size: 15px; line-height: 1.75; }
+.avgs-page .faq-q { font-size: 17px; }
+.avgs-page .faq-a { font-size: 15px; line-height: 1.8; }
+.avgs-page .legal-disclaimer-text { font-size: 16px; line-height: 1.85; color: rgba(245, 240, 232, 0.8); }
+
+@media (max-width: 900px) {
+  .avgs-page .step-intro,
+  .avgs-page .step-text,
+  .avgs-page .avgs-info-box p,
+  .avgs-page .elig-item,
+  .avgs-page .direct-text,
+  .avgs-page .module-text,
+  .avgs-page .faq-a { font-size: 16px; }
+  .avgs-page .step-title,
+  .avgs-page .faq-q { font-size: 18px; }
+  .avgs-page .avgs-info-box { padding: 32px; }
+}
