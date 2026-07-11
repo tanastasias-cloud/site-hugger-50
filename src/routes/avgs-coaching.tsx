@@ -95,7 +95,7 @@ const FAQS: Array<[string, React.ReactNode]> = [
   ],
   [
     "Was passiert, wenn ich abbreche oder die Maßnahme nicht zu mir passt?",
-    "Sie können die Teilnahme jederzeit kostenfrei beenden. Innerhalb der ersten 14 Tage nach Vertragsabschluss haben Sie zudem ein generelles Rücktrittsrecht. Ihnen entstehen dadurch keine Nachteile.",
+    "Sollten Sie feststellen, dass die Maßnahme nicht Ihren Bedürfnissen entspricht, sprechen Sie bitte Ihren Coach sowie Ihre Ansprechperson beim Jobcenter oder der Agentur für Arbeit an. Gemeinsam prüfen wir mögliche Lösungen oder Anpassungen. Eine Beendigung der Teilnahme ist grundsätzlich möglich und erfolgt in Abstimmung mit dem Kostenträger gemäß den geltenden Förderbedingungen.",
   ],
   [
     "Was, wenn ich keinen AVGS-Gutschein bekomme oder mein Fall nicht passt?",
