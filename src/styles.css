@@ -202,8 +202,8 @@
 .door:hover .door-cta::after { transform: translateX(4px); }
 
 /* ── Manifesto strip (DE hero) ── */
-.gg-manifesto { padding: 96px 64px 72px; background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
-.gg-manifesto-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 1fr; gap: 72px; align-items: start; }
+.gg-manifesto { padding: 88px 64px 64px; background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
+.gg-manifesto-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: start; }
 .gg-manifesto .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 24px; }
 .gg-manifesto h1 { font-family: 'Tenor Sans', sans-serif; font-size: clamp(40px, 5.2vw, 68px); line-height: 1.0; letter-spacing: -1px; color: var(--forest); font-weight: 400; }
 .gg-manifesto h1 em { font-family: 'Allura', cursive; color: var(--green); font-style: normal; font-size: 1.1em; letter-spacing: 0; display: inline-block; padding: 0 8px; }
@@ -218,7 +218,7 @@
 .gg-manifesto .cta-row a.ghost { color: var(--forest); padding: 16px 0; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--forest); }
 
 /* trust strip */
-.gg-trust { padding: 28px 64px; background: var(--forest); color: var(--paper); display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; }
+.gg-trust { padding: 24px 64px; background: var(--forest); color: var(--paper); display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; }
 .gg-trust span { opacity: 0.7; }
 .gg-trust strong { font-weight: 500; color: var(--sand); letter-spacing: 2.5px; }
 
