@@ -956,3 +956,66 @@
 @media (max-width: 720px) {
   .gg-method { padding: 64px 20px; }
 }
+
+/* Legal disclaimer (AVGS / job placement) */
+.legal-disclaimer {
+  background: var(--forest);
+  padding: 72px 64px;
+}
+.legal-disclaimer-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.legal-disclaimer-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.legal-disclaimer-tag::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--mint);
+  opacity: 0.5;
+}
+.legal-disclaimer-title {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: clamp(26px, 3.2vw, 36px);
+  color: #f5f0e8;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+.legal-disclaimer-text {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(245, 240, 232, 0.72);
+  margin-bottom: 16px;
+}
+.legal-disclaimer-text strong {
+  color: #f5f0e8;
+  font-weight: 500;
+}
+
+/* Footer legal disclaimer */
+.footer-disclaimer {
+  width: 100%;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(245, 240, 232, 0.1);
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 960px) {
+  .legal-disclaimer { padding: 56px 24px; }
+}

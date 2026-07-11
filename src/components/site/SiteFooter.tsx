@@ -33,6 +33,9 @@ export function SiteFooter() {
         <Link to="/impressum">Impressum</Link>
         <Link to="/datenschutz">Datenschutz</Link>
       </div>
+      <div className="footer-disclaimer">
+        Keine Gewährleistung auf Vermittlungserfolg. § 296 SGB III / § 45 SGB III.
+      </div>
     </footer>
   );
 }
