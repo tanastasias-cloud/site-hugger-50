@@ -311,8 +311,8 @@
 .gg-mobile-cta { margin-top: 24px; background: var(--forest); color: white; padding: 16px 32px; text-align: center; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
 
 /* ── HERO (home) ── */
-.gg-hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 100px; }
-.gg-hero-left { padding: 40px 64px 80px; display: flex; flex-direction: column; justify-content: center; background: white; }
+.gg-hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+.gg-hero-left { padding: 140px 64px 80px; display: flex; flex-direction: column; justify-content: center; background: white; }
 .gg-hero-tag { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--green); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
 .gg-hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--green); }
 .gg-hero-h1 { font-family: 'Tenor Sans', sans-serif; font-size: 54px; line-height: 1.1; color: var(--forest); font-weight: 400; margin-bottom: 8px; letter-spacing: 0.5px; }
