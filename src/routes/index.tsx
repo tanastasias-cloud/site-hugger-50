@@ -155,18 +155,20 @@ function HomePage() {
         </section>
 
         {/* DIFFERENTIATORS — forest */}
-        <section className="section forest">
-          <div className="sh light">
-            <div className="sh-tag">Unsere Methodik · für alle Klient:innen</div>
-            <h2 className="sh-h2">
-              Was uns <em>anders</em> macht
-            </h2>
+        <section className="section forest spread">
+          <div className="spread-top">
+            <div className="sh light">
+              <div className="sh-tag">Unsere Methodik · für alle Klient:innen</div>
+              <h2 className="sh-h2">
+                Was uns <em>anders</em> macht
+              </h2>
+            </div>
+            <p className="direct-lead">
+              Ob privat, über Ihr Unternehmen oder mit AVGS-Gutschein — unser Ansatz bleibt
+              derselbe: psychologisch fundiertes Coaching, moderne Werkzeuge und ein echtes
+              Netzwerk in den deutschen Arbeitsmarkt.
+            </p>
           </div>
-          <p className="direct-lead">
-            Ob privat, über Ihr Unternehmen oder mit AVGS-Gutschein — unser Ansatz bleibt
-            derselbe: psychologisch fundiertes Coaching, moderne Werkzeuge und ein echtes
-            Netzwerk in den deutschen Arbeitsmarkt.
-          </p>
           <div className="direct-grid four">
             {DIFFERENTIATORS.map(([icon, title, text]) => (
               <div className="direct-card" key={title}>
