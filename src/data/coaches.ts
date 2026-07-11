@@ -294,9 +294,10 @@ export const coaches: Coach[] = [
     role: "Job-Coach & Trainerin · Life Coach · Arbeitsmarktintegration",
     photo: dariaAsset.url,
     languages: [
-      { flag: "🇩🇪", label: "Deutsch" },
       { flag: "🇷🇺", label: "Russisch" },
       { flag: "🇺🇦", label: "Ukrainisch" },
+      { flag: "🇩🇪", label: "Deutsch" },
+      { flag: "🇬🇧", label: "Englisch" },
     ],
     bio: [
       "Ich bin Job-Coach und Trainerin mit Schwerpunkt Arbeitsmarktintegration. Nach einem Bachelor im Lehramt (Biologie) und einem Master of Science (Biologie) habe ich 2021–2022 eine Ausbildung zum Life Coach bei der Homodea GmbH absolviert. Seit 2022 begleite ich Menschen im Einzelcoaching und in Gruppenseminaren – vor allem im Rahmen von AVGS-Programmen – und habe bisher rund 200 Kund:innen auf ihrem Weg in den deutschen Arbeitsmarkt unterstützt.",
