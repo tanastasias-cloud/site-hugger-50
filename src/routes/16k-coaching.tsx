@@ -75,7 +75,7 @@ function SixteenKPage() {
           {[
             ["✓", "Kosten", "100 % kostenfrei · gefördert vom Jobcenter"],
             ["📋", "Programm", "§16k SGB II · für Bürgergeld-Beziehende"],
-            ["🌍", "Sprachen", "DE · EN · UA · RU"],
+            ["🌍", "Sprachen", "DE · EN · UA · RU · PL"],
             ["🤝", "Ansatz", "Ganzheitlich · Psychologie + Coaching"],
           ].map(([icon, label, value]) => (
             <div className="hero-badge-item" key={label}>

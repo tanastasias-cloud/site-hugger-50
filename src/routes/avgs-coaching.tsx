@@ -75,7 +75,7 @@ const FAQS: Array<[string, React.ReactNode]> = [
   ],
   [
     "In welchen Sprachen wird gecoacht?",
-    "Deutsch ist die Hauptsprache. Zusätzlich coachen wir aktuell auf Ukrainisch, Russisch und Englisch — auch in der Kommunikation mit dem Jobcenter.",
+    "Deutsch ist die Hauptsprache. Zusätzlich coachen wir aktuell auf Ukrainisch, Russisch, Polnisch und Englisch — auch in der Kommunikation mit dem Jobcenter.",
   ],
   [
     "Helfen Sie mir, einen AVGS-Gutschein zu erhalten?",
@@ -128,7 +128,7 @@ function AvgsPage() {
           {[
             ["✓", "Kosten", "100 % kostenfrei · gefördert vom Jobcenter"],
             ["📋", "Zertifizierung", "AZAV-zertifiziert · AVGS akzeptiert"],
-            ["🌍", "Sprachen", "DE · EN · UA · RU"],
+            ["🌍", "Sprachen", "DE · EN · UA · RU · PL"],
             ["📍", "Format", "Online & vor Ort · Berlin"],
           ].map(([icon, label, value]) => (
             <div className="hero-badge-item" key={label}>

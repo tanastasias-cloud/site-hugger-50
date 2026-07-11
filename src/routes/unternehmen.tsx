@@ -45,7 +45,7 @@ function UnternehmenPage() {
         <div className="page-hero-right">
           {[
             ["✦", "Formate", "Coaching · Workshops · Programme"],
-            ["✦", "Sprachen", "DE · EN · UA · RU"],
+            ["✦", "Sprachen", "DE · EN · UA · RU · PL"],
             ["✦", "Orte", "Vor Ort in Berlin · hybrid · remote"],
             ["✦", "Abrechnung", "Rechnung · USt-pflichtig"],
           ].map(([icon, label, value]) => (

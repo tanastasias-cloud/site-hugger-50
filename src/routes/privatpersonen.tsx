@@ -46,7 +46,7 @@ function PrivatPage() {
         <div className="page-hero-right">
           {[
             ["✦", "Format", "1:1 · online oder in Berlin"],
-            ["✦", "Sprachen", "DE · EN · UA · RU"],
+            ["✦", "Sprachen", "DE · EN · UA · RU · PL"],
             ["✦", "Dauer", "Einzelsitzung oder Paket (5–10 Termine)"],
             ["✦", "Investition", "Auf Anfrage · transparent"],
           ].map(([icon, label, value]) => (

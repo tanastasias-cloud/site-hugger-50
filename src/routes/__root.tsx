@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "GetGrow Academy Berlin · Coaching für Karriere, Leben und Unternehmen" },
-      { name: "description", content: "Zertifiziertes Coaching in Berlin — für Privatpersonen, Unternehmen und Jobcenter-Kund:innen. AVGS & §16k SGB II anerkannt. DE · EN · UA · RU." },
+      { name: "description", content: "Zertifiziertes Coaching in Berlin — für Privatpersonen, Unternehmen und Jobcenter-Kund:innen. AVGS & §16k SGB II anerkannt. DE · EN · UA · RU · PL." },
       { name: "author", content: "GetGrow Academy Berlin" },
       { property: "og:title", content: "GetGrow Academy Berlin" },
       { property: "og:description", content: "Career, life and business coaching for international professionals in Berlin." },
