@@ -167,7 +167,7 @@ function HomePage() {
             derselbe: psychologisch fundiertes Coaching, moderne Werkzeuge und ein echtes
             Netzwerk in den deutschen Arbeitsmarkt.
           </p>
-          <div className="direct-grid">
+          <div className="direct-grid four">
             {DIFFERENTIATORS.map(([icon, title, text]) => (
               <div className="direct-card" key={title}>
                 <div className="direct-icon">{icon}</div>
@@ -176,6 +176,10 @@ function HomePage() {
               </div>
             ))}
           </div>
+          <p className="direct-footnote">
+            Wie wir konkret mit Ihnen arbeiten — privat, über Ihr Unternehmen oder
+            jobcenterfinanziert — besprechen wir im kostenlosen Erstgespräch.
+          </p>
         </section>
 
         {/* THREE DOORS — white, module-style grid */}
