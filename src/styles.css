@@ -563,7 +563,7 @@
 .btn-outline-w { border: 1px solid rgba(255,255,255,0.2); color: rgba(232,240,236,0.7); padding: 14px 32px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
 
 /* ── Coaches page ── */
-.coaches-section { padding: 48px 64px 80px; background: white; }
+.coaches-section { padding: 40px 64px 72px; background: white; }
 .coaches-stats { display: flex; flex-wrap: wrap; gap: 48px; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(26,46,38,0.1); }
 .coaches-stat { display: flex; flex-direction: column; gap: 4px; }
 .coaches-stat strong { font-family: 'Tenor Sans', sans-serif; font-size: 28px; color: var(--forest); font-weight: 400; letter-spacing: 0.5px; }
