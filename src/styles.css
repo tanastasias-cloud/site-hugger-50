@@ -225,7 +225,7 @@
 @media (max-width: 900px) {
   .gg-doors { padding: 80px 24px; }
   .gg-doors-grid { grid-template-columns: 1fr; }
-  .gg-manifesto { padding: 132px 24px 72px; }
+  .gg-manifesto { padding: 96px 24px 72px; }
   .gg-manifesto-inner { grid-template-columns: 1fr; gap: 48px; }
   .gg-trust { padding: 20px 24px; font-size: 10px; gap: 16px; }
 }
@@ -301,7 +301,7 @@
 
 .gg-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
 .gg-burger span { display: block; width: 24px; height: 2px; background: var(--forest); transition: all 0.2s; }
-.gg-mobile-menu { display: none; position: fixed; top: 100px; left: 0; right: 0; bottom: 0; background: white; z-index: 199; padding: 32px 24px; flex-direction: column; gap: 0; overflow-y: auto; }
+.gg-mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; bottom: 0; background: white; z-index: 199; padding: 32px 24px; flex-direction: column; gap: 0; overflow-y: auto; }
 .gg-mobile-menu.open { display: flex; }
 .gg-mobile-link { display: block; padding: 16px 0; font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--forest); text-decoration: none; border-bottom: 1px solid #f0f0f0; }
 .gg-mobile-parent { width: 100%; text-align: left; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; }
