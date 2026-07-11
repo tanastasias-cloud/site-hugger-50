@@ -447,11 +447,12 @@
 
 /* ── Footer ── */
 .gg-footer { background: var(--forest); padding: 48px 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-.footer-logo { display: flex; align-items: center; gap: 13px; }
-.footer-logo .get { font-family: 'Allura', cursive; font-size: 44px; color: var(--mint); line-height: 1; }
-.footer-logo .div { width: 1px; height: 30px; background: linear-gradient(to bottom, transparent, rgba(127,196,160,0.35), transparent); }
-.footer-logo .grow { font-family: 'Tenor Sans', sans-serif; font-size: 13px; letter-spacing: 6px; text-transform: uppercase; color: #f5f0e8; line-height: 1; }
-.footer-logo .acad { font-family: 'DM Sans', sans-serif; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--mint); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-logo .get { font-family: 'Allura', cursive; font-size: 36px; color: var(--mint); line-height: 1; }
+.footer-logo .div { width: 1px; height: 22px; background: linear-gradient(to bottom, transparent, rgba(127,196,160,0.35), transparent); }
+.footer-logo .grow-stack { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.footer-logo .grow { font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: #f5f0e8; line-height: 1; }
+.footer-logo .acad { font-family: 'DM Sans', sans-serif; font-size: 6px; letter-spacing: 1px; text-transform: uppercase; color: var(--mint); line-height: 1; white-space: nowrap; }
 .footer-contacts { display: flex; gap: 40px; flex-wrap: wrap; }
 .footer-c { display: flex; flex-direction: column; gap: 3px; }
 .footer-c .label { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.75); }
