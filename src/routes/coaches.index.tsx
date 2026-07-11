@@ -43,7 +43,7 @@ function CoachMiniCard({ coach }: { coach: Coach }) {
       </div>
       <div className="coach-mini-body">
         {coach.isFounder && (
-          <div className="coach-mini-founder-badge">Mitgründerin</div>
+          <div className="coach-mini-founder-badge">Gründerin</div>
         )}
         <div className="coach-mini-name">{coach.name}</div>
         <div className="coach-mini-role">{coach.role}</div>
