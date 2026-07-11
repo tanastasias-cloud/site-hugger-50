@@ -1063,7 +1063,7 @@
 .avgs-page .cta-box { padding: 28px 36px; }
 .avgs-page .cta-box-text { font-size: 16px; }
 .avgs-page .cta-box a { font-size: 12px; letter-spacing: 2px; }
-.avgs-page .direct-lead { font-size: 18px; line-height: 1.85; }
+.avgs-page .direct-lead { font-size: 18px; line-height: 1.85; text-align: left; max-width: none; }
 .avgs-page .direct-title { font-size: 21px; }
 .avgs-page .direct-text { font-size: 16px; line-height: 1.8; }
 .avgs-page .module-title { font-size: 20px; }
