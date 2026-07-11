@@ -81,6 +81,7 @@ export const coaches: Coach[] = [
       "Heute verbinde ich diese langjährige Management-Erfahrung mit einem professionellen Coaching-Ansatz. Ich begleite Führungskräfte, Unternehmer:innen und Menschen in beruflichen Veränderungsphasen dabei, Klarheit zu gewinnen, fundierte Entscheidungen zu treffen und nachhaltige Strukturen aufzubauen — analytisch, strukturiert und mit einem tiefen Verständnis für die Menschen hinter den Entscheidungen. Ich bin überzeugt: Nachhaltiger Erfolg entsteht dort, wo Klarheit, Verantwortung, gute Führung und konsequentes Handeln zusammenkommen.",
     ],
     credentials: [
+      { type: "Hochschulabschluss", text: "Ingenieurwesen mit Schwerpunkt Automatisierung von Informationssystemen", sub: "Staatliche Technische Universität Nischni Nowgorod" },
       { type: "Erfahrung", text: "9 Jahre Führungserfahrung", sub: "Leitung der Bereiche Vertrieb und Customer Success" },
       { type: "Erfahrung", text: "Unternehmenswachstum aktiv mitgestaltet", sub: "Vom Start-up mit 35 Mitarbeitenden zu ~600 Mitarbeitenden" },
       { type: "Erfahrung", text: "Aufbau und Führung großer Teams", sub: "Verantwortung für rund 300 Mitarbeitende" },
@@ -197,7 +198,6 @@ export const coaches: Coach[] = [
     photo: alinaAsset.url,
     languages: [
       { flag: "🇷🇺", label: "Russisch" },
-      { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇩🇪", label: "Deutsch" },
       { flag: "🇬🇧", label: "Englisch" },
     ],
