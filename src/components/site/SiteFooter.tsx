@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="footer-logo" aria-label="GetGrow Academy Berlin">
         <div className="get">Get</div>
         <div className="div" />
-        <div>
+        <div className="grow-stack">
           <div className="grow">GROW</div>
           <div className="acad">Academy · Berlin</div>
         </div>
