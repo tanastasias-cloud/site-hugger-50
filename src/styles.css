@@ -462,12 +462,12 @@
 .footer-legal a:hover { color: #f5f0e8; }
 
 /* ── Page hero (inner pages) — light, matches home manifesto ── */
-.page-hero { padding-top: 116px; background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
+.page-hero { background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }
 .page-hero.split { display: grid; grid-template-columns: 1fr 1fr; min-height: 0; gap: 0; align-items: stretch; }
 .page-hero.simple { padding: 128px 64px 48px; min-height: 0; display: flex; flex-direction: column; justify-content: flex-start; }
 .page-hero.simple > * { max-width: 1320px; width: 100%; margin-left: auto; margin-right: auto; }
-.page-hero-left { padding: 32px 64px 48px; display: flex; flex-direction: column; justify-content: flex-start; }
-.page-hero-right { display: flex; flex-direction: column; justify-content: center; padding: 32px 64px 48px; gap: 16px; border-left: 1px solid rgba(26,46,38,0.06); background: color-mix(in oklab, var(--cream) 60%, transparent); }
+.page-hero-left { padding: 128px 64px 48px; display: flex; flex-direction: column; justify-content: flex-start; background: var(--paper); }
+.page-hero-right { display: flex; flex-direction: column; justify-content: center; padding: 128px 64px 48px; gap: 16px; border-left: 1px solid rgba(26,46,38,0.06); background: color-mix(in oklab, var(--cream) 60%, transparent); }
 .breadcrumb { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 28px; opacity: 0.75; }
 .breadcrumb a { color: var(--green); text-decoration: none; opacity: 1; }
 .page-hero h1 { font-family: 'Tenor Sans', sans-serif; font-size: clamp(34px, 4vw, 54px); color: var(--forest); letter-spacing: -0.3px; line-height: 1.05; margin-bottom: 20px; font-weight: 400; }
