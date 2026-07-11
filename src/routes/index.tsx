@@ -24,14 +24,19 @@ export const Route = createFileRoute("/")({
 
 const DIFFERENTIATORS: Array<[string, string, string]> = [
   [
-    "🎯",
-    "Ergebnisorientiert",
-    "Wir arbeiten auf konkrete Resultate hin — Jobwechsel, Neustart, Klarheit in der Situation. Fortschritt wird sichtbar, nicht nur besprochen.",
+    "🧭",
+    "Ganzheitliche Methodik",
+    "Wir beginnen bei Ihnen — Ihrer Situation, Ihren Zielen, Ihrer Sprache. Erst dann bauen wir Strategie, Bewerbungsunterlagen und Interviewvorbereitung darauf auf.",
   ],
   [
     "🤝",
-    "Individueller Ansatz",
-    "Kein Standard-Programm. Wir starten bei Ihnen — Situation, Ziele, Sprache — und bauen Strategie, Bewerbungsunterlagen und nächste Schritte passgenau darauf auf.",
+    "Direkte Kontakte zu Unternehmen & HR",
+    "Wir arbeiten eng mit Arbeitgebern und Personalverantwortlichen. Viele Vakanzen erreichen uns, bevor sie öffentlich ausgeschrieben werden — und passende Profile werden persönlich weiterempfohlen.",
+  ],
+  [
+    "🤖",
+    "KI-gestützte, ATS-optimierte Bewerbung",
+    "Wir arbeiten mit ChatGPT und Claude und erstellen Unterlagen, die durch Applicant Tracking Systems (ATS) kommen und beim Menschen auf der anderen Seite überzeugen.",
   ],
   [
     "🌍",
