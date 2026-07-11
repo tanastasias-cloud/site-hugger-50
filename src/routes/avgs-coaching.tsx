@@ -75,7 +75,7 @@ const FAQS: Array<[string, React.ReactNode]> = [
   ],
   [
     "In welchen Sprachen wird gecoacht?",
-    "Deutsch ist die Hauptsprache. Zusätzlich coachen wir aktuell auf Ukrainisch, Russisch, Polnisch und Englisch — auch in der Kommunikation mit dem Jobcenter.",
+    "Das Coaching kann bei Bedarf in der Muttersprache der Teilnehmenden durchgeführt werden, um ein vollständiges Verständnis der Inhalte und eine effektive Bearbeitung individueller Themen sicherzustellen. Gleichzeitig findet ein wesentlicher Teil des Coachings auf Deutsch statt und umfasst die Vorbereitung auf Vorstellungsgespräche, berufliche Kommunikation, die Arbeit mit Bewerbungsunterlagen sowie die Interaktion mit Arbeitgebern und Behörden. Dieser Ansatz fördert eine nachhaltige Integration in den deutschen Arbeitsmarkt.",
   ],
   [
     "Helfen Sie mir, einen AVGS-Gutschein zu erhalten?",
