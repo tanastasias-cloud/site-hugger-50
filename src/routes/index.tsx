@@ -25,13 +25,13 @@ export const Route = createFileRoute("/")({
 const DIFFERENTIATORS: Array<[string, string, string]> = [
   [
     "🎯",
-    "Ganzheitliche Methodik",
-    "Wir starten bei Ihnen — Situation, Ziele, Sprache. Erst dann bauen wir Strategie, Bewerbungsunterlagen und Interviewvorbereitung darauf auf.",
+    "Ergebnisorientiert",
+    "Wir arbeiten auf konkrete Resultate hin — Jobwechsel, Neustart, Klarheit in der Situation. Fortschritt wird sichtbar, nicht nur besprochen.",
   ],
   [
     "🤝",
-    "Direkte Kontakte zu Unternehmen & HR",
-    "Wir arbeiten eng mit Arbeitgebern und Personalverantwortlichen. Viele Vakanzen erreichen uns, bevor sie öffentlich ausgeschrieben werden — passende Profile empfehlen wir persönlich weiter.",
+    "Individueller Ansatz",
+    "Kein Standard-Programm. Wir starten bei Ihnen — Situation, Ziele, Sprache — und bauen Strategie, Bewerbungsunterlagen und nächste Schritte passgenau darauf auf.",
   ],
   [
     "🌍",
