@@ -203,7 +203,7 @@ function HomePage() {
             <div className="coach-intro-tag">Gründerin · GetGrow Academy</div>
             <div className="coach-intro-name">Yuliia Zaienchyk</div>
             <div className="coach-intro-role">
-              Mitgründerin · Psychologin · Job-Coach · Berlin seit 2015
+              Gründerin · Psychologin · Job-Coach · Berlin seit 2015
             </div>
             <p className="coach-intro-bio">
               „Ich habe GetGrow Academy gegründet, weil ich selbst weiß, wie es
