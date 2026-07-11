@@ -22,243 +22,242 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const METHOD_ICONS: Record<string, React.ReactNode> = {
-  compass: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <polygon points="15.5 8.5 10.5 10.5 8.5 15.5 13.5 13.5 15.5 8.5" fill="currentColor" fillOpacity="0.15" />
-    </svg>
-  ),
-  network: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="5" cy="6" r="2.2" /><circle cx="19" cy="6" r="2.2" /><circle cx="12" cy="18" r="2.2" />
-      <path d="M7 7l4 9M17 7l-4 9M7 6h10" />
-    </svg>
-  ),
-  ai: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="4" y="6" width="16" height="12" rx="2" />
-      <path d="M8 10v4M12 10v4M16 10v4M4 12h-1M21 12h-1M8 6V4M16 6V4" />
-    </svg>
-  ),
-  globe: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18" />
-    </svg>
-  ),
-};
+const DIFFERENTIATORS: Array<[string, string, string]> = [
+  [
+    "🎯",
+    "Ganzheitliche Methodik",
+    "Wir starten bei Ihnen — Situation, Ziele, Sprache. Erst dann bauen wir Strategie, Bewerbungsunterlagen und Interviewvorbereitung darauf auf.",
+  ],
+  [
+    "🤝",
+    "Direkte Kontakte zu Unternehmen & HR",
+    "Wir arbeiten eng mit Arbeitgebern und Personalverantwortlichen. Viele Vakanzen erreichen uns, bevor sie öffentlich ausgeschrieben werden — passende Profile empfehlen wir persönlich weiter.",
+  ],
+  [
+    "🌍",
+    "Coaching in Ihrer Sprache",
+    "Deutsch, Englisch, Ukrainisch, Russisch, Polnisch — inklusive Kommunikation mit Behörden, Jobcenter und Arbeitgebern, wenn nötig.",
+  ],
+];
+
+const DOORS: Array<[string, string, string, string, string[], string]> = [
+  [
+    "01",
+    "Für Privatpersonen",
+    "Karriere · Leben · Neuorientierung",
+    "Wenn Sie an einem Wendepunkt stehen — beruflich, persönlich oder beim Neuanfang in Deutschland. Wir arbeiten mit Ihrer ganzen Situation, nicht nur mit dem Lebenslauf.",
+    ["Career & Life Coaching", "Selbstführung und Klarheit", "Neuorientierung & Reintegration"],
+    "/privatpersonen",
+  ],
+  [
+    "02",
+    "Für Unternehmen",
+    "Teams · Führung · Integration",
+    "Coaching und Workshops für Organisationen, die mit internationalen Mitarbeitenden, Veränderungen und Führungsfragen arbeiten. Maßgeschneidert für Ihr Team.",
+    ["Führungskräfte-Coaching", "Onboarding internationaler Talente", "Team-Workshops & Change-Begleitung"],
+    "/unternehmen",
+  ],
+  [
+    "03",
+    "Mit Jobcenter · AVGS · §16k SGB II",
+    "100 % gefördert · für Sie kostenfrei",
+    "Über den AVGS oder §16k SGB II zu 100 % durch das Jobcenter oder die Agentur für Arbeit förderbares Coaching — vom Bewerbungstraining bis zur ganzheitlichen Stabilisierung Ihrer Lebenssituation.",
+    ["AVGS Job Coaching · 56 UE", "§16k SGB II Ganzheitliches Coaching", "AZAV-zertifiziert · anerkannt"],
+    "/avgs-coaching",
+  ],
+];
+
+const OUTCOMES: Array<[string, string]> = [
+  ["Klarheit", "Sie wissen, wo Sie stehen — und wohin Sie wollen. Kein Rätselraten mehr."],
+  ["Richtung", "Ein konkreter Plan: welche Rollen, welcher Markt, welcher nächste Schritt."],
+  ["Selbstvertrauen", "Sie kennen Ihren Wert — unabhängig von Sprache, Pass oder Vorgeschichte."],
+  ["Ergebnisse", "Ein neuer Job, ein gegründetes Unternehmen, ein Leben, das wieder trägt."],
+];
 
 function HomePage() {
   return (
     <SiteShell active="home">
-      {/* HERO */}
-      <section className="gg-manifesto">
-        <div className="gg-manifesto-inner">
-          <div>
-            <div className="eyebrow">Coaching Academy · Berlin</div>
+      <div className="avgs-page">
+        {/* HERO SPLIT */}
+        <section className="page-hero split">
+          <div className="page-hero-left">
+            <div className="breadcrumb">Coaching Academy · Berlin</div>
             <h1>
-              Wachsen,<br />
-              <em>wo</em> Sie<br />
-              stehen.
+              Wachsen, <em>wo</em> Sie stehen.
             </h1>
-            <p className="hero-kicker">
+            <p className="page-hero-text">
               Karriere-Coaching, Bewerbungstraining und Jobvermittlung —
-              mit <strong>direkten Kontakten zu Unternehmen und HR</strong>
-              &nbsp;in Berlin und deutschlandweit.
+              mit <strong>direkten Kontakten zu Unternehmen und HR</strong> in Berlin
+              und deutschlandweit. Privat, über Ihr Unternehmen oder mit AVGS/§16k
+              gefördert vom Jobcenter oder der Agentur für Arbeit.
             </p>
-          </div>
-          <div>
-            <div className="rule" />
-            <p>Wir begleiten Menschen, Teams und Organisationen in entscheidenden beruflichen Übergängen — mit Psychologie, Klarheit und einem konkreten Plan.</p>
-            <p>Privat · über Ihr Unternehmen · oder mit AVGS/§16k gefördert vom Jobcenter oder der Agentur für Arbeit. In Berlin und online, auf Deutsch, Englisch, Ukrainisch, Russisch und Polnisch.</p>
-            <div className="cta-row">
-              <Link to="/kontakt" className="primary">
+            <div className="cta-btns" style={{ marginTop: 32 }}>
+              <Link to="/kontakt" className="btn-mint">
                 Kostenloses Erstgespräch
               </Link>
-              <a href="#angebot" className="ghost">
-                Unser Angebot ansehen
-              </a>
+              <Link to="/avgs-coaching" className="btn-outline-w" style={{ color: "var(--forest)", borderColor: "var(--forest)" }}>
+                AVGS-Programm ansehen →
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
+          <div className="page-hero-right">
+            {[
+              ["✓", "Zertifizierung", "AZAV-zertifiziert · AVGS & §16k anerkannt"],
+              ["👥", "Erfahrung", "200+ begleitete Klient:innen"],
+              ["🌍", "Sprachen", "DE · EN · UA · RU · PL"],
+              ["📍", "Standort", "Berlin Mitte · online & vor Ort"],
+            ].map(([icon, label, value]) => (
+              <div className="hero-badge-item" key={label}>
+                <div className="badge-icon">{icon}</div>
+                <div>
+                  <div className="badge-label">{label}</div>
+                  <div className="badge-value">{value}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* TRUST STRIP */}
-      <div className="gg-trust">
-        <span>AZAV-zertifizierter Träger</span>
-        <span>AVGS · §16k SGB II anerkannt</span>
-        <span><strong>200+</strong> begleitete Klient:innen</span>
-        <span>Direkte HR-Kontakte</span>
-        <span>DE · EN · UA · RU · PL</span>
-      </div>
+        {/* PARAMS STRIP */}
+        <section className="params-strip">
+          <div className="params-strip-item">
+            <div className="params-num">200+</div>
+            <div className="params-label">begleitete Klient:innen</div>
+          </div>
+          <div className="params-strip-item">
+            <div className="params-num">5</div>
+            <div className="params-label">Sprachen · DE · EN · UA · RU · PL</div>
+          </div>
+          <div className="params-strip-item">
+            <div className="params-num">3</div>
+            <div className="params-label">Wege zu uns · privat · Unternehmen · Jobcenter</div>
+          </div>
+        </section>
 
-      {/* METHOD + DIRECT HR NETWORK — moved up: this is the differentiator */}
-      <section className="gg-method">
-        <div className="sh">
-          <div className="sh-tag">Unsere Methodik · für alle Klient:innen</div>
-          <h2 className="sh-h2">
-            Was uns <em>anders</em> macht
-          </h2>
-        </div>
-        <p className="gg-method-lede">
-          Ob privat, über Ihr Unternehmen oder mit AVGS-Gutschein — unser Ansatz bleibt
-          derselbe: psychologisch fundiertes Coaching, moderne Werkzeuge und ein echtes
-          Netzwerk in den deutschen Arbeitsmarkt.
-        </p>
-        <div className="gg-method-grid">
-          {[
-            ["compass", "Ganzheitliche Methodik", "Wir starten bei Ihnen — Situation, Ziele, Sprache. Erst dann bauen wir Strategie, Bewerbungsunterlagen und Interviewvorbereitung darauf auf."],
-            ["network", "Direkte Kontakte zu Unternehmen & HR", "Wir arbeiten eng mit Arbeitgebern und Personalverantwortlichen. Viele Vakanzen erreichen uns, bevor sie öffentlich ausgeschrieben werden — passende Profile empfehlen wir persönlich weiter."],
-            ["ai", "KI-gestützt & ATS-optimiert", "Wir arbeiten mit ChatGPT und Claude und erstellen Unterlagen, die durch Applicant Tracking Systems (ATS) kommen — und beim Menschen dahinter überzeugen."],
-            ["globe", "Coaching in Ihrer Sprache", "Deutsch, Englisch, Ukrainisch, Russisch, Polnisch — inklusive Kommunikation mit Behörden, Jobcenter und Arbeitgebern, wenn nötig."],
-          ].map(([iconKey, title, text]) => (
-            <div className="gg-method-card" key={title}>
-              <div className="gg-method-icon">{METHOD_ICONS[iconKey]}</div>
-              <div className="gg-method-title">{title}</div>
-              <p className="gg-method-text">{text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* DIFFERENTIATORS — forest */}
+        <section className="section forest">
+          <div className="sh light">
+            <div className="sh-tag">Unsere Methodik · für alle Klient:innen</div>
+            <h2 className="sh-h2">
+              Was uns <em>anders</em> macht
+            </h2>
+          </div>
+          <p className="direct-lead">
+            Ob privat, über Ihr Unternehmen oder mit AVGS-Gutschein — unser Ansatz bleibt
+            derselbe: psychologisch fundiertes Coaching, moderne Werkzeuge und ein echtes
+            Netzwerk in den deutschen Arbeitsmarkt.
+          </p>
+          <div className="direct-grid">
+            {DIFFERENTIATORS.map(([icon, title, text]) => (
+              <div className="direct-card" key={title}>
+                <div className="direct-icon">{icon}</div>
+                <div className="direct-title">{title}</div>
+                <div className="direct-text">{text}</div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* THREE DOORS */}
-      <section className="gg-doors" id="angebot">
-        <div className="gg-doors-head">
-          <div>
-            <div className="eyebrow">Drei Wege zu uns</div>
-            <h2>
+        {/* THREE DOORS — white, module-style grid */}
+        <section className="section white" id="angebot">
+          <div className="sh">
+            <div className="sh-tag">Drei Wege zu uns</div>
+            <h2 className="sh-h2">
               Wofür sind Sie <em>hier?</em>
             </h2>
           </div>
-          <p className="lede">
-            Dieselbe Methodik, drei Rahmen: privat, im Unternehmen oder im
-            Rahmen einer geförderten Maßnahme.
+          <p className="direct-lead" style={{ color: "#2a3a34" }}>
+            Dieselbe Methodik, drei Rahmen: privat, im Unternehmen oder im Rahmen einer
+            geförderten Maßnahme.
           </p>
-        </div>
+          <div className="modules-grid">
+            {DOORS.map(([num, tag, title, text, list, href]) => (
+              <Link to={href} className="module-card door-link" key={num}>
+                <div className="module-num">{num}</div>
+                <div className="door-tag" style={{ marginBottom: 6 }}>{tag}</div>
+                <div className="module-title">{title}</div>
+                <div className="module-text">{text}</div>
+                <ul className="door-list" style={{ marginTop: 16 }}>
+                  {list.map((li) => <li key={li}>{li}</li>)}
+                </ul>
+                <span className="door-cta" style={{ marginTop: 20, display: "inline-block" }}>Mehr erfahren →</span>
+              </Link>
+            ))}
+          </div>
+        </section>
 
-        <div className="gg-doors-grid">
-          <Link to="/privatpersonen" className="door">
-            <div className="door-num">01</div>
-            <div className="door-tag">Für Privatpersonen</div>
-            <div className="door-title">Karriere · Leben · Neuorientierung</div>
-            <p className="door-text">
-              Wenn Sie an einem Wendepunkt stehen — beruflich, persönlich
-              oder beim Neuanfang in Deutschland. Wir arbeiten mit Ihrer
-              ganzen Situation, nicht nur mit dem Lebenslauf.
-            </p>
-            <ul className="door-list">
-              <li>Career & Life Coaching</li>
-              <li>Selbstführung und Klarheit</li>
-              <li>Neuorientierung & Reintegration</li>
-            </ul>
-            <span className="door-cta">Mehr erfahren</span>
-          </Link>
-
-          <Link to="/unternehmen" className="door">
-            <div className="door-num">02</div>
-            <div className="door-tag">Für Unternehmen</div>
-            <div className="door-title">Teams · Führung · Integration</div>
-            <p className="door-text">
-              Coaching und Workshops für Organisationen, die mit
-              internationalen Mitarbeitenden, Veränderungen und
-              Führungsfragen arbeiten. Maßgeschneidert für Ihr Team.
-            </p>
-            <ul className="door-list">
-              <li>Führungskräfte-Coaching</li>
-              <li>Onboarding internationaler Talente</li>
-              <li>Team-Workshops & Change-Begleitung</li>
-            </ul>
-            <span className="door-cta">Angebot anfragen</span>
-          </Link>
-
-          <Link to="/avgs-coaching" className="door">
-            <div className="door-num">03</div>
-            <div className="door-tag">Mit Jobcenter</div>
-            <div className="door-title">AVGS · §16k SGB II</div>
-            <p className="door-text">
-              Über den AVGS oder §16k SGB II zu 100 % durch das Jobcenter oder die Agentur für Arbeit förderbares Coaching für
-              Bürgergeld-Empfänger:innen. Vom Bewerbungstraining bis zur
-              ganzheitlichen Stabilisierung Ihrer Lebenssituation.
-            </p>
-            <ul className="door-list">
-              <li>AVGS-Job-Coaching · 56 UE</li>
-              <li>§16k SGB II Ganzheitliches Coaching</li>
-              <li>100 % gefördert · für Sie kostenfrei</li>
-            </ul>
-            <span className="door-cta">Programm ansehen</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* FOUNDER MESSAGE */}
-      <section className="gg-coach-intro">
-        <div className="coach-intro-grid">
-          <img
-            src={yuliiaAsset.url}
-            alt="Yuliia Zaienchyk"
-            className="coach-intro-photo"
-          />
-          <div>
-            <div className="coach-intro-tag">Gründerin · GetGrow Academy</div>
-            <div className="coach-intro-name">Yuliia Zaienchyk</div>
-            <div className="coach-intro-role">
-              Gründerin · Psychologin · Job-Coach · Berlin seit 2015
+        {/* FOUNDER — sage */}
+        <section className="section sage">
+          <div className="sh">
+            <div className="sh-tag">Gründerin</div>
+            <h2 className="sh-h2">
+              Yuliia <em>Zaienchyk</em>
+            </h2>
+          </div>
+          <div className="coach-intro-grid" style={{ marginTop: 12 }}>
+            <img
+              src={yuliiaAsset.url}
+              alt="Yuliia Zaienchyk"
+              className="coach-intro-photo"
+            />
+            <div>
+              <div className="coach-intro-tag">Gründerin · GetGrow Academy</div>
+              <div className="coach-intro-role">
+                Psychologin · Job-Coach · Berlin seit 2015
+              </div>
+              <p className="coach-intro-bio">
+                „Ich habe GetGrow Academy gegründet, weil ich selbst weiß, wie es ist, in
+                Deutschland neu anzufangen. Bei uns bekommen Sie kein Standard-Coaching und
+                keine leeren Versprechen — sondern ein Team, das den deutschen Arbeitsmarkt
+                kennt, Ihre Sprache spricht und Ihre Situation versteht."
+              </p>
+              <Link
+                to="/coaches/$slug"
+                params={{ slug: "yuliia-zaienchyk" }}
+                className="coach-intro-link"
+              >
+                Mehr über Yuliia →
+              </Link>
             </div>
-            <p className="coach-intro-bio">
-              „Ich habe GetGrow Academy gegründet, weil ich selbst weiß, wie es
-              ist, in Deutschland neu anzufangen. Bei uns bekommen Sie kein
-              Standard-Coaching und keine leeren Versprechen — sondern ein Team,
-              das den deutschen Arbeitsmarkt kennt, Ihre Sprache spricht und
-              Ihre Situation versteht."
-            </p>
-            <Link
-              to="/coaches/$slug"
-              params={{ slug: "yuliia-zaienchyk" }}
-              className="coach-intro-link"
-            >
-              Mehr über Yuliia →
+          </div>
+        </section>
+
+        {/* OUTCOMES — off */}
+        <section className="section off">
+          <div className="sh">
+            <div className="sh-tag">Was sich verändert</div>
+            <h2 className="sh-h2">
+              Vier Worte, die unsere Klient:innen <em>nennen</em>
+            </h2>
+          </div>
+          <div className="modules-grid">
+            {OUTCOMES.map(([word, text]) => (
+              <div className="module-card" key={word}>
+                <div className="module-title" style={{ fontFamily: "'Allura', cursive", fontSize: 40, color: "var(--green)", lineHeight: 1 }}>
+                  {word}
+                </div>
+                <div className="module-text" style={{ marginTop: 12 }}>{text}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA STRIP */}
+        <section className="cta-strip">
+          <div>
+            <div className="cta-strip-tag">Bereit anzufangen?</div>
+            <h2>Buchen Sie heute Ihr kostenloses Erstgespräch.</h2>
+          </div>
+          <div className="cta-btns">
+            <Link to="/kontakt" className="btn-mint">
+              Kostenloses Gespräch buchen
+            </Link>
+            <Link to="/avgs-coaching" className="btn-outline-w">
+              AVGS-Programm ansehen →
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* OUTCOMES */}
-      <section className="gg-outcomes">
-        <div className="sh">
-          <div className="sh-tag">Was sich verändert</div>
-          <h2 className="sh-h2">
-            Vier Worte, die unsere Klient:innen <em>nennen</em>
-          </h2>
-        </div>
-        <div className="outcomes-grid">
-          {[
-            ["Klarheit", "Sie wissen, wo Sie stehen — und wohin Sie wollen. Kein Rätselraten mehr."],
-            ["Richtung", "Ein konkreter Plan: welche Rollen, welcher Markt, welcher nächste Schritt."],
-            ["Selbstvertrauen", "Sie kennen Ihren Wert — unabhängig von Sprache, Pass oder Vorgeschichte."],
-            ["Ergebnisse", "Ein neuer Job, ein gegründetes Unternehmen, ein Leben, das wieder trägt."],
-          ].map(([word, text]) => (
-            <div className="outcome-item" key={word}>
-              <div className="outcome-word">{word}</div>
-              <p className="outcome-text">{text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* AVGS BANNER */}
-      <section className="avgs-banner">
-        <div>
-          <div className="tag">Für Jobcenter-Kund:innen</div>
-          <h3>
-            Unser Coaching ist über AVGS — <em>zu 100 % gefördert</em> durch
-            das Jobcenter.
-          </h3>
-        </div>
-        <Link to="/avgs-coaching" className="btn-p" style={{ whiteSpace: "nowrap" }}>
-          AVGS anfragen →
-        </Link>
-      </section>
+        </section>
+      </div>
     </SiteShell>
   );
 }
