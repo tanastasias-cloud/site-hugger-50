@@ -89,29 +89,28 @@ function DatenschutzPage() {
         <h2>2. Hosting</h2>
         <p>Wir hosten die Inhalte unserer Website bei folgenden Anbietern:</p>
 
-        <h3>Lovable (Cloudflare)</h3>
+        <h3>Hetzner (Website-Hosting)</h3>
         <p>
-          Anbieter ist Lovable GmbH, die die Website über die Infrastruktur von Cloudflare,
-          Inc. (101 Townsend St, San Francisco, CA 94107, USA) ausliefert. Wenn Sie unsere
-          Website besuchen, erfasst Cloudflare verschiedene Logfiles inklusive Ihrer
-          IP-Adressen zur sicheren Auslieferung und zum Schutz vor Angriffen.
+          Anbieter ist die Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen,
+          Deutschland (nachfolgend „Hetzner"). Die Server, auf denen unsere Website
+          gehostet wird, stehen in Deutschland. Beim Besuch unserer Website erfasst
+          Hetzner verschiedene Logfiles inklusive Ihrer IP-Adressen.
         </p>
         <p>
-          Details entnehmen Sie der Datenschutzerklärung von Cloudflare:{" "}
+          Details entnehmen Sie der Datenschutzerklärung von Hetzner:{" "}
           <a
-            href="https://www.cloudflare.com/privacypolicy/"
+            href="https://www.hetzner.com/de/rechtliches/datenschutz"
             target="_blank"
             rel="noopener noreferrer"
           >
-            https://www.cloudflare.com/privacypolicy/
+            https://www.hetzner.com/de/rechtliches/datenschutz
           </a>
           .
         </p>
         <p>
-          Die Verwendung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein
-          berechtigtes Interesse an einer möglichst zuverlässigen und sicheren Darstellung
-          unserer Website. Die Datenübertragung in die USA wird auf die Standardvertragsklauseln
-          der EU-Kommission gestützt.
+          Die Verwendung von Hetzner erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+          Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen und
+          sicheren Darstellung unserer Website.
         </p>
 
         <h3>Supabase (Datenbank für Kontaktanfragen)</h3>
@@ -131,6 +130,7 @@ function DatenschutzPage() {
           </a>
           .
         </p>
+
 
         <p>
           <strong>Auftragsverarbeitung.</strong> Mit den oben genannten Anbietern haben wir
