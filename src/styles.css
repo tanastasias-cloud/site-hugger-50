@@ -735,7 +735,7 @@
   .gg-nav, .gg-right { display: none; }
   .gg-burger { display: flex; }
   .gg-hero, .page-hero.split, .two-col, .contact-grid, .contact-main, .coach-card, .coach-intro-grid { grid-template-columns: 1fr; gap: 40px; }
-  .gg-hero-left, .gg-hero-right, .page-hero-left, .page-hero-right { padding: 48px 24px; }
+  .gg-hero-left, .gg-hero-right, .page-hero-left, .page-hero-right { padding: 92px 24px; }
   .gg-hero-h1 { font-size: 40px; }
   .gg-hero-h1 em { font-size: 44px; }
   .gg-mission, .gg-services, .gg-outcomes, .gg-coach-intro, .gg-testimonials, .gg-contact, .section, .coaches-section { padding: 60px 24px; }
@@ -745,7 +745,7 @@
   .cta-strip { flex-direction: column; padding: 48px 24px; align-items: flex-start; }
   .gg-footer { flex-direction: column; gap: 32px; padding: 40px 24px; align-items: flex-start; }
   .avgs-banner { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
-  .page-hero.simple { padding: 56px 24px 40px; }
+  .page-hero.simple { padding: 92px 24px 40px; }
   .page-hero h1 { font-size: 38px; }
   .coach-coming { flex-direction: column; padding: 32px; }
 }
