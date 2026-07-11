@@ -56,7 +56,7 @@ function ContactPage() {
               ["Telefon", <a href="tel:+4915736651515">+49 157 3665 1515</a>],
               ["Website", "getgrow.academy"],
               ["Standort", "Berlin & Online"],
-              ["Sprachen", "DE · EN · UA · RU"],
+              ["Sprachen", "DE · EN · UA · RU · PL"],
             ].map(([label, value], i) => (
               <div className="info-item" key={i}>
                 <span className="info-label">{label}</span>
