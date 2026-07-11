@@ -36,6 +36,9 @@ export function SiteFooter() {
       <div className="footer-disclaimer">
         Keine Gewährleistung auf Vermittlungserfolg. § 296 SGB III / § 45 SGB III.
       </div>
+      <div className="footer-copyright">
+        © {new Date().getFullYear()} GetGrow Academy GmbH · Alle Rechte vorbehalten.
+      </div>
     </footer>
   );
 }
