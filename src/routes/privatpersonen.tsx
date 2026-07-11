@@ -120,7 +120,7 @@ function PrivatPage() {
           <p>
             Droht Ihnen eine Kündigung, möchten Sie sich beruflich neu orientieren oder haben
             (noch) keinen AVGS-Gutschein? Auch dann unterstützen wir Sie — im privaten Rahmen,
-            unabhängig vom Jobcenter.
+            unabhängig vom Jobcenter oder der Agentur für Arbeit.
           </p>
           <p style={{ fontSize: 13, color: "#888" }}>
             Diese Begleitung ist nicht über die AZAV-Zertifizierung gefördert. Format, Dauer und

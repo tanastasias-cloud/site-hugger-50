@@ -117,7 +117,7 @@ function CoachesPage() {
           <h3>Du bist Coach und möchtest mit uns arbeiten?</h3>
           <p>
             Wir bauen ein Netzwerk aus zertifizierten Coaches auf, die Privatpersonen, Unternehmen
-            und Jobcenter-Klient:innen in Deutschland begleiten. Wenn du Erfahrung im Karriere-,
+            und Jobcenter- sowie Agentur-für-Arbeit-Klient:innen in Deutschland begleiten. Wenn du Erfahrung im Karriere-,
             Life- oder Business-Coaching hast, freuen wir uns über deine Nachricht.
           </p>
           <Link to="/kontakt" className="btn-mint">

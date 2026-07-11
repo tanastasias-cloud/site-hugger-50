@@ -8,13 +8,13 @@ export const Route = createFileRoute("/16k-coaching")({
       {
         name: "description",
         content:
-          "Individuelles §16k SGB II Coaching für Ihre gesamte Lebenssituation — vollständig kostenfrei, gefördert durch das Jobcenter.",
+          "Individuelles §16k SGB II Coaching für Ihre gesamte Lebenssituation — vollständig kostenfrei, gefördert durch das Jobcenter oder die Agentur für Arbeit.",
       },
       { property: "og:title", content: "Ganzheitliches Coaching · §16k SGB II — GetGrow Academy Berlin" },
       {
         property: "og:description",
         content:
-          "Individuelle Begleitung, die nicht nur die Jobsuche, sondern Ihre gesamte Lebenssituation berücksichtigt. Kostenfrei durch das Jobcenter.",
+          "Individuelle Begleitung, die nicht nur die Jobsuche, sondern Ihre gesamte Lebenssituation berücksichtigt. Kostenfrei durch das Jobcenter oder die Agentur für Arbeit.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -68,12 +68,12 @@ function SixteenKPage() {
           </h1>
           <p className="page-hero-text">
             Individuelle Begleitung, die nicht nur die Jobsuche umfasst — sondern Ihre gesamte
-            Lebenssituation. Vollständig kostenfrei, gefördert durch das Jobcenter.
+            Lebenssituation. Vollständig kostenfrei, gefördert durch das Jobcenter oder die Agentur für Arbeit.
           </p>
         </div>
         <div className="page-hero-right">
           {[
-            ["✓", "Kosten", "100 % kostenfrei · gefördert vom Jobcenter"],
+            ["✓", "Kosten", "100 % kostenfrei · gefördert vom Jobcenter oder der Agentur für Arbeit"],
             ["📋", "Programm", "§16k SGB II · für Bürgergeld-Beziehende"],
             ["🌍", "Sprachen", "DE · EN · UA · RU · PL"],
             ["🤝", "Ansatz", "Ganzheitlich · Psychologie + Coaching"],
@@ -92,7 +92,7 @@ function SixteenKPage() {
       <section className="params-strip">
         <div className="params-strip-item">
           <div className="params-num">100 %</div>
-          <div className="params-label">kostenfrei · gefördert vom Jobcenter</div>
+          <div className="params-label">kostenfrei · gefördert vom Jobcenter oder der Agentur für Arbeit</div>
         </div>
         <div className="params-strip-item">
           <div className="params-num">1:1</div>
@@ -139,7 +139,7 @@ function SixteenKPage() {
                 Wenn Stress, Schulden, gesundheitliche Themen, eine Sprachbarriere oder einfach
                 das Gefühl, nicht zu wissen, wo man anfangen soll, Ihnen gerade im Weg stehen —
                 dann ist dieses Programm für Sie gedacht. Voraussetzung: Bezug von Bürgergeld
-                und ein §16k SGB II Gutschein vom Jobcenter.
+                und ein §16k SGB II Gutschein vom Jobcenter oder der Agentur für Arbeit.
               </p>
             </div>
 

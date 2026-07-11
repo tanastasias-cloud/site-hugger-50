@@ -71,7 +71,7 @@ function HomePage() {
           <div>
             <div className="rule" />
             <p>Wir begleiten Menschen, Teams und Organisationen in entscheidenden beruflichen Übergängen — mit Psychologie, Klarheit und einem konkreten Plan.</p>
-            <p>Privat · über Ihr Unternehmen · oder mit AVGS/§16k gefördert vom Jobcenter. In Berlin und online, auf Deutsch, Englisch, Ukrainisch, Russisch und Polnisch.</p>
+            <p>Privat · über Ihr Unternehmen · oder mit AVGS/§16k gefördert vom Jobcenter oder der Agentur für Arbeit. In Berlin und online, auf Deutsch, Englisch, Ukrainisch, Russisch und Polnisch.</p>
             <div className="cta-row">
               <Link to="/kontakt" className="primary">
                 Kostenloses Erstgespräch
@@ -177,7 +177,7 @@ function HomePage() {
             <div className="door-tag">Mit Jobcenter</div>
             <div className="door-title">AVGS · §16k SGB II</div>
             <p className="door-text">
-              Vollständig vom Jobcenter finanziertes Coaching für
+              Über den AVGS oder §16k SGB II zu 100 % durch das Jobcenter oder die Agentur für Arbeit förderbares Coaching für
               Bürgergeld-Empfänger:innen. Vom Bewerbungstraining bis zur
               ganzheitlichen Stabilisierung Ihrer Lebenssituation.
             </p>

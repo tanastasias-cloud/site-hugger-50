@@ -122,12 +122,12 @@ function AvgsPage() {
           </h1>
           <p className="page-hero-text">
             Vom ersten Gespräch bis zur Unterschrift des Arbeitsvertrags — zertifiziertes
-            Coaching, vollständig durch das Jobcenter finanziert.
+            Coaching, über den AVGS zu 100 % durch das Jobcenter oder die Agentur für Arbeit förderbar.
           </p>
         </div>
         <div className="page-hero-right">
           {[
-            ["✓", "Kosten", "100 % kostenfrei · gefördert vom Jobcenter"],
+            ["✓", "Kosten", "100 % kostenfrei · gefördert vom Jobcenter oder der Agentur für Arbeit"],
             ["📋", "Zertifizierung", "AZAV-zertifiziert · AVGS akzeptiert"],
             ["🌍", "Sprachen", "DE · EN · UA · RU · PL"],
             ["📍", "Format", "Online & vor Ort · Berlin"],
@@ -245,7 +245,7 @@ function AvgsPage() {
               </p>
               <div className="avgs-free-badge">
                 <div className="free-title">Die Teilnahme ist vollständig kostenfrei.</div>
-                <div className="free-sub">Alle Kosten werden vom Staat übernommen.</div>
+                <div className="free-sub">Alle Kosten werden vom Jobcenter oder der Agentur für Arbeit übernommen.</div>
               </div>
             </div>
             <div className="eligibility-box">
