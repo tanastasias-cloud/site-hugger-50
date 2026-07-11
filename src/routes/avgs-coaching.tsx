@@ -111,7 +111,8 @@ const FAQS: Array<[string, React.ReactNode]> = [
 function AvgsPage() {
   return (
     <SiteShell active="avgs">
-      <section className="page-hero split">
+      <div className="avgs-page">
+        <section className="page-hero split">
         <div className="page-hero-left">
           <div className="breadcrumb">
             <Link to="/">Startseite</Link> · Job Coaching · AVGS
@@ -333,6 +334,7 @@ function AvgsPage() {
           </Link>
         </div>
       </section>
+      </div>
     </SiteShell>
   );
 }
