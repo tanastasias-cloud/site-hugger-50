@@ -691,7 +691,7 @@
   padding: 4px 10px; margin-bottom: 4px;
 }
 
-.coach-group { margin-bottom: 96px; }
+.coach-group { margin-bottom: 64px; }
 .coach-group:last-of-type { margin-bottom: 0; }
 .coach-group-head { max-width: 1320px; margin: 0 auto 40px; }
 .coach-group-tag { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
