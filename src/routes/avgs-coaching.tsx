@@ -45,16 +45,15 @@ const STEPS: Array<[string, string]> = [
   ],
 ];
 
-const INHALTE = [
-  "Stärken-Schwächen-Analyse (SWOT)",
-  "Ziele definieren, Arbeitsschritte und Zeitmanagement festlegen",
-  "Arbeitsmarktrelevante berufliche und persönliche Erfahrungen evaluieren",
-  "Lebenslauf (CV) und Anschreiben formulieren und optimieren",
-  "Methoden der Selbstvermarktung und Selbstpräsentation",
-  "Vorbereitung auf Vorstellungsgespräche (Mock-Interviews)",
-  "Stilberatung, Körpersprache und Umgangsformen",
-  "Stellensuche, Nutzung von LinkedIn, XING und weiteren Plattformen",
-  "Aufbau eines beruflichen Netzwerks",
+const MODULE: Array<[string, string, string]> = [
+  ["01", "Profiling & Standortanalyse · 7 UE", "Erfassung von Kompetenzen, Erfahrungen, Zielen. SWOT-Analyse und individueller Aktionsplan für den deutschen Arbeitsmarkt."],
+  ["02", "Zielsetzung & Zeitmanagement · 6 UE", "Berufliche Ziele definieren, Arbeitsschritte planen, realistische Zeitachsen festlegen."],
+  ["03", "Arbeitsmarkt & Berufsfeld-Analyse · 7 UE", "Der aktuelle Berliner und deutsche Arbeitsmarkt: Branchen, Berufsbilder, Anforderungen, Gehaltsniveaus."],
+  ["04", "Selbstvermarktung & Selbstpräsentation · 6 UE", "Persönliche Positionierung, Körpersprache, Umgangsformen, professioneller Auftritt."],
+  ["05", "Digitale Jobsuche & Netzwerkaufbau · 7 UE", "LinkedIn, XING und weitere Plattformen strategisch nutzen. Aufbau eines beruflichen Netzwerks in Deutschland."],
+  ["06", "Vorstellungsgespräche & Mock-Interviews · 7 UE", "Typische Arbeitgeberfragen, Gehaltsverhandlung, souveräne Selbstpräsentation — trainiert bis es sitzt."],
+  ["07", "KI-gestützte Bewerbung: ChatGPT & Claude · 10 UE", "Wir arbeiten mit modernen KI-Tools (ChatGPT, Claude) für Recherche, Anschreiben-Entwürfe und die Vorbereitung auf Interviews."],
+  ["08", "ATS-optimierte Bewerbungsunterlagen · 6 UE", "Lebenslauf und Anschreiben, die durch Applicant Tracking Systems (ATS) kommen — Formatierung, Keywords, Struktur nach deutschem Standard."],
 ];
 
 const FAQS: Array<[string, React.ReactNode]> = [
@@ -81,6 +80,18 @@ const FAQS: Array<[string, React.ReactNode]> = [
   [
     "Helfen Sie mir, einen AVGS-Gutschein zu erhalten?",
     "Ja. Sprechen Sie zunächst mit Ihrer Ansprechperson im Jobcenter oder der Agentur für Arbeit und beantragen Sie einen AVGS für Job Coaching. Sobald Sie ihn haben, melden Sie sich bei uns — wir übernehmen den Rest und kümmern uns auch um die Formalitäten.",
+  ],
+  [
+    "Bekomme ich ein Zertifikat?",
+    "Ja. Nach erfolgreichem Abschluss erhalten Sie das Teilnehmerzertifikat der GetGrow Academy Berlin mit Angaben zu Inhalt, Dauer und Zielen des Coachings. Zwei verpflichtende Check-Gespräche (Check 1 und Check 2) begleiten den Fortschritt und sind Voraussetzung für das Zertifikat.",
+  ],
+  [
+    "Nutzen Sie KI-Tools im Coaching?",
+    "Ja — bewusst und angeleitet. Wir arbeiten unter anderem mit ChatGPT und Claude, um Bewerbungen ATS-optimiert zu erstellen, Anschreiben zu verfeinern und Sie gezielt auf Interviews vorzubereiten. So bekommen Sie sowohl das Handwerk als auch die aktuellen Werkzeuge des Arbeitsmarkts.",
+  ],
+  [
+    "Wo findet das Coaching statt?",
+    "Hybrid: online und in Präsenz in unseren Räumen im Mindspace, Krausenstraße 9/10, 10117 Berlin (Mitte). Sie wählen das Format, das zu Ihrem Alltag passt — oder kombinieren beide.",
   ],
   [
     "Was passiert, wenn ich abbreche oder die Maßnahme nicht zu mir passt?",
@@ -252,15 +263,22 @@ function AvgsPage() {
 
       <section className="section sage">
         <div className="sh">
-          <div className="sh-tag">Was wir behandeln</div>
+          <div className="sh-tag">8 Module · 56 Unterrichtseinheiten</div>
           <h2 className="sh-h2">
             Inhalte <em>im Detail</em>
           </h2>
         </div>
-        <div className="topics-grid" style={{ maxWidth: 1100 }}>
-          {INHALTE.map((t) => (
-            <div className="topic-item" key={t}>
-              {t}
+        <p className="direct-lead" style={{ color: "#2a3a34" }}>
+          Hybrid · online oder in Präsenz im Mindspace, Krausenstraße 9/10, 10117 Berlin.
+          Zwei verpflichtende Check-Gespräche (Check 1 & Check 2) begleiten Ihren Fortschritt —
+          Abschluss mit Teilnehmerzertifikat der GetGrow Academy Berlin.
+        </p>
+        <div className="modules-grid">
+          {MODULE.map(([num, title, text]) => (
+            <div className="module-card" key={num}>
+              <div className="module-num">{num}</div>
+              <div className="module-title">{title}</div>
+              <div className="module-text">{text}</div>
             </div>
           ))}
         </div>
