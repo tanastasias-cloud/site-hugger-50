@@ -42,8 +42,8 @@ export const coaches: Coach[] = [
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇷🇺", label: "Russisch" },
-      { flag: "🇩🇪", label: "Deutsch B2" },
-      { flag: "🇬🇧", label: "Englisch C1" },
+      { flag: "🇩🇪", label: "Deutsch" },
+      { flag: "🇬🇧", label: "Englisch" },
     ],
     bio: [
       "Ich bin Psychologin und Job-Coach — mit Master in Psychologie (Pädagogische Universität, Kyiv), Bachelor in Internationalem Management und einer Coaching-Ausbildung in Existenziellem und Klientenzentriertem Coaching. Seit über fünf Jahren begleite ich Menschen als Coach.",
