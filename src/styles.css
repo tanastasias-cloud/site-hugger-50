@@ -251,7 +251,7 @@
   padding: 0 64px;
 }
 .gg-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-.gg-logo-img { height: 56px; width: auto; display: block; }
+.gg-logo-img { height: 44px; width: auto; display: block; }
 
 .gg-nav { display: flex; align-items: center; gap: 36px; }
 .gg-nav-link { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--forest); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; letter-spacing: 0.3px; background: none; border: none; cursor: pointer; }

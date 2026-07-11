@@ -40,8 +40,8 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
             src={logoAsset.url}
             alt="GetGrow Academy Berlin"
             className="gg-logo-img"
-            width="180"
-            height="60"
+            width="132"
+            height="44"
             loading="eager"
           />
         </Link>
