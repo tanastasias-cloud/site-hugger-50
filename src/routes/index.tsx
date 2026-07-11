@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Zertifiziertes Coaching in Berlin — für Privatpersonen, Unternehmen und Jobcenter-Kund:innen. AVGS & §16k SGB II anerkannt. DE · EN · UA · RU.",
+          "Zertifiziertes Coaching in Berlin — für Privatpersonen, Unternehmen und Jobcenter-Kund:innen. AVGS & §16k SGB II anerkannt. DE · EN · UA · RU · PL.",
       },
       { property: "og:title", content: "GetGrow Academy Berlin" },
       {
@@ -71,7 +71,7 @@ function HomePage() {
           <div>
             <div className="rule" />
             <p>Wir begleiten Menschen, Teams und Organisationen in entscheidenden beruflichen Übergängen — mit Psychologie, Klarheit und einem konkreten Plan.</p>
-            <p>Privat · über Ihr Unternehmen · oder mit AVGS/§16k gefördert vom Jobcenter. In Berlin und online, auf Deutsch, Englisch, Ukrainisch und Russisch.</p>
+            <p>Privat · über Ihr Unternehmen · oder mit AVGS/§16k gefördert vom Jobcenter. In Berlin und online, auf Deutsch, Englisch, Ukrainisch, Russisch und Polnisch.</p>
             <div className="cta-row">
               <Link to="/kontakt" className="primary">
                 Kostenloses Erstgespräch
@@ -90,7 +90,7 @@ function HomePage() {
         <span>AVGS · §16k SGB II anerkannt</span>
         <span><strong>200+</strong> begleitete Klient:innen</span>
         <span>Direkte HR-Kontakte</span>
-        <span>DE · EN · UA · RU</span>
+        <span>DE · EN · UA · RU · PL</span>
       </div>
 
       {/* METHOD + DIRECT HR NETWORK — moved up: this is the differentiator */}
@@ -111,7 +111,7 @@ function HomePage() {
             ["compass", "Ganzheitliche Methodik", "Wir starten bei Ihnen — Situation, Ziele, Sprache. Erst dann bauen wir Strategie, Bewerbungsunterlagen und Interviewvorbereitung darauf auf."],
             ["network", "Direkte Kontakte zu Unternehmen & HR", "Wir arbeiten eng mit Arbeitgebern und Personalverantwortlichen. Viele Vakanzen erreichen uns, bevor sie öffentlich ausgeschrieben werden — passende Profile empfehlen wir persönlich weiter."],
             ["ai", "KI-gestützt & ATS-optimiert", "Wir arbeiten mit ChatGPT und Claude und erstellen Unterlagen, die durch Applicant Tracking Systems (ATS) kommen — und beim Menschen dahinter überzeugen."],
-            ["globe", "Coaching in Ihrer Sprache", "Deutsch, Englisch, Ukrainisch, Russisch — inklusive Kommunikation mit Behörden, Jobcenter und Arbeitgebern, wenn nötig."],
+            ["globe", "Coaching in Ihrer Sprache", "Deutsch, Englisch, Ukrainisch, Russisch, Polnisch — inklusive Kommunikation mit Behörden, Jobcenter und Arbeitgebern, wenn nötig."],
           ].map(([iconKey, title, text]) => (
             <div className="gg-method-card" key={title}>
               <div className="gg-method-icon">{METHOD_ICONS[iconKey]}</div>
