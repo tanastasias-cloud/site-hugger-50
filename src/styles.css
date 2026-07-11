@@ -751,7 +751,11 @@
   .gg-header { padding: 0 24px; }
   .gg-nav, .gg-right { display: none; }
   .gg-burger { display: flex; }
-  .gg-hero, .page-hero.split, .two-col, .contact-grid, .contact-main, .coach-card, .coach-intro-grid { grid-template-columns: 1fr; gap: 40px; }
+  .gg-hero, .page-hero.split, .two-col, .contact-grid, .contact-main, .coach-card, .coach-intro-grid, .founder-inner { grid-template-columns: 1fr; gap: 40px; }
+  .founder-inner { justify-items: center; text-align: center; }
+  .founder-photo { width: 180px; }
+  .founder-tag { justify-content: center; }
+  .founder-bio { text-align: center; }
   .gg-hero-left, .gg-hero-right, .page-hero-left, .page-hero-right { padding: 112px 24px 48px; }
   .gg-hero-h1 { font-size: 40px; }
   .gg-hero-h1 em { font-size: 44px; }
