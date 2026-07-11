@@ -118,6 +118,36 @@ function HomePage() {
           </div>
         </section>
 
+        {/* FOUNDER — sage, compact, immediately after hero */}
+        <section className="section sage founder-section">
+          <div className="founder-inner">
+            <img
+              src={yuliiaAsset.url}
+              alt="Yuliia Zaienchyk"
+              className="founder-photo"
+            />
+            <div className="founder-text">
+              <div className="founder-tag">Gründerin · GetGrow Academy</div>
+              <h2 className="founder-name">
+                Yuliia <em>Zaienchyk</em>
+              </h2>
+              <div className="founder-role">Psychologin · Job-Coach · Berlin seit 2015</div>
+              <p className="founder-bio">
+                „Ich habe GetGrow Academy gegründet, weil ich selbst weiß, wie es ist, in
+                Deutschland neu anzufangen. Bei uns bekommen Sie kein Standard-Coaching und
+                keine leeren Versprechen — sondern ein Team, das den deutschen Arbeitsmarkt
+                kennt, Ihre Sprache spricht und Ihre Situation versteht."
+              </p>
+              <Link
+                to="/coaches/$slug"
+                params={{ slug: "yuliia-zaienchyk" }}
+                className="coach-intro-link"
+              >
+                Mehr über Yuliia →
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* DIFFERENTIATORS — forest */}
         <section className="section forest">
