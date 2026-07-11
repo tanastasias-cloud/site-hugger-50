@@ -6,6 +6,7 @@ import alinaAsset from "@/assets/alina-orlanski.jpg.asset.json";
 import olhaAsset from "@/assets/olha-shanta-hladun.jpg.asset.json";
 import eugenieAsset from "@/assets/eugenie-kralyuk.jpg.asset.json";
 import nataliiaAsset from "@/assets/nataliia-skliar.jpg.asset.json";
+import dariaAsset from "@/assets/daria-coach.jpg.asset.json";
 
 // Coach-Profile — neue Coaches einfach hier hinzufügen.
 // Jeder Eintrag erscheint automatisch auf /coaches.
@@ -287,7 +288,42 @@ export const coaches: Coach[] = [
       "Interkulturelle Kompetenz & Gewaltfreie Kommunikation",
     ],
   },
+  {
+    slug: "daria",
+    name: "Daria",
+    role: "Job-Coach & Trainerin · Life Coach · Arbeitsmarktintegration",
+    photo: dariaAsset.url,
+    languages: [
+      { flag: "🇩🇪", label: "Deutsch" },
+      { flag: "🇷🇺", label: "Russisch" },
+      { flag: "🇺🇦", label: "Ukrainisch" },
+    ],
+    bio: [
+      "Ich bin Job-Coach und Trainerin mit Schwerpunkt Arbeitsmarktintegration. Nach einem Bachelor im Lehramt (Biologie) und einem Master of Science (Biologie) habe ich 2021–2022 eine Ausbildung zum Life Coach bei der Homodea GmbH absolviert. Seit 2022 begleite ich Menschen im Einzelcoaching und in Gruppenseminaren – vor allem im Rahmen von AVGS-Programmen – und habe bisher rund 200 Kund:innen auf ihrem Weg in den deutschen Arbeitsmarkt unterstützt.",
+      "Als Migrantin mit langjähriger Lebenserfahrung in Deutschland kenne ich die Herausforderungen der beruflichen Integration aus eigener Erfahrung. Ich bin überzeugt, dass berufliche Fragen nie losgelöst vom restlichen Leben betrachtet werden können. Arbeit ist ein wichtiger Teil des Lebens, und berufliche Entscheidungen entstehen immer im Zusammenhang mit der persönlichen Situation, den eigenen Werten und Ressourcen.",
+      "Im Coaching verbinde ich deshalb berufliche Orientierung mit einem ganzheitlichen Blick auf den Menschen. Ich glaube, dass jeder Mensch seine eigene Geschichte, Erfahrungen und Stärken mitbringt. Gemeinsam entwickeln wir einen Weg, der zur jeweiligen Person passt – und dabei hilft, eine stimmige berufliche Perspektive zu entwickeln und die nächsten Schritte selbstbestimmt zu gehen.",
+    ],
+    credentials: [
+      { type: "Bachelor", text: "Lehramt (Biologie)", sub: "1999–2003" },
+      { type: "Master", text: "Science (Biologie)", sub: "2003–2005" },
+      { type: "Zertifikat", text: "Life Coach", sub: "Homodea GmbH, 01/2021–04/2022" },
+      { type: "Erfahrung", text: "Jobcoach und Trainerin", sub: "seit 2022, Schwerpunkt Arbeitsmarktintegration" },
+      { type: "Erfahrung", text: "~200 begleitete Kund:innen", sub: "Einzelcoaching & Gruppenseminare (AVGS)" },
+      { type: "Praxis", text: "Zielgruppe: Menschen mit Migrationshintergrund", sub: "" },
+    ],
+    expertise: [
+      "Berufliche Orientierung",
+      "Stellensuche und Bewerbungsprozess",
+      "Erstellung von Bewerbungsunterlagen",
+      "Vorbereitung auf Vorstellungsgespräche",
+      "Berufliche Neuorientierung",
+      "Stärkung von Selbstvertrauen und Selbstwirksamkeit",
+      "Entwicklung von Resilienz",
+      "Motivation und Entscheidungsfindung",
+    ],
+  },
 ];
+
 
 // Platzhalter für Coaches, deren Profil noch ergänzt wird.
 export const coachPlaceholders: Coach[] = [];
