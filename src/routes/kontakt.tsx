@@ -15,7 +15,7 @@ export const Route = createFileRoute("/kontakt")({
       {
         property: "og:description",
         content:
-          "Kostenloses Erstgespräch buchen — für Jobcenter-Klient:innen, Privatpersonen und Unternehmen. Berlin & online.",
+          "Kostenloses Erstgespräch buchen — für Jobcenter- und Agentur-für-Arbeit-Klient:innen, Privatpersonen und Unternehmen. Berlin & online.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -66,10 +66,10 @@ function ContactPage() {
           </div>
 
           <div className="avgs-box">
-            <div className="avgs-box-tag">Klient:innen mit Jobcenter-Bezug</div>
+            <div className="avgs-box-tag">Klient:innen mit Jobcenter- oder Agentur-für-Arbeit-Bezug</div>
             <h3>Haben Sie einen AVGS-Gutschein?</h3>
             <p>
-              Unser Coaching ist vollständig über AVGS und §16k SGB II finanzierbar. Wenn Sie
+              Unser Coaching ist über den AVGS zu 100 % durch das Jobcenter oder die Agentur für Arbeit förderbar. §16k SGB II wird durch das Jobcenter gefördert. Wenn Sie
               bereits einen Gutschein haben — oder Unterstützung bei der Beantragung brauchen —
               vermerken Sie es einfach im Formular, wir kümmern uns um den Rest.
             </p>
@@ -132,7 +132,7 @@ function ContactPage() {
             </div>
 
             <div className="form-group">
-              <label className="form-label">AVGS / Jobcenter-Gutschein</label>
+              <label className="form-label">AVGS / Jobcenter- oder Agentur-für-Arbeit-Gutschein</label>
               <select name="avgs_status" className="form-select" defaultValue="Nein — aber ich möchte einen beantragen">
                 <option>Nein — aber ich möchte einen beantragen</option>
                 <option>Ja — ich habe bereits einen AVGS-Gutschein</option>
