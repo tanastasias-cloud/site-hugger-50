@@ -551,7 +551,7 @@
 .direct-icon { font-size: 24px; line-height: 1; margin-bottom: 18px; }
 .direct-title { font-family: 'Tenor Sans', sans-serif; font-size: 20px; color: white; letter-spacing: 0.5px; line-height: 1.25; margin-bottom: 12px; }
 .direct-text { font-size: 14px; line-height: 1.7; color: rgba(232,240,236,0.6); }
-.direct-footnote { margin: 48px auto 0; font-size: 16px; line-height: 1.7; color: var(--mint); font-style: italic; text-align: center; max-width: 900px; }
+.direct-footnote { margin: 48px 0 0; font-size: 16px; line-height: 1.7; color: var(--mint); font-style: italic; text-align: left; }
 @media (max-width: 900px) { .direct-grid, .direct-grid.four { grid-template-columns: 1fr; } .direct-lead { font-size: 15px; } .direct-footnote { font-size: 15px; } }
 .faq-list { display: flex; flex-direction: column; max-width: 780px; }
 .faq-item { border-bottom: 1px solid #f0f0f0; }
