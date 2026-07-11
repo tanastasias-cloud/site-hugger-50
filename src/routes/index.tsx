@@ -118,21 +118,6 @@ function HomePage() {
           </div>
         </section>
 
-        {/* PARAMS STRIP */}
-        <section className="params-strip">
-          <div className="params-strip-item">
-            <div className="params-num">200+</div>
-            <div className="params-label">begleitete Klient:innen</div>
-          </div>
-          <div className="params-strip-item">
-            <div className="params-num">5</div>
-            <div className="params-label">Sprachen · DE · EN · UA · RU · PL</div>
-          </div>
-          <div className="params-strip-item">
-            <div className="params-num">3</div>
-            <div className="params-label">Wege zu uns · privat · Unternehmen · Jobcenter</div>
-          </div>
-        </section>
 
         {/* DIFFERENTIATORS — forest */}
         <section className="section forest">
