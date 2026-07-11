@@ -22,10 +22,37 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+const METHOD_ICONS: Record<string, JSX.Element> = {
+  compass: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <polygon points="15.5 8.5 10.5 10.5 8.5 15.5 13.5 13.5 15.5 8.5" fill="currentColor" fillOpacity="0.15" />
+    </svg>
+  ),
+  network: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="5" cy="6" r="2.2" /><circle cx="19" cy="6" r="2.2" /><circle cx="12" cy="18" r="2.2" />
+      <path d="M7 7l4 9M17 7l-4 9M7 6h10" />
+    </svg>
+  ),
+  ai: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4" y="6" width="16" height="12" rx="2" />
+      <path d="M8 10v4M12 10v4M16 10v4M4 12h-1M21 12h-1M8 6V4M16 6V4" />
+    </svg>
+  ),
+  globe: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18" />
+    </svg>
+  ),
+};
+
 function HomePage() {
   return (
     <SiteShell active="home">
-      {/* MANIFEST HERO */}
+      {/* HERO */}
       <section className="gg-manifesto">
         <div className="gg-manifesto-inner">
           <div>
@@ -35,11 +62,16 @@ function HomePage() {
               <em>wo</em> Sie<br />
               stehen.
             </h1>
+            <p className="hero-kicker">
+              Karriere-Coaching, Bewerbungstraining und Jobvermittlung —
+              mit <strong>direkten Kontakten zu Unternehmen und HR</strong>
+              &nbsp;in Berlin und deutschlandweit.
+            </p>
           </div>
           <div>
             <div className="rule" />
-            <p>GetGrow Academy begleitet Menschen, Teams und Organisationen in entscheidenden beruflichen Übergängen — mit Psychologie, Klarheit und einem konkreten Plan.</p>
-            <p>Wir arbeiten mit Privatpersonen, mit Unternehmen und gemeinsam mit dem Jobcenter. In Berlin und online, auf Deutsch, Englisch, Ukrainisch und Russisch.</p>
+            <p>Wir begleiten Menschen, Teams und Organisationen in entscheidenden beruflichen Übergängen — mit Psychologie, Klarheit und einem konkreten Plan.</p>
+            <p>Privat · über Ihr Unternehmen · oder mit AVGS/§16k gefördert vom Jobcenter. In Berlin und online, auf Deutsch, Englisch, Ukrainisch und Russisch.</p>
             <div className="cta-row">
               <Link to="/kontakt" className="primary">
                 Kostenloses Erstgespräch
@@ -57,10 +89,38 @@ function HomePage() {
         <span>AZAV-zertifizierter Träger</span>
         <span>AVGS · §16k SGB II anerkannt</span>
         <span><strong>200+</strong> begleitete Klient:innen</span>
+        <span>Direkte HR-Kontakte</span>
         <span>DE · EN · UA · RU</span>
       </div>
 
-
+      {/* METHOD + DIRECT HR NETWORK — moved up: this is the differentiator */}
+      <section className="gg-method">
+        <div className="sh">
+          <div className="sh-tag">Unsere Methodik · für alle Klient:innen</div>
+          <h2 className="sh-h2">
+            Was uns <em>anders</em> macht
+          </h2>
+        </div>
+        <p className="gg-method-lede">
+          Ob privat, über Ihr Unternehmen oder mit AVGS-Gutschein — unser Ansatz bleibt
+          derselbe: psychologisch fundiertes Coaching, moderne Werkzeuge und ein echtes
+          Netzwerk in den deutschen Arbeitsmarkt.
+        </p>
+        <div className="gg-method-grid">
+          {[
+            ["compass", "Ganzheitliche Methodik", "Wir starten bei Ihnen — Situation, Ziele, Sprache. Erst dann bauen wir Strategie, Bewerbungsunterlagen und Interviewvorbereitung darauf auf."],
+            ["network", "Direkte Kontakte zu Unternehmen & HR", "Wir arbeiten eng mit Arbeitgebern und Personalverantwortlichen. Viele Vakanzen erreichen uns, bevor sie öffentlich ausgeschrieben werden — passende Profile empfehlen wir persönlich weiter."],
+            ["ai", "KI-gestützt & ATS-optimiert", "Wir arbeiten mit ChatGPT und Claude und erstellen Unterlagen, die durch Applicant Tracking Systems (ATS) kommen — und beim Menschen dahinter überzeugen."],
+            ["globe", "Coaching in Ihrer Sprache", "Deutsch, Englisch, Ukrainisch, Russisch — inklusive Kommunikation mit Behörden, Jobcenter und Arbeitgebern, wenn nötig."],
+          ].map(([iconKey, title, text]) => (
+            <div className="gg-method-card" key={title}>
+              <div className="gg-method-icon">{METHOD_ICONS[iconKey]}</div>
+              <div className="gg-method-title">{title}</div>
+              <p className="gg-method-text">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* THREE DOORS */}
       <section className="gg-doors" id="angebot">
@@ -72,9 +132,8 @@ function HomePage() {
             </h2>
           </div>
           <p className="lede">
-            Unsere Arbeit folgt einem Prinzip: Coaching, das den Menschen
-            ernst nimmt. Die Form passen wir an — privat, im Unternehmen
-            oder im Rahmen einer geförderten Maßnahme.
+            Dieselbe Methodik, drei Rahmen: privat, im Unternehmen oder im
+            Rahmen einer geförderten Maßnahme.
           </p>
         </div>
 
@@ -123,12 +182,44 @@ function HomePage() {
               ganzheitlichen Stabilisierung Ihrer Lebenssituation.
             </p>
             <ul className="door-list">
-              <li>AVGS-Job-Coaching</li>
+              <li>AVGS-Job-Coaching · 56 UE</li>
               <li>§16k SGB II Ganzheitliches Coaching</li>
               <li>100 % gefördert · für Sie kostenfrei</li>
             </ul>
             <span className="door-cta">Programm ansehen</span>
           </Link>
+        </div>
+      </section>
+
+      {/* FOUNDER MESSAGE */}
+      <section className="gg-coach-intro">
+        <div className="coach-intro-grid">
+          <img
+            src={yuliiaAsset.url}
+            alt="Yuliia Zaienchyk"
+            className="coach-intro-photo"
+          />
+          <div>
+            <div className="coach-intro-tag">Gründerin · GetGrow Academy</div>
+            <div className="coach-intro-name">Yuliia Zaienchyk</div>
+            <div className="coach-intro-role">
+              Mitgründerin · Psychologin · Job-Coach · Berlin seit 2015
+            </div>
+            <p className="coach-intro-bio">
+              „Ich habe GetGrow Academy gegründet, weil ich selbst weiß, wie es
+              ist, in Deutschland neu anzufangen. Bei uns bekommen Sie kein
+              Standard-Coaching und keine leeren Versprechen — sondern ein Team,
+              das den deutschen Arbeitsmarkt kennt, Ihre Sprache spricht und
+              Ihre Situation versteht."
+            </p>
+            <Link
+              to="/coaches/$slug"
+              params={{ slug: "yuliia-zaienchyk" }}
+              className="coach-intro-link"
+            >
+              Mehr über Yuliia →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -152,81 +243,6 @@ function HomePage() {
               <p className="outcome-text">{text}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* FOUNDER MESSAGE */}
-      <section className="gg-coach-intro">
-        <div className="coach-intro-grid">
-          <img
-            src={yuliiaAsset.url}
-            alt="Yuliia Zaienchyk"
-            className="coach-intro-photo"
-          />
-          <div>
-            <div className="coach-intro-tag">Gründerin · GetGrow Academy</div>
-            <div className="coach-intro-name">Yuliia Zaienchyk</div>
-            <div className="coach-intro-role">
-              Mitgründerin · Psychologin · Job-Coach · Berlin seit 2015
-            </div>
-            <p className="coach-intro-bio">
-              „Ich habe GetGrow Academy gegründet, weil ich selbst weiß, wie es
-              ist, in Deutschland neu anzufangen. Ich weiß, wie viel Kraft es
-              kostet — und wie viel möglich wird, wenn man den richtigen
-              Menschen an seiner Seite hat.
-            </p>
-            <p className="coach-intro-bio">
-              Bei uns bekommen Sie kein Standard-Coaching und keine leeren
-              Versprechen. Sie bekommen ein Team aus Coaches, die den deutschen
-              Arbeitsmarkt kennen, Ihre Sprache sprechen und Ihre Situation
-              verstehen — weil viele von uns diesen Weg selbst gegangen sind.
-            </p>
-            <p className="coach-intro-bio">
-              Egal ob Sie beruflich neu ansetzen, sich selbstständig machen
-              oder als Unternehmen mit uns arbeiten möchten: Wir hören zu, wir
-              denken mit, und wir bringen Sie einen echten Schritt weiter."
-            </p>
-            <Link
-              to="/coaches/$slug"
-              params={{ slug: "yuliia-zaienchyk" }}
-              className="coach-intro-link"
-            >
-              Mehr über Yuliia →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* METHOD + DIRECT HR NETWORK — for everyone, not only AVGS */}
-      <section className="gg-method">
-        <div className="sh">
-          <div className="sh-tag">Unsere Methodik · für alle Klient:innen</div>
-          <h2 className="sh-h2">
-            Was uns <em>anders</em> macht
-          </h2>
-        </div>
-        <p className="gg-method-lede">
-          Ob privat, über Ihr Unternehmen oder mit AVGS-Gutschein — unser Ansatz bleibt
-          derselbe: psychologisch fundiertes Coaching, moderne Werkzeuge und ein echtes
-          Netzwerk in den deutschen Arbeitsmarkt.
-        </p>
-        <div className="gg-method-grid">
-          {[
-            ["🧭", "Ganzheitliche Methodik", "Wir beginnen bei Ihnen — Ihrer Situation, Ihren Zielen, Ihrer Sprache. Erst dann bauen wir Strategie, Bewerbungsunterlagen und Interviewvorbereitung darauf auf."],
-            ["🤝", "Direkte Kontakte zu Unternehmen & HR", "Wir arbeiten eng mit Arbeitgebern und Personalverantwortlichen. Viele Vakanzen erreichen uns, bevor sie öffentlich ausgeschrieben werden — und passende Profile werden persönlich weiterempfohlen."],
-            ["🤖", "KI-gestützte, ATS-optimierte Bewerbung", "Wir arbeiten mit ChatGPT und Claude und erstellen Unterlagen, die durch Applicant Tracking Systems (ATS) kommen und beim Menschen auf der anderen Seite überzeugen."],
-            ["🌍", "Coaching in Ihrer Sprache", "Deutsch, Englisch, Ukrainisch, Russisch — inklusive Kommunikation mit Behörden, Jobcenter und Arbeitgebern, wenn nötig."],
-          ].map(([icon, title, text]) => (
-            <div className="gg-method-card" key={title}>
-              <div className="gg-method-icon">{icon}</div>
-              <div className="gg-method-title">{title}</div>
-              <p className="gg-method-text">{text}</p>
-            </div>
-          ))}
-        </div>
-        <div className="gg-method-note">
-          Wie wir konkret mit Ihnen arbeiten — privat, über Ihr Unternehmen oder
-          jobcenterfinanziert — besprechen wir im kostenlosen Erstgespräch.
         </div>
       </section>
 
