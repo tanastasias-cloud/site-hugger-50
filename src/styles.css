@@ -176,7 +176,7 @@
 }
 
 /* ── Audience doors (home) ── */
-.gg-doors { padding: 88px 64px; background: var(--paper); }
+.gg-doors { padding: 72px 64px; background: var(--paper); }
 .gg-doors-head { max-width: 1320px; margin: 0 auto 64px; display: flex; align-items: end; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
 .gg-doors-head .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 18px; }
 .gg-doors-head h2 { font-family: 'Tenor Sans', sans-serif; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; color: var(--forest); letter-spacing: -0.5px; max-width: 700px; font-weight: 400; }
@@ -367,15 +367,15 @@
 .service-card:hover .service-link::after { transform: translateX(4px); }
 
 /* ── Outcomes ── */
-.gg-outcomes { padding: 72px 64px 88px; background: var(--off); }
+.gg-outcomes { padding: 64px 64px 72px; background: var(--off); }
 .outcomes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
 .outcome-item { padding: 32px 0; border-top: 2px solid var(--forest); }
 .outcome-word { font-family: 'Cormorant Garamond', serif; font-size: 44px; color: var(--green); font-weight: 400; font-style: italic; line-height: 1; margin-bottom: 12px; }
 .outcome-text { font-size: 13px; line-height: 1.8; color: var(--gg-muted); }
 
 /* ── Coach intro on home ── */
-.gg-coach-intro { background: #fafafa; padding: 72px 64px; }
-.coach-intro-grid { display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: center; max-width: 980px; margin: 0 auto; }
+.gg-coach-intro { background: #fafafa; padding: 64px 64px; }
+.coach-intro-grid { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: center; max-width: 980px; margin: 0 auto; }
 .coach-intro-photo { width: 100%; max-width: 340px; aspect-ratio: 3/4; object-fit: cover; display: block; background: linear-gradient(160deg, #dde8e4, #c4d8d0); }
 .coach-intro-tag { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
 .coach-intro-tag::before { content: ''; width: 20px; height: 1px; background: var(--green); }
@@ -412,7 +412,7 @@
 .tcard-regular .tcard-role { color: #bbb; }
 
 /* ── AVGS banner home ── */
-.avgs-banner { background: var(--sage); padding: 40px 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; border-top: 1px solid #e0ece6; border-bottom: 1px solid #e0ece6; flex-wrap: wrap; }
+.avgs-banner { background: var(--sage); padding: 32px 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; border-top: 1px solid #e0ece6; border-bottom: 1px solid #e0ece6; flex-wrap: wrap; }
 .avgs-banner .tag { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
 .avgs-banner h3 { font-family: 'Tenor Sans', sans-serif; font-size: 22px; color: var(--forest); letter-spacing: 0.5px; line-height: 1.4; font-weight: 400; }
 .avgs-banner h3 em { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--green); font-size: 28px; }
