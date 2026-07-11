@@ -87,9 +87,9 @@ function HomePage() {
             </h1>
             <p className="page-hero-text">
               Karriere-Coaching, Bewerbungstraining und Jobvermittlung —
-              mit <strong>direkten Kontakten zu Unternehmen und HR</strong> in Berlin
-              und deutschlandweit. Privat, über Ihr Unternehmen oder mit AVGS/§16k
-              gefördert vom Jobcenter oder der Agentur für Arbeit.
+              ergebnisorientiert und individuell auf Ihre Situation zugeschnitten.
+              Privat, über Ihr Unternehmen oder mit AVGS/§16k gefördert vom
+              Jobcenter oder der Agentur für Arbeit.
             </p>
             <div className="cta-btns" style={{ marginTop: 32 }}>
               <Link to="/kontakt" className="btn-mint">
