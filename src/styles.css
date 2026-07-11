@@ -390,6 +390,18 @@
 .coach-intro-tags span { border: 1px solid #e0ece6; padding: 6px 14px; font-size: 11px; letter-spacing: 1px; color: var(--green); }
 .coach-intro-link { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
 
+/* ── Homepage founder — compact, right after hero ── */
+.founder-section { padding: 56px 64px; }
+.founder-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 220px 1fr; gap: 44px; align-items: center; }
+.founder-photo { width: 220px; aspect-ratio: 3/4; object-fit: cover; display: block; }
+.founder-text { display: flex; flex-direction: column; gap: 10px; }
+.founder-tag { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--green); display: flex; align-items: center; gap: 10px; }
+.founder-tag::before { content: ''; width: 20px; height: 1px; background: var(--green); }
+.founder-name { font-family: 'Tenor Sans', sans-serif; font-size: 36px; color: var(--forest); letter-spacing: 1px; line-height: 1.1; margin: 0; }
+.founder-name em { font-family: 'Allura', cursive; color: var(--green); font-style: normal; font-size: 1.25em; letter-spacing: 0; }
+.founder-role { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 6px; }
+.founder-bio { font-size: 15px; line-height: 1.7; color: #4a4a4a; max-width: 620px; }
+
 /* ── Testimonials ── */
 .gg-testimonials { padding: 96px 64px; background: white; }
 .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -739,7 +751,11 @@
   .gg-header { padding: 0 24px; }
   .gg-nav, .gg-right { display: none; }
   .gg-burger { display: flex; }
-  .gg-hero, .page-hero.split, .two-col, .contact-grid, .contact-main, .coach-card, .coach-intro-grid { grid-template-columns: 1fr; gap: 40px; }
+  .gg-hero, .page-hero.split, .two-col, .contact-grid, .contact-main, .coach-card, .coach-intro-grid, .founder-inner { grid-template-columns: 1fr; gap: 40px; }
+  .founder-inner { justify-items: center; text-align: center; }
+  .founder-photo { width: 180px; }
+  .founder-tag { justify-content: center; }
+  .founder-bio { text-align: center; }
   .gg-hero-left, .gg-hero-right, .page-hero-left, .page-hero-right { padding: 112px 24px 48px; }
   .gg-hero-h1 { font-size: 40px; }
   .gg-hero-h1 em { font-size: 44px; }
