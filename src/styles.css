@@ -250,8 +250,12 @@
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 64px;
 }
-.gg-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-.gg-logo-img { height: 64px; width: auto; display: block; }
+.gg-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+.gg-logo .get { font-family: 'Allura', cursive; font-size: 44px; color: var(--green); line-height: 1; }
+.gg-logo .div { width: 1px; height: 26px; background: linear-gradient(to bottom, transparent, rgba(61,107,85,0.35), transparent); }
+.gg-logo .grow-stack { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.gg-logo .grow { font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--forest); line-height: 1; }
+.gg-logo .acad { font-family: 'DM Sans', sans-serif; font-size: 6px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--green); line-height: 1; white-space: nowrap; }
 
 .gg-nav { display: flex; align-items: center; gap: 36px; }
 .gg-nav-link { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--forest); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; letter-spacing: 0.3px; background: none; border: none; cursor: pointer; }
