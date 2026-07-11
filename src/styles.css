@@ -510,7 +510,7 @@
 .section.white { background: white; }
 .section.sage { background: var(--sage); }
 .section.forest { background: var(--forest); }
-.section.forest.spread { display: flex; flex-direction: column; justify-content: space-between; gap: 48px; min-height: 75vh; padding: 80px 64px; }
+.section.forest.spread { display: flex; flex-direction: column; justify-content: space-between; gap: 56px; min-height: 85vh; padding: 80px 64px; }
 .section.forest.spread .spread-top { display: flex; flex-direction: column; gap: 0; }
 .section.forest.spread .direct-lead { margin: 0; }
 .section.forest.spread .direct-footnote { margin: 0; }
