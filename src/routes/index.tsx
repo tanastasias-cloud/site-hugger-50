@@ -197,6 +197,39 @@ function HomePage() {
         </div>
       </section>
 
+      {/* METHOD + DIRECT HR NETWORK — for everyone, not only AVGS */}
+      <section className="gg-method">
+        <div className="sh">
+          <div className="sh-tag">Unsere Methodik · für alle Klient:innen</div>
+          <h2 className="sh-h2">
+            Was uns <em>anders</em> macht
+          </h2>
+        </div>
+        <p className="gg-method-lede">
+          Ob privat, über Ihr Unternehmen oder mit AVGS-Gutschein — unser Ansatz bleibt
+          derselbe: psychologisch fundiertes Coaching, moderne Werkzeuge und ein echtes
+          Netzwerk in den deutschen Arbeitsmarkt.
+        </p>
+        <div className="gg-method-grid">
+          {[
+            ["🧭", "Ganzheitliche Methodik", "Wir beginnen bei Ihnen — Ihrer Situation, Ihren Zielen, Ihrer Sprache. Erst dann bauen wir Strategie, Bewerbungsunterlagen und Interviewvorbereitung darauf auf."],
+            ["🤝", "Direkte Kontakte zu Unternehmen & HR", "Wir arbeiten eng mit Arbeitgebern und Personalverantwortlichen. Viele Vakanzen erreichen uns, bevor sie öffentlich ausgeschrieben werden — und passende Profile werden persönlich weiterempfohlen."],
+            ["🤖", "KI-gestützte, ATS-optimierte Bewerbung", "Wir arbeiten mit ChatGPT und Claude und erstellen Unterlagen, die durch Applicant Tracking Systems (ATS) kommen und beim Menschen auf der anderen Seite überzeugen."],
+            ["🌍", "Coaching in Ihrer Sprache", "Deutsch, Englisch, Ukrainisch, Russisch — inklusive Kommunikation mit Behörden, Jobcenter und Arbeitgebern, wenn nötig."],
+          ].map(([icon, title, text]) => (
+            <div className="gg-method-card" key={title}>
+              <div className="gg-method-icon">{icon}</div>
+              <div className="gg-method-title">{title}</div>
+              <p className="gg-method-text">{text}</p>
+            </div>
+          ))}
+        </div>
+        <div className="gg-method-note">
+          Wie wir konkret mit Ihnen arbeiten — privat, über Ihr Unternehmen oder
+          jobcenterfinanziert — besprechen wir im kostenlosen Erstgespräch.
+        </div>
+      </section>
+
       {/* AVGS BANNER */}
       <section className="avgs-banner">
         <div>
