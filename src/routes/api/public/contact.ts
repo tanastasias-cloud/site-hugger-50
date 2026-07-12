@@ -27,24 +27,36 @@ export const Route = createFileRoute("/api/public/contact")({
             );
           }
 
-          const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-          const { error } = await supabaseAdmin.from("contact_requests").insert({
-            ...parsed.data,
+          const record = {
+            first_name: parsed.data.first_name,
+            last_name: parsed.data.last_name,
+            email: parsed.data.email,
             phone: parsed.data.phone || null,
             interest: parsed.data.interest || null,
             avgs_status: parsed.data.avgs_status || null,
             message: parsed.data.message || null,
             format: parsed.data.format || null,
             source: parsed.data.source || "kontakt-form",
-          });
+          };
 
-          if (error) {
-            console.error("contact insert error", error);
+          try {
+            const { insertContactRequest } = await import("@/lib/db.server");
+            insertContactRequest(record);
+          } catch (dbError) {
+            console.error("contact insert error", dbError);
             return new Response(JSON.stringify({ error: "db_error" }), {
               status: 500,
               headers: { "Content-Type": "application/json" },
             });
           }
+
+          // Don't let a Gmail hiccup fail the form submission — the request
+          // is already saved in the database.
+          import("@/lib/email.server")
+            .then(({ sendContactNotification }) => sendContactNotification(record))
+            .catch((emailError) => {
+              console.error("contact notification email error", emailError);
+            });
 
           return new Response(JSON.stringify({ ok: true }), {
             status: 200,

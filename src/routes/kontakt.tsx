@@ -24,12 +24,41 @@ export const Route = createFileRoute("/kontakt")({
 });
 
 function ContactPage() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
-    (e.target as HTMLFormElement).reset();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          first_name: data.get("first_name"),
+          last_name: data.get("last_name"),
+          email: data.get("email"),
+          phone: data.get("phone"),
+          interest: data.get("interest"),
+          avgs_status: data.get("avgs_status"),
+          message: data.get("message"),
+          format: data.get("format"),
+          source: "kontakt-form",
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error(`Anfrage fehlgeschlagen (Status ${res.status})`);
+      }
+
+      setStatus("sent");
+      form.reset();
+    } catch (error) {
+      console.error("contact form submit error", error);
+      setStatus("error");
+    }
   }
 
   return (
@@ -169,9 +198,25 @@ function ContactPage() {
               </label>
             </div>
 
-            <button type="submit" className="btn-submit" disabled={sent}>
-              {sent ? "Vielen Dank — wir melden uns ✓" : "Anfrage senden →"}
+            <button
+              type="submit"
+              className="btn-submit"
+              disabled={status === "sending" || status === "sent"}
+            >
+              {status === "sent"
+                ? "Vielen Dank — wir melden uns ✓"
+                : status === "sending"
+                  ? "Wird gesendet…"
+                  : "Anfrage senden →"}
             </button>
+
+            {status === "error" && (
+              <p className="form-error" role="alert">
+                Beim Senden ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder
+                schreiben Sie uns direkt an{" "}
+                <a href="mailto:info@getgrow.academy">info@getgrow.academy</a>.
+              </p>
+            )}
 
           </form>
         </div>

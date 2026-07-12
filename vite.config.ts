@@ -12,4 +12,12 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // We self-host on our own Node server (not Cloudflare Workers), and the
+  // contact API route uses better-sqlite3, which needs a real Node.js
+  // runtime with filesystem access — it can't run on Cloudflare's edge
+  // runtime. This override only applies outside Lovable's own sandbox build,
+  // which still forces the Cloudflare preset regardless of this setting.
+  nitro: {
+    preset: "node-server",
+  },
 });

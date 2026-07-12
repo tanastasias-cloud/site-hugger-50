@@ -460,6 +460,8 @@
 .form-check a { color: var(--green); }
 .btn-submit { width: 100%; background: var(--forest); color: white; border: none; padding: 16px; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; margin-top: 24px; }
 .btn-submit:hover { background: var(--green); }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.form-error { color: var(--destructive); font-size: 13px; margin-top: 12px; line-height: 1.6; }
 
 /* ── Footer ── */
 .gg-footer { background: var(--forest); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }

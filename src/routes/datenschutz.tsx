@@ -113,20 +113,27 @@ function DatenschutzPage() {
           sicheren Darstellung unserer Website.
         </p>
 
-        <h3>Supabase (Datenbank für Kontaktanfragen)</h3>
+        <h3>Datenbank für Kontaktanfragen</h3>
         <p>
-          Formularanfragen speichern wir in einer verwalteten Datenbank von Supabase, Inc.
-          (970 Toa Payoh North #07-04, Singapore 318992). Die von uns genutzten Server befinden
-          sich in der EU (Region Frankfurt).
+          Formularanfragen speichern wir in einer selbst betriebenen Datenbank auf unseren
+          Servern bei Hetzner (siehe oben), nicht bei einem externen Datenbank-Anbieter.
+        </p>
+
+        <h3>Google Workspace (E-Mail-Benachrichtigung)</h3>
+        <p>
+          Um neue Kontaktanfragen zeitnah zu bearbeiten, versenden wir bei Formulareingang eine
+          interne Benachrichtigungs-E-Mail an info@getgrow.academy über die Gmail API. Anbieter
+          ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland
+          (nachfolgend „Google").
         </p>
         <p>
-          Details:{" "}
+          Details entnehmen Sie der Datenschutzerklärung von Google:{" "}
           <a
-            href="https://supabase.com/privacy"
+            href="https://policies.google.com/privacy"
             target="_blank"
             rel="noopener noreferrer"
           >
-            https://supabase.com/privacy
+            https://policies.google.com/privacy
           </a>
           .
         </p>
