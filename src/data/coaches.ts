@@ -1,12 +1,12 @@
-import yuliiaAsset from "@/assets/yuliia-zaienchyk.jpg.asset.json";
-import anastasiaAsset from "@/assets/anastasia-lunina.jpg.asset.json";
-import alenaAsset from "@/assets/alena-yurpalova.jpg.asset.json";
-import zoyaAsset from "@/assets/zoya-skobeltsyna.jpg.asset.json";
-import alinaAsset from "@/assets/alina-orlanski.jpg.asset.json";
-import olhaAsset from "@/assets/olha-shanta-hladun.jpg.asset.json";
-import eugenieAsset from "@/assets/eugenie-kralyuk.jpg.asset.json";
-import nataliiaAsset from "@/assets/nataliia-skliar.jpg.asset.json";
-import dariaAsset from "@/assets/daria-coach.jpg.asset.json";
+import yuliiaPhoto from "@/assets/yuliia-zaienchyk.jpg";
+import anastasiaPhoto from "@/assets/anastasia-lunina.jpg";
+import alenaPhoto from "@/assets/alena-yurpalova.jpg";
+import zoyaPhoto from "@/assets/zoya-skobeltsyna.jpg";
+import alinaPhoto from "@/assets/alina-orlanski.jpg";
+import olhaPhoto from "@/assets/olha-shanta-hladun.jpg";
+import eugeniePhoto from "@/assets/eugenie-kralyuk.jpg";
+import nataliiaPhoto from "@/assets/nataliia-skliar.jpg";
+import dariaPhoto from "@/assets/daria-coach.jpg";
 
 // Coach-Profile — neue Coaches einfach hier hinzufügen.
 // Jeder Eintrag erscheint automatisch auf /coaches.
@@ -38,7 +38,7 @@ export const coaches: Coach[] = [
     name: "Yuliia Zaienchyk",
     role: "Gründerin · Psychologin · Job-Coach · Berlin seit 2015",
     isFounder: true,
-    photo: yuliiaAsset.url,
+    photo: yuliiaPhoto,
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇷🇺", label: "Russisch" },
@@ -70,7 +70,7 @@ export const coaches: Coach[] = [
     slug: "anastasia-lunina",
     name: "Anastasia Lunina",
     role: "Business & Leadership Coach · Organisationsentwicklung",
-    photo: anastasiaAsset.url,
+    photo: anastasiaPhoto,
     languages: [
       { flag: "🇷🇺", label: "Russisch" },
       { flag: "🇬🇧", label: "Englisch" },
@@ -103,7 +103,7 @@ export const coaches: Coach[] = [
     slug: "olha-shanta-hladun",
     name: "Olha Shanta-Hladun",
     role: "Job- & Business-Coach · Leadership · Persönlichkeitsentwicklung",
-    photo: olhaAsset.url,
+    photo: olhaPhoto,
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇷🇺", label: "Russisch" },
@@ -133,7 +133,7 @@ export const coaches: Coach[] = [
     slug: "zoya-skobeltsyna",
     name: "Zoya Skobeltsyna",
     role: "ICF-zertifizierte Job- & Life-Coach · AVGS-Coach · Berlin seit 2022",
-    photo: zoyaAsset.url,
+    photo: zoyaPhoto,
     languages: [
       { flag: "🇷🇺", label: "Russisch" },
       { flag: "🇬🇧", label: "Englisch" },
@@ -164,7 +164,7 @@ export const coaches: Coach[] = [
     slug: "alena-yurpalova",
     name: "Alena Yurpalova",
     role: "Business- & Karriere-Coach · Selbstständigkeit · 20+ Jahre Erwachsenenbildung",
-    photo: alenaAsset.url,
+    photo: alenaPhoto,
     languages: [
       { flag: "🇷🇺", label: "Russisch" },
       { flag: "🇩🇪", label: "Deutsch" },
@@ -195,7 +195,7 @@ export const coaches: Coach[] = [
     slug: "alina-orlanski",
     name: "Alina Orlanski",
     role: "Job-Coach · Karriereberaterin · Expertin für Existenzgründung",
-    photo: alinaAsset.url,
+    photo: alinaPhoto,
     languages: [
       { flag: "🇷🇺", label: "Russisch" },
       { flag: "🇩🇪", label: "Deutsch" },
@@ -225,7 +225,7 @@ export const coaches: Coach[] = [
     slug: "eugenie-kralyuk",
     name: "Eugenie Kralyuk",
     role: "Systemischer Coach · HR-Expertin · Job-Coach",
-    photo: eugenieAsset.url,
+    photo: eugeniePhoto,
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇩🇪", label: "Deutsch" },
@@ -259,7 +259,7 @@ export const coaches: Coach[] = [
     slug: "nataliia-skliar",
     name: "Nataliia Skliar",
     role: "Diplom-Psychologin · Job-Coach · Eco-Facilitator",
-    photo: nataliiaAsset.url,
+    photo: nataliiaPhoto,
     languages: [
       { flag: "🇺🇦", label: "Ukrainisch" },
       { flag: "🇷🇺", label: "Russisch" },
@@ -292,7 +292,7 @@ export const coaches: Coach[] = [
     slug: "daria",
     name: "Daria",
     role: "Job-Coach & Trainerin · Life Coach · Arbeitsmarktintegration",
-    photo: dariaAsset.url,
+    photo: dariaPhoto,
     languages: [
       { flag: "🇷🇺", label: "Russisch" },
       { flag: "🇺🇦", label: "Ukrainisch" },

@@ -118,6 +118,15 @@ function ContactPage() {
         </div>
 
         <div>
+          {status === "sent" ? (
+            <div className="form-card form-success">
+              <div className="form-success-icon">✓</div>
+              <div className="form-title">Vielen Dank!</div>
+              <p className="form-sub">
+                Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen.
+              </p>
+            </div>
+          ) : (
           <form className="form-card" onSubmit={onSubmit}>
             <div className="form-title">Kostenloses Erstgespräch</div>
             <div className="form-sub">
@@ -198,16 +207,8 @@ function ContactPage() {
               </label>
             </div>
 
-            <button
-              type="submit"
-              className="btn-submit"
-              disabled={status === "sending" || status === "sent"}
-            >
-              {status === "sent"
-                ? "Vielen Dank — wir melden uns ✓"
-                : status === "sending"
-                  ? "Wird gesendet…"
-                  : "Anfrage senden →"}
+            <button type="submit" className="btn-submit" disabled={status === "sending"}>
+              {status === "sending" ? "Wird gesendet…" : "Anfrage senden →"}
             </button>
 
             {status === "error" && (
@@ -219,6 +220,7 @@ function ContactPage() {
             )}
 
           </form>
+          )}
         </div>
       </div>
     </SiteShell>

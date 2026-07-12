@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
-import yuliiaAsset from "@/assets/yuliia-zaienchyk.jpg.asset.json";
+import yuliiaPhoto from "@/assets/yuliia-zaienchyk.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -127,7 +127,7 @@ function HomePage() {
         <section className="section sage founder-section">
           <div className="founder-inner">
             <img
-              src={yuliiaAsset.url}
+              src={yuliiaPhoto}
               alt="Yuliia Zaienchyk"
               className="founder-photo"
             />
