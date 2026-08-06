@@ -84,8 +84,8 @@ function CoachesPage() {
           Unser <em>Team</em>
         </h1>
         <p className="page-hero-sub">
-          Zertifizierte Coaches mit eigener Migrationserfahrung — die den deutschen Arbeitsmarkt
-          verstehen und wissen, was es wirklich braucht, sich beruflich in einem neuen Land neu
+          Zertifizierte Coaches der GetGrow Academy — mit eigener Migrationserfahrung, dem Blick für
+          den deutschen Arbeitsmarkt und dem Wissen, was es wirklich braucht, sich beruflich in einem neuen Land neu
           aufzustellen.
         </p>
         <div className="coaches-stats">
