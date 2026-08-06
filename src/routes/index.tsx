@@ -86,7 +86,7 @@ function HomePage() {
         {/* HERO SPLIT */}
         <section className="page-hero split">
           <div className="page-hero-left">
-            <div className="breadcrumb">Coaching Academy · Berlin</div>
+            <div className="breadcrumb">GetGrow Academy · Berlin</div>
             <h1>
               Wachsen, <em>wo</em> Sie stehen.
             </h1>
