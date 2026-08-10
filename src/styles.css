@@ -481,6 +481,8 @@
 .footer-legal { display: flex; gap: 24px; }
 .footer-legal a { font-size: 11px; color: rgba(255,255,255,0.65); text-decoration: none; letter-spacing: 1px; transition: color 0.2s; }
 .footer-legal a:hover { color: #f5f0e8; }
+.footer-certification { display: flex; align-items: center; }
+.footer-certification img { height: 48px; width: auto; display: block; border-radius: 2px; }
 
 /* ── Page hero (inner pages) — light, matches home manifesto ── */
 .page-hero { background: var(--paper); border-bottom: 1px solid rgba(26,46,38,0.06); }

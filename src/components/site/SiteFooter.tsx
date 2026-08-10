@@ -33,6 +33,14 @@ export function SiteFooter() {
         <Link to="/impressum">Impressum</Link>
         <Link to="/datenschutz">Datenschutz</Link>
       </div>
+      <div className="footer-certification">
+        <img
+          src="/certuria-azav-badge.jpg"
+          alt="CERTURIA AZAV Trägerzulassung"
+          width={500}
+          height={112}
+        />
+      </div>
       <div className="footer-disclaimer">
         Keine Gewährleistung auf Vermittlungserfolg. § 296 SGB III / § 45 SGB III.
       </div>

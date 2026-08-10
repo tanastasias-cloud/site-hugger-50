@@ -41,3 +41,6 @@ data/*.db-shm
 *.njsproj
 *.sln
 *.sw?
+
+# local Claude Code settings, machine-specific
+.claude/
