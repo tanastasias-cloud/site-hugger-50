@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- Относительные пути (img/...) должны работать и на сайте по адресу /event (без слэша), и при открытии файла с диска.
+     <base> подставляется только на сайте, когда адрес ровно /event. -->
+<script>if(location.pathname==="/event"){document.write('<base href="/event/">')}</script>
+<title>GetGrow Academy Eröffnung</title>
+<meta name="description" content="Открытие GetGrow Academy в Берлине: живая встреча с карьерными коучами. 15 ноября, 12:00–16:00, бесплатно, 50 мест.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Открытие GetGrow Academy · 15 ноября, Берлин">
+<meta property="og:description" content="Живая встреча с карьерными коучами. Бесплатно, 50 мест по регистрации.">
+<meta property="og:locale" content="ru_RU">
+<!-- Картинка превью: адрес должен быть полным. Если страница будет не по адресу /event, поправьте путь -->
+<meta property="og:image" content="https://getgrow.academy/event/img/og-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/logo-round-cream.webp">
+<!-- Meta Pixel. Пока PIXEL_ID пустой, ничего не загружается и не отправляется.
+     Вставьте ID пикселя из Meta Events Manager — и пиксель включится, а клик по кнопкам Tally будет отправлять событие Lead. -->
+<script>
+(function(){
+  var PIXEL_ID = ""; // TODO: вставьте ID пикселя Meta (только цифры)
+  if (!PIXEL_ID) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
+  // Lead: клик по любой кнопке/ссылке регистрации на tally.so (ссылки получают ?ref=… ниже по странице, это не мешает)
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest && ev.target.closest('a[href*="tally.so"]');
+    if (a && window.fbq) fbq('track', 'Lead');
+  }, true);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Allura&family=DM+Sans:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&family=PT+Sans+Narrow:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: brand-quiet reading column on cream; one loud object — a VBB-style paper ticket — carries the date, place and price */
+:root{
+  /* GetGrow brand tokens */
+  --forest:#1A2E26; --green:#3D6B55; --mint:#7FC4A0; --sand:#C4A57A;
+  --cream:#F5F0E8; --paper:#F5F3EE; --sage:#F4F8F5; --off:#FAFAFA; --white:#FFFFFF;
+  --text:#2A2A2A; --muted:#6F6F6F; --border:#E3ECE7;
+  --f-head:"Tenor Sans","Cormorant Garamond",Georgia,serif;
+  --f-serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-script:"Allura","Cormorant Garamond",cursive;
+  /* DM Sans has no Cyrillic, so Russian text falls through to Manrope */
+  --f-body:"DM Sans","Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-tk:"PT Sans Narrow","Arial Narrow",sans-serif;
+  --f-print:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --gl:max(16px,env(safe-area-inset-left,0px));
+  --gr:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+body{background:var(--cream);color:var(--text);font-family:var(--f-body);font-weight:400;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--cream)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:4px}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
+.narrow{max-width:720px}
+h1,h2,h3{margin:0;font-weight:400;color:var(--forest);text-wrap:balance}
+h1{font-family:var(--f-head);font-size:clamp(32px,4.8vw,52px);line-height:1.12;letter-spacing:-.005em}
+h2{font-family:var(--f-serif);font-weight:500;font-size:clamp(32px,4vw,46px);line-height:1.1}
+h3{font-family:var(--f-body);font-weight:500;font-size:17px;line-height:1.4}
+.it{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--green)}
+.label{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+.label::before{content:"";width:22px;height:1.5px;background:var(--sand);flex:none}
+section{padding-block:clamp(36px,5vw,60px)}
+.head{display:grid;gap:6px;margin-bottom:22px}
+
+/* Logo */
+.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--forest)}
+.logo .get{font-family:var(--f-script);font-size:36px;line-height:1;color:var(--green);margin-top:4px}
+.logo .bar{width:1px;height:34px;background:linear-gradient(var(--white),var(--green),var(--white))}
+.logo .wm{display:grid;line-height:1}
+.logo .wm b{font-family:var(--f-head);font-weight:400;font-size:20px;letter-spacing:.32em}
+.logo .wm small{font-size:8.5px;font-weight:500;letter-spacing:.32em;color:var(--green);margin-top:5px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border-radius:999px;background:var(--forest);color:var(--white);font-family:var(--f-body);font-weight:500;font-size:16px;letter-spacing:.01em;text-decoration:none;transition:background .2s}
+.btn:hover{background:var(--green)}
+.btn .arr{transition:transform .2s}
+.btn:hover .arr{transform:translateX(3px)}
+.btn.sm{min-height:42px;padding:0 20px;font-size:14px}
+.link{display:inline-flex;align-items:center;min-height:44px;font-size:15px;color:var(--green);text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:5px}
+.link:hover{text-decoration-color:var(--green)}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(245,240,232,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+
+/* Hero */
+.hero{padding-block:clamp(24px,4vw,48px) clamp(32px,4vw,48px)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,6vw,80px);align-items:center}
+.hero-copy{display:grid;gap:16px;min-width:0}
+.lead{font-size:clamp(17px,1.5vw,18.5px);color:var(--muted);max-width:56ch}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;margin:0;padding:12px 0;border-block:1px solid var(--border);font-size:16px}
+.facts dt{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.facts dd{margin:0;color:var(--forest)}
+.cta-block{display:grid;justify-items:start;gap:10px}
+.cta-block.center{justify-items:center;text-align:center;margin-top:26px}
+.cta-block.after{margin-top:22px}
+.btn.lg{min-height:58px;padding:0 36px;font-size:17px}
+.micro{font-size:13.5px;color:var(--muted)}
+.final .micro{color:rgba(245,240,232,.6)}
+.top-r{display:flex;align-items:center;gap:16px}
+.top-meta{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+a.tk-zone{flex-direction:column;align-items:center;gap:18px;text-decoration:none;cursor:pointer}
+a.tk-zone .tk{transition:transform .25s ease,box-shadow .25s ease}
+a.tk-zone:hover .tk{transform:rotate(-.5deg) translateY(-4px);box-shadow:0 30px 50px -22px rgba(26,46,38,.55)}
+.tk-hint{font-size:14px;color:var(--green);text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:5px}
+a.tk-zone:hover .tk-hint{text-decoration-color:var(--green)}
+
+/* Ticket — modelled on a VBB paper ticket */
+.tk-zone{display:flex;justify-content:center;min-width:0;padding:12px 8px}
+.tk{position:relative;width:100%;max-width:370px;aspect-ratio:auto;transform:rotate(-2deg);
+  background:
+    radial-gradient(circle at 28% 22%,rgba(127,196,160,.22),transparent 45%),
+    radial-gradient(circle at 80% 60%,rgba(196,165,122,.16),transparent 50%),
+    #F8F6EF;
+  color:#2B2B28;box-shadow:0 1px 0 rgba(0,0,0,.04),0 22px 40px -22px rgba(26,46,38,.45);
+  padding:18px 46px 0 20px;font-family:var(--f-tk);overflow:hidden}
+.tk::before,.tk::after{content:"";position:absolute;border-radius:50%;pointer-events:none;
+  background:repeating-radial-gradient(circle,transparent 0 9px,rgba(61,107,85,.10) 9px 15px)}
+.tk::before{width:170px;height:170px;left:-40px;top:-30px}
+.tk::after{width:200px;height:200px;right:10px;top:120px}
+.tk>*{position:relative;z-index:1}
+.tk-strip{position:absolute;top:0;right:0;bottom:0;width:28px;background:linear-gradient(180deg,#E9D8BE,var(--sand) 40%,#D9BD93);display:flex;align-items:center;justify-content:center;z-index:1}
+.tk-strip span{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--f-tk);font-size:12px;letter-spacing:.06em;color:#3B2F1E}
+.tk-top{display:flex;align-items:center;gap:12px}
+.tk-mark{width:46px;height:46px;border-radius:50%;flex:none;display:block}
+.final-logo{width:96px;height:96px;border-radius:50%;display:block;margin-bottom:4px}
+.tk-validate{font-family:var(--f-print);font-size:11.5px;line-height:1.35;color:#55554F}
+.tk-title{font-family:var(--f-tk);font-weight:700;font-size:30px;line-height:1;margin-top:26px;letter-spacing:-.01em}
+.tk-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-top:4px}
+.tk-sub small{font-size:15px;color:#5C5C55}
+.tk-sub b{font-size:30px;font-weight:700;line-height:1}
+.tk-print{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-top:22px;font-family:var(--f-print);font-size:15.5px;line-height:1.3;color:#2E2E2A;text-shadow:0 0 .6px rgba(0,0,0,.5);letter-spacing:.02em}
+.tk-print .r{text-align:right}
+.tk-fine{margin:16px -46px 0 -20px;padding:12px 46px 12px 20px;border-top:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.55);font-family:var(--f-body);font-size:10.5px;line-height:1.45;color:#4A4A45}
+.tk-foot{margin:0 -46px 0 -20px;padding:0 46px 14px 20px;background:rgba(255,255,255,.55);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tk-code{font-family:var(--f-print);font-size:19px;font-weight:500;letter-spacing:.12em;background:rgba(196,165,122,.45);padding:2px 10px}
+.tk-box{background:var(--mint);color:var(--forest);font-family:var(--f-tk);font-weight:700;font-size:14px;padding:5px 8px;line-height:1}
+.under-tk{display:flex;flex-wrap:wrap;justify-content:center;gap:0 22px;margin-top:20px}
+
+/* Trust strip */
+.trust{background:var(--forest);color:var(--cream)}
+.trust .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 28px;padding-block:14px;font-size:14.5px}
+.trust b{font-family:var(--f-script);font-weight:400;font-size:30px;line-height:1;color:var(--mint);margin-right:6px;vertical-align:-4px}
+.trust a{color:var(--mint);text-underline-offset:4px}
+
+
+/* Reviews */
+.reviews{background:var(--cream)}
+.rev-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 32px;margin-bottom:24px}
+.rating{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--forest)}
+.rating b{font-family:var(--f-head);font-weight:400;font-size:46px;line-height:1}
+.rating span{font-size:13.5px;line-height:1.5;color:var(--muted)}
+.stars{color:var(--sand);letter-spacing:.12em;font-size:15px}
+.rating .stars{font-size:16px;color:var(--sand)}
+.rev-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{margin:0;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:22px 22px 20px;display:grid;gap:12px;align-content:start;min-width:0}
+.rev blockquote{margin:0;font-family:var(--f-serif);font-size:19px;line-height:1.4;color:var(--forest)}
+.rev figcaption{font-size:14px;color:var(--muted)}
+.mono{width:62%;aspect-ratio:1;border-radius:50%;border:1.5px solid var(--green);display:grid;place-items:center;font-family:var(--f-head);font-size:clamp(22px,3vw,34px);letter-spacing:.12em;color:var(--green);background:var(--cream);text-transform:none}
+.photo.no{border:0;background:var(--sage)}
+.photo img{filter:saturate(.9)}
+.swipe-hint{display:none}
+.lead-short,.label-short{display:none}
+
+/* Pains */
+.pains{background:var(--paper);border-block:1px solid var(--border)}
+.pain-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.pain-list li{border-top:1px solid var(--border)}
+.pain{all:unset;box-sizing:border-box;display:grid;grid-template-columns:20px 1fr;gap:12px;width:100%;padding:10px 0;cursor:pointer;font-family:var(--f-serif);font-size:19.5px;line-height:1.35;color:var(--forest)}
+.pain .box{width:18px;height:18px;border:1.5px solid var(--green);border-radius:4px;margin-top:5px;display:grid;place-items:center;transition:background .15s}
+.pain .box svg{width:12px;height:12px;opacity:0}
+.pain[aria-pressed="true"] .box{background:var(--green)}
+.pain[aria-pressed="true"] .box svg{opacity:1}
+.pain:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.answer{margin-top:26px;display:grid;grid-template-columns:1.3fr auto;gap:20px 40px;align-items:center;background:var(--forest);color:var(--cream);border-radius:6px;padding:clamp(24px,3.5vw,40px)}
+.answer .count{grid-column:1/-1;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);margin:0}
+.answer .count:empty{display:none}
+.answer .big-p{font-family:var(--f-serif);font-size:clamp(22px,2.4vw,28px);line-height:1.3;color:var(--cream)}
+.answer .big-p em{font-style:italic;color:var(--mint)}
+.answer .btn{background:var(--cream);color:var(--forest)}
+.answer .btn:hover{background:var(--white)}
+.answer .micro{color:rgba(245,240,232,.6)}
+
+/* Takeaways */
+.takes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+.takes li{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--border)}
+.takes .n{font-family:var(--f-script);font-size:34px;line-height:1;color:var(--sand)}
+.takes p{color:var(--muted);font-size:15.5px;margin-top:2px}
+.takes li.feat{grid-column:1/-1;border-top:0;background:rgba(127,196,160,.2);border-radius:6px;padding:24px clamp(20px,3vw,32px);grid-template-columns:64px 1fr;gap:18px;margin-bottom:8px}
+.takes li.feat .n{font-size:64px;color:var(--green)}
+.takes li.feat h3{font-family:var(--f-serif);font-weight:500;font-size:clamp(24px,2.6vw,30px);line-height:1.15}
+.takes li.feat p{font-size:16.5px;color:var(--text);max-width:64ch;margin-top:6px}
+.chip-free{display:inline-block;vertical-align:middle;margin-left:10px;font-family:var(--f-body);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--forest);color:var(--mint);padding:4px 10px;border-radius:999px}
+
+/* Programme */
+.prog{background:var(--sage);border-block:1px solid var(--border)}
+.prog-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(32px,6vw,80px);align-items:start}
+.prog-side{position:sticky;top:96px;display:grid;gap:14px}
+.time{font-family:var(--f-head);font-size:clamp(26px,3vw,34px);color:var(--forest);line-height:1;font-variant-numeric:tabular-nums}
+.note{font-family:var(--f-serif);font-style:italic;font-size:20px;line-height:1.4;color:var(--green)}
+.agenda{list-style:none;margin:0;padding:0;counter-reset:a}
+.agenda li{counter-increment:a;display:grid;grid-template-columns:34px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--border)}
+.agenda li:last-child{border-bottom:1px solid var(--border)}
+.agenda li::before{content:counter(a);font-family:var(--f-script);font-size:30px;line-height:1;color:var(--sand)}
+.agenda .who{display:block;margin-top:4px;font-size:15px;color:var(--muted)}
+.agenda .tbd{font-style:italic}
+.agenda .tag{display:inline-block;margin-left:8px;vertical-align:2px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);background:var(--mint);padding:3px 9px;border-radius:999px}
+.agenda li.hl h3{color:var(--green)}
+
+/* Coaches */
+.coaches{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 20px}
+.coach{display:grid;gap:5px;align-content:start;min-width:0;width:calc((100% - 60px)/4)}
+.photo{aspect-ratio:1/1;margin-bottom:5px;max-width:100%;border-radius:4px;background:var(--paper);border:1px dashed #CBD8D0;display:grid;place-items:center;color:#A7B5AD;font-size:13px;letter-spacing:.14em;text-transform:uppercase;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo.has{border:0;background:var(--sage)}
+.coach h3{font-family:var(--f-serif);font-size:21px;font-weight:500;line-height:1.15}
+.coach .topic{font-size:13.5px;line-height:1.4;color:var(--green)}
+.coach .bio{font-size:14px;line-height:1.5;color:var(--muted)}
+.coach .bio.empty{color:#A5A5A5;font-style:italic}
+
+/* About */
+.about{background:var(--paper);border-top:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:start}
+.motto{font-family:var(--f-head);font-size:clamp(36px,4.6vw,56px);color:var(--forest);line-height:1.08;margin-top:14px}
+.motto+p{font-family:var(--f-serif);font-style:italic;font-size:clamp(22px,2.4vw,28px);color:var(--green);margin-top:10px;padding-top:12px;border-top:1px solid var(--sand);display:inline-block}
+.nums{display:none}
+.nums div{display:grid}
+.nums b{font-family:var(--f-script);font-weight:400;font-size:56px;line-height:1;color:var(--green)}
+.nums b.caps{font-family:var(--f-head);font-size:34px;letter-spacing:.08em;padding-top:12px}
+.nums span{font-size:14px;color:var(--muted);max-width:20ch;margin-top:4px}
+.proofs{list-style:none;margin:0;padding:0}
+.proofs li{padding:9px 0 9px 22px;border-top:1px solid var(--border);position:relative}
+.proofs li:last-child{border-bottom:1px solid var(--border)}
+.proofs li::before{content:"";position:absolute;left:0;top:21px;width:8px;height:1px;background:var(--green)}
+.about .links{display:flex;flex-wrap:wrap;gap:0 24px;margin-top:20px}
+
+
+.founder{margin:28px 0 0;padding:24px 0 0;border-top:1px solid var(--border);display:grid;gap:16px;position:relative}
+.founder::before{content:"";position:absolute;top:30px;left:0;bottom:70px;width:2px;background:var(--sand)}
+.founder blockquote{margin:0;padding-left:30px;font-family:var(--f-serif);font-style:italic;font-size:clamp(20px,2vw,23px);line-height:1.4;color:var(--forest)}
+.founder figcaption{display:flex;align-items:center;gap:12px;padding-left:30px}
+.founder img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.founder figcaption span{display:grid;font-size:13.5px;line-height:1.35;color:var(--muted)}
+.founder figcaption b{font-weight:500;color:var(--forest);font-size:15px}
+/* Final */
+.final{background:var(--forest);color:var(--cream)}
+.final .wrap{display:grid;justify-items:center;text-align:center;gap:14px}
+.final h2{color:var(--white)}
+.final h2 .it{color:var(--mint)}
+.final p{color:rgba(245,240,232,.75)}
+.final .btn{background:var(--cream);color:var(--forest)}
+.final .btn:hover{background:var(--white)}
+.final .count{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+
+footer{background:var(--forest);color:rgba(245,240,232,.6);border-top:1px solid rgba(255,255,255,.1);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding-block:24px}
+footer .c{display:flex;flex-wrap:wrap;gap:4px 22px}
+footer .c span{user-select:all}
+
+/* Mobile dock */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--white);border-top:1px solid var(--border);padding:10px var(--gr) calc(10px + env(safe-area-inset-bottom,0px)) var(--gl);display:none;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .25s}
+.dock.show{transform:none}
+.dock .i{font-size:13px;line-height:1.3;color:var(--muted)}
+.dock .i b{display:block;color:var(--forest);font-weight:500;font-size:14.5px}
+.dock .btn{min-height:46px;padding:0 20px;font-size:14.5px}
+
+@media (max-width:900px){
+  .hero-grid,.prog-grid,.about-grid{grid-template-columns:1fr}
+  .prog-side{position:static}
+  .coach{width:calc((100% - 40px)/3)}
+  .tk-zone{padding:0 8px}
+  .tk{max-width:340px}
+}
+@media (max-width:640px){
+  body{font-size:16px;padding-bottom:76px}
+  .top .btn,.top-meta{display:none}
+  .btn.lg{width:100%}
+  .hero-copy .cta-block{justify-items:stretch;text-align:center}
+  .pain-list,.takes{grid-template-columns:1fr}
+  .answer{grid-template-columns:1fr}
+  .takes li.feat{grid-template-columns:44px 1fr;gap:12px}
+  .takes li.feat .n{font-size:48px}
+
+  .coach h3{font-size:19px}
+  .trust .wrap{justify-content:flex-start;gap:6px 18px;font-size:13.5px}
+  .tk{max-width:300px}
+  a.tk-zone{gap:12px}
+  .dock{display:flex}
+  .lead-full,.label-long{display:none}
+  .lead-short,.label-short{display:inline}
+  .coaches,.rev-list{display:flex;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:calc(-1*var(--gl)) calc(-1*var(--gr));padding:0 var(--gr) 8px var(--gl);scroll-padding-inline:var(--gl);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .coaches::-webkit-scrollbar,.rev-list::-webkit-scrollbar{display:none}
+  .coach{flex:0 0 64%;width:auto;scroll-snap-align:start}
+  .rev{flex:0 0 82%;scroll-snap-align:start}
+  .swipe-hint{display:block;font-size:13px;color:var(--green);margin:-10px 0 14px}
+  .rating b{font-size:38px}
+
+  .tk{transform:rotate(-1deg)}
+  .tk-title,.tk-sub b{font-size:26px}
+  .tk-print{font-size:14px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .tk{animation:settle .8s cubic-bezier(.2,.8,.3,1) both}
+  @keyframes settle{from{transform:translateY(-10px) rotate(-5deg)}to{transform:rotate(-2deg)}}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="logo" aria-label="GetGrow Academy Berlin">
+      <span class="get">Get</span><span class="bar" aria-hidden="true"></span>
+      <span class="wm"><b>GROW</b><small>ACADEMY · BERLIN</small></span>
+    </div>
+    <div class="top-r"><span class="top-meta">15.11 · бесплатно</span><a class="btn sm" href="https://tally.so/r/7XqYG2">Забронировать <span class="arr" aria-hidden="true">→</span></a></div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="label"><span class="label-long">Открытие GetGrow Academy · коучинг в Берлине</span><span class="label-short">Открытие GetGrow Academy</span></p>
+      <h1>Новая работа в Германии: <span class="it">с чего начать</span> и где взять поддержку</h1>
+      <p class="lead"><span class="lead-full">Живая встреча с карьерными коучами, которые сами переехали в Германию и заново строили здесь карьеру. За одно воскресенье вы узнаете, положен ли вам бесплатный коучинг, получите систему поиска работы и познакомитесь с людьми, которые сейчас проходят тот же путь.</span><span class="lead-short">Живая встреча с коучами, которые сами переехали в Германию. Узнаете, положен ли вам бесплатный коучинг, и уйдёте с планом поиска работы.</span></p>
+      <div class="cta-block">
+        <a class="btn lg" id="hero-cta" href="https://tally.so/r/7XqYG2">Забронировать место <span class="arr" aria-hidden="true">→</span></a>
+        <p class="micro">Бесплатно · анкета на 3 минуты · всего 50 мест</p>
+      </div>
+      <dl class="facts">
+        <dt>Когда</dt><dd>Воскресенье, 15 ноября, 12:00–16:00</dd>
+        <dt>Где</dt><dd>Motel One Berlin-Tiergarten, An der Urania 12–14</dd>
+        <dt>Язык</dt><dd>Русский, можно украинский</dd>
+      </dl>
+    </div>
+
+    <div>
+      <a class="tk-zone" href="https://tally.so/r/7XqYG2" aria-label="Забронировать билет на открытие 15 ноября">
+        <article class="tk">
+          <div class="tk-strip" aria-hidden="true"><span>Eintritt frei · 50 Plätze</span></div>
+          <div class="tk-top">
+            <img class="tk-mark" alt="" src="img/logo-round-cream.webp">
+            <p class="tk-validate">↑ Bitte hier entwerten ↑<br>Отметьтесь на входе</p>
+          </div>
+          <p class="tk-title">Eröffnung<br>GetGrow Academy</p>
+          <div class="tk-sub"><small>Jobcoaching · Regeltarif</small><b>So 15.11</b></div>
+          <div class="tk-print">
+            <span>Berlin<br>Tiergarten<br>151126 1200</span>
+            <span class="r">0,00 EUR/50<br>12–16 Uhr</span>
+          </div>
+          <p class="tk-fine">Motel One Berlin-Tiergarten · An der Urania 12–14 · 10787 Berlin. Sprache: Russisch, Ukrainisch. Gültig nach Anmeldung. GetGrow Academy GmbH · AZAV-zertifiziert.</p>
+          <div class="tk-foot"><span class="tk-code">15112 0050</span><span class="tk-box">AZAV</span></div>
+        </article>
+        <span class="tk-hint">Нажмите на билет, чтобы забронировать <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span><b>200+</b>клиентов</span>
+    <span>Сертификация AZAV · коучинг по AVGS-Gutschein</span>
+    <span>Коучи сами прошли миграцию</span>
+    <a href="https://www.google.com/maps/place/GetGrow+Academy+GmbH/@52.5094234,13.3885801,16z/data=!3m1!4b1!4m6!3m5!1s0x47a851d5bd8f6457:0x38a5224dd88cd38e!8m2!3d52.5094234!4d13.391155!16s%2Fg%2F11zbgsltxs"><b>5,0</b>★ в Google · 45 отзывов</a>
+  </div>
+</div>
+
+<section class="pains">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Узнаёте себя?</p>
+      <h2>Отметьте то, что <span class="it">про вас</span></h2>
+    </div>
+    <ul class="pain-list">
+      <li><button class="pain" id="p1" aria-pressed="false"><span class="box" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3L9.5 3.5"/></svg></span><span>«Дома у меня были опыт и должность, а здесь я будто начинаю с нуля»</span></button></li>
+      <li><button class="pain" id="p2" aria-pressed="false"><span class="box" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3L9.5 3.5"/></svg></span><span>«Мне за 40 — кажется, берут только молодых»</span></button></li>
+      <li><button class="pain" id="p3" aria-pressed="false"><span class="box" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3L9.5 3.5"/></svg></span><span>«Мой немецкий пока не идеален — кто меня возьмёт?»</span></button></li>
+      <li><button class="pain" id="p4" aria-pressed="false"><span class="box" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3L9.5 3.5"/></svg></span><span>«Отправляю резюме, а в ответ тишина или шаблонные отказы»</span></button></li>
+      <li><button class="pain" id="p5" aria-pressed="false"><span class="box" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3L9.5 3.5"/></svg></span><span>«Здесь всё решают знакомства, а у меня их нет»</span></button></li>
+      <li><button class="pain" id="p6" aria-pressed="false"><span class="box" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3L9.5 3.5"/></svg></span><span>«Не понимаю, с чего начать, и поэтому откладываю»</span></button></li>
+      <li><button class="pain" id="p7" aria-pressed="false"><span class="box" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3L9.5 3.5"/></svg></span><span>«Меня сократили (или могут сократить), и я не знаю, что дальше»</span></button></li>
+      <li><button class="pain" id="p8" aria-pressed="false"><span class="box" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3L9.5 3.5"/></svg></span><span>«Хочу поддержку коуча, но не могу себе это позволить»</span></button></li>
+    </ul>
+    <div class="answer">
+      <p class="count" id="count" aria-live="polite"></p>
+      <p class="big-p">Если вы узнали себя хотя бы в одном пункте, <em>с вами всё в порядке.</em> Так выглядит переход в новой стране, и почти каждый из нас прошёл через него сам. Поэтому мы начинаем не с резюме, а с вас: с вашего опыта, целей и сильных сторон.</p>
+      <div class="cta-block"><a class="btn" id="pain-cta" href="https://tally.so/r/7XqYG2"><span id="pain-cta-t">Забронировать место</span> <span class="arr" aria-hidden="true">→</span></a><p class="micro">Мы начнём с вашей ситуации: она есть в анкете</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="takes-sec">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">За одно воскресенье</p>
+      <h2>С чем вы <span class="it">уйдёте</span></h2>
+    </div>
+    <ul class="takes">
+      <li class="feat"><span class="n" aria-hidden="true">1</span><div><h3>Узнаете, можно ли пройти коучинг бесплатно <span class="chip-free">0 €</span></h3><p>Многим коучинг оплачивает Jobcenter или Agentur für Arbeit через ваучер AVGS. Расскажем, кому он положен и что сказать своему консультанту, чтобы его получить.</p></div></li>
+      <li><span class="n" aria-hidden="true">2</span><div><h3>Получите план поиска работы</h3><p>С чего начать, что делать каждую неделю и как не бросить на полпути. Чтобы вы искали по плану, а не рассылали резюме наугад.</p></div></li>
+      <li><span class="n" aria-hidden="true">3</span><div><h3>Почувствуете опору</h3><p>Поговорим, почему после переезда пропадает уверенность в себе и как её вернуть, даже когда вокруг всё новое.</p></div></li>
+      <li><span class="n" aria-hidden="true">4</span><div><h3>Познакомитесь с людьми на том же пути</h3><p>Пообщаетесь в группах по 4 человека. Собеседников подберём по вашим ответам в анкете.</p></div></li>
+      <li><span class="n" aria-hidden="true">5</span><div><h3>Найдёте «своего» коуча</h3><p>Поговорите с коучами вживую и поймёте, с кем вам было бы комфортно работать. Ни к чему не обязывает.</p></div></li>
+    </ul>
+    <div class="cta-block after"><a class="btn" href="https://tally.so/r/7XqYG2">Хочу это получить <span class="arr" aria-hidden="true">→</span></a><p class="micro">Бесплатно · всего 50 мест</p></div>
+  </div>
+</section>
+
+<section class="speakers">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Спикеры</p>
+      <h2>Коучи, с которыми <span class="it">вы познакомитесь</span></h2>
+    </div>
+    <p class="swipe-hint">Листайте вбок →</p>
+    <div class="coaches">
+      <div class="coach"><div class="photo has" data-photo="yulia"><img alt="Юлия Заенчик" loading="lazy" src="img/yulia.webp"></div><h3>Юлия Заенчик</h3><p class="topic">Основательница GetGrow Academy</p><p class="bio">Психолог и джоб-коуч, в Берлине с 2015 года. Больше 5 лет помогает людям заново начать карьеру в Германии: от выбора направления до собеседования.</p></div>
+      <div class="coach"><div class="photo has" data-photo="alina"><img alt="Алина Орланская" loading="lazy" src="img/alina.webp"></div><h3>Алина Орланская</h3><p class="topic">Виды коучинга и AVGS-Gutschein</p><p class="bio">Джоб-коуч и карьерный консультант, бакалавр экономики и права. Помогла около 100 людям открыть бизнес в Германии.</p></div>
+      <div class="coach"><div class="photo has" data-photo="olha"><img alt="Ольга Шанта-Гладун" loading="lazy" src="img/olha.webp"></div><h3>Ольга Шанта-Гладун</h3><p class="topic">Идентичность в миграции</p><p class="bio">Больше 15 лет в управлении и предпринимательстве, руководила командой из 50 человек. С 2022 года провела больше 700 часов коучинга.</p></div>
+      <div class="coach"><div class="photo has" data-photo="parvin"><img alt="Парвин Фатуллаев" loading="lazy" src="img/parvin.webp"></div><h3>Парвин Фатуллаев</h3><p class="topic">Идентичность в миграции</p><p class="bio">Коуч по изменениям и фасилитатор, 8+ лет помогает командам проходить перемены, от стартапов до BASF. Ментор в ReDI School: готовил людей из разных стран к выходу на немецкий рынок труда.</p></div>
+      <div class="coach"><div class="photo has" data-photo="zoya"><img alt="Зоя Скобельцына" loading="lazy" src="img/zoya.webp"></div><h3>Зоя Скобельцына</h3><p class="topic">Системный поиск работы</p><p class="bio">ICF-сертифицированный джоб- и лайф-коуч, работает по AVGS. Больше 1000 часов коучинга с 2022 года.</p></div>
+      <div class="coach"><div class="photo has" data-photo="dasha"><img alt="Даша" loading="lazy" src="img/dasha.webp"></div><h3>Даша</h3><p class="topic">Истории клиентов</p><p class="bio">Джоб-коуч и тренер по интеграции на рынке труда. Сопровождала около 200 клиентов, в основном по AVGS.</p></div>
+      <div class="coach"><div class="photo has" data-photo="alena"><img alt="Алёна Юрпалова" loading="lazy" src="img/alena.webp"></div><h3>Алёна Юрпалова</h3><p class="topic">ИИ в жизни людей</p><p class="bio">Бизнес- и карьерный коуч, больше 20 лет в обучении взрослых. Обучила больше 1000 специалистов.</p></div>
+      <div class="coach"><div class="photo has" data-photo="olesya"><img alt="Олеся Левински" loading="lazy" src="img/olesya.webp"></div><h3>Олеся Левински</h3><p class="topic">Виды коучинга и AVGS-Gutschein</p><p class="bio">Джоб-коуч: помогает войти на немецкий рынок труда, готовит Lebenslauf, Anschreiben и к собеседованиям. Сопровождает в ведомствах и в немецкой медицинской системе.</p></div>
+    </div>
+    <div class="cta-block center"><a class="btn" href="https://tally.so/r/7XqYG2">Познакомиться лично 15 ноября <span class="arr" aria-hidden="true">→</span></a><p class="micro">Бесплатно · 50 мест</p></div>
+  </div>
+</section>
+
+<section class="prog">
+  <div class="wrap prog-grid">
+    <div class="prog-side">
+      <p class="label">Воскресенье, 15 ноября</p>
+      <h2>Программа</h2>
+      <p class="time">12:00 – 16:00</p>
+      <p class="note">В каждом выступлении есть реальная история клиента: с чем человек пришёл, к чему пришёл и что ему помогло.</p>
+      <div><a class="btn" href="https://tally.so/r/7XqYG2">Забронировать место <span class="arr" aria-hidden="true">→</span></a></div>
+    </div>
+    <ol class="agenda">
+      <li><div><h3>Знакомство с GetGrow Academy</h3><span class="who">Юлия Заенчик</span></div></li>
+      <li><div><h3>Какие бывают виды коучинга и кто может получить его бесплатно по AVGS-Gutschein</h3><span class="who">Олеся Левински и Алина Орланская</span></div></li>
+      <li><div><h3>«Идентичность в период миграции и интеграции»</h3><span class="who">Парвин Фатуллаев и Ольга Шанта-Гладун</span></div></li>
+      <li><div><h3>«Как искать работу системно и не прокрастинировать»</h3><span class="who">Зоя Скобельцына</span></div></li>
+      <li class="hl"><div><h3>Нетворкинг в группах по 4 человека<span class="tag">Знакомства</span></h3></div></li>
+      <li><div><h3>Истории клиентов, которые после миграции воплотили свою мечту</h3><span class="who">Даша</span></div></li>
+      <li><div><h3>ИИ в жизни людей: как он может помочь</h3><span class="who">Алёна Юрпалова</span></div></li>
+      <li class="hl"><div><h3>Розыгрыш вводной сессии с коучем<span class="tag">Розыгрыш</span></h3></div></li>
+      <li class="hl"><div><h3>Общение с коучами и участниками за напитками<span class="tag">Напитки</span></h3></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2>Кто мы</h2>
+      <p class="motto">Wachsen, wo Sie stehen.</p>
+      <p>Расти там, где вы сейчас.</p>
+      <div class="nums">
+        <div><b>200+</b><span>клиентов</span></div>
+        <div><b class="caps">AZAV</b><span>работаем по AVGS-Gutschein</span></div>
+      </div>
+      <figure class="founder">
+        <blockquote>«Я основала GetGrow Academy, потому что сама знаю, каково это — начинать заново в Германии. У нас вы не получите стандартный коучинг и пустых обещаний. Вас ждёт команда, которая знает немецкий рынок труда, говорит на вашем языке и понимает вашу ситуацию.»</blockquote>
+        <figcaption><img alt="" src="img/yulia.webp"><span><b>Юлия Заенчик</b>основательница GetGrow Academy</span></figcaption>
+      </figure>
+      <div class="links">
+        <a class="link" href="https://www.google.com/maps/place/GetGrow+Academy+GmbH/@52.5094234,13.3885801,16z/data=!3m1!4b1!4m6!3m5!1s0x47a851d5bd8f6457:0x38a5224dd88cd38e!8m2!3d52.5094234!4d13.391155!16s%2Fg%2F11zbgsltxs">Отзывы клиентов в Google ↗</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:18px;color:var(--forest);margin-bottom:20px">GetGrow Academy — коучинг в центре Берлина, очно и онлайн.</p>
+      <ul class="proofs">
+        <li>Для многих клиентов коучинг бесплатный благодаря AVGS-Gutschein</li>
+        <li>Коучи сами прошли миграцию и знают немецкий рынок труда изнутри</li>
+        <li>Психологическая основа: основательница академии — психолог</li>
+        <li>Выстроенные процессы: каждый шаг коучинга понятен заранее</li>
+        <li>Прямые контакты с работодателями и HR</li>
+        <li>Без шаблонов, без ярлыков, без давления</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <div class="head" style="margin:0">
+        <p class="label">Отзывы клиентов</p>
+        <h2>Что говорят о <span class="it">GetGrow Academy</span></h2>
+      </div>
+      <a class="rating" href="https://www.google.com/maps/place/GetGrow+Academy+GmbH/@52.5094234,13.3885801,16z/data=!3m1!4b1!4m6!3m5!1s0x47a851d5bd8f6457:0x38a5224dd88cd38e!8m2!3d52.5094234!4d13.391155!16s%2Fg%2F11zbgsltxs"><b>5,0</b><span><span class="stars" aria-hidden="true">★★★★★</span><br>45 отзывов в Google ↗</span></a>
+    </div>
+    <div class="rev-list">
+      <figure class="rev"><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>«Я бухгалтер с большим опытом работы в Украине, но в Германии всё нужно было начинать заново. Юлия помогла мне составить резюме, подготовиться к собеседованиям и найти подходящие курсы. И в итоге я нашла работу по своей специальности.»</blockquote><figcaption>Ольга, бухгалтер</figcaption></figure>
+      <figure class="rev"><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>«Мой диплом ещё не признан в Германии. Юлия не сдалась: благодаря своим контактам она помогла мне организовать практику в детском саду. Садик готов взять меня на работу, как только я сдам экзамен по немецкому.»</blockquote><figcaption>Галина М., воспитатель</figcaption></figure>
+      <figure class="rev"><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>«Хочу оставить небольшой отзыв о работе с GetGrow Academy. Я получил действительно качественную, структурированную и практичную поддержку. Это был не просто разговор, а чёткое разложение ситуации: куда двигаться дальше и какие шаги важны в условиях адаптации к немецкому рынку.»</blockquote><figcaption>Jade G.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap narrow">
+    <h2>Начните с одного воскресенья, <span class="it">остальное соберём вместе</span></h2>
+    <p>15 ноября, 12:00–16:00 · Motel One Berlin-Tiergarten · бесплатно</p>
+    <a class="btn lg" href="https://tally.so/r/7XqYG2">Забронировать место <span class="arr" aria-hidden="true">→</span></a>
+    <p class="micro">Анкета на 3 минуты. Ответы помогут собрать для вас группу нетворкинга.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>GetGrow Academy GmbH · Berlin Mitte</span>
+    <div class="c">
+      <span>info@getgrow.academy</span>
+      <span>+49 157 3665 1515</span>
+      <a href="https://www.instagram.com/getgrow.academy/">@getgrow.academy</a>
+    </div>
+  </div>
+</footer>
+
+<div class="dock" id="dock" aria-hidden="true">
+  <div class="i"><b>15 ноября, 12:00</b>Бесплатно · 50 мест</div>
+  <a class="btn" href="https://tally.so/r/7XqYG2" tabindex="-1">Забронировать →</a>
+</div>
+
+<script>
+(function(){
+  // tag every registration link with where it was clicked (?ref=hero, ?ref=final …) for Tally hidden fields
+  [].forEach.call(document.querySelectorAll('a[href*="tally.so"]'),function(a){
+    var ref=a.closest('.dock')?'dock':a.closest('.top')?'header':a.closest('.tk-zone')?'ticket':(a.closest('section')||{}).className||'page';
+    ref=String(ref).split(' ')[0]||'page';
+    a.href='https://tally.so/r/7XqYG2?ref='+encodeURIComponent(ref);
+  });
+
+  var pains=[].slice.call(document.querySelectorAll('.pain')), count=document.getElementById('count'), ct=document.getElementById('pain-cta-t');
+  pains.forEach(function(b){b.addEventListener('click',function(){
+    b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');
+    var n=pains.filter(function(x){return x.getAttribute('aria-pressed')==='true'}).length;
+    var w=(n%10===1&&n%100!==11)?'пункте':'пунктах';
+    count.textContent=n?('Вы узнали себя в '+n+' '+w+' из 8. Именно с этим мы работаем на встрече.'):'';
+    ct.textContent=n?'Мне это знакомо, хочу прийти':'Забронировать место';
+  });});
+
+
+  var dock=document.getElementById('dock'), hero=document.getElementById('hero-cta');
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){var s=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;dock.classList.toggle('show',s);dock.setAttribute('aria-hidden',s?'false':'true');}).observe(hero);}
+  else{dock.classList.add('show');}
+})();
+</script>
+
+</body>
+</html>
