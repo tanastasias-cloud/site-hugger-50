@@ -314,6 +314,11 @@ footer .c span{user-select:all}
   .tk-title,.tk-sub b{font-size:26px}
   .tk-print{font-size:14px}
 }
+/* Ширина блоков как на главной странице сайта: боковые поля 32px, в шапке 64px (на телефоне без изменений) */
+@media (min-width:641px){
+  .wrap:not(.narrow){max-width:1440px;padding-left:32px;padding-right:32px}
+  .top .wrap{max-width:none;padding-left:64px;padding-right:64px}
+}
 @media (prefers-reduced-motion:no-preference){
   .tk{animation:settle .8s cubic-bezier(.2,.8,.3,1) both}
   @keyframes settle{from{transform:translateY(-10px) rotate(-5deg)}to{transform:rotate(-2deg)}}
@@ -472,7 +477,6 @@ footer .c span{user-select:all}
     <div>
       <h2>Кто мы</h2>
       <p class="motto">Wachsen, wo Sie stehen.</p>
-      <p>Расти там, где вы сейчас.</p>
       <div class="nums">
         <div><b>200+</b><span>клиентов</span></div>
         <div><b class="caps">AZAV</b><span>работаем по AVGS-Gutschein</span></div>
