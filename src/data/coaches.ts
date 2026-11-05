@@ -8,6 +8,7 @@ import eugeniePhoto from "@/assets/eugenie-kralyuk.jpg";
 import nataliiaPhoto from "@/assets/nataliia-skliar.jpg";
 import dariaPhoto from "@/assets/daria-coach.jpg";
 import corneliaPhoto from "@/assets/cornelia-boos.jpg";
+import parvinPhoto from "@/assets/parvin-fatullayev.jpg";
 
 // Coach-Profile — neue Coaches einfach hier hinzufügen.
 // Jeder Eintrag erscheint automatisch auf /coaches.
@@ -357,6 +358,46 @@ export const coaches: Coach[] = [
       "Bewerbungscoaching & beruflicher Wiedereinstieg",
       "Migration & berufliche Integration",
       "Ganzheitliche Betreuung nach § 16k SGB II",
+    ],
+  },
+  {
+    slug: "parvin-fatullayev",
+    name: "Parvin Fatullayev",
+    role: "Change Manager · Facilitator · New Work & nachhaltige Transformation",
+    photo: parvinPhoto,
+    languages: [
+      { flag: "🇦🇿", label: "Aserbaidschanisch" },
+      { flag: "🇬🇧", label: "Englisch" },
+      { flag: "🇩🇪", label: "Deutsch" },
+      { flag: "🇷🇺", label: "Russisch" },
+      { flag: "🇹🇷", label: "Türkisch" },
+    ],
+    bio: [
+      "Ich bin Change Manager und Facilitator mit Schwerpunkt Organisationsentwicklung, New Work und nachhaltiger Transformation. Seit über acht Jahren begleite ich Organisationen, Führungskräfte und Teams in Startups und globalen Unternehmen bei Veränderungsprozessen, digitalem Wandel und beim Aufbau leistungsfähiger, funktionsübergreifender Teams.",
+      "Ich unterstütze Organisationen dabei, Strategie, Kultur und Arbeitsweisen in Einklang zu bringen – damit Menschen sich anpassen, zusammenarbeiten und wachsen können. Mir liegt besonders am Herzen, Veränderung sinnvoll zu gestalten: mit einer Kultur aus psychologischer Sicherheit, Authentizität, Engagement und kontinuierlicher Weiterentwicklung.",
+      "Meine Stationen reichen von ExxonMobil in Budapest über ein Berliner Startup bis zur BASF, wo ich als Senior Specialist und Agile Coach tätig war. Als Trainer und Mentor an der ReDI School of Digital Integration habe ich Teilnehmende aus unterschiedlichen Hintergründen – auch aus marginalisierten Gruppen – in Einzelcoachings und Job-Readiness-Sessions bei Lebenslauf, Vorstellungsgesprächen und Selbstvertrauen begleitet. Heute arbeite ich in Berlin freiberuflich als Berater für Organisationsentwicklung und Change.",
+    ],
+    credentials: [
+      { type: "Master", text: "Business Administration (MBA)", sub: "Corvinus-Universität Budapest, 2015–2017" },
+      { type: "Master", text: "Informatik", sub: "Aserbaidschanische Technische Universität, 2010–2013" },
+      { type: "Bachelor", text: "Informatik", sub: "Aserbaidschanische Technische Universität, 2006–2010" },
+      { type: "Weiterbildung", text: "Change & Innovation Management", sub: "Fired up Space GmbH, Berlin, 05/2026–08/2026" },
+      { type: "Zertifikat", text: "Professional Scrum Master I (PSM I)", sub: "scrum.org" },
+      { type: "Zertifikat", text: "ITIL Foundation", sub: "IT Service Management, seit 07/2018" },
+      { type: "Erfahrung", text: "Senior Specialist / Agile Coach", sub: "BASF, Berlin, 11/2020–12/2023" },
+      { type: "Erfahrung", text: "Scrum Master", sub: "ExxonMobil Business Support Center Budapest, 2017–2019 · Yunar by Ambidexter, Berlin, 2019–2020" },
+      { type: "Praxis", text: "Trainer & Mentor", sub: "ReDI School of Digital Integration, Berlin, 01/2022–12/2023" },
+      { type: "Praxis", text: "Berater für Organisationsentwicklung & Change", sub: "freiberuflich, Berlin, seit 05/2026" },
+    ],
+    expertise: [
+      "Organisationsentwicklung & systemischer Wandel",
+      "Change-Begleitung & Transformationsprozesse",
+      "Führungs- & Teamentwicklung",
+      "Agile & New Work Transformation",
+      "Psychologische Sicherheit, Kultur & Kommunikation",
+      "Strategische Ausrichtung & Innovationsprozesse",
+      "Digitale Transformation & KI-Readiness",
+      "Nachhaltige & regenerative Organisationspraxis",
     ],
   },
 ];
