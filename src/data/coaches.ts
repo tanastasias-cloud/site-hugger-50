@@ -7,6 +7,7 @@ import olhaPhoto from "@/assets/olha-shanta-hladun.jpg";
 import eugeniePhoto from "@/assets/eugenie-kralyuk.jpg";
 import nataliiaPhoto from "@/assets/nataliia-skliar.jpg";
 import dariaPhoto from "@/assets/daria-coach.jpg";
+import corneliaPhoto from "@/assets/cornelia-boos.jpg";
 
 // Coach-Profile — neue Coaches einfach hier hinzufügen.
 // Jeder Eintrag erscheint automatisch auf /coaches.
@@ -290,7 +291,7 @@ export const coaches: Coach[] = [
   },
   {
     slug: "daria",
-    name: "Daria",
+    name: "Daria Lazarieva",
     role: "Job-Coach & Trainerin · Life Coach · Arbeitsmarktintegration",
     photo: dariaPhoto,
     languages: [
@@ -321,6 +322,41 @@ export const coaches: Coach[] = [
       "Stärkung von Selbstvertrauen und Selbstwirksamkeit",
       "Entwicklung von Resilienz",
       "Motivation und Entscheidungsfindung",
+    ],
+  },
+  {
+    slug: "cornelia-boos",
+    name: "Cornelia Boos",
+    role: "Job- & Karrierecoach (AVGS) · Gründungscoach · Ganzheitliches Lifecoaching",
+    photo: corneliaPhoto,
+    languages: [
+      { flag: "🇩🇪", label: "Deutsch" },
+      { flag: "🇷🇺", label: "Russisch" },
+      { flag: "🇬🇧", label: "Englisch" },
+    ],
+    bio: [
+      "Ich begleite insbesondere Frauen, die spüren, dass mehr in ihnen steckt, die sich beruflich verändern, neu orientieren oder den Schritt in die Selbstständigkeit wagen möchten – denen aber manchmal noch der Mut, die Klarheit oder das Vertrauen in die eigenen Fähigkeiten fehlt.",
+      "Vielleicht hast du viele Ideen und Wünsche, weißt aber nicht, wo du anfangen sollst. Vielleicht zweifelst du an dir selbst, fühlst dich überfordert oder wünschst dir einfach jemanden, der dich auf deinem Weg unterstützt.",
+      "Mit meinem wirtschaftlichen Hintergrund, meiner Ausbildung als systemischer Coach und einem ganzheitlichen Blick auf den Menschen unterstütze ich dich dabei, deine Stärken wiederzuentdecken, innere Blockaden zu überwinden und neue Perspektiven zu entwickeln.",
+      "Dabei geht es nicht nur um den nächsten Job oder eine erfolgreiche Gründung, sondern auch um dich als Mensch, deine Wünsche, deine Werte und das, was dich wirklich erfüllt.",
+      "Wenn du davon träumst, dein eigenes Business aufzubauen, begleite ich dich von der ersten Geschäftsidee über die gemeinsame Erstellung deines Businessplans bis hin zur Vorbereitung und Beantragung des Gründungszuschusses.",
+      "Mein Ziel ist es, dich darin zu bestärken, an dich selbst zu glauben, deine Möglichkeiten zu erkennen und deinen eigenen Weg mutig und selbstbestimmt zu gehen.",
+      "Durch meine Erfahrung in der Arbeit mit Menschen aus verschiedenen Ländern und Kulturen kenne ich die Herausforderungen der beruflichen Integration in Deutschland und unterstütze individuell beim Neustart sowie im Rahmen der ganzheitlichen Betreuung nach § 16k SGB II.",
+    ],
+    credentials: [
+      { type: "Bachelor", text: "Science (Wirtschaft)", sub: "" },
+      { type: "Zertifikat", text: "Zertifizierter Systemischer Coach", sub: "" },
+      { type: "Standort", text: "Berlin & Brandenburg oder online", sub: "" },
+    ],
+    expertise: [
+      "Berufliche Neu- und Umorientierung",
+      "Frauen-Coaching, Selbstvertrauen & Potenzialentfaltung",
+      "Umgang mit Selbstzweifeln, Ängsten & inneren Blockaden",
+      "Stressbewältigung, innere Balance & persönliche Entwicklung",
+      "Gründungscoaching, Businessplan & Gründungszuschuss",
+      "Bewerbungscoaching & beruflicher Wiedereinstieg",
+      "Migration & berufliche Integration",
+      "Ganzheitliche Betreuung nach § 16k SGB II",
     ],
   },
 ];
