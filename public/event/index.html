@@ -2,11 +2,11 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<!-- Относительные пути (img/...) должны работать и на сайте по адресу /event (без слэша), и при открытии файла с диска.
-     <base> подставляется только на сайте, когда адрес ровно /event. -->
+<!-- <base> должен стоять в самом начале head (сразу после meta charset), чтобы все относительные пути, включая иконку вкладки,
+     работали и на сайте по адресу /event (без слэша), и при открытии файла с диска. <base> подставляется только когда адрес ровно /event. -->
 <script>if(location.pathname==="/event"){document.write('<base href="/event/">')}</script>
-<title>GetGrow Academy Eröffnung</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Открытие GetGrow Academy · 15 ноября, Берлин</title>
 <meta name="description" content="Открытие GetGrow Academy в Берлине: живая встреча с карьерными коучами. 15 ноября, 12:00–16:00, бесплатно, 50 мест.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Открытие GetGrow Academy · 15 ноября, Берлин">
@@ -295,7 +295,12 @@ footer .c span{user-select:all}
 }
 @media (max-width:640px){
   body{font-size:16px;padding-bottom:76px}
-  .top .btn,.top-meta{display:none}
+  .top-home,.top-meta{display:none}
+  /* в шапке на телефоне — кнопка «Забронировать»; логотип не сжимается, поэтому кнопка компактная */
+  .top .wrap{gap:10px}
+  .logo{flex:none}
+  .top .btn.sm{min-height:40px;padding:0 14px;font-size:13px}
+  .top .btn.sm .arr{display:none}
   .btn.lg{width:100%}
   .hero-copy .cta-block{justify-items:stretch;text-align:center}
   .pain-list,.takes{grid-template-columns:1fr}
@@ -320,6 +325,10 @@ footer .c span{user-select:all}
   .tk{transform:rotate(-1deg)}
   .tk-title,.tk-sub b{font-size:26px}
   .tk-print{font-size:14px}
+}
+/* очень узкие телефоны: логотипу разрешено сжиматься, чтобы кнопка в шапке не вылезала за экран */
+@media (max-width:350px){
+  .logo{flex:0 1 auto;min-width:0}
 }
 /* Ширина блоков как на главной странице сайта: боковые поля 32px, в шапке 64px (на телефоне без изменений) */
 @media (min-width:641px){
@@ -544,6 +553,7 @@ footer .c span{user-select:all}
       <span>info@getgrow.academy</span>
       <span>+49 157 3665 1515</span>
       <a href="https://www.instagram.com/getgrow.academy/">@getgrow.academy</a>
+      <a href="/">О компании</a>
     </div>
   </div>
 </footer>
@@ -568,7 +578,7 @@ footer .c span{user-select:all}
     var n=pains.filter(function(x){return x.getAttribute('aria-pressed')==='true'}).length;
     var w=(n%10===1&&n%100!==11)?'пункте':'пунктах';
     count.textContent=n?('Вы узнали себя в '+n+' '+w+' из 8. Именно с этим мы работаем на встрече.'):'';
-    ct.textContent=n?'Мне это знакомо, хочу прийти':'Забронировать место';
+    ct.textContent=n?'Хочу прийти':'Забронировать место';
   });});
 
 
