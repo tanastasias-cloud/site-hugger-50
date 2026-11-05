@@ -303,6 +303,14 @@
 .gg-cta { background: var(--forest); color: white; padding: 10px 26px; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
 .gg-cta:hover { background: var(--green); }
 
+/* Narrow laptops / tablets in landscape: keep all nav items (incl. "Event") on one line */
+@media (min-width: 961px) and (max-width: 1180px) {
+  .gg-header { padding-left: 32px; padding-right: 32px; }
+  .gg-nav { gap: 20px; }
+  .gg-nav-link, .gg-dropdown-trigger { white-space: nowrap; }
+  .gg-cta { padding: 10px 18px; }
+}
+
 .gg-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
 .gg-burger span { display: block; width: 24px; height: 2px; background: var(--forest); transition: all 0.2s; }
 .gg-mobile-menu { display: none; position: fixed; top: 96px; left: 0; right: 0; bottom: 0; background: white; z-index: 199; padding: 32px 24px; flex-direction: column; gap: 0; overflow-y: auto; }

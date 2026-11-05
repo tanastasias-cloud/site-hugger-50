@@ -102,6 +102,10 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
           <Link to="/referenzen" className={`gg-nav-link${active === "referenzen" ? " active" : ""}`}>
             Referenzen
           </Link>
+          {/* /event ist eine eigenständige statische Seite (public/event), daher normaler Link statt Router-Link */}
+          <a href="/event" className="gg-nav-link">
+            Event
+          </a>
         </nav>
 
         <div className="gg-right">
@@ -142,6 +146,7 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
         )}
         <Link to="/coaches" className="gg-mobile-link" onClick={() => setOpen(false)}>Coaches</Link>
         <Link to="/referenzen" className="gg-mobile-link" onClick={() => setOpen(false)}>Referenzen</Link>
+        <a href="/event" className="gg-mobile-link">Event</a>
 
         <Link to="/kontakt" className="gg-mobile-cta" onClick={() => setOpen(false)}>
           Erstgespräch buchen →
