@@ -41,19 +41,22 @@ export function SiteFooter() {
           height={112}
         />
       </div>
-      <div className="footer-disclaimer">
-        Keine Gewährleistung auf Vermittlungserfolg. § 296 SGB III / § 45 SGB III.
-      </div>
-      <div className="footer-copyright">
-        © {new Date().getFullYear()} GetGrow Academy GmbH · Alle Rechte vorbehalten.
-      </div>
-      <div className="footer-inclusive">
+      <div className="footer-bottom">
+        <div className="footer-bottom-text">
+          <div className="footer-disclaimer">
+            Keine Gewährleistung auf Vermittlungserfolg. § 296 SGB III / § 45 SGB III.
+          </div>
+          <div className="footer-copyright">
+            © {new Date().getFullYear()} GetGrow Academy GmbH · Alle Rechte vorbehalten.
+          </div>
+        </div>
+        <div className="footer-inclusive">
         {/* Progress-Pride-Flagge in gedämpften Farben, damit sie zur ruhigen Optik der Seite passt */}
         <svg
           className="pride-flag"
           viewBox="0 0 60 40"
-          width="30"
-          height="20"
+          width="45"
+          height="30"
           role="img"
           aria-label="Progress-Pride-Flagge"
         >
@@ -77,6 +80,7 @@ export function SiteFooter() {
           </g>
         </svg>
         <span>Ein sicherer und inklusiver Raum für alle – LGBTQIA+-freundlich</span>
+        </div>
       </div>
     </footer>
   );

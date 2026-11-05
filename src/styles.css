@@ -1037,12 +1037,21 @@
   font-weight: 500;
 }
 
-/* Footer legal disclaimer */
-.footer-disclaimer {
+/* Footer bottom row: legal text on the left, inclusion note on the right */
+.footer-bottom {
   width: 100%;
   margin-top: 24px;
   padding-top: 24px;
   border-top: 1px solid rgba(245, 240, 232, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 32px;
+  flex-wrap: wrap;
+}
+
+/* Footer legal disclaimer */
+.footer-disclaimer {
   font-size: 11px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.5);
@@ -1050,7 +1059,6 @@
 }
 
 .footer-copyright {
-  width: 100%;
   margin-top: 12px;
   font-size: 10px;
   line-height: 1.5;
@@ -1060,17 +1068,15 @@
 
 /* Inclusion note with a muted pride flag */
 .footer-inclusive {
-  width: 100%;
-  margin-top: 16px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 11px;
+  gap: 16px;
+  font-size: 13px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.65);
   letter-spacing: 0.3px;
 }
-.footer-inclusive .pride-flag { flex: none; width: 30px; height: 20px; display: block; opacity: 0.95; }
+.footer-inclusive .pride-flag { flex: none; width: 45px; height: 30px; display: block; opacity: 0.95; }
 
 @media (max-width: 960px) {
   .legal-disclaimer { padding: 28px 24px; }
