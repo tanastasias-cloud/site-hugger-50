@@ -227,11 +227,12 @@ a.tk-zone:hover .tk-hint{text-decoration-color:var(--green)}
 
 /* Coaches */
 .coaches{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 20px}
-.coach{display:grid;gap:5px;align-content:start;min-width:0;width:calc((100% - 60px)/4)}
+.coach{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;align-content:start;min-width:0;width:calc((100% - 60px)/4)}
 .photo{aspect-ratio:1/1;margin-bottom:5px;max-width:100%;border-radius:4px;background:var(--paper);border:1px dashed #CBD8D0;display:grid;place-items:center;color:#A7B5AD;font-size:13px;letter-spacing:.14em;text-transform:uppercase;overflow:hidden}
 .photo img{width:100%;height:100%;object-fit:cover}
 .photo.has{border:0;background:var(--sage)}
-.coach h3{font-family:var(--f-serif);font-size:21px;font-weight:500;line-height:1.15}
+.coach h3{font-family:var(--f-serif);font-size:21px;font-weight:500;line-height:1.15;overflow-wrap:anywhere}
+.coach .topic,.coach .bio{overflow-wrap:anywhere}
 .coach .tlabel{margin-top:3px;font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .coach .topic{font-size:13.5px;line-height:1.4;color:var(--green)}
 .coach .bio{font-size:15px;line-height:1.5;color:var(--muted);text-wrap:pretty}
@@ -284,7 +285,9 @@ footer .c span{user-select:all}
 .dock.show{transform:none}
 .dock .i{font-size:13px;line-height:1.3;color:var(--muted)}
 .dock .i b{display:block;color:var(--forest);font-weight:500;font-size:14.5px}
-.dock .btn{min-height:46px;padding:0 20px;font-size:14.5px}
+.dock .btn{min-height:46px;padding:0 20px;font-size:14.5px;max-width:100%}
+.dock{flex-wrap:wrap;gap:8px 12px}
+.dock .i{min-width:0}
 
 @media (max-width:900px){
   .hero-grid,.prog-grid,.about-grid{grid-template-columns:1fr}
@@ -297,9 +300,10 @@ footer .c span{user-select:all}
   body{font-size:16px;padding-bottom:76px}
   .top-home,.top-meta{display:none}
   /* в шапке на телефоне — кнопка «Забронировать»; логотип не сжимается, поэтому кнопка компактная */
-  .top .wrap{gap:10px}
-  .logo{flex:none}
-  .top .btn.sm{min-height:40px;padding:0 14px;font-size:13px}
+  .top .wrap{gap:8px;flex-wrap:wrap}
+  .top-r{margin-left:auto}
+  .logo{flex:none;max-width:100%}
+  .top .btn.sm{min-height:40px;padding:0 12px;font-size:13px}
   .top .btn.sm .arr{display:none}
   .btn.lg{width:100%}
   .hero-copy .cta-block{justify-items:stretch;text-align:center}
@@ -326,9 +330,11 @@ footer .c span{user-select:all}
   .tk-title,.tk-sub b{font-size:26px}
   .tk-print{font-size:14px}
 }
-/* очень узкие телефоны: логотипу разрешено сжиматься, чтобы кнопка в шапке не вылезала за экран */
-@media (max-width:350px){
-  .logo{flex:0 1 auto;min-width:0}
+/* очень узкие экраны или крупный шрифт в системе: нижняя панель — одна кнопка на всю ширину,
+   текст «15 ноября…» скрыт (дата и так указана выше на странице) */
+@media (max-width:340px){
+  .dock .i{display:none}
+  .dock .btn{flex:1 1 auto}
 }
 /* Ширина блоков как на главной странице сайта: боковые поля 32px, в шапке 64px (на телефоне без изменений) */
 @media (min-width:641px){
