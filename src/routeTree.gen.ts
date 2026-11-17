@@ -14,6 +14,7 @@ import { Route as ReferenzenRouteImport } from './routes/referenzen'
 import { Route as PrivatpersonenRouteImport } from './routes/privatpersonen'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as ImpressumRouteImport } from './routes/impressum'
+import { Route as EventRouteImport } from './routes/event'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as AvgsCoachingRouteImport } from './routes/avgs-coaching'
@@ -46,6 +47,11 @@ const KontaktRoute = KontaktRouteImport.update({
 const ImpressumRoute = ImpressumRouteImport.update({
   id: '/impressum',
   path: '/impressum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventRoute = EventRouteImport.update({
+  id: '/event',
+  path: '/event',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DatenschutzRoute = DatenschutzRouteImport.update({
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/coaches': typeof CoachesRouteWithChildren
   '/datenschutz': typeof DatenschutzRoute
+  '/event': typeof EventRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/16k-coaching': typeof R16kCoachingRoute
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/datenschutz': typeof DatenschutzRoute
+  '/event': typeof EventRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/coaches': typeof CoachesRouteWithChildren
   '/datenschutz': typeof DatenschutzRoute
+  '/event': typeof EventRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/privatpersonen': typeof PrivatpersonenRoute
@@ -142,6 +151,7 @@ export interface FileRouteTypes {
     | '/avgs-coaching'
     | '/coaches'
     | '/datenschutz'
+    | '/event'
     | '/impressum'
     | '/kontakt'
     | '/privatpersonen'
@@ -156,6 +166,7 @@ export interface FileRouteTypes {
     | '/16k-coaching'
     | '/avgs-coaching'
     | '/datenschutz'
+    | '/event'
     | '/impressum'
     | '/kontakt'
     | '/privatpersonen'
@@ -171,6 +182,7 @@ export interface FileRouteTypes {
     | '/avgs-coaching'
     | '/coaches'
     | '/datenschutz'
+    | '/event'
     | '/impressum'
     | '/kontakt'
     | '/privatpersonen'
@@ -187,6 +199,7 @@ export interface RootRouteChildren {
   AvgsCoachingRoute: typeof AvgsCoachingRoute
   CoachesRoute: typeof CoachesRouteWithChildren
   DatenschutzRoute: typeof DatenschutzRoute
+  EventRoute: typeof EventRoute
   ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
   PrivatpersonenRoute: typeof PrivatpersonenRoute
@@ -230,6 +243,13 @@ declare module '@tanstack/react-router' {
       path: '/impressum'
       fullPath: '/impressum'
       preLoaderRoute: typeof ImpressumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/event': {
+      id: '/event'
+      path: '/event'
+      fullPath: '/event'
+      preLoaderRoute: typeof EventRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/datenschutz': {
@@ -310,6 +330,7 @@ const rootRouteChildren: RootRouteChildren = {
   AvgsCoachingRoute: AvgsCoachingRoute,
   CoachesRoute: CoachesRouteWithChildren,
   DatenschutzRoute: DatenschutzRoute,
+  EventRoute: EventRoute,
   ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
   PrivatpersonenRoute: PrivatpersonenRoute,
