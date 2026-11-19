@@ -15,6 +15,7 @@ export function K16Page({ lang }: { lang: TLang }) {
             <LLink lang={lang} to="/">{c.hero.crumbHome}</LLink>
             {c.hero.crumbRest}
           </div>
+          <div className="hero-kicker">{c.hero.kicker}</div>
           <h1>
             {h1a}
             <em>{h1b}</em>
