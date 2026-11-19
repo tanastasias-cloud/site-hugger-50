@@ -6,11 +6,13 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { HTML_LANG, langFromPathname } from "../i18n/lang";
 
 function NotFoundComponent() {
   return (
@@ -97,8 +99,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  // /ru/... -> lang="ru", /uk/... -> lang="uk", sonst "de"
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
-    <html lang="de">
+    <html lang={HTML_LANG[langFromPathname(pathname)]}>
       <head>
         <HeadContent />
       </head>

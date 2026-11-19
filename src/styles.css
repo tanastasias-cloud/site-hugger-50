@@ -322,6 +322,34 @@
 .gg-mobile-sub .sub-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--mint); display: block; margin-bottom: 3px; }
 .gg-mobile-cta { margin-top: 24px; background: var(--forest); color: white; padding: 16px 32px; text-align: center; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
 
+/* Language switcher DE / RU / UA */
+.gg-lang-switch { display: flex; gap: 2px; background: #f4f4f4; border-radius: 20px; padding: 3px; }
+.gg-lang-switch a { padding: 4px 10px; border-radius: 16px; font-size: 11px; letter-spacing: 1px; font-family: 'DM Sans', sans-serif; font-weight: 500; color: #888; text-decoration: none; transition: all 0.2s; }
+.gg-lang-switch a:hover { color: var(--forest); }
+.gg-lang-switch a.active { background: var(--forest); color: white; }
+.gg-mobile-lang-row { display: flex; gap: 8px; margin-top: 24px; }
+.gg-mobile-lang-row a { flex: 1; text-align: center; background: #f4f4f4; padding: 12px 10px; border-radius: 8px; font-size: 13px; font-weight: 600; letter-spacing: 1px; color: #666; text-decoration: none; font-family: 'DM Sans', sans-serif; }
+.gg-mobile-lang-row a.active { background: var(--forest); color: white; }
+
+/* Narrow laptops: the language switcher + longer RU/UA labels must still fit in the header */
+@media (min-width: 961px) and (max-width: 1180px) {
+  .gg-right { gap: 12px; }
+  .gg-lang-switch a { padding: 4px 7px; }
+  html[lang="de"] .gg-header { padding-left: 22px; padding-right: 22px; }
+  html[lang="ru"] .gg-header, html[lang="uk"] .gg-header { padding-left: 20px; padding-right: 20px; }
+  html[lang="ru"] .gg-nav, html[lang="uk"] .gg-nav { gap: 14px; }
+  html[lang="ru"] .gg-cta, html[lang="uk"] .gg-cta { padding: 10px 12px; letter-spacing: 1.5px; }
+}
+
+/* RU / UA: Allura has no Cyrillic — use Cormorant Garamond italic for accent words */
+html[lang="ru"] .page-hero h1 em, html[lang="uk"] .page-hero h1 em,
+html[lang="ru"] .founder-name em, html[lang="uk"] .founder-name em {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1em; margin-left: 0;
+}
+html[lang="ru"] .outcome-script, html[lang="uk"] .outcome-script {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 40px; color: var(--green); line-height: 1;
+}
+
 /* ── HERO (home) ── */
 .gg-hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
 .gg-hero-left { padding: 116px 32px 40px; display: flex; flex-direction: column; justify-content: center; background: white; }

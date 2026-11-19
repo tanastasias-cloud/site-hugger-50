@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
-
+import { Link, useRouterState } from "@tanstack/react-router";
+import { LLink } from "./LLink";
+import { UI } from "@/i18n/ui";
+import { basePath, hasTranslation, localizedPath, type Lang } from "@/i18n/lang";
 
 type ActiveKey =
   | "home"
@@ -14,11 +16,22 @@ type ActiveKey =
   | "impressum"
   | "contact";
 
-export function SiteHeader({ active }: { active?: ActiveKey }) {
+const SWITCH: Array<{ lang: Lang; label: string }> = [
+  { lang: "de", label: "DE" },
+  { lang: "ru", label: "RU" },
+  { lang: "uk", label: "UA" },
+];
+
+export function SiteHeader({ active, lang = "de" }: { active?: ActiveKey; lang?: Lang }) {
   const [open, setOpen] = useState(false);
   const [jcOpen, setJcOpen] = useState(false);
   const [mobileJcOpen, setMobileJcOpen] = useState(false);
   const jcRef = useRef<HTMLDivElement>(null);
+  const t = UI[lang].nav;
+
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const base = basePath(pathname);
+  const showSwitcher = hasTranslation(base);
 
   const jcActive = active === "jobcenter" || active === "avgs" || active === "16k";
 
@@ -32,34 +45,38 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  const closeMenu = () => setOpen(false);
+
   return (
     <>
       <header className="gg-header">
-        <Link to="/" className="gg-logo" aria-label="GetGrow Academy Berlin">
+        <LLink lang={lang} to="/" className="gg-logo" aria-label="GetGrow Academy Berlin">
           <div className="get">Get</div>
           <div className="div" />
           <div className="grow-stack">
             <div className="grow">GROW</div>
             <div className="acad">Academy · Berlin</div>
           </div>
-        </Link>
+        </LLink>
 
         <nav className="gg-nav">
-          <Link to="/" className={`gg-nav-link${active === "home" ? " active" : ""}`}>
-            Start
-          </Link>
-          <Link
+          <LLink lang={lang} to="/" className={`gg-nav-link${active === "home" ? " active" : ""}`}>
+            {t.home}
+          </LLink>
+          <LLink
+            lang={lang}
             to="/privatpersonen"
             className={`gg-nav-link${active === "privat" ? " active" : ""}`}
           >
-            Privatpersonen
-          </Link>
-          <Link
+            {t.privat}
+          </LLink>
+          <LLink
+            lang={lang}
             to="/unternehmen"
             className={`gg-nav-link${active === "unternehmen" ? " active" : ""}`}
           >
-            Unternehmen
-          </Link>
+            {t.unternehmen}
+          </LLink>
 
           <div
             ref={jcRef}
@@ -72,53 +89,72 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
               aria-haspopup="true"
               onClick={() => setJcOpen((v) => !v)}
             >
-              Mit Jobcenter <span className="arrow">▾</span>
+              {t.jobcenter} <span className="arrow">▾</span>
             </button>
             <div className="gg-dropdown-menu" role="menu">
-              <Link
+              <LLink
+                lang={lang}
                 to="/avgs-coaching"
                 className={`gg-dropdown-item${active === "avgs" ? " active" : ""}`}
                 role="menuitem"
                 onClick={() => setJcOpen(false)}
               >
-                <span className="gg-di-label">Programm 01 · AVGS</span>
-                <span className="gg-di-title">Job Coaching</span>
-              </Link>
-              <Link
+                <span className="gg-di-label">{t.avgsLabel}</span>
+                <span className="gg-di-title">{t.avgsTitle}</span>
+              </LLink>
+              <LLink
+                lang={lang}
                 to="/16k-coaching"
                 className={`gg-dropdown-item${active === "16k" ? " active" : ""}`}
                 role="menuitem"
                 onClick={() => setJcOpen(false)}
               >
-                <span className="gg-di-label">Programm 02 · §16k SGB II</span>
-                <span className="gg-di-title">Ganzheitliches Coaching</span>
-              </Link>
+                <span className="gg-di-label">{t.k16Label}</span>
+                <span className="gg-di-title">{t.k16Title}</span>
+              </LLink>
             </div>
           </div>
 
-          <Link to="/coaches" className={`gg-nav-link${active === "coaches" ? " active" : ""}`}>
-            Coaches
-          </Link>
-          <Link to="/referenzen" className={`gg-nav-link${active === "referenzen" ? " active" : ""}`}>
-            Referenzen
-          </Link>
+          <LLink lang={lang} to="/coaches" className={`gg-nav-link${active === "coaches" ? " active" : ""}`}>
+            {t.coaches}
+          </LLink>
+          <LLink lang={lang} to="/referenzen" className={`gg-nav-link${active === "referenzen" ? " active" : ""}`}>
+            {t.referenzen}
+          </LLink>
         </nav>
 
         <div className="gg-right">
-          <Link to="/kontakt" className="gg-cta">
-            Erstgespräch
-          </Link>
+          {showSwitcher && (
+            <div className="gg-lang-switch" role="group" aria-label={UI[lang].switcherLabel}>
+              {SWITCH.map((s) => (
+                <Link
+                  key={s.lang}
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  to={localizedPath(s.lang, base) as any}
+                  hrefLang={s.lang}
+                  lang={s.lang}
+                  className={s.lang === lang ? "active" : undefined}
+                  aria-current={s.lang === lang ? "true" : undefined}
+                >
+                  {s.label}
+                </Link>
+              ))}
+            </div>
+          )}
+          <LLink lang={lang} to="/kontakt" className="gg-cta">
+            {t.cta}
+          </LLink>
         </div>
 
-        <button className="gg-burger" aria-label="Menü" onClick={() => setOpen((v) => !v)}>
+        <button className="gg-burger" aria-label={t.menu} onClick={() => setOpen((v) => !v)}>
           <span /><span /><span />
         </button>
       </header>
 
       <div className={`gg-mobile-menu${open ? " open" : ""}`}>
-        <Link to="/" className="gg-mobile-link" onClick={() => setOpen(false)}>Start</Link>
-        <Link to="/privatpersonen" className="gg-mobile-link" onClick={() => setOpen(false)}>Privatpersonen</Link>
-        <Link to="/unternehmen" className="gg-mobile-link" onClick={() => setOpen(false)}>Unternehmen</Link>
+        <LLink lang={lang} to="/" className="gg-mobile-link" onClick={closeMenu}>{t.home}</LLink>
+        <LLink lang={lang} to="/privatpersonen" className="gg-mobile-link" onClick={closeMenu}>{t.privat}</LLink>
+        <LLink lang={lang} to="/unternehmen" className="gg-mobile-link" onClick={closeMenu}>{t.unternehmen}</LLink>
         <button
           type="button"
           className="gg-mobile-link gg-mobile-parent"
@@ -126,26 +162,45 @@ export function SiteHeader({ active }: { active?: ActiveKey }) {
           onClick={() => setMobileJcOpen((v) => !v)}
           aria-expanded={mobileJcOpen}
         >
-          Mit Jobcenter <span className="arrow" style={{ transform: mobileJcOpen ? "rotate(180deg)" : undefined }}>▾</span>
+          {t.jobcenter} <span className="arrow" style={{ transform: mobileJcOpen ? "rotate(180deg)" : undefined }}>▾</span>
         </button>
         {mobileJcOpen && (
           <>
-            <Link to="/avgs-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
-              <span className="sub-label">Programm 01 · AVGS</span>
-              Job Coaching
-            </Link>
-            <Link to="/16k-coaching" className="gg-mobile-sub" onClick={() => setOpen(false)}>
-              <span className="sub-label">Programm 02 · §16k SGB II</span>
-              Ganzheitliches Coaching
-            </Link>
+            <LLink lang={lang} to="/avgs-coaching" className="gg-mobile-sub" onClick={closeMenu}>
+              <span className="sub-label">{t.avgsLabel}</span>
+              {t.avgsTitle}
+            </LLink>
+            <LLink lang={lang} to="/16k-coaching" className="gg-mobile-sub" onClick={closeMenu}>
+              <span className="sub-label">{t.k16Label}</span>
+              {t.k16Title}
+            </LLink>
           </>
         )}
-        <Link to="/coaches" className="gg-mobile-link" onClick={() => setOpen(false)}>Coaches</Link>
-        <Link to="/referenzen" className="gg-mobile-link" onClick={() => setOpen(false)}>Referenzen</Link>
+        <LLink lang={lang} to="/coaches" className="gg-mobile-link" onClick={closeMenu}>{t.coaches}</LLink>
+        <LLink lang={lang} to="/referenzen" className="gg-mobile-link" onClick={closeMenu}>{t.referenzen}</LLink>
 
-        <Link to="/kontakt" className="gg-mobile-cta" onClick={() => setOpen(false)}>
-          Erstgespräch buchen →
-        </Link>
+        <LLink lang={lang} to="/kontakt" className="gg-mobile-cta" onClick={closeMenu}>
+          {t.ctaMobile}
+        </LLink>
+
+        {showSwitcher && (
+          <div className="gg-mobile-lang-row" role="group" aria-label={UI[lang].switcherLabel}>
+            {SWITCH.map((s) => (
+              <Link
+                key={s.lang}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                to={localizedPath(s.lang, base) as any}
+                hrefLang={s.lang}
+                lang={s.lang}
+                className={s.lang === lang ? "active" : undefined}
+                aria-current={s.lang === lang ? "true" : undefined}
+                onClick={closeMenu}
+              >
+                {s.label}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

@@ -19,10 +19,20 @@ import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as AvgsCoachingRouteImport } from './routes/avgs-coaching'
 import { Route as R16kCoachingRouteImport } from './routes/16k-coaching'
+import { Route as LangRouteImport } from './routes/$lang'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CoachesIndexRouteImport } from './routes/coaches.index'
+import { Route as LangIndexRouteImport } from './routes/$lang.index'
 import { Route as CoachesSlugRouteImport } from './routes/coaches.$slug'
+import { Route as LangUnternehmenRouteImport } from './routes/$lang.unternehmen'
+import { Route as LangReferenzenRouteImport } from './routes/$lang.referenzen'
+import { Route as LangPrivatpersonenRouteImport } from './routes/$lang.privatpersonen'
+import { Route as LangKontaktRouteImport } from './routes/$lang.kontakt'
+import { Route as LangAvgsCoachingRouteImport } from './routes/$lang.avgs-coaching'
+import { Route as Lang16kCoachingRouteImport } from './routes/$lang.16k-coaching'
+import { Route as LangCoachesIndexRouteImport } from './routes/$lang.coaches.index'
 import { Route as ApiPublicContactRouteImport } from './routes/api/public/contact'
+import { Route as LangCoachesSlugRouteImport } from './routes/$lang.coaches.$slug'
 
 const UnternehmenRoute = UnternehmenRouteImport.update({
   id: '/unternehmen',
@@ -74,6 +84,11 @@ const R16kCoachingRoute = R16kCoachingRouteImport.update({
   path: '/16k-coaching',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LangRoute = LangRouteImport.update({
+  id: '/$lang',
+  path: '/$lang',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -84,19 +99,65 @@ const CoachesIndexRoute = CoachesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => CoachesRoute,
 } as any)
+const LangIndexRoute = LangIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LangRoute,
+} as any)
 const CoachesSlugRoute = CoachesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => CoachesRoute,
+} as any)
+const LangUnternehmenRoute = LangUnternehmenRouteImport.update({
+  id: '/unternehmen',
+  path: '/unternehmen',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangReferenzenRoute = LangReferenzenRouteImport.update({
+  id: '/referenzen',
+  path: '/referenzen',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangPrivatpersonenRoute = LangPrivatpersonenRouteImport.update({
+  id: '/privatpersonen',
+  path: '/privatpersonen',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangKontaktRoute = LangKontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangAvgsCoachingRoute = LangAvgsCoachingRouteImport.update({
+  id: '/avgs-coaching',
+  path: '/avgs-coaching',
+  getParentRoute: () => LangRoute,
+} as any)
+const Lang16kCoachingRoute = Lang16kCoachingRouteImport.update({
+  id: '/16k-coaching',
+  path: '/16k-coaching',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangCoachesIndexRoute = LangCoachesIndexRouteImport.update({
+  id: '/coaches/',
+  path: '/coaches/',
+  getParentRoute: () => LangRoute,
 } as any)
 const ApiPublicContactRoute = ApiPublicContactRouteImport.update({
   id: '/api/public/contact',
   path: '/api/public/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LangCoachesSlugRoute = LangCoachesSlugRouteImport.update({
+  id: '/coaches/$slug',
+  path: '/coaches/$slug',
+  getParentRoute: () => LangRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$lang': typeof LangRouteWithChildren
   '/16k-coaching': typeof R16kCoachingRoute
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/coaches': typeof CoachesRouteWithChildren
@@ -107,9 +168,18 @@ export interface FileRoutesByFullPath {
   '/privatpersonen': typeof PrivatpersonenRoute
   '/referenzen': typeof ReferenzenRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/$lang/16k-coaching': typeof Lang16kCoachingRoute
+  '/$lang/avgs-coaching': typeof LangAvgsCoachingRoute
+  '/$lang/kontakt': typeof LangKontaktRoute
+  '/$lang/privatpersonen': typeof LangPrivatpersonenRoute
+  '/$lang/referenzen': typeof LangReferenzenRoute
+  '/$lang/unternehmen': typeof LangUnternehmenRoute
   '/coaches/$slug': typeof CoachesSlugRoute
+  '/$lang/': typeof LangIndexRoute
   '/coaches/': typeof CoachesIndexRoute
+  '/$lang/coaches/$slug': typeof LangCoachesSlugRoute
   '/api/public/contact': typeof ApiPublicContactRoute
+  '/$lang/coaches/': typeof LangCoachesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -122,13 +192,23 @@ export interface FileRoutesByTo {
   '/privatpersonen': typeof PrivatpersonenRoute
   '/referenzen': typeof ReferenzenRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/$lang/16k-coaching': typeof Lang16kCoachingRoute
+  '/$lang/avgs-coaching': typeof LangAvgsCoachingRoute
+  '/$lang/kontakt': typeof LangKontaktRoute
+  '/$lang/privatpersonen': typeof LangPrivatpersonenRoute
+  '/$lang/referenzen': typeof LangReferenzenRoute
+  '/$lang/unternehmen': typeof LangUnternehmenRoute
   '/coaches/$slug': typeof CoachesSlugRoute
+  '/$lang': typeof LangIndexRoute
   '/coaches': typeof CoachesIndexRoute
+  '/$lang/coaches/$slug': typeof LangCoachesSlugRoute
   '/api/public/contact': typeof ApiPublicContactRoute
+  '/$lang/coaches': typeof LangCoachesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$lang': typeof LangRouteWithChildren
   '/16k-coaching': typeof R16kCoachingRoute
   '/avgs-coaching': typeof AvgsCoachingRoute
   '/coaches': typeof CoachesRouteWithChildren
@@ -139,14 +219,24 @@ export interface FileRoutesById {
   '/privatpersonen': typeof PrivatpersonenRoute
   '/referenzen': typeof ReferenzenRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/$lang/16k-coaching': typeof Lang16kCoachingRoute
+  '/$lang/avgs-coaching': typeof LangAvgsCoachingRoute
+  '/$lang/kontakt': typeof LangKontaktRoute
+  '/$lang/privatpersonen': typeof LangPrivatpersonenRoute
+  '/$lang/referenzen': typeof LangReferenzenRoute
+  '/$lang/unternehmen': typeof LangUnternehmenRoute
   '/coaches/$slug': typeof CoachesSlugRoute
+  '/$lang/': typeof LangIndexRoute
   '/coaches/': typeof CoachesIndexRoute
+  '/$lang/coaches/$slug': typeof LangCoachesSlugRoute
   '/api/public/contact': typeof ApiPublicContactRoute
+  '/$lang/coaches/': typeof LangCoachesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$lang'
     | '/16k-coaching'
     | '/avgs-coaching'
     | '/coaches'
@@ -157,9 +247,18 @@ export interface FileRouteTypes {
     | '/privatpersonen'
     | '/referenzen'
     | '/unternehmen'
+    | '/$lang/16k-coaching'
+    | '/$lang/avgs-coaching'
+    | '/$lang/kontakt'
+    | '/$lang/privatpersonen'
+    | '/$lang/referenzen'
+    | '/$lang/unternehmen'
     | '/coaches/$slug'
+    | '/$lang/'
     | '/coaches/'
+    | '/$lang/coaches/$slug'
     | '/api/public/contact'
+    | '/$lang/coaches/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -172,12 +271,22 @@ export interface FileRouteTypes {
     | '/privatpersonen'
     | '/referenzen'
     | '/unternehmen'
+    | '/$lang/16k-coaching'
+    | '/$lang/avgs-coaching'
+    | '/$lang/kontakt'
+    | '/$lang/privatpersonen'
+    | '/$lang/referenzen'
+    | '/$lang/unternehmen'
     | '/coaches/$slug'
+    | '/$lang'
     | '/coaches'
+    | '/$lang/coaches/$slug'
     | '/api/public/contact'
+    | '/$lang/coaches'
   id:
     | '__root__'
     | '/'
+    | '/$lang'
     | '/16k-coaching'
     | '/avgs-coaching'
     | '/coaches'
@@ -188,13 +297,23 @@ export interface FileRouteTypes {
     | '/privatpersonen'
     | '/referenzen'
     | '/unternehmen'
+    | '/$lang/16k-coaching'
+    | '/$lang/avgs-coaching'
+    | '/$lang/kontakt'
+    | '/$lang/privatpersonen'
+    | '/$lang/referenzen'
+    | '/$lang/unternehmen'
     | '/coaches/$slug'
+    | '/$lang/'
     | '/coaches/'
+    | '/$lang/coaches/$slug'
     | '/api/public/contact'
+    | '/$lang/coaches/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LangRoute: typeof LangRouteWithChildren
   R16kCoachingRoute: typeof R16kCoachingRoute
   AvgsCoachingRoute: typeof AvgsCoachingRoute
   CoachesRoute: typeof CoachesRouteWithChildren
@@ -280,6 +399,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof R16kCoachingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$lang': {
+      id: '/$lang'
+      path: '/$lang'
+      fullPath: '/$lang'
+      preLoaderRoute: typeof LangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -294,12 +420,68 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoachesIndexRouteImport
       parentRoute: typeof CoachesRoute
     }
+    '/$lang/': {
+      id: '/$lang/'
+      path: '/'
+      fullPath: '/$lang/'
+      preLoaderRoute: typeof LangIndexRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/coaches/$slug': {
       id: '/coaches/$slug'
       path: '/$slug'
       fullPath: '/coaches/$slug'
       preLoaderRoute: typeof CoachesSlugRouteImport
       parentRoute: typeof CoachesRoute
+    }
+    '/$lang/unternehmen': {
+      id: '/$lang/unternehmen'
+      path: '/unternehmen'
+      fullPath: '/$lang/unternehmen'
+      preLoaderRoute: typeof LangUnternehmenRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/referenzen': {
+      id: '/$lang/referenzen'
+      path: '/referenzen'
+      fullPath: '/$lang/referenzen'
+      preLoaderRoute: typeof LangReferenzenRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/privatpersonen': {
+      id: '/$lang/privatpersonen'
+      path: '/privatpersonen'
+      fullPath: '/$lang/privatpersonen'
+      preLoaderRoute: typeof LangPrivatpersonenRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/kontakt': {
+      id: '/$lang/kontakt'
+      path: '/kontakt'
+      fullPath: '/$lang/kontakt'
+      preLoaderRoute: typeof LangKontaktRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/avgs-coaching': {
+      id: '/$lang/avgs-coaching'
+      path: '/avgs-coaching'
+      fullPath: '/$lang/avgs-coaching'
+      preLoaderRoute: typeof LangAvgsCoachingRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/16k-coaching': {
+      id: '/$lang/16k-coaching'
+      path: '/16k-coaching'
+      fullPath: '/$lang/16k-coaching'
+      preLoaderRoute: typeof Lang16kCoachingRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/coaches/': {
+      id: '/$lang/coaches/'
+      path: '/coaches'
+      fullPath: '/$lang/coaches/'
+      preLoaderRoute: typeof LangCoachesIndexRouteImport
+      parentRoute: typeof LangRoute
     }
     '/api/public/contact': {
       id: '/api/public/contact'
@@ -308,8 +490,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$lang/coaches/$slug': {
+      id: '/$lang/coaches/$slug'
+      path: '/coaches/$slug'
+      fullPath: '/$lang/coaches/$slug'
+      preLoaderRoute: typeof LangCoachesSlugRouteImport
+      parentRoute: typeof LangRoute
+    }
   }
 }
+
+interface LangRouteChildren {
+  Lang16kCoachingRoute: typeof Lang16kCoachingRoute
+  LangAvgsCoachingRoute: typeof LangAvgsCoachingRoute
+  LangKontaktRoute: typeof LangKontaktRoute
+  LangPrivatpersonenRoute: typeof LangPrivatpersonenRoute
+  LangReferenzenRoute: typeof LangReferenzenRoute
+  LangUnternehmenRoute: typeof LangUnternehmenRoute
+  LangIndexRoute: typeof LangIndexRoute
+  LangCoachesSlugRoute: typeof LangCoachesSlugRoute
+  LangCoachesIndexRoute: typeof LangCoachesIndexRoute
+}
+
+const LangRouteChildren: LangRouteChildren = {
+  Lang16kCoachingRoute: Lang16kCoachingRoute,
+  LangAvgsCoachingRoute: LangAvgsCoachingRoute,
+  LangKontaktRoute: LangKontaktRoute,
+  LangPrivatpersonenRoute: LangPrivatpersonenRoute,
+  LangReferenzenRoute: LangReferenzenRoute,
+  LangUnternehmenRoute: LangUnternehmenRoute,
+  LangIndexRoute: LangIndexRoute,
+  LangCoachesSlugRoute: LangCoachesSlugRoute,
+  LangCoachesIndexRoute: LangCoachesIndexRoute,
+}
+
+const LangRouteWithChildren = LangRoute._addFileChildren(LangRouteChildren)
 
 interface CoachesRouteChildren {
   CoachesSlugRoute: typeof CoachesSlugRoute
@@ -326,6 +541,7 @@ const CoachesRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LangRoute: LangRouteWithChildren,
   R16kCoachingRoute: R16kCoachingRoute,
   AvgsCoachingRoute: AvgsCoachingRoute,
   CoachesRoute: CoachesRouteWithChildren,

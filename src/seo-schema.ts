@@ -23,7 +23,8 @@
  * ВАЖНО: при переезде из Mindspace Krausenstraße поменять адрес в ADDRESS ниже.
  */
 
-const SITE = 'https://getgrow.academy'
+import { localizedPath, OG_LOCALE, SITE, TLANGS, type Lang, type TLang } from '@/i18n/lang'
+import { CONTENT } from '@/i18n'
 
 const ADDRESS = {
   '@type': 'PostalAddress',
@@ -43,6 +44,8 @@ const organization = {
   '@id': `${SITE}/#organization`,
   name: 'GetGrow Academy Berlin',
   legalName: 'GetGrow Academy GmbH',
+  alternateName: ['ГетГроу Академия', 'ГетГроу Академія'],
+  foundingDate: '2026',
   url: `${SITE}/`,
   logo: `${SITE}/favicon.png`,
   image: `${SITE}/certuria-azav-badge.jpg`,
@@ -192,24 +195,104 @@ const ld = (data: unknown) => ({
   children: JSON.stringify(data),
 })
 
-/** canonical + og:url для любой страницы: pageHead('/unternehmen') */
-export const pageHead = (path: string) => ({
-  links: [{ rel: 'canonical', href: `${SITE}${path}` }],
-  meta: [{ property: 'og:url', content: `${SITE}${path}` }],
-})
+/** hreflang-Alternativen für eine Seite (Pfad ohne Sprachpräfix): de, ru, uk und x-default (= Deutsch). */
+const alternates = (base: string) => [
+  { rel: 'alternate', hreflang: 'de', href: `${SITE}${base}` },
+  ...TLANGS.map((l) => ({ rel: 'alternate', hreflang: l, href: `${SITE}${localizedPath(l, base)}` })),
+  { rel: 'alternate', hreflang: 'x-default', href: `${SITE}${base}` },
+]
 
-export const homeHead = () => {
-  const base = pageHead('/')
+/**
+ * canonical + hreflang + og:url für jede Seite: pageHead('/unternehmen') bzw. pageHead('/unternehmen', 'ru').
+ * `path` ist immer der deutsche Pfad (ohne /ru, /uk). Der canonical zeigt auf die Seite selbst.
+ */
+export const pageHead = (path: string, lang: Lang = 'de') => {
+  const url = `${SITE}${localizedPath(lang, path)}`
   return {
-    ...base,
-    scripts: [ld(organization), ld(website)],
+    links: [{ rel: 'canonical', href: url }, ...alternates(path)],
+    meta: [
+      { property: 'og:url', content: url },
+      ...(lang === 'de' ? [] : [{ property: 'og:locale', content: OG_LOCALE[lang as TLang] }]),
+    ],
   }
 }
 
-export const avgsHead = () => {
-  const base = pageHead('/avgs-coaching')
+// ---- Lokalisierte Varianten (RU / UK) -------------------------------------------------------
+
+const orgFor = (lang: Lang) => {
+  if (lang === 'de') return organization
+  const t = CONTENT[lang].schema
+  return {
+    ...organization,
+    description: t.orgDescription,
+    knowsAbout: t.knowsAbout,
+    founder: { ...organization.founder, jobTitle: t.founderJobTitle },
+    hasCredential: {
+      ...organization.hasCredential,
+      name: t.credentialName,
+      credentialCategory: t.credentialCategory,
+    },
+  }
+}
+
+const websiteFor = (lang: Lang) => {
+  if (lang === 'de') return website
+  return {
+    ...website,
+    '@id': `${SITE}${localizedPath(lang, '/')}#website`,
+    url: `${SITE}${localizedPath(lang, '/')}`,
+    inLanguage: lang,
+  }
+}
+
+const courseFor = (lang: Lang) => {
+  if (lang === 'de') return avgsCourse
+  const t = CONTENT[lang].schema
+  const url = `${SITE}${localizedPath(lang, '/avgs-coaching')}`
+  return {
+    ...avgsCourse,
+    '@id': `${url}#course`,
+    name: t.courseName,
+    description: t.courseDescription,
+    url,
+    inLanguage: lang,
+    educationalCredentialAwarded: t.courseCredential,
+    offers: { ...avgsCourse.offers, category: t.offerCategory },
+  }
+}
+
+const faqFor = (lang: Lang) => {
+  if (lang === 'de') return avgsFaq
+  // Fragen/Antworten 1:1 aus dem sichtbaren FAQ der Seite (gleiche Quelle wie die Seite selbst)
+  const pairs = CONTENT[lang].avgs.faq.items.map((f) => [f.q, f.a] as [string, string])
+  return { ...faq(pairs), inLanguage: lang }
+}
+
+const breadcrumbsFor = (lang: Lang) => {
+  if (lang === 'de') return avgsBreadcrumbs
+  const t = CONTENT[lang].schema
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t.breadcrumbHome, item: `${SITE}${localizedPath(lang, '/')}` },
+      { '@type': 'ListItem', position: 2, name: t.breadcrumbAvgs, item: `${SITE}${localizedPath(lang, '/avgs-coaching')}` },
+    ],
+  }
+}
+
+export const homeHead = (lang: Lang = 'de') => {
+  const base = pageHead('/', lang)
   return {
     ...base,
-    scripts: [ld(avgsCourse), ld(avgsFaq), ld(avgsBreadcrumbs)],
+    scripts: [ld(orgFor(lang)), ld(websiteFor(lang))],
+  }
+}
+
+export const avgsHead = (lang: Lang = 'de') => {
+  const base = pageHead('/avgs-coaching', lang)
+  return {
+    ...base,
+    scripts: [ld(courseFor(lang)), ld(faqFor(lang)), ld(breadcrumbsFor(lang))],
   }
 }

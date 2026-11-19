@@ -1,6 +1,9 @@
 import { Link } from "@tanstack/react-router";
+import { UI } from "@/i18n/ui";
+import type { Lang } from "@/i18n/lang";
 
-export function SiteFooter() {
+export function SiteFooter({ lang = "de" }: { lang?: Lang }) {
+  const t = UI[lang].footer;
   return (
     <footer className="gg-footer">
       <div className="footer-logo" aria-label="GetGrow Academy Berlin">
@@ -13,25 +16,25 @@ export function SiteFooter() {
       </div>
       <div className="footer-contacts">
         <div className="footer-c">
-          <div className="label">E-Mail</div>
+          <div className="label">{t.email}</div>
           <div className="value">
             <a href="mailto:info@getgrow.academy">info@getgrow.academy</a>
           </div>
         </div>
         <div className="footer-c">
-          <div className="label">Telefon</div>
+          <div className="label">{t.phone}</div>
           <div className="value">
             <a href="tel:+4915736651515">+49 157 3665 1515</a>
           </div>
         </div>
         <div className="footer-c">
-          <div className="label">Website</div>
+          <div className="label">{t.website}</div>
           <div className="value">getgrow.academy</div>
         </div>
       </div>
       <div className="footer-legal">
-        <Link to="/impressum">Impressum</Link>
-        <Link to="/datenschutz">Datenschutz</Link>
+        <Link to="/impressum">{t.imprint}</Link>
+        <Link to="/datenschutz">{t.privacy}</Link>
       </div>
       <div className="footer-certification">
         <img
@@ -44,10 +47,10 @@ export function SiteFooter() {
       <div className="footer-bottom">
         <div className="footer-bottom-text">
           <div className="footer-disclaimer">
-            Keine Gewährleistung auf Vermittlungserfolg. § 296 SGB III / § 45 SGB III.
+            {t.disclaimer}
           </div>
           <div className="footer-copyright">
-            © {new Date().getFullYear()} GetGrow Academy GmbH · Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} GetGrow Academy GmbH · {t.rights}
           </div>
         </div>
         <div className="footer-inclusive">
@@ -58,7 +61,7 @@ export function SiteFooter() {
           width="45"
           height="30"
           role="img"
-          aria-label="Progress-Pride-Flagge"
+          aria-label={t.prideAlt}
         >
           <defs>
             <clipPath id="pride-flag-clip">
@@ -79,7 +82,7 @@ export function SiteFooter() {
             <polygon points="0,16 6,20 0,24" fill="#efe9dd" />
           </g>
         </svg>
-        <span>Ein sicherer und inklusiver Raum für alle – LGBTQIA+-freundlich</span>
+        <span>{t.inclusive}</span>
         </div>
       </div>
     </footer>

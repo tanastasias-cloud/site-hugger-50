@@ -58,6 +58,19 @@ ssh hetzner-getgrow "cd /var/www/getgrow \
 - Production build preset is `node-server` (set in `vite.config.ts`); Cloudflare preset would break SQLite.
 - Pushes from the Lovable bot: `git fetch`, merge (`git merge origin/main`), run `bash scripts/strip-lovable-supabase.sh`, build, commit.
 
+## Languages (DE / RU / UK)
+
+- German pages live in `src/routes/*.tsx` (texts inline, as before). Russian and Ukrainian versions are under `/ru/...` and `/uk/...`:
+  routes `src/routes/$lang.*.tsx` → page components `src/i18n/pages/*.tsx` → texts in `src/i18n/{ru,uk}/` (`main.ts`, `programs.ts`, `coaches.ts`).
+- **When a German text or fact changes, change it in `src/i18n/ru` and `src/i18n/uk` too** (the three versions are separate copies). Coach texts:
+  `src/data/coaches.ts` (German) + `coachTexts` in `src/i18n/{ru,uk}/coaches.ts` (same credentials order).
+- Vocabulary for RU/UK: AVGS → «ваучер AVGS (Aktivierungs- und Vermittlungsgutschein)», Jobcenter → «джобцентр (Jobcenter)», Agentur für Arbeit →
+  «Агентство по труду / з праці (Agentur für Arbeit)», Bürgergeld → «Бюргергельд (Bürgergeld)», Erstgespräch → «бесплатная первая встреча» /
+  «безкоштовна перша зустріч», UE → «академический час (45 минут)». German term in brackets at first mention on a page. Never promise a job.
+- SEO: `pageHead(path, lang)` in `src/seo-schema.ts` gives canonical (self), hreflang de/ru/uk/x-default, og:url; every new page needs it.
+  `public/sitemap.xml` lists all three versions of each page with hreflang. `<html lang>` is set in `__root.tsx` from the URL.
+- Allura has no Cyrillic: `html[lang=ru|uk]` CSS swaps accent words to Cormorant Garamond italic. Impressum/Datenschutz/Event stay German only.
+
 ## Coaches (frequent task)
 
 Add photo to `src/assets/` (≈4:5, ~800px wide, ≤100KB) → import + entry in `src/data/coaches.ts`
