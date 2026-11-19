@@ -1,4 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { pageHead } from "@/seo-schema";
+import { mergeHead } from "@/lib/merge-head";
 import { SiteShell } from "@/components/site/SiteShell";
 import { coaches, type Coach } from "@/data/coaches";
 
@@ -7,14 +9,17 @@ export const Route = createFileRoute("/coaches/$slug")({
     const c = coaches.find((x) => x.slug === params.slug);
     const title = c ? `${c.name} — GetGrow Academy Berlin` : "Coach — GetGrow Academy";
     const desc = c ? `${c.name} · ${c.role}` : "Coach-Profil";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: desc },
-        { property: "og:title", content: title },
-        { property: "og:description", content: desc },
-      ],
-    };
+    return mergeHead(
+      {
+        meta: [
+          { title },
+          { name: "description", content: desc },
+          { property: "og:title", content: title },
+          { property: "og:description", content: desc },
+        ],
+      },
+      c ? pageHead(`/coaches/${c.slug}`) : {},
+    );
   },
   loader: ({ params }) => {
     const coach = coaches.find((c) => c.slug === params.slug);

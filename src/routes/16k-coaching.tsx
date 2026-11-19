@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/seo-schema";
+import { mergeHead } from "@/lib/merge-head";
 import { SiteShell } from "@/components/site/SiteShell";
 
 export const Route = createFileRoute("/16k-coaching")({
-  head: () => ({
+  head: () => mergeHead({
     meta: [
       { title: "Ganzheitliches Coaching · §16k SGB II — GetGrow Academy Berlin" },
       {
@@ -18,7 +20,7 @@ export const Route = createFileRoute("/16k-coaching")({
       },
       { property: "og:type", content: "website" },
     ],
-  }),
+  }, pageHead("/16k-coaching")),
   component: SixteenKPage,
 });
 

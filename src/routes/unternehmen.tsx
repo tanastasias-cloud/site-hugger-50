@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/seo-schema";
+import { mergeHead } from "@/lib/merge-head";
 import { SiteShell } from "@/components/site/SiteShell";
 
 export const Route = createFileRoute("/unternehmen")({
-  head: () => ({
+  head: () => mergeHead({
     meta: [
       { title: "Coaching für Unternehmen — GetGrow Academy Berlin" },
       {
@@ -11,7 +13,7 @@ export const Route = createFileRoute("/unternehmen")({
           "Führungskräfte-Coaching, Team-Workshops und Onboarding-Programme für internationale Talente. Maßgeschneidert für Berliner Unternehmen.",
       },
     ],
-  }),
+  }, pageHead("/unternehmen")),
   component: UnternehmenPage,
 });
 

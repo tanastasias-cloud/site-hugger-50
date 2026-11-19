@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { homeHead } from "@/seo-schema";
+import { mergeHead } from "@/lib/merge-head";
 import { SiteShell } from "@/components/site/SiteShell";
 import yuliiaPhoto from "@/assets/yuliia-zaienchyk.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
+  head: () => mergeHead({
     meta: [
       { title: "GetGrow Academy Berlin · Coaching für Karriere, Leben und Unternehmen" },
       {
@@ -18,7 +20,7 @@ export const Route = createFileRoute("/")({
           "Coaching für Privatpersonen, Unternehmen und Jobcenter-Kund:innen. AZAV-zertifiziert.",
       },
     ],
-  }),
+  }, homeHead()),
   component: HomePage,
 });
 

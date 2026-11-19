@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/seo-schema";
+import { mergeHead } from "@/lib/merge-head";
 import { SiteShell } from "@/components/site/SiteShell";
 import { coaches, coachPlaceholders, type Coach } from "@/data/coaches";
 
 export const Route = createFileRoute("/coaches/")({
-  head: () => ({
+  head: () => mergeHead({
     meta: [
       { title: "Coaches — GetGrow Academy Berlin" },
       {
@@ -12,7 +14,7 @@ export const Route = createFileRoute("/coaches/")({
           "Lerne unser Team kennen — zertifizierte Coaches mit eigener Migrationserfahrung, die den deutschen Arbeitsmarkt und den Weg zurück ins Berufsleben verstehen.",
       },
     ],
-  }),
+  }, pageHead("/coaches")),
   component: CoachesPage,
 });
 

@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/seo-schema";
+import { mergeHead } from "@/lib/merge-head";
 import { SiteShell } from "@/components/site/SiteShell";
 
 export const Route = createFileRoute("/referenzen")({
-  head: () => ({
+  head: () => mergeHead({
     meta: [
       { title: "Referenzen — GetGrow Academy Berlin" },
       {
@@ -16,7 +18,7 @@ export const Route = createFileRoute("/referenzen")({
         content: "Was unsere Klient:innen über das Coaching mit Yulia sagen.",
       },
     ],
-  }),
+  }, pageHead("/referenzen")),
   component: ReferenzenPage,
 });
 

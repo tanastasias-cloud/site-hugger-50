@@ -1,9 +1,11 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/seo-schema";
+import { mergeHead } from "@/lib/merge-head";
 import { SiteShell } from "@/components/site/SiteShell";
 
 export const Route = createFileRoute("/kontakt")({
-  head: () => ({
+  head: () => mergeHead({
     meta: [
       { title: "Kontakt — GetGrow Academy Berlin" },
       {
@@ -19,7 +21,7 @@ export const Route = createFileRoute("/kontakt")({
       },
       { property: "og:type", content: "website" },
     ],
-  }),
+  }, pageHead("/kontakt")),
   component: ContactPage,
 });
 

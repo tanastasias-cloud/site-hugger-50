@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { avgsHead } from "@/seo-schema";
+import { mergeHead } from "@/lib/merge-head";
 import { SiteShell } from "@/components/site/SiteShell";
 
 export const Route = createFileRoute("/avgs-coaching")({
-  head: () => ({
+  head: () => mergeHead({
     meta: [
       { title: "Job Coaching · AVGS — GetGrow Academy Berlin" },
       {
@@ -18,7 +20,7 @@ export const Route = createFileRoute("/avgs-coaching")({
       },
       { property: "og:type", content: "website" },
     ],
-  }),
+  }, avgsHead()),
   component: AvgsPage,
 });
 
