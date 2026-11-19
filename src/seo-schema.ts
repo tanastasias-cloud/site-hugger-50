@@ -76,7 +76,10 @@ const organization = {
   ],
   // Добавьте сюда ссылки на профили, когда они есть:
   // Instagram, LinkedIn, Google Business Profile, KURSNET-карточку и т.п.
-  sameAs: [] as string[],
+  sameAs: [
+    'https://www.instagram.com/getgrow.academy/',
+    'https://maps.google.com/?cid=4081706355022156686',
+  ] as string[],
 }
 
 const website = {
