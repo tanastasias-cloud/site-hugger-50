@@ -31,6 +31,18 @@ export function SiteFooter({ lang = "de" }: { lang?: Lang }) {
           <div className="label">{t.website}</div>
           <div className="value">getgrow.academy</div>
         </div>
+        <div className="footer-c">
+          <div className="label">Instagram</div>
+          <div className="value">
+            <a
+              href="https://www.instagram.com/getgrow.academy/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @getgrow.academy
+            </a>
+          </div>
+        </div>
       </div>
       <div className="footer-legal">
         <Link to="/impressum">{t.imprint}</Link>
