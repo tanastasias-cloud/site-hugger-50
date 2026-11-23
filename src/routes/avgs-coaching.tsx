@@ -314,7 +314,7 @@ function AvgsPage() {
             GetGrow Academy Berlin unterstützt Sie bei der Vorbereitung auf den Arbeitsmarkt, der Optimierung Ihrer Bewerbungsunterlagen und der Herstellung von Kontakten zu Unternehmen und HR-Verantwortlichen. Wir geben jedoch <strong>keine verbindliche Zusage oder Garantie</strong>, dass Sie nach Abschluss des Coachings eine Stelle erhalten.
           </p>
           <p className="legal-disclaimer-text">
-            Die Vermittlung in Arbeit oder Ausbildung ist von vielen Faktoren abhängig, unter anderem von Ihrem individuellen Profil, dem aktuellen Arbeitsmarkt, den Anforderungen der Arbeitgeber und Ihrer eigenen aktiven Mitarbeit. Dies entspricht den gesetzlichen Vorgaben nach <strong>§ 296 SGB III</strong> und <strong>§ 45 SGB III</strong>, die eine erfolgsunabhängige Vermittlungsleistung vorsehen.
+            Die Vermittlung in Arbeit oder Ausbildung ist von vielen Faktoren abhängig, unter anderem von Ihrem individuellen Profil, dem aktuellen Arbeitsmarkt, den Anforderungen der Arbeitgeber und Ihrer eigenen aktiven Mitarbeit. Dies entspricht den gesetzlichen Vorgaben nach <strong>§ 45 SGB III</strong>, die eine erfolgsunabhängige Vermittlungsleistung vorsehen.
           </p>
           <p className="legal-disclaimer-text">
             Unser Coaching zielt darauf ab, Ihre Chancen auf dem Arbeitsmarkt nachhaltig zu verbessern — eine erfolgreiche Anstellung kann jedoch nicht garantiert werden.

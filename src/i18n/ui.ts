@@ -24,7 +24,7 @@ const de: Ui = {
   },
   footer: {
     email: "E-Mail", phone: "Telefon", website: "Website", imprint: "Impressum", privacy: "Datenschutz",
-    disclaimer: "Keine Gewährleistung auf Vermittlungserfolg. § 296 SGB III / § 45 SGB III.",
+    disclaimer: "Keine Gewährleistung auf Vermittlungserfolg. § 45 SGB III.",
     rights: "Alle Rechte vorbehalten.",
     inclusive: "Ein sicherer und inklusiver Raum für alle – LGBTQIA+-freundlich",
     prideAlt: "Progress-Pride-Flagge",
@@ -43,7 +43,7 @@ const ru: Ui = {
   },
   footer: {
     email: "Эл. почта", phone: "Телефон", website: "Сайт", imprint: "Impressum (DE)", privacy: "Datenschutz (DE)",
-    disclaimer: "Мы не гарантируем результат трудоустройства. § 296 SGB III / § 45 SGB III.",
+    disclaimer: "Мы не гарантируем результат трудоустройства. § 45 SGB III.",
     rights: "Все права защищены.",
     inclusive: "Безопасное и инклюзивное пространство для всех — дружелюбно к ЛГБТКИА+ (LGBTQIA+)",
     prideAlt: "Флаг прайда (Progress Pride)",
@@ -62,7 +62,7 @@ const uk: Ui = {
   },
   footer: {
     email: "Ел. пошта", phone: "Телефон", website: "Сайт", imprint: "Impressum (DE)", privacy: "Datenschutz (DE)",
-    disclaimer: "Ми не гарантуємо результат працевлаштування. § 296 SGB III / § 45 SGB III.",
+    disclaimer: "Ми не гарантуємо результат працевлаштування. § 45 SGB III.",
     rights: "Усі права захищено.",
     inclusive: "Безпечний та інклюзивний простір для всіх — дружній до ЛГБТКІА+ (LGBTQIA+)",
     prideAlt: "Прапор прайду (Progress Pride)",
