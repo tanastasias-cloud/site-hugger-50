@@ -181,9 +181,9 @@ function formatDate(iso: string, lang: TLang): string {
   return `${pick("day")} ${pick("month")} ${pick("year")}`;
 }
 
-/** H1 «… в Берлине — пошаговая инструкция» -> [«… в Берлине », «— пошаговая инструкция»] (Akzent wie «— на русском» auf /avgs-coaching) */
+/** H1 «… в Берлине – пошаговая инструкция» -> [«… в Берлине », «— пошаговая инструкция»] (Akzent wie «— на русском» auf /avgs-coaching) */
 function splitH1(h1: string): [string, string] {
-  const i = h1.lastIndexOf(" — ");
+  const i = Math.max(h1.lastIndexOf(" – "), h1.lastIndexOf(" — "));
   return i < 0 ? [h1, ""] : [h1.slice(0, i + 1), h1.slice(i + 1)];
 }
 
