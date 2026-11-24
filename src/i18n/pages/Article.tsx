@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { LLink } from "@/components/site/LLink";
 import type { Article, Block } from "@/articles";
+import type { TLang } from "../lang";
 import { CONTENT } from "../index";
 import { UI } from "../ui";
 
@@ -43,10 +44,10 @@ function renderBlocks(blocks: Block[]): ReactNode[] {
         out.push(<hr key={i} />);
         break;
       case "ul":
-        out.push(<ul key={i}>{b.items.map((it, j) => <li key={j}>{inline(it)}</li>)}</ul>);
+        out.push(<ul key={i} className="article-bullets">{b.items.map((it, j) => <li key={j}>{inline(it)}</li>)}</ul>);
         break;
       case "ol":
-        out.push(<ol key={i}>{b.items.map((it, j) => <li key={j}>{inline(it)}</li>)}</ol>);
+        out.push(<ol key={i} className="article-steps">{b.items.map((it, j) => <li key={j}>{inline(it)}</li>)}</ol>);
         break;
       case "qa": {
         // zusammenhängende Frage-Antwort-Blöcke bilden die FAQ-Liste
@@ -66,14 +67,12 @@ function renderBlocks(blocks: Block[]): ReactNode[] {
       }
       case "p": {
         const isMeta = /^\*[^*]+\*$/.test(b.text); // Zeile «Обновлено … Автор …»
-        const isLead: boolean = !seenFirstP && !isMeta;
-        if (isLead) seenFirstP = true;
+        const isGo = /^\[[^\]]+\]\([^)]+\)$/.test(b.text); // Absatz nur aus einem Link -> Button
+        const isCallout = !isMeta && !isGo && (!seenFirstP || /^\*\*[^*]+:\*\*/.test(b.text)); // «Коротко:», «Совет:»
+        if (!isMeta && !isGo) seenFirstP = true;
         const after = blocks[i - 1]?.t === "hr";
-        out.push(
-          <p key={i} className={isMeta ? "article-meta" : isLead ? "article-lead" : after ? "article-source" : undefined}>
-            {inline(b.text)}
-          </p>,
-        );
+        const cls = isMeta ? "article-meta" : isGo ? "article-go" : isCallout ? "article-callout" : after ? "article-source" : undefined;
+        out.push(<p key={i} className={cls}>{inline(b.text)}</p>);
         break;
       }
     }
@@ -81,9 +80,20 @@ function renderBlocks(blocks: Block[]): ReactNode[] {
   return out;
 }
 
+const CRUMBS: Record<TLang, { articles: string }> = {
+  ru: { articles: "Статьи" },
+  uk: { articles: "Статті" },
+};
+/** Kurzer Titel der Statt im Brotkrumenpfad (pro Adresse). */
+const CRUMB_TITLE: Record<string, string> = {
+  "/ru/stati/kak-poluchit-vaucher-avgs": "Как получить ваучер AVGS",
+  "/uk/statti/yak-otrymaty-vaucher-avgs": "Як отримати ваучер AVGS",
+};
+
 export function ArticlePage({ article }: { article: Article }) {
   const lang = article.lang;
   const t = UI[lang].nav;
+  const cta = CONTENT[lang].avgs.cta;
   return (
     <SiteShell active="avgs" lang={lang}>
       <div className="article-page">
@@ -91,13 +101,27 @@ export function ArticlePage({ article }: { article: Article }) {
           <div className="breadcrumb">
             <LLink lang={lang} to="/">{t.home}</LLink>
             {" · "}
-            <LLink lang={lang} to="/avgs-coaching">{CONTENT[lang].avgs.hero.kicker}</LLink>
+            {CRUMBS[lang].articles}
+            {" · "}
+            {CRUMB_TITLE[article.path] ?? article.h1}
           </div>
           <h1>{article.h1}</h1>
         </section>
 
         <section className="section white">
           <article className="article-body">{renderBlocks(article.blocks)}</article>
+        </section>
+
+        <section className="cta-strip">
+          <div>
+            <div className="cta-strip-tag">{cta.tag}</div>
+            <h2>{cta.h2}</h2>
+          </div>
+          <div className="cta-btns">
+            <LLink lang={lang} to="/kontakt" className="btn-mint">
+              {cta.primary}
+            </LLink>
+          </div>
         </section>
       </div>
     </SiteShell>
