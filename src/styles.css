@@ -1173,9 +1173,8 @@ html[lang="ru"] .outcome-script, html[lang="uk"] .outcome-script {
 .module-card .door-cta { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); font-family: 'DM Sans', sans-serif; margin-top: auto; }
 
 /* Статьи (/ru/stati/..., /uk/statti/...) */
-.article-body { max-width: 780px; margin: 0 auto; font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.8; color: #2a2a2a; }
+.article-body { max-width: 680px; margin: 0 auto; font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.8; color: #2a2a2a; }
 .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 500; line-height: 1.15; color: var(--forest); margin: 44px 0 14px; }
-.article-body h3 { font-family: 'Tenor Sans', sans-serif; font-size: 18px; font-weight: 400; letter-spacing: 0.3px; line-height: 1.4; color: var(--forest); margin: 0 0 6px; }
 .article-body p { margin: 0 0 16px; }
 .article-body a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
 .article-body strong { color: var(--forest); font-weight: 600; }
@@ -1191,20 +1190,37 @@ html[lang="ru"] .outcome-script, html[lang="uk"] .outcome-script {
 .article-steps li::before { content: counter(step); position: absolute; left: 0; top: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--mint); color: var(--forest); display: flex; align-items: center; justify-content: center; font-family: 'Tenor Sans', sans-serif; font-size: 17px; font-weight: 600; }
 /* «Коротко» и «Совет» */
 .article-callout { background: var(--sage); border-left: 3px solid var(--mint); padding: 20px 24px; margin: 8px 0 24px; }
-.article-meta { font-size: 14px; color: #666; margin-bottom: 8px; }
 .article-source { font-size: 14px; color: #666; }
 /* абзац из одной ссылки — кнопка-переход */
 .article-body p.article-go { margin: 28px 0; }
 .article-body p.article-go a { display: inline-block; background: var(--forest); color: #fff; text-decoration: none; padding: 16px 28px; font-size: 15px; letter-spacing: 0.3px; line-height: 1.5; transition: background 0.2s; }
 .article-body p.article-go a:hover { background: var(--green); }
 /* частые вопросы — открытым текстом, вопросы разделены тонкими линиями */
-.article-qa { padding: 18px 0; border-bottom: 1px solid #f0f0f0; }
-.article-qa p { margin: 0; font-size: 16px; color: #444; }
-.article-page .page-hero.simple > * { max-width: 780px; }
+.article-page .page-hero.simple > * { max-width: 680px; }
 .article-link { max-width: 780px; margin: 28px 0 0; font-size: 16px; }
 .article-link a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+/* шапка: бейдж, H1 с акцентом, строка автора */
+.article-kicker-row { margin-bottom: 20px; }
+.article-page .hero-kicker { display: inline-block; margin-bottom: 0; }
+.article-page .page-hero.simple { padding-bottom: 32px; }
+.article-byline { font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.6; color: #4a5a52; font-style: normal; margin: 4px 0 0; }
+.article-byline-name { font-weight: 500; }
+/* частые вопросы: жирный вопрос, зелёная полоса слева */
+.article-faq { display: flex; flex-direction: column; gap: 32px; margin-top: 12px; }
+.article-qa { border-left: 2px solid #3D6B55; padding: 2px 0 2px 22px; }
+.article-qa h3 { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 19px; line-height: 1.4; letter-spacing: 0; color: var(--forest); margin: 0 0 8px; }
+.article-qa p { margin: 0; font-size: 16px; color: #444; }
+/* карточка автора */
+.article-author { background: var(--sage); border: 1px solid var(--gg-border); padding: 24px 28px; margin: 48px 0 0; }
+.article-author-name { font-family: 'Tenor Sans', sans-serif; font-size: 20px; color: var(--forest); letter-spacing: 0.3px; }
+.article-author-role { font-size: 15px; line-height: 1.6; color: #4a5a52; margin: 4px 0 12px; }
+.article-body .article-author-link { font-size: 15px; font-weight: 500; }
+/* линия между блоком записи и подвалом */
+.article-page .cta-strip { border-bottom: 1px solid rgba(127, 196, 160, 0.25); }
 @media (max-width: 900px) {
   .article-body { font-size: 16px; }
+  .article-qa h3 { font-size: 18px; }
+  .article-author { padding: 20px; }
   .article-body h2 { font-size: 28px; margin-top: 36px; }
   .article-callout { padding: 16px 18px; }
   .article-steps li { padding-left: 60px; }

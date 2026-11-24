@@ -25,6 +25,8 @@ export type Article = {
   author: string;
   /** Только имя автора (до первой запятой) */
   authorName: string;
+  /** Роль автора — вторая часть frontmatter-поля author (например «основательница GetGrow Academy») */
+  authorRole: string;
   /** Дата обновления, YYYY-MM-DD */
   updated: string;
   blocks: Block[];
@@ -77,6 +79,7 @@ function build(raw: string): Article {
     h1: meta.h1,
     author: meta.author,
     authorName: meta.author.split(",")[0].trim(),
+    authorRole: (meta.author.split(",")[1] ?? "").trim(),
     updated: meta.updated,
     blocks: parseBlocks(body),
   };

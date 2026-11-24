@@ -67,7 +67,7 @@ export function SiteHeader({ active, lang = "de" }: { active?: ActiveKey; lang?:
         </LLink>
 
         <nav className="gg-nav">
-          <LLink lang={lang} to="/" className={`gg-nav-link${active === "home" ? " active" : ""}`}>
+          <LLink lang={lang} to="/" exact className={`gg-nav-link${active === "home" ? " active" : ""}`}>
             {t.home}
           </LLink>
           <LLink

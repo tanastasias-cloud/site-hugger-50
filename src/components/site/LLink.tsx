@@ -10,6 +10,7 @@ export function LLink({
   style,
   onClick,
   children,
+  exact,
   ...rest
 }: {
   lang: Lang;
@@ -19,6 +20,8 @@ export function LLink({
   onClick?: MouseEventHandler<HTMLAnchorElement>;
   children: ReactNode;
   role?: string;
+  /** Nur auf genau dieser Adresse als aktiv markieren (sonst matcht «/ru» jede /ru/...-Seite) */
+  exact?: boolean;
 }) {
   return (
     <Link
@@ -27,6 +30,7 @@ export function LLink({
       className={className}
       style={style}
       onClick={onClick}
+      activeOptions={exact ? { exact: true } : undefined}
       {...rest}
     >
       {children}

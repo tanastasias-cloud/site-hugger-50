@@ -29,9 +29,10 @@ function inline(text: string): ReactNode[] {
   });
 }
 
-function renderBlocks(blocks: Block[]): ReactNode[] {
+function renderBlocks(blocks: Block[], card: ReactNode): ReactNode[] {
   const out: ReactNode[] = [];
   let seenFirstP = false;
+  let cardPlaced = false;
   for (let i = 0; i < blocks.length; i++) {
     const b = blocks[i];
     switch (b.t) {
@@ -41,6 +42,11 @@ function renderBlocks(blocks: Block[]): ReactNode[] {
         out.push(<h2 key={i}>{inline(b.text)}</h2>);
         break;
       case "hr":
+        // Karte der Autorin steht vor dem Quellenhinweis
+        if (!cardPlaced) {
+          out.push(card);
+          cardPlaced = true;
+        }
         out.push(<hr key={i} />);
         break;
       case "ul":
@@ -66,50 +72,106 @@ function renderBlocks(blocks: Block[]): ReactNode[] {
         break;
       }
       case "p": {
-        const isMeta = /^\*[^*]+\*$/.test(b.text); // Zeile «Обновлено … Автор …»
+        const isMeta = /^\*[^*]+\*$/.test(b.text); // Zeile «Обновлено … Автор …» — steht jetzt im Kopf der Seite
+        if (isMeta) break;
         const isGo = /^\[[^\]]+\]\([^)]+\)$/.test(b.text); // Absatz nur aus einem Link -> Button
         const isCallout = !isMeta && !isGo && (!seenFirstP || /^\*\*[^*]+:\*\*/.test(b.text)); // «Коротко:», «Совет:»
         if (!isMeta && !isGo) seenFirstP = true;
         const after = blocks[i - 1]?.t === "hr";
-        const cls = isMeta ? "article-meta" : isGo ? "article-go" : isCallout ? "article-callout" : after ? "article-source" : undefined;
+        const cls = isGo ? "article-go" : isCallout ? "article-callout" : after ? "article-source" : undefined;
         out.push(<p key={i} className={cls}>{inline(b.text)}</p>);
         break;
       }
     }
   }
+  if (!cardPlaced) out.push(card);
   return out;
 }
 
-const CRUMBS: Record<TLang, { articles: string }> = {
-  ru: { articles: "Статьи" },
-  uk: { articles: "Статті" },
+const T: Record<
+  TLang,
+  { badge: string; articles: string; updated: string; cardRole: string; profile: string; crumb: Record<string, string> }
+> = {
+  ru: {
+    badge: "Статья · 5 минут чтения",
+    articles: "Статьи",
+    updated: "Обновлено",
+    cardRole: "Основательница GetGrow Academy, психолог, джоб-коуч",
+    profile: "Профиль коуча →",
+    crumb: { "/ru/stati/kak-poluchit-vaucher-avgs": "Как получить ваучер AVGS" },
+  },
+  uk: {
+    badge: "Стаття · 5 хвилин читання",
+    articles: "Статті",
+    updated: "Оновлено",
+    cardRole: "Засновниця GetGrow Academy, психологиня, джоб-коуч",
+    profile: "Профіль коуча →",
+    crumb: { "/uk/statti/yak-otrymaty-vaucher-avgs": "Як отримати ваучер AVGS" },
+  },
 };
-/** Kurzer Titel der Statt im Brotkrumenpfad (pro Adresse). */
-const CRUMB_TITLE: Record<string, string> = {
-  "/ru/stati/kak-poluchit-vaucher-avgs": "Как получить ваучер AVGS",
-  "/uk/statti/yak-otrymaty-vaucher-avgs": "Як отримати ваучер AVGS",
-};
+
+/** Автор всех статей — основательница; профиль коуча на сайте. */
+const AUTHOR_PROFILE = "/coaches/yuliia-zaienchyk";
+
+/** 2026-11-23 -> «23 ноября 2026» / «23 листопада 2026» (без «г.» / «р.») */
+function formatDate(iso: string, lang: TLang): string {
+  const parts = new Intl.DateTimeFormat(lang, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).formatToParts(
+    new Date(`${iso}T00:00:00Z`),
+  );
+  const pick = (t: string) => parts.find((p) => p.type === t)?.value ?? "";
+  return `${pick("day")} ${pick("month")} ${pick("year")}`;
+}
+
+/** H1 «… в Берлине — пошаговая инструкция» -> [«… в Берлине », «— пошаговая инструкция»] (Akzent wie «— на русском» auf /avgs-coaching) */
+function splitH1(h1: string): [string, string] {
+  const i = h1.lastIndexOf(" — ");
+  return i < 0 ? [h1, ""] : [h1.slice(0, i + 1), h1.slice(i + 1)];
+}
 
 export function ArticlePage({ article }: { article: Article }) {
   const lang = article.lang;
   const t = UI[lang].nav;
+  const x = T[lang];
   const cta = CONTENT[lang].avgs.cta;
+  const [h1a, h1b] = splitH1(article.h1);
+  const card = (
+    <aside className="article-author" key="author-card">
+      <div className="article-author-name">{article.authorName}</div>
+      <div className="article-author-role">{x.cardRole}</div>
+      <LLink lang={lang} to={AUTHOR_PROFILE} className="article-author-link">
+        {x.profile}
+      </LLink>
+    </aside>
+  );
   return (
     <SiteShell active="avgs" lang={lang}>
       <div className="article-page">
         <section className="page-hero simple">
           <div className="breadcrumb">
-            <LLink lang={lang} to="/">{t.home}</LLink>
+            <LLink lang={lang} to="/" exact>{t.home}</LLink>
             {" · "}
-            {CRUMBS[lang].articles}
+            {x.articles}
             {" · "}
-            {CRUMB_TITLE[article.path] ?? article.h1}
+            {x.crumb[article.path] ?? article.h1}
           </div>
-          <h1>{article.h1}</h1>
+          <div className="article-kicker-row">
+            <span className="hero-kicker">{x.badge}</span>
+          </div>
+          <h1>
+            {h1a}
+            {h1b && <em>{h1b}</em>}
+          </h1>
+          <p className="article-byline">
+            <span className="article-byline-name">{article.authorName}</span>
+            {" · "}
+            {article.authorRole}
+            {" · "}
+            {x.updated} {formatDate(article.updated, lang)}
+          </p>
         </section>
 
         <section className="section white">
-          <article className="article-body">{renderBlocks(article.blocks)}</article>
+          <article className="article-body">{renderBlocks(article.blocks, card)}</article>
         </section>
 
         <section className="cta-strip">
