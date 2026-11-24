@@ -1210,6 +1210,13 @@ html[lang="ru"] .outcome-script, html[lang="uk"] .outcome-script {
 .article-qa { border-left: 2px solid #3D6B55; padding: 2px 0 2px 22px; }
 .article-qa h3 { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 19px; line-height: 1.4; letter-spacing: 0; color: var(--forest); margin: 0 0 8px; }
 .article-qa p { margin: 0; font-size: 16px; color: #444; }
+/* «Поделиться» */
+.article-share { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 28px; }
+.article-faq + .article-share { margin-top: 40px; }
+.article-share-label { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #4a5a52; margin-right: 4px; }
+.article-body .article-share a, .article-share button { font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1; letter-spacing: 0.3px; color: #3D6B55; background: transparent; border: 1px solid #3D6B55; padding: 10px 16px; text-decoration: none; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.article-body .article-share a:hover, .article-share button:hover { background: #3D6B55; color: #fff; }
+.article-share-note { font-size: 14px; color: #3D6B55; min-height: 1em; }
 /* карточка автора */
 .article-author { background: var(--sage); border: 1px solid var(--gg-border); padding: 24px 28px; margin: 48px 0 0; }
 .article-author-name { font-family: 'Tenor Sans', sans-serif; font-size: 20px; color: var(--forest); letter-spacing: 0.3px; }

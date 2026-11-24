@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { HTML_LANG, langFromPathname } from "../i18n/lang";
+import { HTML_LANG, langFromPathname, SITE } from "../i18n/lang";
 
 function NotFoundComponent() {
   return (
@@ -85,7 +85,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "GetGrow Academy Berlin" },
       { property: "og:description", content: "Career, life and business coaching for international professionals in Berlin." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      // Общая обложка по умолчанию (создаётся при сборке, scripts/generate-og.mjs); статьи задают свою
+      { property: "og:image", content: `${SITE}/og/default.png` },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${SITE}/og/default.png` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

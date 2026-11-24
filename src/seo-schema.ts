@@ -25,7 +25,7 @@
 
 import { localizedPath, OG_LOCALE, SITE, TLANGS, type Lang, type TLang } from '@/i18n/lang'
 import { CONTENT } from '@/i18n'
-import { articleUrl, plainText, type Article } from '@/articles'
+import { articleUrl, ogImageUrl, plainText, type Article } from '@/articles'
 
 const ADDRESS = {
   '@type': 'PostalAddress',
@@ -337,6 +337,13 @@ export const articleHead = (a: Article) => {
       { property: 'og:url', content: url },
       { property: 'og:locale', content: OG_LOCALE[a.lang] },
       { property: 'article:modified_time', content: a.updated },
+      { property: 'og:image', content: ogImageUrl(a) },
+      { property: 'og:image:type', content: 'image/png' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:image:alt', content: a.h1 },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:image', content: ogImageUrl(a) },
     ],
     scripts,
   }

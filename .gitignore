@@ -44,3 +44,6 @@ data/*.db-shm
 
 # local Claude Code settings, machine-specific
 .claude/
+
+# Обложки для соцсетей — создаются при сборке (scripts/generate-og.mjs)
+public/og/

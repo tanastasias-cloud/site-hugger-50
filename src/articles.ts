@@ -102,3 +102,6 @@ export function plainText(md: string): string {
 }
 
 export const articleUrl = (a: Pick<Article, "path">) => `${SITE}${a.path}`;
+
+/** Обложка статьи для соцсетей: создаётся при сборке scripts/generate-og.mjs (имя = <lang>-<последний сегмент slug>.png). */
+export const ogImageUrl = (a: Pick<Article, "lang" | "path">) => `${SITE}/og/${a.lang}-${a.path.split("/").pop()}.png`;

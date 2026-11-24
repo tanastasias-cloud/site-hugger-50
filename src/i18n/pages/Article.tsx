@@ -1,8 +1,8 @@
-import { Fragment, type ReactNode } from "react";
+import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { LLink } from "@/components/site/LLink";
-import type { Article, Block } from "@/articles";
+import { articleUrl, type Article, type Block } from "@/articles";
 import type { TLang } from "../lang";
 import { CONTENT } from "../index";
 import { UI } from "../ui";
@@ -29,10 +29,11 @@ function inline(text: string): ReactNode[] {
   });
 }
 
-function renderBlocks(blocks: Block[], card: ReactNode): ReactNode[] {
+function renderBlocks(blocks: Block[], card: ReactNode, share: (key: string) => ReactNode): ReactNode[] {
   const out: ReactNode[] = [];
   let seenFirstP = false;
   let cardPlaced = false;
+  let shareTopPlaced = false;
   for (let i = 0; i < blocks.length; i++) {
     const b = blocks[i];
     switch (b.t) {
@@ -44,7 +45,7 @@ function renderBlocks(blocks: Block[], card: ReactNode): ReactNode[] {
       case "hr":
         // Karte der Autorin steht vor dem Quellenhinweis
         if (!cardPlaced) {
-          out.push(card);
+          out.push(share("share-bottom"), card);
           cardPlaced = true;
         }
         out.push(<hr key={i} />);
@@ -80,17 +81,25 @@ function renderBlocks(blocks: Block[], card: ReactNode): ReactNode[] {
         const after = blocks[i - 1]?.t === "hr";
         const cls = isGo ? "article-go" : isCallout ? "article-callout" : after ? "article-source" : undefined;
         out.push(<p key={i} className={cls}>{inline(b.text)}</p>);
+        // «Поделиться» — сразу под блоком «Коротко» (первая выноска)
+        if (cls === "article-callout" && !shareTopPlaced) {
+          out.push(share("share-top"));
+          shareTopPlaced = true;
+        }
         break;
       }
     }
   }
-  if (!cardPlaced) out.push(card);
+  if (!cardPlaced) out.push(share("share-bottom"), card);
   return out;
 }
 
 const T: Record<
   TLang,
-  { badge: string; articles: string; updated: string; cardRole: string; profile: string; crumb: Record<string, string> }
+  {
+    badge: string; articles: string; updated: string; cardRole: string; profile: string; crumb: Record<string, string>;
+    share: string; copy: string; copied: string;
+  }
 > = {
   ru: {
     badge: "Статья · 5 минут чтения",
@@ -98,6 +107,9 @@ const T: Record<
     updated: "Обновлено",
     cardRole: "Основательница GetGrow Academy, психолог, джоб-коуч",
     profile: "Профиль коуча →",
+    share: "Поделиться",
+    copy: "Скопировать ссылку",
+    copied: "Ссылка скопирована",
     crumb: { "/ru/stati/kak-poluchit-vaucher-avgs": "Как получить ваучер AVGS" },
   },
   uk: {
@@ -106,9 +118,56 @@ const T: Record<
     updated: "Оновлено",
     cardRole: "Засновниця GetGrow Academy, психологиня, джоб-коуч",
     profile: "Профіль коуча →",
+    share: "Поділитися",
+    copy: "Скопіювати посилання",
+    copied: "Посилання скопійовано",
     crumb: { "/uk/statti/yak-otrymaty-vaucher-avgs": "Як отримати ваучер AVGS" },
   },
 };
+
+/** Кнопки «Поделиться»: WhatsApp, Telegram (обычные ссылки, без скриптов и трекеров) и «Скопировать ссылку». */
+function ShareRow({ lang, url, title }: { lang: TLang; url: string; title: string }) {
+  const x = T[lang];
+  const [copied, setCopied] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  useEffect(() => () => clearTimeout(timer.current), []);
+
+  const wa = `https://wa.me/?text=${encodeURIComponent(`${title} ${url}`)}`;
+  const tg = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      // Fallback für ältere Browser / ohne HTTPS
+      const ta = document.createElement("textarea");
+      ta.value = url;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+      } catch {
+        /* nichts */
+      }
+      document.body.removeChild(ta);
+    }
+    setCopied(true);
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setCopied(false), 2500);
+  }
+
+  return (
+    <div className="article-share">
+      <span className="article-share-label">{x.share}</span>
+      <a href={wa} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href={tg} target="_blank" rel="noopener noreferrer">Telegram</a>
+      <button type="button" onClick={copy}>{x.copy}</button>
+      <span className="article-share-note" role="status" aria-live="polite">{copied ? x.copied : ""}</span>
+    </div>
+  );
+}
 
 /** Автор всех статей — основательница; профиль коуча на сайте. */
 const AUTHOR_PROFILE = "/coaches/yuliia-zaienchyk";
@@ -171,7 +230,9 @@ export function ArticlePage({ article }: { article: Article }) {
         </section>
 
         <section className="section white">
-          <article className="article-body">{renderBlocks(article.blocks, card)}</article>
+          <article className="article-body">{renderBlocks(article.blocks, card, (key) => (
+              <ShareRow key={key} lang={lang} url={articleUrl(article)} title={article.h1} />
+            ))}</article>
         </section>
 
         <section className="cta-strip">

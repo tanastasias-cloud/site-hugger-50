@@ -77,6 +77,10 @@ ssh hetzner-getgrow "cd /var/www/getgrow \
   (h1/h2, lists, bold/italic/links, `**Q**\nA` FAQ blocks); `src/i18n/pages/Article.tsx` renders; JSON-LD Article + FAQPage: `articleHead()` in `src/seo-schema.ts`.
 - Each article has its own route file (`$lang.stati.*.tsx` for RU, `$lang.statti.*.tsx` for UK; wrong language → 404) and its address pair in `ARTICLE_GROUPS` (`src/i18n/lang.ts`)
   — used by the header language switcher (RU ↔ UA only, no German version). Add both URLs to `public/sitemap.xml`. To update an article, replace the `.md` file (keep the slug).
+- Social covers (og:image 1200×630) are generated on every build by `scripts/generate-og.mjs` (`prebuild`; satori + @resvg/resvg-js, fonts from @fontsource) into `public/og/`
+  (git-ignored): `default.png` (site-wide default, set in `__root.tsx`) and `<lang>-<slug>.png` per article (set in `articleHead()`). New article → just add the `.md`; the file name must be
+  `<lang>-<last slug segment>.md`. Social networks cache images by URL — after changing the design they may show the old cover for a while.
+- Article pages have "Share" buttons (WhatsApp / Telegram links + copy link, no external scripts): `ShareRow` in `src/i18n/pages/Article.tsx`.
 
 ## Coaches (frequent task)
 
