@@ -1,7 +1,8 @@
 import { SiteShell } from "@/components/site/SiteShell";
 import { LLink } from "@/components/site/LLink";
+import { Link } from "@tanstack/react-router";
 import { CONTENT } from "../index";
-import type { TLang } from "../lang";
+import { AVGS_ARTICLE, type TLang } from "../lang";
 import { Em, RichText } from "./shared";
 
 export function AvgsPage({ lang }: { lang: TLang }) {
@@ -156,6 +157,10 @@ export function AvgsPage({ lang }: { lang: TLang }) {
               </details>
             ))}
           </div>
+          <p className="article-link">
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            <Link to={AVGS_ARTICLE[lang] as any}>{c.faq.articleLink} →</Link>
+          </p>
         </section>
 
         <section className="section legal-disclaimer">

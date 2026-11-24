@@ -71,6 +71,13 @@ ssh hetzner-getgrow "cd /var/www/getgrow \
   `public/sitemap.xml` lists all three versions of each page with hreflang. `<html lang>` is set in `__root.tsx` from the URL.
 - Allura has no Cyrillic: `html[lang=ru|uk]` CSS swaps accent words to Cormorant Garamond italic. Impressum/Datenschutz/Event stay German only.
 
+## Articles (RU/UK)
+
+- Text: `src/content/articles/*.md` (frontmatter `lang, slug, title, description, h1, author, updated, hreflang_pair` + markdown). `src/articles.ts` parses them
+  (h1/h2, lists, bold/italic/links, `**Q**\nA` FAQ blocks); `src/i18n/pages/Article.tsx` renders; JSON-LD Article + FAQPage: `articleHead()` in `src/seo-schema.ts`.
+- Each article has its own route file (`$lang.stati.*.tsx` for RU, `$lang.statti.*.tsx` for UK; wrong language → 404) and its address pair in `ARTICLE_GROUPS` (`src/i18n/lang.ts`)
+  — used by the header language switcher (RU ↔ UA only, no German version). Add both URLs to `public/sitemap.xml`. To update an article, replace the `.md` file (keep the slug).
+
 ## Coaches (frequent task)
 
 Add photo to `src/assets/` (≈4:5, ~800px wide, ≤100KB) → import + entry in `src/data/coaches.ts`

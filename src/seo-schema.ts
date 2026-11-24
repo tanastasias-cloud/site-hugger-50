@@ -25,6 +25,7 @@
 
 import { localizedPath, OG_LOCALE, SITE, TLANGS, type Lang, type TLang } from '@/i18n/lang'
 import { CONTENT } from '@/i18n'
+import { articleUrl, plainText, type Article } from '@/articles'
 
 const ADDRESS = {
   '@type': 'PostalAddress',
@@ -294,5 +295,49 @@ export const avgsHead = (lang: Lang = 'de') => {
   return {
     ...base,
     scripts: [ld(courseFor(lang)), ld(faqFor(lang)), ld(breadcrumbsFor(lang))],
+  }
+}
+
+/**
+ * Статья (RU/UK): canonical на себя, hreflang между двумя версиями, og:*, JSON-LD Article + FAQPage.
+ * Все данные — из frontmatter и текста статьи; datePublished = dateModified = `updated` (отдельной даты публикации во frontmatter нет).
+ */
+export const articleHead = (a: Article) => {
+  const url = articleUrl(a)
+  const pairUrl = `${SITE}${a.pairPath}`
+  const article = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${url}#article`,
+    headline: a.h1,
+    description: a.description,
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    inLanguage: a.lang,
+    author: { '@type': 'Person', name: a.authorName },
+    publisher: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: organization.name },
+    datePublished: a.updated,
+    dateModified: a.updated,
+  }
+  const pairs = a.blocks.flatMap((b) => (b.t === 'qa' ? [[plainText(b.q), plainText(b.a)] as [string, string]] : []))
+  const scripts = [ld(article)]
+  if (pairs.length > 0) scripts.push(ld({ ...faq(pairs), '@id': `${url}#faq`, inLanguage: a.lang }))
+  return {
+    links: [
+      { rel: 'canonical', href: url },
+      { rel: 'alternate', hreflang: a.lang, href: url },
+      { rel: 'alternate', hreflang: a.pairLang, href: pairUrl },
+    ],
+    meta: [
+      { title: a.title },
+      { name: 'description', content: a.description },
+      { property: 'og:title', content: a.title },
+      { property: 'og:description', content: a.description },
+      { property: 'og:type', content: 'article' },
+      { property: 'og:url', content: url },
+      { property: 'og:locale', content: OG_LOCALE[a.lang] },
+      { property: 'article:modified_time', content: a.updated },
+    ],
+    scripts,
   }
 }

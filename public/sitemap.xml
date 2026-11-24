@@ -399,4 +399,14 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://getgrow.academy/uk/kontakt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://getgrow.academy/kontakt"/>
   </url>
+  <url>
+    <loc>https://getgrow.academy/ru/stati/kak-poluchit-vaucher-avgs</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getgrow.academy/ru/stati/kak-poluchit-vaucher-avgs"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://getgrow.academy/uk/statti/yak-otrymaty-vaucher-avgs"/>
+  </url>
+  <url>
+    <loc>https://getgrow.academy/uk/statti/yak-otrymaty-vaucher-avgs</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getgrow.academy/ru/stati/kak-poluchit-vaucher-avgs"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://getgrow.academy/uk/statti/yak-otrymaty-vaucher-avgs"/>
+  </url>
 </urlset>

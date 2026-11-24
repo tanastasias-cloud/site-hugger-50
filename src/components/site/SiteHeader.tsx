@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { LLink } from "./LLink";
 import { UI } from "@/i18n/ui";
-import { basePath, hasTranslation, localizedPath, type Lang } from "@/i18n/lang";
+import { articleLangPaths, basePath, hasTranslation, localizedPath, type Lang } from "@/i18n/lang";
 
 type ActiveKey =
   | "home"
@@ -31,7 +31,14 @@ export function SiteHeader({ active, lang = "de" }: { active?: ActiveKey; lang?:
 
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const base = basePath(pathname);
-  const showSwitcher = hasTranslation(base);
+  // Статьи есть только на RU/UK (адреса разные) — переключатель ведёт RU ↔ UA, без DE
+  const article = articleLangPaths(pathname);
+  const switchItems = article
+    ? SWITCH.filter((s) => s.lang !== "de").map((s) => ({ ...s, to: article[s.lang as "ru" | "uk"] }))
+    : hasTranslation(base)
+      ? SWITCH.map((s) => ({ ...s, to: localizedPath(s.lang, base) }))
+      : [];
+  const showSwitcher = switchItems.length > 0;
 
   const jcActive = active === "jobcenter" || active === "avgs" || active === "16k";
 
@@ -126,11 +133,11 @@ export function SiteHeader({ active, lang = "de" }: { active?: ActiveKey; lang?:
         <div className="gg-right">
           {showSwitcher && (
             <div className="gg-lang-switch" role="group" aria-label={UI[lang].switcherLabel}>
-              {SWITCH.map((s) => (
+              {switchItems.map((s) => (
                 <Link
                   key={s.lang}
                   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                  to={localizedPath(s.lang, base) as any}
+                  to={s.to as any}
                   hrefLang={s.lang}
                   lang={s.lang}
                   className={s.lang === lang ? "active" : undefined}
@@ -185,11 +192,11 @@ export function SiteHeader({ active, lang = "de" }: { active?: ActiveKey; lang?:
 
         {showSwitcher && (
           <div className="gg-mobile-lang-row" role="group" aria-label={UI[lang].switcherLabel}>
-            {SWITCH.map((s) => (
+            {switchItems.map((s) => (
               <Link
                 key={s.lang}
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                to={localizedPath(s.lang, base) as any}
+                to={s.to as any}
                 hrefLang={s.lang}
                 lang={s.lang}
                 className={s.lang === lang ? "active" : undefined}

@@ -32,6 +32,8 @@ import { Route as LangAvgsCoachingRouteImport } from './routes/$lang.avgs-coachi
 import { Route as Lang16kCoachingRouteImport } from './routes/$lang.16k-coaching'
 import { Route as LangCoachesIndexRouteImport } from './routes/$lang.coaches.index'
 import { Route as ApiPublicContactRouteImport } from './routes/api/public/contact'
+import { Route as LangStattiYakOtrymatyVaucherAvgsRouteImport } from './routes/$lang.statti.yak-otrymaty-vaucher-avgs'
+import { Route as LangStatiKakPoluchitVaucherAvgsRouteImport } from './routes/$lang.stati.kak-poluchit-vaucher-avgs'
 import { Route as LangCoachesSlugRouteImport } from './routes/$lang.coaches.$slug'
 
 const UnternehmenRoute = UnternehmenRouteImport.update({
@@ -149,6 +151,18 @@ const ApiPublicContactRoute = ApiPublicContactRouteImport.update({
   path: '/api/public/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LangStattiYakOtrymatyVaucherAvgsRoute =
+  LangStattiYakOtrymatyVaucherAvgsRouteImport.update({
+    id: '/statti/yak-otrymaty-vaucher-avgs',
+    path: '/statti/yak-otrymaty-vaucher-avgs',
+    getParentRoute: () => LangRoute,
+  } as any)
+const LangStatiKakPoluchitVaucherAvgsRoute =
+  LangStatiKakPoluchitVaucherAvgsRouteImport.update({
+    id: '/stati/kak-poluchit-vaucher-avgs',
+    path: '/stati/kak-poluchit-vaucher-avgs',
+    getParentRoute: () => LangRoute,
+  } as any)
 const LangCoachesSlugRoute = LangCoachesSlugRouteImport.update({
   id: '/coaches/$slug',
   path: '/coaches/$slug',
@@ -178,6 +192,8 @@ export interface FileRoutesByFullPath {
   '/$lang/': typeof LangIndexRoute
   '/coaches/': typeof CoachesIndexRoute
   '/$lang/coaches/$slug': typeof LangCoachesSlugRoute
+  '/$lang/stati/kak-poluchit-vaucher-avgs': typeof LangStatiKakPoluchitVaucherAvgsRoute
+  '/$lang/statti/yak-otrymaty-vaucher-avgs': typeof LangStattiYakOtrymatyVaucherAvgsRoute
   '/api/public/contact': typeof ApiPublicContactRoute
   '/$lang/coaches/': typeof LangCoachesIndexRoute
 }
@@ -202,6 +218,8 @@ export interface FileRoutesByTo {
   '/$lang': typeof LangIndexRoute
   '/coaches': typeof CoachesIndexRoute
   '/$lang/coaches/$slug': typeof LangCoachesSlugRoute
+  '/$lang/stati/kak-poluchit-vaucher-avgs': typeof LangStatiKakPoluchitVaucherAvgsRoute
+  '/$lang/statti/yak-otrymaty-vaucher-avgs': typeof LangStattiYakOtrymatyVaucherAvgsRoute
   '/api/public/contact': typeof ApiPublicContactRoute
   '/$lang/coaches': typeof LangCoachesIndexRoute
 }
@@ -229,6 +247,8 @@ export interface FileRoutesById {
   '/$lang/': typeof LangIndexRoute
   '/coaches/': typeof CoachesIndexRoute
   '/$lang/coaches/$slug': typeof LangCoachesSlugRoute
+  '/$lang/stati/kak-poluchit-vaucher-avgs': typeof LangStatiKakPoluchitVaucherAvgsRoute
+  '/$lang/statti/yak-otrymaty-vaucher-avgs': typeof LangStattiYakOtrymatyVaucherAvgsRoute
   '/api/public/contact': typeof ApiPublicContactRoute
   '/$lang/coaches/': typeof LangCoachesIndexRoute
 }
@@ -257,6 +277,8 @@ export interface FileRouteTypes {
     | '/$lang/'
     | '/coaches/'
     | '/$lang/coaches/$slug'
+    | '/$lang/stati/kak-poluchit-vaucher-avgs'
+    | '/$lang/statti/yak-otrymaty-vaucher-avgs'
     | '/api/public/contact'
     | '/$lang/coaches/'
   fileRoutesByTo: FileRoutesByTo
@@ -281,6 +303,8 @@ export interface FileRouteTypes {
     | '/$lang'
     | '/coaches'
     | '/$lang/coaches/$slug'
+    | '/$lang/stati/kak-poluchit-vaucher-avgs'
+    | '/$lang/statti/yak-otrymaty-vaucher-avgs'
     | '/api/public/contact'
     | '/$lang/coaches'
   id:
@@ -307,6 +331,8 @@ export interface FileRouteTypes {
     | '/$lang/'
     | '/coaches/'
     | '/$lang/coaches/$slug'
+    | '/$lang/stati/kak-poluchit-vaucher-avgs'
+    | '/$lang/statti/yak-otrymaty-vaucher-avgs'
     | '/api/public/contact'
     | '/$lang/coaches/'
   fileRoutesById: FileRoutesById
@@ -490,6 +516,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$lang/statti/yak-otrymaty-vaucher-avgs': {
+      id: '/$lang/statti/yak-otrymaty-vaucher-avgs'
+      path: '/statti/yak-otrymaty-vaucher-avgs'
+      fullPath: '/$lang/statti/yak-otrymaty-vaucher-avgs'
+      preLoaderRoute: typeof LangStattiYakOtrymatyVaucherAvgsRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/stati/kak-poluchit-vaucher-avgs': {
+      id: '/$lang/stati/kak-poluchit-vaucher-avgs'
+      path: '/stati/kak-poluchit-vaucher-avgs'
+      fullPath: '/$lang/stati/kak-poluchit-vaucher-avgs'
+      preLoaderRoute: typeof LangStatiKakPoluchitVaucherAvgsRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/coaches/$slug': {
       id: '/$lang/coaches/$slug'
       path: '/coaches/$slug'
@@ -509,6 +549,8 @@ interface LangRouteChildren {
   LangUnternehmenRoute: typeof LangUnternehmenRoute
   LangIndexRoute: typeof LangIndexRoute
   LangCoachesSlugRoute: typeof LangCoachesSlugRoute
+  LangStatiKakPoluchitVaucherAvgsRoute: typeof LangStatiKakPoluchitVaucherAvgsRoute
+  LangStattiYakOtrymatyVaucherAvgsRoute: typeof LangStattiYakOtrymatyVaucherAvgsRoute
   LangCoachesIndexRoute: typeof LangCoachesIndexRoute
 }
 
@@ -521,6 +563,8 @@ const LangRouteChildren: LangRouteChildren = {
   LangUnternehmenRoute: LangUnternehmenRoute,
   LangIndexRoute: LangIndexRoute,
   LangCoachesSlugRoute: LangCoachesSlugRoute,
+  LangStatiKakPoluchitVaucherAvgsRoute: LangStatiKakPoluchitVaucherAvgsRoute,
+  LangStattiYakOtrymatyVaucherAvgsRoute: LangStattiYakOtrymatyVaucherAvgsRoute,
   LangCoachesIndexRoute: LangCoachesIndexRoute,
 }
 

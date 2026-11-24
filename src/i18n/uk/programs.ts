@@ -167,6 +167,7 @@ export const avgs: typeof RU.avgs = {
       },
     ],
     lastLink: "Докладніше для приватних осіб →",
+    articleLink: "Як отримати ваучер AVGS — покрокова інструкція",
   },
   legal: {
     tag: "Правова інформація",
