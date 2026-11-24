@@ -31,7 +31,8 @@ export function SiteHeader({ active, lang = "de" }: { active?: ActiveKey; lang?:
 
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const base = basePath(pathname);
-  // Статьи есть только на RU/UK (адреса разные) — переключатель ведёт RU ↔ UA, без DE
+  // Статьи есть только на RU/UK (адреса разные) — переключатель ведёт RU ↔ UA, без DE.
+  // На статьях «Главная» не подсвечиваем (exact), на остальных страницах меню как раньше.
   const article = articleLangPaths(pathname);
   const switchItems = article
     ? SWITCH.filter((s) => s.lang !== "de").map((s) => ({ ...s, to: article[s.lang as "ru" | "uk"] }))
@@ -67,7 +68,7 @@ export function SiteHeader({ active, lang = "de" }: { active?: ActiveKey; lang?:
         </LLink>
 
         <nav className="gg-nav">
-          <LLink lang={lang} to="/" exact className={`gg-nav-link${active === "home" ? " active" : ""}`}>
+          <LLink lang={lang} to="/" exact={!!article} className={`gg-nav-link${active === "home" ? " active" : ""}`}>
             {t.home}
           </LLink>
           <LLink

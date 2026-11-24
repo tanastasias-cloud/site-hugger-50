@@ -148,7 +148,7 @@ export function ArticlePage({ article }: { article: Article }) {
       <div className="article-page">
         <section className="page-hero simple">
           <div className="breadcrumb">
-            <LLink lang={lang} to="/" exact>{t.home}</LLink>
+            <LLink lang={lang} to="/">{t.home}</LLink>
             {" · "}
             {x.articles}
             {" · "}
